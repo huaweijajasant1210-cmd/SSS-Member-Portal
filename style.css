@@ -904,3 +904,11 @@ body {
 #menuButton.menu-open {
     display: none !important;
 }
+
+#menuButton {
+    display: flex;
+}
+
+#menuButton.menu-open {
+    display: none !important;
+}
