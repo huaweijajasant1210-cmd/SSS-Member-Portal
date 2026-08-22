@@ -1,323 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SSS Dashboard Mockup</title>
-
-<!-- Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #eaf4fb;
-    color: #202020;
-}
-
-/* =========================
-   TOP HEADER
-========================= */
-
-.header {
-    height: 76px;
-    background: #ffffff;
-    border-bottom: 1px solid #d7dce2;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 22px;
-
-    position: sticky;
-    top: 0;
-    z-index: 20;
-}
-
-.menu {
-    font-size: 32px;
-    color: #315a9c;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.bell {
-    font-size: 30px;
-    color: #315a9c;
-}
-
-.profile {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #dbeeff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 5px #999;
-}
-
-.profile i {
-    font-size: 32px;
-    color: #3b67a5;
-}
-
-/* =========================
-   USER INFORMATION
-========================= */
-
-.user-info {
-    background: #ffffff;
-    padding: 17px 26px 18px;
-    box-shadow: 0 3px 8px rgba(0,0,0,.12);
-}
-
-.user-name {
-    font-size: 19px;
-    font-weight: 400;
-    margin-bottom: 7px;
-}
-
-.sss-number {
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.date {
-    color: #3d6199;
-    font-size: 17px;
-}
-
-.date i {
-    margin-right: 7px;
-}
-
-/* =========================
-   MAIN
-========================= */
-
-.container {
-    width: 94%;
-    max-width: 720px;
-    margin: 18px auto 40px;
-}
+<!-- DASHBOARD -->
 
-/* =========================
-   CARD
-========================= */
+<div class="dashboard-header">
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-.card {
-    background: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 16px;
-    padding: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.12);
-    overflow: hidden;
-}
-
-.card-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    font-size: 29px;
-    font-weight: 400;
-
-    margin-bottom: 22px;
-}
-
-.title-icon {
-    width: 65px;
-    height: 65px;
+    <div class="dashboard-actions">
+        <i class="fa-solid fa-bell"></i>
 
-    background: #e5f9fb;
-    color: #176fa4;
+        <div class="profile-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+</div>
 
-    border-radius: 12px;
+<div class="member-info">
+    <div class="member-name">SANTIAGO, MARK LESTER NARAG</div>
+    <div class="member-number">01-3599294-4</div>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    <div class="member-date">
+        <i class="fa-solid fa-calendar-days"></i>
+        Saturday, August 22, 2026 at 3:55:07 PM
+    </div>
+</div>
 
-    font-size: 31px;
-}
 
-/* =========================
-   IMAGE PANEL
-========================= */
+<div class="dashboard-container">
 
-.image-panel {
-    width: 100%;
-    height: 250px;
+    <!-- VIEW CONTRIBUTIONS -->
 
-    border-radius: 10px;
+    <div class="dashboard-card">
 
-    background:
-        linear-gradient(
-            rgba(190,230,245,.15),
-            rgba(210,240,250,.65)
-        ),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80");
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
 
-    background-size: cover;
-    background-position: center;
+            <span>View Contributions</span>
+        </div>
 
-    margin-bottom: 25px;
-}
+        <div class="dashboard-image contributions-image"></div>
 
-/* =========================
-   CONTRIBUTIONS
-========================= */
+        <div class="contribution-amount">
+            ₱ 119,181.00
+        </div>
 
-.amount {
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
+        <div class="amount-label">
+            Total amount of contributions
+        </div>
 
-.amount-label {
-    font-size: 19px;
-    margin-bottom: 28px;
-}
+        <div class="contribution-bottom">
 
-.contribution-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+            <div class="contribution-number">
+                104
+            </div>
 
-.number-box {
-    width: 65px;
-    height: 65px;
+            <div class="contribution-description">
+                <span>↑ Total number of contribution posted</span>
+                <small>AS OF AUG 2026</small>
+            </div>
 
-    border-radius: 10px;
+        </div>
 
-    background: #d8f5ee;
-    border: 3px solid #a9ded3;
+        <button class="blue-button">
+            View Contributions
+        </button>
 
-    color: #27977a;
+    </div>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    font-size: 23px;
-}
+    <!-- PAY CONTRIBUTIONS -->
 
-.contribution-text {
-    color: #3d977e;
-    font-size: 18px;
-    line-height: 1.5;
-}
+    <div class="dashboard-card">
 
-.contribution-text small {
-    display: block;
-    color: #777;
-    font-size: 15px;
-}
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
 
-/* =========================
-   BUTTON
-========================= */
+            <span>Pay Contributions</span>
+        </div>
 
-.btn {
-    display: inline-block;
+        <div class="dashboard-image pay-contributions-image"></div>
 
-    background: #315a9c;
-    color: white;
+    </div>
 
-    border: none;
-    border-radius: 5px;
 
-    padding: 15px 24px;
+    <!-- PAY LOANS -->
 
-    font-family: inherit;
-    font-size: 17px;
+    <div class="dashboard-card">
 
-    float: right;
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
 
-    margin-top: -65px;
-}
+            <span>Pay Loans</span>
+        </div>
 
-/* =========================
-   INFO BOX
-========================= */
+        <div class="dashboard-image loans-image"></div>
 
-.info-box {
-    background: #cef5fa;
-    border-radius: 10px;
+        <div class="loan-notice">
+            <i class="fa-solid fa-circle-info"></i>
 
-    padding: 20px;
+            <span>
+                Are you planning to pay for your loan?
+                You haven't generated a PRN for payment yet.
+                You can create one by
+                <b>Generating a PRN →</b>
+            </span>
+        </div>
 
-    color: #256679;
+    </div>
 
-    font-size: 17px;
-    line-height: 1.6;
 
-    margin-top: 25px;
-}
+    <!-- SERVICES -->
 
-.info-box i {
-    margin-right: 8px;
-}
+    <div class="dashboard-card services-card">
 
-.link {
-    color: #1878d1;
-    font-weight: 500;
-}
+        <div class="card-title">
+            <div class="card-icon services-icon">
+                <i class="fa-solid fa-fingerprint"></i>
+            </div>
 
-/* =========================
-   SERVICES
-========================= */
+            <span>Services</span>
+        </div>
 
-.services {
-    margin-top: 15px;
-}
+        <div class="services-list">
 
-.service {
-    display: flex;
-    align-items: center;
+            <div class="service-item">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <span>Salary Loan</span>
+            </div>
 
-    gap: 20px;
+            <div class="service-item">
+                <i class="fa-solid fa-person-cane"></i>
+                <span>Pension Loan</span>
+            </div>
 
-    padding: 18px 5px;
+            <div class="service-item">
+                <i class="fa-solid fa-house-tsunami"></i>
+                <span>Calamity/Emergency Loan</span>
+            </div>
 
-    border-bottom: 1px solid #ddd;
+            <div class="service-item">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span>Loan Condonation</span>
+            </div>
 
-    color: #345d98;
+            <div class="service-item">
+                <i class="fa-solid fa-person-pregnant"></i>
+                <span>Maternity Benefit</span>
+            </div>
 
-    font-size: 20px;
-}
+            <div class="service-item">
+                <i class="fa-solid fa-briefcase-medical"></i>
+                <span>Unemployment Benefit</span>
+            </div>
 
-.service:last-child {
-    border-bottom: none;
-}
+            <div class="service-item">
+                <i class="fa-solid fa-truck-medical"></i>
+                <span>Sickness Benefit</span>
+            </div>
 
-.service i {
-    width: 30px;
-    text-align: center;
-    font-size: 20px;
-}
+            <div class="service-item">
+                <i class="fa-solid fa-wheelchair"></i>
+                <span>Disability Benefit</span>
+            </div>
 
-/* ================
+            <div class="service-item">
+                <i class="fa-solid fa-chair"></i>
+                <span>Retirement Benefit</span>
+            </div>
+
+            <div class="service-item">
+                <i class="fa-solid fa-ribbon"></i>
+                <span>Funeral Benefit</span>
+            </div>
+
+            <div class="service-item">
+                <i class="fa-solid fa-cross"></i>
+                <span>Death Benefit</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK LINKS -->
+
+    <div class="dashboard-card">
+
+        <div class="card-title">
+            <div class="card-icon">
+                <i class="fa-solid fa-link"></i>
+            </div>
+
+            <span>Quick Links</span>
+        </div>
+
+
+ 
