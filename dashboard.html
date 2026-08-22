@@ -223,13 +223,13 @@
 
     <div class="menu-items">
 
-        <a href="dashboard.html" class="menu-item">
+        <a href="dashboard.html" class="menu-item active">
             <i class="fa-solid fa-border-all"></i>
             <span>Dashboard</span>
         </a>
 
 
-        <a href="#" class="menu-item active">
+        <a href="#" class="menu-item">
             <i class="fa-solid fa-user-tie"></i>
             <span>Member Information</span>
         </a>
@@ -268,44 +268,6 @@
 
 </div>
 <script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
-const menuButton = document.getElementById("menuButton");
-const sideMenu = document.getElementById("sideMenu");
-const overlay = document.getElementById("menuOverlay");
-const closeMenu = document.getElementById("closeMenu");
-
-
-menuButton.addEventListener("click", function(){
-
-    sideMenu.classList.add("open");
-    overlay.classList.add("open");
-
-});
-
-
-closeMenu.addEventListener("click", function(){
-
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("open");
-
-});
-
-
-overlay.addEventListener("click", function(){
-
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("open");
-
-});
-
-
-});
-
-</script>
-
-<script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const menuButton = document.getElementById("menuButton");
@@ -313,20 +275,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuOverlay = document.getElementById("menuOverlay");
     const closeMenu = document.getElementById("closeMenu");
 
-    menuButton.addEventListener("click", function () {
+    menuButton.onclick = function () {
         sideMenu.classList.add("open");
         menuOverlay.classList.add("open");
-    });
 
-    closeMenu.addEventListener("click", function () {
+        // Hide hamburger
+        menuButton.classList.add("menu-open");
+    };
+
+    closeMenu.onclick = function () {
         sideMenu.classList.remove("open");
         menuOverlay.classList.remove("open");
-    });
 
-    menuOverlay.addEventListener("click", function () {
+        // Show hamburger again
+        menuButton.classList.remove("menu-open");
+    };
+
+    menuOverlay.onclick = function () {
         sideMenu.classList.remove("open");
         menuOverlay.classList.remove("open");
-    });
+
+        // Show hamburger again
+        menuButton.classList.remove("menu-open");
+    };
 
 });
 </script>
