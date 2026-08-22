@@ -189,22 +189,25 @@
 
     </div>
 
+<!-- QUICK LINKS -->
 
-    <!-- QUICK LINKS -->
+<div class="dashboard-card">
 
-    <div class="dashboard-card">
-
-        <div class="card-title">
-            <div class="card-icon">
-                <i class="fa-solid fa-link"></i>
-            </div>
-
-            <span>Quick Links</span>
+    <div class="card-title">
+        <div class="card-icon">
+            <i class="fa-solid fa-link"></i>
         </div>
+
+        <span>Quick Links</span>
     </div>
 
-        <!-- MENU OVERLAY -->
+</div>
+
+</div> <!-- END DASHBOARD CONTAINER -->
+
+<!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay"></div>
+
 
 <!-- SIDE MENU -->
 <div class="side-menu" id="sideMenu">
@@ -225,30 +228,36 @@
             <span>Dashboard</span>
         </a>
 
+
         <a href="#" class="menu-item active">
             <i class="fa-solid fa-user-tie"></i>
             <span>Member Information</span>
         </a>
+
 
         <a href="#" class="menu-item">
             <i class="fa-solid fa-fingerprint"></i>
             <span>Services</span>
         </a>
 
+
         <a href="#" class="menu-item">
             <i class="fa-solid fa-hand-holding-dollar"></i>
             <span>Loans</span>
         </a>
+
 
         <a href="#" class="menu-item">
             <i class="fa-solid fa-network-wired"></i>
             <span>Benefits</span>
         </a>
 
+
         <a href="#" class="menu-item">
             <i class="fa-solid fa-barcode"></i>
             <span>Payment Reference Number</span>
         </a>
+
 
         <a href="#" class="menu-item">
             <i class="fa-solid fa-right-from-bracket"></i>
@@ -258,33 +267,40 @@
     </div>
 
 </div>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
+document.addEventListener("DOMContentLoaded", function(){
 
-
-    menuButton.onclick = function(){
-        sideMenu.classList.add("open");
-        menuOverlay.classList.add("open");
-    };
+const menuButton = document.getElementById("menuButton");
+const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
 
 
-    closeMenu.onclick = function(){
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    };
+menuButton.addEventListener("click", function(){
+
+    sideMenu.classList.add("open");
+    overlay.classList.add("open");
+
+});
 
 
-    menuOverlay.onclick = function(){
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    };
+closeMenu.addEventListener("click", function(){
+
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("open");
+
+});
+
+
+overlay.addEventListener("click", function(){
+
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("open");
+
+});
 
 
 });
+
 </script>
