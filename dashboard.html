@@ -202,5 +202,82 @@
             <span>Quick Links</span>
         </div>
 
+        <!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+        <span>Menu</span>
+
+        <button class="close-menu" id="closeMenu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="menu-items">
+
+        <a href="dashboard.html" class="menu-item">
+            <i class="fa-solid fa-border-all"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#" class="menu-item active">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Member Information</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span>Services</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Loans</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Benefits</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-barcode"></i>
+            <span>Payment Reference Number</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+        </a>
+        <!-- JAVASCRIPT -->
+<script>
+const menuButton = document.querySelector(".menu-icon");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
+
+menuButton.addEventListener("click", function () {
+    sideMenu.classList.add("open");
+    menuOverlay.classList.add("open");
+});
+
+closeMenu.addEventListener("click", function () {
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("open");
+});
+
+menuOverlay.addEventListener("click", function () {
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("open");
+});
+</script>
+
+    </div>
+
+</div>
+
 
  
