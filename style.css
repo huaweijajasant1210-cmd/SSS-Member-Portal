@@ -900,3 +900,7 @@ body {
         min-height: 65px;
     }
 }
+/* Hide hamburger when menu is open */
+#menuButton.menu-open {
+    display: none !important;
+}
