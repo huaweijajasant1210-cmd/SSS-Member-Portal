@@ -201,36 +201,8 @@
 
             <span>Quick Links</span>
         </div>
+    </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
-
-
-    menuButton.onclick = function(){
-        sideMenu.classList.add("open");
-        menuOverlay.classList.add("open");
-    };
-
-
-    closeMenu.onclick = function(){
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    };
-
-
-    menuOverlay.onclick = function(){
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    };
-
-
-});
-</script>
         <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -286,3 +258,33 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("menuButton");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const closeMenu = document.getElementById("closeMenu");
+
+
+    menuButton.onclick = function(){
+        sideMenu.classList.add("open");
+        menuOverlay.classList.add("open");
+    };
+
+
+    closeMenu.onclick = function(){
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+    };
+
+
+    menuOverlay.onclick = function(){
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+    };
+
+
+});
+</script>
