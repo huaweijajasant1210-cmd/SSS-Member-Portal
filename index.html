@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortal - Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #edf3f8;
+            min-height: 100vh;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 830px;
+            min-height: 100vh;
+            margin: auto;
+            background: #f8fcff;
+            padding: 40px;
+        }
+
+        /* DEMO NOTICE */
+        .notice {
+            text-align: center;
+            background: #fff4cc;
+            color: #705b00;
+            border: 1px solid #e1c85b;
+            border-radius: 6px;
+            padding: 8px;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        /* LOGO */
+        .logo-area {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .logo {
+            width: 185px;
+            height: 165px;
+            object-fit: contain;
+        }
+
+        .brand {
+            color: #285aa6;
+            font-size: 43px;
+            font-weight: 800;
+            margin-top: 5px;
+            letter-spacing: -2px;
+        }
+
+        /* TITLE */
+        .title {
+            font-size: 38px;
+            font-weight: 400;
+            margin-top: 85px;
+            margin-bottom: 70px;
+        }
+
+        /* INPUT */
+        .input {
+            width: 100%;
+            height: 115px;
+            border: 2px solid #d2d8dc;
+            border-radius: 10px;
+            background: #fff;
+            padding: 0 30px;
+            font-size: 33px;
+            outline: none;
+        }
+
+        .input:focus {
+            border-color: #2870c4;
+        }
+
+        .input::placeholder {
+            color: #222;
+        }
+
+        /* FORGOT */
+        .forgot {
+            text-align: right;
+            color: #2670c7;
+            font-size: 30px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        /* BUTTON */
+        .signin {
+            width: 100%;
+            height: 90px;
+            border: none;
+            border-radius: 10px;
+            background: #3159a4;
+            color: white;
+            font-size: 35px;
+            margin-top: 35px;
+            cursor: pointer;
+        }
+
+        .signin:hover {
+            background: #264b91;
+        }
+
+        /* CREATE */
+        .create {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 95px;
+        }
+
+        .blue {
+            color: #2670c7;
+            cursor: pointer;
+        }
+
+        /* CHARTER */
+        .charter {
+            text-align: center;
+            font-size: 29px;
+            margin-top: 50px;
+        }
+
+        /* HOME */
+        .home-area {
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .line {
+            height: 2px;
+            background: #d7dde1;
+            flex: 1;
+        }
+
+        .home {
+            color: #1874db;
+            font-size: 42px;
+            margin: 0 55px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 25px 27px 60px;
+            }
+
+            .notice {
+                font-size: 10px;
+            }
+
+            .logo {
+                width: 145px;
+                height: 130px;
+            }
+
+            .brand {
+                font-size: 35px;
+            }
+
+            .title {
+                font-size: 29px;
+                margin-top: 75px;
+                margin-bottom: 55px;
+            }
+
+            .input {
+                height: 88px;
+                padding: 0 25px;
+                font-size: 26px;
+            }
+
+            .forgot {
+                font-size: 24px;
+            }
+
+            .signin {
+                height: 78px;
+                font-size: 29px;
+                margin-top: 28px;
+            }
+
+            .create {
+                font-size: 24px;
+                margin-top: 70px;
+            }
+
+            .charter {
+                font-size: 23px;
+                margin-top: 40px;
+            }
+
+            .home-area {
+                margin-top: 75px;
+            }
+
+            .home {
+                font-size: 35px;
+                margin: 0 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- DEMO NOTICE -->
+    <div class="notice">
+        DEMO MEMBER PORTAL — NOT AN OFFICIAL GOVERNMENT WEBSITE
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo-area">
+
+        <!--
+            Ilagay ang logo.png sa parehong folder
+            ng index.html
+        -->
+        <img
+            src="logo.png"
+            alt="Member Portal Logo"
+            class="logo"
+        >
+
+        <div class="brand">
+            MyPortal
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN TITLE -->
+    <h1 class="title">
+        Sign-in to your account.
+    </h1>
+
+
+    <!-- USER ID -->
+    <input
+        id="userID"
+        class="input"
+        type="text"
+        placeholder="User ID"
+        autocomplete="off"
+    >
+
+
+    <!-- FORGOT PASSWORD -->
+    <div
+        class="forgot"
+        onclick="forgotPassword()">
+        Forgot Password?
+    </div>
+
+
+    <!-- PASSWORD -->
+    <input
+        id="password"
+        class="input"
+        type="password"
+        placeholder="Password"
+        autocomplete="off"
+    >
+
+
+    <!-- SIGN IN -->
+    <button
+        class="signin"
+        onclick="signIn()">
+        Sign In
+    </button>
+
+
+    <!-- CREATE ACCOUNT -->
+    <div class="create">
+        No account yet?
+        <span
+            class="blue"
+            onclick="createAccount()">
+            Create now
+        </span>
+    </div>
+
+
+    <!-- CITIZEN'S CHARTER -->
+    <div class="charter">
+        Explore the
+        <span class="blue">
+            Citizen's Charter
+        </span>
+    </div>
+
+
+    <!-- HOME -->
+    <div class="home-area">
+        <div class="line"></div>
+
+        <div class="home">⌂</div>
+
+        <div class="line"></div>
+    </div>
+
+</div>
+
+
+<script>
+
+function signIn() {
+
+    const userID =
+        document.getElementById("userID").value.trim();
+
+    const password =
+        document.getElementById("password").value.trim();
+
+    if (userID === "") {
+        alert("Please enter your User ID.");
+        return;
+    }
+
+    if (password === "") {
+        alert("Please enter your Password.");
+        return;
+    }
+
+    /*
+        DEMO ONLY.
+        Walang credentials na ipinapadala
+        o sine-save sa server.
+    */
+
+    alert("Demo login successful.");
+
+}
+
+
+function forgotPassword() {
+    alert("Password recovery is available in this demo.");
+}
+
+
+function createAccount() {
+    alert("Account registration is available in this demo.");
+}
+
+</script>
+
+</body>
+</html>
