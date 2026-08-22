@@ -605,3 +605,42 @@ body {
 #menuOverlay.open {
     display:block;
 }
+.side-menu{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:85%;
+    max-width:400px;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:9999;
+
+    transform:translateX(-100%);
+    transition:.3s;
+}
+
+
+.side-menu.open{
+    transform:translateX(0);
+}
+
+
+.menu-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    z-index:9998;
+
+    display:none;
+}
+
+
+.menu-overlay.open{
+    display:block;
+}
