@@ -644,3 +644,68 @@ body {
 .menu-overlay.open{
     display:block;
 }
+/* ===== MOBILE SIDE MENU FIX ===== */
+
+#sideMenu {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 85vw !important;
+    max-width: 420px !important;
+
+    height: 100vh !important;
+
+    background: #ffffff !important;
+
+    z-index: 99999 !important;
+
+    transform: translateX(-100%) !important;
+
+    transition: transform .3s ease !important;
+
+    overflow-y: auto !important;
+
+    display: block !important;
+}
+
+
+#sideMenu.open {
+    transform: translateX(0) !important;
+}
+
+
+
+#menuOverlay {
+    position: fixed !important;
+
+    top:0 !important;
+    left:0 !important;
+
+    width:100% !important;
+    height:100vh !important;
+
+    background: rgba(0,0,0,.5) !important;
+
+    z-index:99998 !important;
+
+    display:none;
+}
+
+
+#menuOverlay.open {
+    display:block !important;
+}
+
+
+
+/* HAMBURGER */
+
+#menuButton {
+    position:relative;
+
+    z-index:100000;
+
+    cursor:pointer;
+}
