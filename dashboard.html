@@ -202,6 +202,32 @@
             <span>Quick Links</span>
         </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const closeMenu = document.getElementById("closeMenu");
+
+    menuButton.addEventListener("click", function () {
+        sideMenu.classList.add("open");
+        menuOverlay.classList.add("open");
+    });
+
+    closeMenu.addEventListener("click", function () {
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+    });
+
+    menuOverlay.addEventListener("click", function () {
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+    });
+
+});
+</script>
+
+
         <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -215,6 +241,7 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
     </div>
+
 
     <div class="menu-items">
 
@@ -252,56 +279,7 @@
             <i class="fa-solid fa-right-from-bracket"></i>
             <span>Sign Out</span>
         </a>
-        <!-- JAVASCRIPT -->
-<script>
-const menuButton = document.querySelector(".menu-icon");
-const sideMenu = document.getElementById("sideMenu");
-const menuOverlay = document.getElementById("menuOverlay");
-const closeMenu = document.getElementById("closeMenu");
-
-menuButton.addEventListener("click", function () {
-    sideMenu.classList.add("open");
-    menuOverlay.classList.add("open");
-});
-
-closeMenu.addEventListener("click", function () {
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("open");
-});
-
-menuOverlay.addEventListener("click", function () {
-    sideMenu.classList.remove("open");
-    menuOverlay.classList.remove("open");
-});
-</script>
 
     </div>
 
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
-
-    menuButton.addEventListener("click", function () {
-        sideMenu.classList.add("open");
-        menuOverlay.classList.add("open");
-    });
-
-    closeMenu.addEventListener("click", function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    });
-
-    menuOverlay.addEventListener("click", function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-    });
-
-});
-</script>
- 
