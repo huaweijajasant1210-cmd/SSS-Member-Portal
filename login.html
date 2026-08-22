@@ -1,0 +1,381 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Member Portal Login</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #eef4f9;
+    min-height: 100vh;
+}
+
+.page {
+    width: 100%;
+    max-width: 830px;
+    min-height: 100vh;
+    margin: auto;
+    background: #f8fcff;
+    padding: 40px 40px 70px;
+}
+
+/* DEMO NOTICE */
+.demo-notice {
+    background: #fff4cc;
+    color: #705b00;
+    border: 1px solid #e2ca62;
+    border-radius: 6px;
+    padding: 9px;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* LOGO */
+.logo-area {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.logo {
+    width: 185px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* Kung wala kang image logo, gamitin ito */
+.logo-placeholder {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    background: #285aa6;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* BRAND NAME */
+.brand-name {
+    color: #285aa6;
+    font-size: 43px;
+    font-weight: 800;
+    margin-top: 8px;
+    letter-spacing: -2px;
+}
+
+/* TITLE */
+.login-title {
+    font-size: 38px;
+    font-weight: 400;
+    margin-top: 85px;
+    margin-bottom: 70px;
+}
+
+/* INPUTS */
+.input {
+    width: 100%;
+    height: 115px;
+    border: 2px solid #d2d8dc;
+    border-radius: 10px;
+    background: white;
+
+    padding: 0 30px;
+
+    font-size: 33px;
+    color: #222;
+
+    outline: none;
+}
+
+.input:focus {
+    border-color: #2b6dc0;
+}
+
+.input::placeholder {
+    color: #252525;
+}
+
+/* FORGOT PASSWORD */
+.forgot {
+    display: block;
+    text-align: right;
+
+    color: #2670c7;
+    font-size: 30px;
+
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    cursor: pointer;
+}
+
+/* SIGN IN */
+.signin {
+    width: 100%;
+    height: 90px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #3159a4;
+    color: white;
+
+    font-size: 35px;
+
+    margin-top: 35px;
+
+    cursor: pointer;
+}
+
+.signin:active {
+    background: #24498b;
+}
+
+/* CREATE ACCOUNT */
+.create {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-top: 95px;
+}
+
+.blue {
+    color: #2670c7;
+}
+
+/* CITIZEN CHARTER */
+.charter {
+    text-align: center;
+
+    font-size: 29px;
+
+    margin-top: 50px;
+}
+
+/* HOME ICON */
+.home-area {
+    margin-top: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    height: 2px;
+    background: #d7dde1;
+    flex: 1;
+}
+
+.home {
+    color: #1874db;
+    font-size: 45px;
+    margin: 0 60px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .page {
+        padding: 25px 27px 60px;
+    }
+
+    .demo-notice {
+        font-size: 10px;
+    }
+
+    .logo {
+        width: 145px;
+        height: 130px;
+    }
+
+    .logo-placeholder {
+        width: 135px;
+        height: 135px;
+        font-size: 34px;
+    }
+
+    .brand-name {
+        font-size: 35px;
+    }
+
+    .login-title {
+        font-size: 29px;
+        margin-top: 75px;
+        margin-bottom: 55px;
+    }
+
+    .input {
+        height: 88px;
+        padding: 0 25px;
+        font-size: 26px;
+    }
+
+    .forgot {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .signin {
+        height: 78px;
+        font-size: 29px;
+        margin-top: 28px;
+    }
+
+    .create {
+        font-size: 24px;
+        margin-top: 70px;
+    }
+
+    .charter {
+        font-size: 23px;
+        margin-top: 40px;
+    }
+
+    .home-area {
+        margin-top: 75px;
+    }
+
+    .home {
+        font-size: 36px;
+        margin: 0 35px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <!-- DEMO NOTICE -->
+    <div class="demo-notice">
+        DEMO MEMBER PORTAL — NOT AN OFFICIAL GOVERNMENT WEBSITE
+    </div>
+
+
+    <!-- LOGO -->
+    <div class="logo-area">
+
+        <!--
+            ILAGAY ANG SARILI MONG LOGO:
+            Palitan ang "logo.png" ng filename ng logo mo.
+        -->
+
+        <img
+            src="logo.png"
+            alt="Member Portal Logo"
+            class="logo"
+        >
+
+        <div class="brand-name">
+            MyPortal
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN TITLE -->
+    <h1 class="login-title">
+        Sign-in to your account.
+    </h1>
+
+
+    <!-- USER ID -->
+    <input
+        type="text"
+        class="input"
+        placeholder="User ID"
+        autocomplete="off"
+    >
+
+
+    <!-- FORGOT PASSWORD -->
+    <div class="forgot">
+        Forgot Password?
+    </div>
+
+
+    <!-- PASSWORD -->
+    <input
+        type="password"
+        class="input"
+        placeholder="Password"
+        autocomplete="off"
+    >
+
+
+    <!-- SIGN IN -->
+    <button
+        class="signin"
+        onclick="demoLogin()">
+        Sign In
+    </button>
+
+
+    <!-- CREATE ACCOUNT -->
+    <div class="create">
+        No account yet?
+        <span class="blue">Create now</span>
+    </div>
+
+
+    <!-- CITIZEN'S CHARTER -->
+    <div class="charter">
+        Explore the
+        <span class="blue">Citizen's Charter</span>
+    </div>
+
+
+    <!-- HOME -->
+    <div class="home-area">
+        <div class="line"></div>
+
+        <div class="home">
+            🏠
+        </div>
+
+        <div class="line"></div>
+    </div>
+
+</div>
+
+
+<script>
+function demoLogin() {
+
+    const userID = document.querySelectorAll(".input")[0].value;
+    const password = document.querySelectorAll(".input")[1].value;
+
+    if (userID === "" || password === "") {
+        alert("Please enter your User ID and Password.");
+        return;
+    }
+
+    alert("Demo login only. No credentials were sent or stored.");
+}
+</script>
+
+</body>
+</html>
+```
