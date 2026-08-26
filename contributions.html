@@ -1,240 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Contributions</title>
 
-    <title>View Contributions</title>
+<link rel="stylesheet" href="style.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7f9;
-            color: #3f3f3f;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .top-header {
-            height: 92px;
-            background: #ffffff;
-            border-bottom: 1px solid #d8dee5;
-            display: flex;
-            align-items: center;
-            padding: 0 25px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .hamburger {
-            font-size: 34px;
-            color: #315a9b;
-            margin-right: auto;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .notification {
-            font-size: 34px;
-            color: #315a9b;
-        }
-
-        .profile {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+body{
+    margin:0;
+    font-family:"Montserrat",sans-serif;
+    background:#eaf4fb;
+}
 
 
-        /* =========================
-           MEMBER INFORMATION
-        ========================= */
+/* HEADER */
 
-        .member-header {
-            background: #ffffff;
-            padding: 20px 25px 25px;
-            border-bottom: 1px solid #d9dfe6;
-        }
-
-        .member-name {
-            font-size: 22px;
-            margin-bottom: 8px;
-            color: #333333;
-        }
-
-        .member-number {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .datetime {
-            font-size: 19px;
-            color: #315a9b;
-        }
-
-        .datetime i {
-            margin-right: 7px;
-        }
+.dashboard-header{
+    height:76px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 24px;
+    border-bottom:1px solid #ddd;
+}
 
 
-        /* =========================
-           MAIN CONTAINER
-        ========================= */
-
-        .container {
-            width: 94%;
-            max-width: 850px;
-            margin: 25px auto;
-        }
+.menu-icon{
+    background:none;
+    border:none;
+    color:#315a9c;
+    font-size:32px;
+}
 
 
-        /* =========================
-           SUMMARY
-        ========================= */
-
-        .summary-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-        }
-
-        .summary-title {
-            text-align: center;
-            background: #edf0f3;
-            padding: 9px;
-            border-radius: 6px;
-            font-size: 21px;
-            color: #5d6268;
-            margin-bottom: 25px;
-        }
-
-        .summary-item {
-            margin-bottom: 22px;
-        }
-
-        .summary-label {
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .summary-value {
-            font-size: 25px;
-            color: #333333;
-        }
+.dashboard-actions{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    color:#315a9c;
+    font-size:28px;
+}
 
 
-        /* =========================
-           YEAR NAVIGATION
-        ========================= */
-
-        .year-navigation {
-            background: #dff1fc;
-            border-radius: 5px 5px 0 0;
-            height: 60px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: relative;
-        }
-
-        .year {
-            font-size: 23px;
-            color: #526b82;
-            font-weight: 500;
-        }
-
-        .year-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-
-            border: none;
-            background: transparent;
-
-            font-size: 48px;
-            color: #315a9b;
-
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .year-btn:hover {
-            color: #1d467f;
-        }
-
-        .previous-year {
-            left: -55px;
-        }
-
-        .next-year {
-            right: -55px;
-        }
+.profile-icon{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#dceeff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
 
-        /* =========================
-           CONTRIBUTION TABLE
-        ========================= */
+/* MEMBER */
 
-        .table-wrapper {
-            background: #ffffff;
-            padding: 0 0 10px;
-            overflow-x: auto;
-        }
+.member-info{
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 20px;
-        }
+    background:white;
+    padding:15px 25px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
 
-        th {
-            background: #ffffff;
-            color: #526b82;
-            font-weight: 500;
-            padding: 14px;
-            border: 1px solid #ffffff;
-        }
-
-        td {
-            padding: 13px 20px;
-            border: 1px solid #ffffff;
-        }
-
-        td.month {
-            width: 35%;
-            background: #a9d3ed;
-            text-align: center;
-            color: #34495e;
-        }
-
-        td.amount {
-            width: 65%;
-            background: #fafafa;
-            text-align: right;
-            color: #333333;
-        }
+}
 
 
-       
+.member-name{
+    font-size:20px;
+}
+
+
+.member-number{
+    margin-top:5px;
+    font-size:18px;
+}
+
+
+.member-date{
+
+    margin-top:8px;
+    color:#315a9c;
+    font-size:16px;
+
+}
+
+
+/* CONTENT */
+
+.contribution-box{
+
+    width:90%;
+    max-width:700px;
+
+    background:white;
+
+    margin:20px auto;
+
+    padding:25px;
+
+    border-radius:8px;
+
+}
+
+
+.summary-title{
+
+    text-align:center;
+
+    background:#edf1f3;
+
+    padding:8px;
+
+    color:#777;
+
+    font-size:20px;
+
+}
+
+
+.summary-item{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+}
+
+
+.summary-value{
+
+    font-size:25px;
+
+    margin-top:8px;
+
+}
+
+
+/* TABLE */
+
+
+.year-title{
+
+    margin-top:35px;
+
+    background:#dff2ff;
+
+    padding:12px;
+
+    text-align:center;
+
+    font-size:22px;
+
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:20px;
+
+}
+
+
+th{
+
+    background:#a9d4ef;
+
+    padding:15px;
+
+    color:#456;
+
+
+}
+
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+td:first-child{
+
+    background:#acd5ee;
+
+    width:35%;
+
+}
+
+
+td:last-child{
+
+    text-align:right;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="dashboard-header">
+
+
+<button class="menu-icon">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<div class="dashboard-actions">
+
+<i class="fa-solid fa-bell"></i>
+
+
+<div class="profile-icon">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- MEMBER -->
+
+
+<div class="member-info">
+
+<div class="member-name">
+SANTIAGO, ANJANETTE RAMOS
+</div>
+
+
+<div class="member-number">
+34-7743593-3
+</div>
+
+
+<div class="member-date">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Saturday, August 22, 2026 at 3:55:33 PM
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- CONTRIBUTIONS -->
+
+<div class="contribution-box">
+
+
+<div class="summary-title">
+SUMMARY
+</div>
+
+
+
+<div class="summary-item">
+(A) Total Number of Contributions Displayed
+
+<div class="summary-value">
+10
+</div>
+
+</div>
+
+
+
+<div class="summary-item">
+(B) Total Number of Contributions not Displayed
+
+<div class="summary-value">
+0
+</div>
+
+</div>
+
+
+
+
+<div class="summary-item">
+
+Total Number of Contributions Posted (A)+(B)
+
+<div class="summary-value">
+10
+</div>
+
+</div>
+
+
+
+
+<div class="summary-item">
+
+Total Amount of Contributions
+
+<div class="summary-value">
+22,980.00
+</div>
+
+</div>
+
+
+
+
+
+<div class="year-title">
+2026
+</div>
+
+
+<table>
+
+
+<tr>
+
+<th>
+MONTH
+</th>
+
+<th>
+CONTRIBUTION
+</th>
+
+</tr>
+
+
+
+<tr><td>Jan</td><td>3,000.00</td></tr>
+<tr><td>Feb</td><td>3,000.00</td></tr>
+<tr><td>Mar</td><td>3,000.00</td></tr>
+<tr><td>Apr</td><td>3,000.00</td></tr>
+<tr><td>May</td><td>3,000.00</td></tr>
+<tr><td>Jun</td><td>3,000.00</td></tr>
+<tr><td>Jul</td><td>0.00</td></tr>
+<tr><td>Aug</td><td>0.00</td></tr>
+<tr><td>Sep</td><td>0.00</td></tr>
+<tr><td>Oct</td><td>0.00</td></tr>
+<tr><td>Nov</td><td>0.00</td></tr>
+<tr><td>Dec</td><td>0.00</td></tr>
+
+
+</table>
+
+
+</div>
+
+
+</body>
+</html>
