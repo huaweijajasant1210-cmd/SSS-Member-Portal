@@ -912,3 +912,7 @@ body {
 #menuButton.menu-open {
     display: none !important;
 }
+
+<a href="contributions.html" class="blue-button">
+    View Contributions
+</a>
