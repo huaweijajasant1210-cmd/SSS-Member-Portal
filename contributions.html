@@ -4,211 +4,272 @@
 <meta charset="UTF-8">
 <title>Contributions</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
+
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:"Montserrat",sans-serif;
-    background:#eaf4fb;
+margin:0;
+font-family:"Montserrat",sans-serif;
+background:#eef6fc;
+color:#444;
 }
 
 
 /* HEADER */
 
-.dashboard-header{
-    height:76px;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 24px;
-    border-bottom:1px solid #ddd;
-}
+.header{
 
-
-.menu-icon{
-    background:none;
-    border:none;
-    color:#315a9c;
-    font-size:32px;
-}
-
-
-.dashboard-actions{
-    display:flex;
-    gap:25px;
-    align-items:center;
-    color:#315a9c;
-    font-size:28px;
-}
-
-
-.profile-icon{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#dceeff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-
-/* MEMBER */
-
-.member-info{
-
-    background:white;
-    padding:15px 25px;
-    box-shadow:0 3px 8px rgba(0,0,0,.15);
+height:70px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+box-shadow:0 2px 8px #ccc;
 
 }
 
 
-.member-name{
-    font-size:20px;
-}
+.menu{
 
-
-.member-number{
-    margin-top:5px;
-    font-size:18px;
-}
-
-
-.member-date{
-
-    margin-top:8px;
-    color:#315a9c;
-    font-size:16px;
+font-size:32px;
+color:#285aa6;
 
 }
 
 
-/* CONTENT */
+.icons{
 
-.contribution-box{
-
-    width:90%;
-    max-width:700px;
-
-    background:white;
-
-    margin:20px auto;
-
-    padding:25px;
-
-    border-radius:8px;
+display:flex;
+gap:25px;
+align-items:center;
+color:#285aa6;
+font-size:27px;
 
 }
 
 
-.summary-title{
+.profile{
 
-    text-align:center;
-
-    background:#edf1f3;
-
-    padding:8px;
-
-    color:#777;
-
-    font-size:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+overflow:hidden;
+border:2px solid white;
 
 }
 
 
-.summary-item{
+.profile img{
 
-    margin-top:25px;
+width:100%;
+height:100%;
+object-fit:cover;
 
-    font-size:18px;
+}
+
+
+
+/* MEMBER INFO */
+
+
+.member{
+
+background:white;
+padding:15px 25px;
+box-shadow:0 3px 8px #ddd;
 
 }
 
 
-.summary-value{
+.name{
 
-    font-size:25px;
-
-    margin-top:8px;
+font-size:20px;
+font-weight:400;
 
 }
+
+
+.number{
+
+font-size:18px;
+margin-top:5px;
+
+}
+
+
+.date{
+
+margin-top:10px;
+font-size:17px;
+color:#315a9c;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+width:90%;
+max-width:520px;
+margin:18px auto;
+background:white;
+padding:25px;
+
+
+}
+
+
+/* SUMMARY */
+
+
+.title{
+
+text-align:center;
+background:#edf1f4;
+padding:8px;
+font-size:20px;
+color:#777;
+
+}
+
+
+.item{
+
+margin-top:28px;
+font-size:17px;
+
+}
+
+
+.value{
+
+font-size:25px;
+margin-top:8px;
+
+}
+
+
+
+/* FLOAT BUTTON */
+
+
+.calendar{
+
+position:fixed;
+right:0;
+top:365px;
+
+background:#bcdcff;
+padding:25px 20px;
+border-radius:20px 0 0 20px;
+
+font-size:40px;
+color:#285aa6;
+
+}
+
 
 
 /* TABLE */
 
 
-.year-title{
+.year{
 
-    margin-top:35px;
-
-    background:#dff2ff;
-
-    padding:12px;
-
-    text-align:center;
-
-    font-size:22px;
+margin-top:35px;
+background:#dff2ff;
+padding:15px;
+text-align:center;
+font-size:22px;
 
 }
 
 
 table{
 
-    width:100%;
-
-    border-collapse:collapse;
-
-    font-size:20px;
+width:100%;
+border-collapse:collapse;
+font-size:20px;
 
 }
 
 
 th{
 
-    background:#a9d4ef;
-
-    padding:15px;
-
-    color:#456;
-
+padding:15px;
+background:#9fd0ee;
+color:#52606d;
 
 }
 
 
 td{
 
-    padding:15px;
-
-    border-bottom:1px solid #eee;
+padding:14px;
+border-bottom:1px solid #eee;
 
 }
 
 
 td:first-child{
 
-    background:#acd5ee;
-
-    width:35%;
+background:#acd5ee;
+width:35%;
+text-align:center;
 
 }
 
 
 td:last-child{
 
-    text-align:right;
+text-align:right;
 
 }
 
 
+
+/* ARROWS */
+
+
+.arrow{
+
+position:fixed;
+top:70%;
+font-size:55px;
+color:#285aa6;
+
+}
+
+
+.left{
+
+left:35px;
+
+}
+
+
+.right{
+
+right:35px;
+
+}
+
+
+
 </style>
+
 
 </head>
 
@@ -216,25 +277,46 @@ td:last-child{
 <body>
 
 
-<!-- HEADER -->
+<div class="header">
 
-<div class="dashboard-header">
-
-
-<div class="dashboard-header">
-   <button class="menu-icon" id="menuButton" type="button">
-    <i class="fa-solid fa-bars"></i>
-</button>
+<i class="fa-solid fa-bars menu"></i>
 
 
-<div class="dashboard-actions">
+<div class="icons">
 
 <i class="fa-solid fa-bell"></i>
 
 
-<div class="profile-icon">
+<div class="profile">
 
-<i class="fa-solid fa-user"></i>
+<img src="profile.jpg">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="member">
+
+<div class="name">
+SANTIAGO, ANJANETTE RAMOS
+</div>
+
+
+<div class="number">
+34-7743593-3
+</div>
+
+
+<div class="date">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Saturday, August 22, 2026 at 3:55:33 PM
 
 </div>
 
@@ -242,42 +324,30 @@ td:last-child{
 </div>
 
 
+
+
+<div class="calendar">
+
+<i class="fa-solid fa-calendar-days"></i>
+
 </div>
 
 
 
-<!-- MEMBER -->
+<div class="container">
 
 
-<div class="member-info">
-    <div class="member-name">SANTIAGO, MARK LESTER NARAG</div>
-    <div class="member-number">01-3599294-4</div>
-
-    <div class="member-date">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="realTime"></span>
-</div>
-</div>
-
-
-
-
-
-<!-- CONTRIBUTIONS -->
-
-<div class="contribution-box">
-
-
-<div class="summary-title">
+<div class="title">
 SUMMARY
 </div>
 
 
 
-<div class="summary-item">
+<div class="item">
+
 (A) Total Number of Contributions Displayed
 
-<div class="summary-value">
+<div class="value">
 10
 </div>
 
@@ -285,10 +355,12 @@ SUMMARY
 
 
 
-<div class="summary-item">
+
+<div class="item">
+
 (B) Total Number of Contributions not Displayed
 
-<div class="summary-value">
+<div class="value">
 0
 </div>
 
@@ -297,12 +369,12 @@ SUMMARY
 
 
 
-<div class="summary-item">
+<div class="item">
 
 Total Number of Contributions Posted (A)+(B)
 
-<div class="summary-value">
-105
+<div class="value">
+10
 </div>
 
 </div>
@@ -310,12 +382,12 @@ Total Number of Contributions Posted (A)+(B)
 
 
 
-<div class="summary-item">
+<div class="item">
 
 Total Amount of Contributions
 
-<div class="summary-value">
-120,647.00
+<div class="value">
+22,980.00
 </div>
 
 </div>
@@ -323,10 +395,10 @@ Total Amount of Contributions
 
 
 
-
-<div class="year-title">
+<div class="year">
 2026
 </div>
+
 
 
 <table>
@@ -334,62 +406,41 @@ Total Amount of Contributions
 
 <tr>
 
-<th>
-MONTH
-</th>
-
-<th>
-CONTRIBUTION
-</th>
+<th>MONTH</th>
+<th>CONTRIBUTION</th>
 
 </tr>
 
 
+<tr><td>Jan</td><td>3,000.00</td></tr>
+<tr><td>Feb</td><td>3,000.00</td></tr>
+<tr><td>Mar</td><td>3,000.00</td></tr>
+<tr><td>Apr</td><td>3,000.00</td></tr>
+<tr><td>May</td><td>3,000.00</td></tr>
+<tr><td>Jun</td><td>3,000.00</td></tr>
+<tr><td>Jul</td><td>0.00</td></tr>
+<tr><td>Aug</td><td>0.00</td></tr>
+<tr><td>Sep</td><td>0.00</td></tr>
 
-<tr><td>Jan</td><td>1,466.00</td></tr>
-<tr><td>Feb</td><td>1,466.00</td></tr>
-<tr><td>Mar</td><td>1,466.00</td></tr>
-<tr><td>Apr</td><td>1,466.00</td></tr>
-<tr><td>May</td><td>1,466.00</td></tr>
-<tr><td>Jun</td><td>1,466.00</td></tr>
-<tr><td>Jul</td><td>1,466.00</td></tr>
-<tr><td>Aug</td><td>1,466.00</td></tr>
-<tr><td>Sep</td><td>1,466.00</td></tr>
-<tr><td>Oct</td><td>0.00</td></tr>
-<tr><td>Nov</td><td>0.00</td></tr>
-<tr><td>Dec</td><td>0.00</td></tr>
 
 
 </table>
 
 
+
 </div>
 
-<script>
-function updateTime(){
 
-    const now = new Date();
 
-    const options = {
-        timeZone: "Asia/Manila",
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        hour12: true
-    };
+<div class="arrow left">
+‹
+</div>
 
-    document.getElementById("realTime").textContent =
-        new Intl.DateTimeFormat("en-US", options).format(now);
-}
 
-updateTime();
+<div class="arrow right">
+›
+</div>
 
-setInterval(updateTime,1000);
-</script>
 
 </body>
 </html>
