@@ -1,101 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contributions</title>
+
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<div class="dashboard-header">
-   <button class="menu-icon" id="menuButton" type="button">
-    <i class="fa-solid fa-bars"></i>
-</button>
 
-    <div class="dashboard-actions">
-        <i class="fa-solid fa-bell"></i>
-
-        <div class="profile-icon">
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </div>
-</div>
-
-<div class="member-info">
-    <div class="member-name">SANTIAGO, MARK LESTER NARAG</div>
-    <div class="member-number">01-3599294-4</div>
-
-    <div class="member-date">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="realTime"></span>
-    </div>
-</div>
-
-    
 <style>
 
 *{
 box-sizing:border-box;
 }
 
+
 body{
+
 margin:0;
+
 font-family:"Montserrat",sans-serif;
+
 background:#eef6fc;
+
 color:#444;
+
 }
 
 
 /* HEADER */
 
-.header{
 
-height:70px;
+.dashboard-header{
+
+height:75px;
+
 background:white;
+
 display:flex;
+
 align-items:center;
+
 justify-content:space-between;
-padding:0 20px;
-box-shadow:0 2px 8px #ccc;
+
+padding:0 22px;
+
+box-shadow:0 2px 8px #ddd;
 
 }
 
 
-.menu{
+
+.menu-icon{
+
+border:none;
+
+background:none;
 
 font-size:32px;
-color:#285aa6;
+
+color:#285a9c;
 
 }
 
 
-.icons{
+
+.dashboard-actions{
 
 display:flex;
-gap:25px;
+
 align-items:center;
-color:#285aa6;
-font-size:27px;
+
+gap:25px;
+
+font-size:28px;
+
+color:#285a9c;
 
 }
 
 
-.profile{
 
-width:60px;
-height:60px;
+.profile-icon{
+
+width:55px;
+
+height:55px;
+
 border-radius:50%;
+
+background:#ddd;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
 overflow:hidden;
-border:2px solid white;
 
 }
 
 
-.profile img{
+
+.profile-icon img{
 
 width:100%;
+
 height:100%;
+
 object-fit:cover;
 
 }
@@ -105,55 +123,90 @@ object-fit:cover;
 /* MEMBER INFO */
 
 
-.member{
+.member-info{
 
 background:white;
+
 padding:15px 25px;
-box-shadow:0 3px 8px #ddd;
+
+box-shadow:0 3px 8px #ccc;
 
 }
 
 
-.name{
+
+.member-name{
 
 font-size:20px;
-font-weight:400;
 
 }
 
 
-.number{
+
+.member-number{
 
 font-size:18px;
+
 margin-top:5px;
 
 }
 
 
-.date{
+
+.member-date{
 
 margin-top:10px;
+
 font-size:17px;
+
 color:#315a9c;
 
 }
 
 
 
+/* FLOAT CALENDAR */
 
-/* MAIN */
+
+.calendar{
+
+position:fixed;
+
+right:0;
+
+top:365px;
+
+background:#b9dcff;
+
+padding:25px 18px;
+
+border-radius:20px 0 0 20px;
+
+font-size:38px;
+
+color:#285a9c;
+
+}
+
+
+
+/* CONTENT */
 
 
 .container{
 
-width:90%;
+width:88%;
+
 max-width:520px;
-margin:18px auto;
+
+margin:20px auto;
+
 background:white;
+
 padding:25px;
 
-
 }
+
 
 
 /* SUMMARY */
@@ -162,46 +215,34 @@ padding:25px;
 .title{
 
 text-align:center;
-background:#edf1f4;
+
+background:#edf1f3;
+
 padding:8px;
+
 font-size:20px;
+
 color:#777;
 
 }
 
 
+
 .item{
 
 margin-top:28px;
+
 font-size:17px;
 
 }
 
 
+
 .value{
 
 font-size:25px;
+
 margin-top:8px;
-
-}
-
-
-
-/* FLOAT BUTTON */
-
-
-.calendar{
-
-position:fixed;
-right:0;
-top:365px;
-
-background:#bcdcff;
-padding:25px 20px;
-border-radius:20px 0 0 20px;
-
-font-size:40px;
-color:#285aa6;
 
 }
 
@@ -213,47 +254,63 @@ color:#285aa6;
 .year{
 
 margin-top:35px;
+
 background:#dff2ff;
+
 padding:15px;
+
 text-align:center;
+
 font-size:22px;
 
 }
 
 
+
 table{
 
 width:100%;
+
 border-collapse:collapse;
+
 font-size:20px;
 
 }
 
 
+
 th{
 
+background:#b0d7ee;
+
 padding:15px;
-background:#9fd0ee;
+
 color:#52606d;
 
 }
 
 
+
 td{
 
 padding:14px;
+
 border-bottom:1px solid #eee;
 
 }
 
 
+
 td:first-child{
 
 background:#acd5ee;
+
 width:35%;
+
 text-align:center;
 
 }
+
 
 
 td:last-child{
@@ -270,11 +327,21 @@ text-align:right;
 .arrow{
 
 position:fixed;
+
 top:70%;
+
 font-size:55px;
-color:#285aa6;
+
+background:none;
+
+border:none;
+
+color:#285a9c;
+
+cursor:pointer;
 
 }
+
 
 
 .left{
@@ -282,6 +349,7 @@ color:#285aa6;
 left:35px;
 
 }
+
 
 
 .right{
@@ -298,60 +366,105 @@ right:35px;
 </head>
 
 
+
 <body>
 
-<div class="member-details">
 
 
-<div class="cover"></div>
+<!-- HEADER -->
+
+<div class="dashboard-header">
 
 
-<div class="avatar">
+<button class="menu-icon">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+
+<div class="dashboard-actions">
+
+
+<i class="fa-solid fa-bell"></i>
+
+
+<div class="profile-icon">
+
 <img src="profile.jpg">
+
 </div>
 
 
-<h2>
-SANTIAGO, MARK LESTER NARAG
-</h2>
+</div>
 
 
-<p>
-<i class="fa-solid fa-id-card"></i>
-SS Number 01-3599294-4
-</p>
+</div>
 
 
-<p>
-<i class="fa-regular fa-calendar"></i>
-Your password will expire on Feb 14, 2027
-</p>
 
 
-<p>
+<!-- MEMBER INFO -->
+
+
+<div class="member-info">
+
+
+<div class="member-name">
+
+SANTIAGO, ANJANETTE RAMOS
+
+</div>
+
+
+<div class="member-number">
+
+34-7743593-3
+
+</div>
+
+
+<div class="member-date">
+
 <i class="fa-solid fa-calendar-days"></i>
-    <span id="realTime"></span>
-</p>
+
+Wednesday, August 26, 2026 at 10:07:30 AM
+
+</div>
 
 
 </div>
 
 
 
-<div class="member-button">
 
-<i class="fa-solid fa-user"></i>
-Member Information ▼
+
+<!-- FLOAT BUTTON -->
+
+
+<div class="calendar">
+
+<i class="fa-solid fa-calendar-days"></i>
 
 </div>
 
-   
+
+
+
+
+<!-- SUMMARY -->
+
+
 <div class="container">
 
 
 <div class="title">
+
 SUMMARY
+
 </div>
+
 
 
 
@@ -360,10 +473,13 @@ SUMMARY
 (A) Total Number of Contributions Displayed
 
 <div class="value">
-105
+
+10
+
 </div>
 
 </div>
+
 
 
 
@@ -373,10 +489,13 @@ SUMMARY
 (B) Total Number of Contributions not Displayed
 
 <div class="value">
+
 0
+
 </div>
 
 </div>
+
 
 
 
@@ -386,10 +505,13 @@ SUMMARY
 Total Number of Contributions Posted (A)+(B)
 
 <div class="value">
-105
+
+10
+
 </div>
 
 </div>
+
 
 
 
@@ -399,17 +521,23 @@ Total Number of Contributions Posted (A)+(B)
 Total Amount of Contributions
 
 <div class="value">
-120,647.00
+
+22,980.00
+
 </div>
 
 </div>
+
 
 
 
 
 <div class="year">
+
 2026
+
 </div>
+
 
 
 
@@ -419,39 +547,69 @@ Total Amount of Contributions
 <tr>
 
 <th>MONTH</th>
+
 <th>CONTRIBUTION</th>
 
 </tr>
 
 
-<tr><td>Jan</td><td>1,466.00</td></tr>
-<tr><td>Feb</td><td>1,466.00</td></tr>
-<tr><td>Mar</td><td>1,466.00</td></tr>
-<tr><td>Apr</td><td>1,466.00</td></tr>
-<tr><td>May</td><td>1,466.00</td></tr>
-<tr><td>Jun</td><td>1,466.00</td></tr>
-<tr><td>Jul</td><td>1,466.00</td></tr>
-<tr><td>Aug</td><td>1,466.00</td></tr>
-<tr><td>Sep</td><td>1,466.00</td></tr>
-
+<tr><td>Jan</td><td>3,000.00</td></tr>
+<tr><td>Feb</td><td>3,000.00</td></tr>
+<tr><td>Mar</td><td>3,000.00</td></tr>
+<tr><td>Apr</td><td>3,000.00</td></tr>
+<tr><td>May</td><td>3,000.00</td></tr>
+<tr><td>Jun</td><td>3,000.00</td></tr>
+<tr><td>Jul</td><td>0.00</td></tr>
+<tr><td>Aug</td><td>0.00</td></tr>
+<tr><td>Sep</td><td>0.00</td></tr>
 
 
 </table>
 
 
-
 </div>
 
 
 
-<div class="arrow left">
+
+
+<button class="arrow left" onclick="prevPage()">
+
 ‹
-</div>
+
+</button>
 
 
-<div class="arrow right">
+
+<button class="arrow right" onclick="nextPage()">
+
 ›
-</div>
+
+</button>
+
+
+
+
+
+<script>
+
+
+function prevPage(){
+
+alert("Previous year");
+
+}
+
+
+function nextPage(){
+
+alert("Next year");
+
+}
+
+
+</script>
+
 
 
 </body>
