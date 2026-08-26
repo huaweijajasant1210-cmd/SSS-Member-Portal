@@ -366,6 +366,31 @@ CONTRIBUTION
 
 </div>
 
+<script>
+function updateTime(){
+
+    const now = new Date();
+
+    const options = {
+        timeZone: "Asia/Manila",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+    };
+
+    document.getElementById("realTime").textContent =
+        new Intl.DateTimeFormat("en-US", options).format(now);
+}
+
+updateTime();
+
+setInterval(updateTime,1000);
+</script>
 
 </body>
 </html>
