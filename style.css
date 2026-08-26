@@ -913,6 +913,7 @@ body {
     display: none !important;
 }
 
-<a href="contributions.html" class="blue-button">
-    View Contributions
-</a>
+.blue-button{
+    display:inline-block;
+    text-decoration:none;
+}
