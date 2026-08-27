@@ -1836,7 +1836,24 @@ const years = [
 
     2026,
 
-    2019
+    2025,
+
+    2024,
+
+    2023,
+
+    2022,
+
+    2021,
+
+    2020,
+
+    2019,
+
+    2018,
+
+    2017
+      
 
 ];
 
@@ -1989,21 +2006,27 @@ function nextYear(){
 
 function updateDots(){
 
-    document
-    .getElementById("dot0")
-    .classList.remove("active");
+    const dots = document.querySelectorAll(".dot");
 
 
-    document
-    .getElementById("dot1")
-    .classList.remove("active");
+    dots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
 
 
-    document
-    .getElementById(
+    const activeDot =
+    document.getElementById(
         "dot" + currentYearIndex
-    )
-    .classList.add("active");
+    );
+
+
+    if(activeDot){
+
+        activeDot.classList.add("active");
+
+    }
 
 }
 
