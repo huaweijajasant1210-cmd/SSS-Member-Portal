@@ -436,4 +436,1571 @@ body{
 
     border-radius:8px;
 
-    
+    font-family:"Montserrat",sans-serif;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   MEMBER INFO BOX
+===================================================== */
+
+.info-box{
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+
+    margin-bottom:40px;
+
+}
+
+
+.info-item{
+
+    padding:14px 0;
+
+    border-bottom:1px solid #eee;
+
+    font-size:17px;
+
+    color:#555;
+
+}
+
+
+.info-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTION SECTION
+===================================================== */
+
+.contributions-section{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:9px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+
+    padding:25px;
+
+    margin-top:20px;
+
+}
+
+
+/* YEAR */
+
+.year-navigation{
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    margin-bottom:0;
+
+}
+
+
+.year-arrow{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#285a9c;
+
+    font-size:55px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+
+.year{
+
+    flex:1;
+
+    background:#dff2ff;
+
+    padding:15px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    color:#52606d;
+
+}
+
+
+/* =====================================================
+   TABLE AREA
+===================================================== */
+
+.table-area{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+
+/* SIDE ARROWS */
+
+.side-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:55px;
+
+    background:none;
+
+    border:none;
+
+    color:#285a9c;
+
+    cursor:pointer;
+
+    z-index:10;
+
+}
+
+
+.side-arrow.left{
+
+    left:-55px;
+
+}
+
+
+.side-arrow.right{
+
+    right:-55px;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:20px;
+
+}
+
+
+th{
+
+    background:#b0d7ee;
+
+    padding:15px;
+
+    color:#52606d;
+
+    font-weight:500;
+
+    text-align:center;
+
+    border-right:1px solid rgba(255,255,255,.6);
+
+}
+
+
+th:first-child{
+
+    width:35%;
+
+}
+
+
+th:last-child{
+
+    width:65%;
+
+}
+
+
+td{
+
+    padding:14px;
+
+    height:66px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+td:first-child{
+
+    background:#acd5ee;
+
+    width:35%;
+
+    text-align:center;
+
+}
+
+
+td:last-child{
+
+    text-align:right;
+
+    padding-right:18px;
+
+    background:#fafcfd;
+
+}
+
+
+/* =====================================================
+   YEAR DOTS
+===================================================== */
+
+.year-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-top:28px;
+
+}
+
+
+.dot{
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+    background:#d0d0d0;
+
+}
+
+
+.dot.active{
+
+    width:25px;
+
+    height:25px;
+
+    background:#3159a2;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary{
+
+    background:white;
+
+    border-radius:9px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+
+    margin-top:30px;
+
+    padding:25px;
+
+}
+
+
+.summary-title{
+
+    text-align:center;
+
+    background:#edf1f3;
+
+    padding:10px;
+
+    font-size:20px;
+
+    color:#777;
+
+    margin-bottom:20px;
+
+}
+
+
+.summary-item{
+
+    margin-top:25px;
+
+    font-size:16px;
+
+    color:#666;
+
+    line-height:1.5;
+
+}
+
+
+.summary-value{
+
+    font-size:25px;
+
+    margin-top:7px;
+
+    color:#333;
+
+}
+
+
+/* =====================================================
+   DEMO NOTICE
+===================================================== */
+
+.demo-notice{
+
+    text-align:center;
+
+    font-size:11px;
+
+    color:#777;
+
+    margin-top:25px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .dashboard-header{
+
+        height:65px;
+
+        padding:0 20px;
+
+    }
+
+
+    .menu-icon{
+
+        font-size:31px;
+
+    }
+
+
+    .dashboard-actions{
+
+        gap:18px;
+
+        font-size:25px;
+
+    }
+
+
+    .profile-icon{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+
+    .member-info{
+
+        padding:15px 25px 17px;
+
+    }
+
+
+    .member-name{
+
+        font-size:19px;
+
+    }
+
+
+    .member-number{
+
+        font-size:17px;
+
+    }
+
+
+    .member-date{
+
+        font-size:16px;
+
+        white-space:nowrap;
+
+    }
+
+
+    .main-content{
+
+        padding:20px 20px 70px;
+
+    }
+
+
+    .member-title{
+
+        font-size:20px;
+
+    }
+
+
+    .cover{
+
+        height:210px;
+
+    }
+
+
+    .avatar{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+
+    .member-details h2{
+
+        font-size:26px;
+
+    }
+
+
+    .member-details p{
+
+        font-size:16px;
+
+    }
+
+
+    .contributions-section{
+
+        padding:20px 25px 30px;
+
+    }
+
+
+    .year{
+
+        font-size:21px;
+
+        padding:14px 5px;
+
+    }
+
+
+    .year-arrow{
+
+        width:38px;
+
+        font-size:45px;
+
+    }
+
+
+    .table-area{
+
+        margin-top:0;
+
+    }
+
+
+    .side-arrow{
+
+        font-size:52px;
+
+    }
+
+
+    .side-arrow.left{
+
+        left:-42px;
+
+    }
+
+
+    .side-arrow.right{
+
+        right:-42px;
+
+    }
+
+
+    table{
+
+        font-size:20px;
+
+    }
+
+
+    th{
+
+        font-size:17px;
+
+        padding:14px 8px;
+
+    }
+
+
+    td{
+
+        font-size:20px;
+
+        height:66px;
+
+        padding:13px 8px;
+
+    }
+
+
+    td:last-child{
+
+        padding-right:14px;
+
+    }
+
+
+    .calendar{
+
+        top:365px;
+
+        padding:22px 16px;
+
+        font-size:35px;
+
+    }
+
+
+    .summary{
+
+        padding:22px 20px;
+
+    }
+
+
+    .summary-title{
+
+        font-size:19px;
+
+    }
+
+
+    .summary-item{
+
+        font-size:15px;
+
+    }
+
+
+    .summary-value{
+
+        font-size:24px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+    .member-name{
+
+        font-size:17px;
+
+    }
+
+
+    .member-number{
+
+        font-size:15px;
+
+    }
+
+
+    .member-date{
+
+        font-size:14px;
+
+    }
+
+
+    .main-content{
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+    }
+
+
+    .contributions-section{
+
+        padding-left:20px;
+
+        padding-right:20px;
+
+    }
+
+
+    .side-arrow.left{
+
+        left:-35px;
+
+    }
+
+
+    .side-arrow.right{
+
+        right:-35px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     STICKY HEADER
+===================================================== -->
+
+<div class="sticky-header">
+
+
+    <!-- TOP HEADER -->
+
+    <div class="dashboard-header">
+
+
+        <button
+        class="menu-icon"
+        onclick="toggleMenu()">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="dashboard-actions">
+
+
+            <i class="fa-solid fa-bell"></i>
+
+
+            <div class="profile-icon">
+
+                <img
+                src="profile.jpg"
+                alt="Profile">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MEMBER INFO -->
+
+    <div class="member-info">
+
+
+        <div class="member-name">
+
+            SANTIAGO, ANJANETTE RAMOS
+
+        </div>
+
+
+        <div class="member-number">
+
+            34-7743593-3
+
+        </div>
+
+
+        <div class="member-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="currentDate">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FLOATING CALENDAR
+===================================================== -->
+
+<div class="calendar">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+
+    <!-- =================================================
+         MEMBER DETAILS
+    ================================================== -->
+
+    <div class="member-title">
+
+        <span>Member Information</span>
+        / Member Details
+
+    </div>
+
+
+
+    <div class="member-details">
+
+
+        <!-- COVER -->
+
+        <div class="cover"></div>
+
+
+        <!-- PROFILE -->
+
+        <div class="avatar">
+
+            <img
+            src="profile.jpg"
+            alt="Profile">
+
+        </div>
+
+
+        <!-- NAME -->
+
+        <h2>
+
+            SANTIAGO, ANJANETTE RAMOS
+
+        </h2>
+
+
+        <!-- SS NUMBER -->
+
+        <p>
+
+            <i class="fa-solid fa-id-card"></i>
+
+            SS Number 34-7743593-3
+
+        </p>
+
+
+        <!-- PASSWORD -->
+
+        <p>
+
+            <i class="fa-regular fa-calendar"></i>
+
+            Your password will expire on Feb 14, 2027
+
+        </p>
+
+
+        <!-- LAST LOGIN -->
+
+        <p>
+
+            <i class="fa-regular fa-calendar-check"></i>
+
+            Your last login was on Aug 22, 2026
+
+            <br>
+
+            03:54:52 PM through the SSS Website
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         MEMBER INFORMATION DROPDOWN
+    ================================================== -->
+
+    <button
+    class="member-dropdown"
+    onclick="toggleMemberInfo()">
+
+        <i class="fa-solid fa-user"></i>
+
+        &nbsp; Member Information
+
+        <i
+        id="dropdownArrow"
+        class="fa-solid fa-chevron-down">
+        </i>
+
+    </button>
+
+
+
+    <div
+    class="info-box"
+    id="memberInfoBox">
+
+        <div class="info-item">
+
+            <i class="fa-regular fa-id-card"></i>
+
+            &nbsp; My Details
+
+        </div>
+
+
+        <div class="info-item">
+
+            <i class="fa-regular fa-user"></i>
+
+            &nbsp; Personal Information
+
+        </div>
+
+
+        <div class="info-item">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            &nbsp; Address Information
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CONTRIBUTIONS
+    ================================================== -->
+
+    <div
+    class="member-title">
+
+        <span>Member Information</span>
+        / Contributions
+
+    </div>
+
+
+
+    <section class="contributions-section">
+
+
+
+        <!-- YEAR NAVIGATION -->
+
+        <div class="year-navigation">
+
+
+            <div
+            class="year-arrow"
+            onclick="previousYear()">
+
+                ‹
+
+            </div>
+
+
+            <div
+            class="year"
+            id="yearTitle">
+
+                2026
+
+            </div>
+
+
+            <div
+            class="year-arrow"
+            onclick="nextYear()">
+
+                ›
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- TABLE AREA -->
+
+        <div class="table-area">
+
+
+            <!-- LEFT ARROW -->
+
+            <button
+            class="side-arrow left"
+            onclick="previousYear()">
+
+                ‹
+
+            </button>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-wrapper">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                MONTH
+
+                            </th>
+
+
+                            <th>
+
+                                CONTRIBUTION
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                    id="contributionBody">
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+
+            <!-- RIGHT ARROW -->
+
+            <button
+            class="side-arrow right"
+            onclick="nextYear()">
+
+                ›
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- DOTS -->
+
+        <div class="year-dots">
+
+
+            <div
+            class="dot active"
+            id="dot0">
+
+            </div>
+
+
+            <div
+            class="dot"
+            id="dot1">
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================== -->
+
+    <section class="summary">
+
+
+        <div class="summary-title">
+
+            SUMMARY
+
+        </div>
+
+
+
+        <div class="summary-item">
+
+            (A) Total Number of Contributions Displayed
+
+            <div
+            class="summary-value"
+            id="displayedCount">
+
+                0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-item">
+
+            (B) Total Number of Contributions not Displayed
+
+            <div class="summary-value">
+
+                0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-item">
+
+            Total Number of Contributions Posted (A)+(B)
+
+            <div
+            class="summary-value"
+            id="postedCount">
+
+                0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-item">
+
+            Total Amount of Contributions
+
+            <div
+            class="summary-value"
+            id="totalAmount">
+
+                ₱0.00
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- DEMO NOTICE -->
+
+    <div class="demo-notice">
+
+        DEMO / MOCKUP — NOT AN OFFICIAL SSS WEBSITE
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+/* =====================================================
+   CONTRIBUTION DATA
+===================================================== */
+
+const contributionData = {
+
+    2026: {
+
+        Jan: "3,000.00",
+        Feb: "3,000.00",
+        Mar: "3,000.00",
+        Apr: "3,000.00",
+        May: "3,000.00",
+        Jun: "3,000.00",
+        Jul: "2,980.00",
+        Aug: "0.00",
+        Sep: "0.00",
+        Oct: "0.00",
+        Nov: "0.00",
+        Dec: "0.00"
+
+    },
+
+
+    2019: {
+
+        Jan: "0.00",
+        Feb: "660.00",
+        Mar: "0.00",
+        Apr: "0.00",
+        May: "1,500.00",
+        Jun: "1,560.00",
+        Jul: "1,260.00",
+        Aug: "0.00",
+        Sep: "0.00",
+        Oct: "0.00",
+        Nov: "0.00",
+        Dec: "0.00"
+
+    }
+
+};
+
+
+
+/* =====================================================
+   YEAR LIST
+===================================================== */
+
+const years = [
+
+    2026,
+
+    2019
+
+];
+
+
+let currentYearIndex = 0;
+
+
+
+/* =====================================================
+   LOAD YEAR
+===================================================== */
+
+function loadYear(){
+
+    const year =
+        years[currentYearIndex];
+
+
+    document.getElementById(
+        "yearTitle"
+    ).textContent = year;
+
+
+    const tbody =
+        document.getElementById(
+            "contributionBody"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    const data =
+        contributionData[year];
+
+
+    let displayed = 0;
+
+    let total = 0;
+
+
+
+    Object.entries(data).forEach(
+        ([month, amount]) => {
+
+
+            const row =
+                document.createElement("tr");
+
+
+            const monthCell =
+                document.createElement("td");
+
+
+            monthCell.textContent =
+                month;
+
+
+            const amountCell =
+                document.createElement("td");
+
+
+            amountCell.textContent =
+                amount;
+
+
+            row.appendChild(monthCell);
+
+            row.appendChild(amountCell);
+
+            tbody.appendChild(row);
+
+
+
+            const number =
+                parseFloat(
+                    amount.replace(/,/g,"")
+                );
+
+
+            if(number > 0){
+
+                displayed++;
+
+                total += number;
+
+            }
+
+        }
+    );
+
+
+
+    document.getElementById(
+        "displayedCount"
+    ).textContent = displayed;
+
+
+    document.getElementById(
+        "postedCount"
+    ).textContent = displayed;
+
+
+    document.getElementById(
+        "totalAmount"
+    ).textContent =
+
+        "₱" +
+
+        total.toLocaleString(
+            "en-PH",
+            {
+                minimumFractionDigits:2,
+
+                maximumFractionDigits:2
+            }
+        );
+
+
+
+    updateDots();
+
+}
+
+
+
+/* =====================================================
+   PREVIOUS YEAR
+===================================================== */
+
+function previousYear(){
+
+    currentYearIndex--;
+
+
+    if(currentYearIndex < 0){
+
+        currentYearIndex =
+            years.length - 1;
+
+    }
+
+
+    loadYear();
+
+}
+
+
+
+/* =====================================================
+   NEXT YEAR
+===================================================== */
+
+function nextYear(){
+
+    currentYearIndex++;
+
+
+    if(
+        currentYearIndex >=
+        years.length
+    ){
+
+        currentYearIndex = 0;
+
+    }
+
+
+    loadYear();
+
+}
+
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+function updateDots(){
+
+    document
+    .getElementById("dot0")
+    .classList.remove("active");
+
+
+    document
+    .getElementById("dot1")
+    .classList.remove("active");
+
+
+    document
+    .getElementById(
+        "dot" + currentYearIndex
+    )
+    .classList.add("active");
+
+}
+
+
+
+/* =====================================================
+   REAL TIME DATE
+===================================================== */
+
+function updateDateTime(){
+
+    const now = new Date();
+
+
+    const options = {
+
+        weekday:"long",
+
+        year:"numeric",
+
+        month:"long",
+
+        day:"numeric",
+
+        hour:"numeric",
+
+        minute:"2-digit",
+
+        second:"2-digit",
+
+        hour12:true
+
+    };
+
+
+    const formatted =
+        now.toLocaleString(
+            "en-US",
+            options
+        );
+
+
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        formatted;
+
+}
+
+
+updateDateTime();
+
+
+setInterval(
+    updateDateTime,
+    1000
+);
+
+
+
+/* =====================================================
+   MEMBER INFORMATION DROPDOWN
+===================================================== */
+
+function toggleMemberInfo(){
+
+    const box =
+        document.getElementById(
+            "memberInfoBox"
+        );
+
+
+    const arrow =
+        document.getElementById(
+            "dropdownArrow"
+        );
+
+
+    if(
+        box.style.display === "none"
+    ){
+
+        box.style.display = "block";
+
+        arrow.classList.remove(
+            "fa-chevron-down"
+        );
+
+        arrow.classList.add(
+            "fa-chevron-up"
+        );
+
+    }else{
+
+        box.style.display = "none";
+
+        arrow.classList.remove(
+            "fa-chevron-up"
+        );
+
+        arrow.classList.add(
+            "fa-chevron-down"
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+function toggleMenu(){
+
+    console.log(
+        "Menu clicked"
+    );
+
+}
+
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadYear();
+
+</script>
+
+
+</body>
+
+</html>
