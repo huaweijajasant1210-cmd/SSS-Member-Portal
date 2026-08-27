@@ -1315,3 +1315,58 @@ border-radius:5px;
 font-size:18px;
 
 }
+
+.main-contribution-window{
+
+    width:88%;
+    max-width:520px;
+
+    margin:20px auto;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 8px #ccc;
+
+    padding:25px;
+
+}
+
+
+
+.fixed-summary{
+
+    position:sticky;
+
+    top:140px;
+
+    background:white;
+
+    z-index:5;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.contributions-area{
+
+    margin-top:25px;
+
+}
+
+
+
+.contributions-section{
+
+    box-shadow:none;
+
+    padding:0;
+
+    margin:0;
+
+}
