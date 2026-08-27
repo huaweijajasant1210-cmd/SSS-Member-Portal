@@ -1,694 +1,337 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contributions</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<title>Contributions - Member Portal Demo</title>
 
 <style>
 
-*{
-box-sizing:border-box;
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf5fb;
+    color: #333;
+    overflow-x: hidden;
 }
 
 
-body{
+/* =====================================================
+   STICKY HEADER
+===================================================== */
 
-margin:0;
-
-font-family:"Montserrat",sans-serif;
-
-background:#eef6fc;
-
-color:#444;
-
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #f7f7fb;
 }
 
 
-/* HEADER */
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
 
+.topbar {
+    height: 64px;
+    background: #071616;
 
-.dashboard-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-height:75px;
+    padding: 0 22px;
 
-background:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-padding:0 22px;
-
-box-shadow:0 2px 8px #ddd;
-
+    position: relative;
 }
 
 
+/* HAMBURGER */
 
-.menu-icon{
+.menu-button {
+    width: 45px;
+    height: 45px;
 
-border:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
 
-background:none;
+    cursor: pointer;
+}
 
-font-size:32px;
+.menu-button span {
+    width: 30px;
+    height: 4px;
 
-color:#285a9c;
-
+    background: #3159a2;
+    border-radius: 3px;
 }
 
 
+/* RIGHT ICONS */
 
-.dashboard-actions{
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
 
-display:flex;
+.notification {
+    font-size: 28px;
+    color: #3159a2;
+}
 
-align-items:center;
+.profile-small {
+    width: 55px;
+    height: 55px;
 
-gap:25px;
+    border-radius: 50%;
 
-font-size:28px;
+    background: #4aa5df;
 
-color:#285a9c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    font-size: 30px;
+
+    border: 3px solid #fff;
+
+    overflow: hidden;
 }
 
 
+/* =====================================================
+   MEMBER HEADER
+===================================================== */
 
-.profile-icon{
+.member-header {
+    background: #ffffff;
 
-width:55px;
+    padding: 15px 25px 17px;
 
-height:55px;
+    border-bottom: 1px solid #ddd;
 
-border-radius:50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
 
-background:#ddd;
+.member-name {
+    font-size: 20px;
+    font-weight: 400;
 
-display:flex;
+    margin-bottom: 5px;
+}
 
-align-items:center;
+.member-number {
+    font-size: 17px;
 
-justify-content:center;
+    margin-bottom: 9px;
+}
 
-overflow:hidden;
+.member-date {
+    color: #31558e;
 
+    font-size: 17px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
 
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
-.profile-icon img{
+.page-container {
+    width: 100%;
+    max-width: 1000px;
 
-width:100%;
+    margin: 0 auto;
 
-height:100%;
-
-object-fit:cover;
-
+    padding: 28px 20px 80px;
 }
 
 
+/* =====================================================
+   BREADCRUMB
+===================================================== */
 
-/* MEMBER INFO */
+.breadcrumb {
+    font-size: 21px;
 
+    margin-bottom: 20px;
 
-.member-info{
+    color: #333;
+}
 
-background:white;
-
-padding:15px 25px;
-
-box-shadow:0 3px 8px #ccc;
-
+.breadcrumb span {
+    color: #999;
 }
 
 
+/* =====================================================
+   CONTRIBUTION MAIN CARD
+===================================================== */
 
-.member-name{
+.contribution-card {
+    background: #ffffff;
 
-font-size:20px;
+    border-radius: 9px;
 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+
+    padding: 30px 25px 35px;
+
+    width: 100%;
+
+    position: relative;
 }
 
 
+/* =====================================================
+   YEAR NAVIGATION
+===================================================== */
 
-.member-number{
+.year-navigation {
+    width: 100%;
 
-font-size:18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-margin-top:5px;
+    margin-bottom: 10px;
+}
 
+.year-arrow {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+    font-weight: 200;
+
+    color: #3159a2;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.year-arrow:hover {
+    opacity: 0.7;
+}
+
+.year-title {
+    flex: 1;
+
+    text-align: center;
+
+    background: #dff1fb;
+
+    color: #5b6b78;
+
+    padding: 12px;
+
+    font-size: 22px;
+
+    letter-spacing: 1px;
 }
 
 
+/* =====================================================
+   TABLE
+===================================================== */
 
-.member-date{
+.table-container {
+    width: 100%;
 
-margin-top:10px;
+    overflow-x: auto;
 
-font-size:17px;
+    -webkit-overflow-scrolling: touch;
+}
 
-color:#315a9c;
+.contribution-table {
+    width: 100%;
 
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+.contribution-table th {
+    background: #a9d5ed;
+
+    color: #526777;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    padding: 15px 10px;
+
+    border-right: 1px solid #e7f3f9;
+}
+
+.contribution-table th:first-child {
+    width: 34%;
+}
+
+.contribution-table th:last-child {
+    width: 66%;
+}
+
+.contribution-table td {
+    padding: 13px 12px;
+
+    font-size: 20px;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    height: 66px;
+}
+
+.contribution-table td:first-child {
+    background: #a9d5ed;
+
+    text-align: center;
+
+    color: #344b5d;
+
+    border-right: 1px solid #ffffff;
+}
+
+.contribution-table td:last-child {
+    text-align: right;
+
+    padding-right: 18px;
+
+    color: #333;
+
+    background: #fafcfd;
 }
 
 
-
-/* FLOAT CALENDAR */
-
-
-.calendar{
-
-position:fixed;
-
-right:0;
-
-top:365px;
-
-background:#b9dcff;
-
-padding:25px 18px;
-
-border-radius:20px 0 0 20px;
-
-font-size:38px;
-
-color:#285a9c;
-
-}
-
-
-
-/* CONTENT */
-
-
-.container{
-
-width:88%;
-
-max-width:520px;
-
-margin:20px auto;
-
-background:white;
-
-padding:25px;
-
-}
-
-
-
-/* SUMMARY */
-
-
-.title{
-
-text-align:center;
-
-background:#edf1f3;
-
-padding:8px;
-
-font-size:20px;
-
-color:#777;
-
-}
-
-
-
-.item{
-
-margin-top:28px;
-
-font-size:17px;
-
-}
-
-
-
-.value{
-
-font-size:25px;
-
-margin-top:8px;
-
-}
-
-
-
-/* TABLE */
-
-
-.year{
-
-margin-top:35px;
-
-background:#dff2ff;
-
-padding:15px;
-
-text-align:center;
-
-font-size:22px;
-
-}
-
-
-
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-font-size:20px;
-
-}
-
-
-
-th{
-
-background:#b0d7ee;
-
-padding:15px;
-
-color:#52606d;
-
-}
-
-
-
-td{
-
-padding:14px;
-
-border-bottom:1px solid #eee;
-
-}
-
-
-
-td:first-child{
-
-background:#acd5ee;
-
-width:35%;
-
-text-align:center;
-
-}
-
-
-
-td:last-child{
-
-text-align:right;
-
-}
-
-
-
-/* ARROWS */
-
-
-.arrow{
-
-position:fixed;
-
-top:70%;
-
-font-size:55px;
-
-background:none;
-
-border:none;
-
-color:#285a9c;
-
-cursor:pointer;
-
-}
-
-
-
-.left{
-
-left:35px;
-
-}
-
-
-
-.right{
-
-right:35px;
-
-}
-
-
-
-</style>
-
-
-</head>
-
-
-
-<body>
-
-
-
-<!-- HEADER -->
-
-<div class="dashboard-header">
-
-
-<button class="menu-icon">
-
-<i class="fa-solid fa-bars"></i>
-
-</button>
-
-
-
-<div class="dashboard-actions">
-
-
-<i class="fa-solid fa-bell"></i>
-
-
-<div class="profile-icon">
-
-<img src="profile.jpg">
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-<!-- MEMBER INFO -->
-
-
-<div class="member-info">
-
-
-<div class="member-name">
-
-SANTIAGO, ANJANETTE RAMOS
-
-</div>
-
-
-<div class="member-number">
-
-34-7743593-3
-
-</div>
-
-
-<div class="member-date">
-
-<i class="fa-solid fa-calendar-days"></i>
-
-Wednesday, August 26, 2026 at 10:07:30 AM
-
-</div>
-
-
-</div>
-
-
-
-
-
-<!-- FLOAT BUTTON -->
-
-
-<div class="calendar">
-
-<i class="fa-solid fa-calendar-days"></i>
-
-</div>
-
-<!-- MEMBER DETAILS -->
-
-<div class="member-title">
-
-Member Information / <span>Member Details</span>
-
-</div>
-
-
-<div class="member-details">
-
-
-<div class="cover"></div>
-
-
-<div class="avatar">
-
-<img src="profile.jpg">
-
-</div>
-
-
-
-<h2>
-SANTIAGO, ANJANETTE RAMOS
-</h2>
-
-
-
-<p>
-<i class="fa-solid fa-id-card"></i>
-SS Number 34-7743593-3
-</p>
-
-
-
-<p>
-<i class="fa-regular fa-calendar"></i>
-Your password will expire on Feb 14, 2027
-</p>
-
-
-
-<p>
-<i class="fa-regular fa-calendar-check"></i>
-Your last login was on Aug 22, 2026
-<br>
-03:54:52 PM through the SSS Website
-</p>
-
-
-</div>
-
-
-
-<div class="member-container">
-
-    <div class="member-title">
-    Member Information / <span>Member Details</span>
-    </div>
-
-
-    <div class="member-card">
-        ...
-    </div>
-
-
-    <button class="member-dropdown">
-        Member Information ▼
-    </button>
-
-
-    <div class="info-box">
-        <div>My Details</div>
-        <div>Personal Information</div>
-        <div>Address Information</div>
-    </div>
-
-
-</div>
-
-
-<!-- SUMMARY -->
-
-
-<div class="container">
-
-
-<div class="title">
-
-SUMMARY
-
-</div>
-
-
-
-
-<div class="item">
-
-(A) Total Number of Contributions Displayed
-
-<div class="value">
-
-10
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="item">
-
-(B) Total Number of Contributions not Displayed
-
-<div class="value">
-
-0
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="item">
-
-Total Number of Contributions Posted (A)+(B)
-
-<div class="value">
-
-10
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="item">
-
-Total Amount of Contributions
-
-<div class="value">
-
-22,980.00
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="year">
-
-2026
-
-</div>
-
-
-
-
-<table>
-
-
-<tr>
-
-<th>MONTH</th>
-
-<th>CONTRIBUTION</th>
-
-</tr>
-
-
-<tr><td>Jan</td><td>3,000.00</td></tr>
-<tr><td>Feb</td><td>3,000.00</td></tr>
-<tr><td>Mar</td><td>3,000.00</td></tr>
-<tr><td>Apr</td><td>3,000.00</td></tr>
-<tr><td>May</td><td>3,000.00</td></tr>
-<tr><td>Jun</td><td>3,000.00</td></tr>
-<tr><td>Jul</td><td>0.00</td></tr>
-<tr><td>Aug</td><td>0.00</td></tr>
-<tr><td>Sep</td><td>0.00</td></tr>
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-<button class="arrow left" onclick="prevPage()">
-
-‹
-
-</button>
-
-
-
-<button class="arrow right" onclick="nextPage()">
-
-›
-
-</button>
-
-
-
-
-
-<script>
-
-
-function prevPage(){
-
-alert("Previous year");
-
-}
-
-
-function nextPage(){
-
-alert("Next year");
-
-}
-
-
-</script>
-
-
-
-</body>
-</html>
+/* ================
