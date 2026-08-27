@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Contributions - Member Portal Demo</title>
+<title>Contributions</title>
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
 
 <style>
 
@@ -14,21 +25,25 @@
    RESET
 ===================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #eaf5fb;
-    color: #333;
-    overflow-x: hidden;
+body{
+
+    margin:0;
+
+    font-family:"Montserrat",sans-serif;
+
+    background:#eef6fc;
+
+    color:#444;
+
+    overflow-x:hidden;
 }
 
 
@@ -36,123 +51,172 @@ body {
    STICKY HEADER
 ===================================================== */
 
-.sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: #f7f7fb;
+.sticky-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:9999;
+
+    background:white;
 }
 
 
 /* =====================================================
-   TOP NAVIGATION
+   TOP HEADER
 ===================================================== */
 
-.topbar {
-    height: 64px;
-    background: #071616;
+.dashboard-header{
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height:75px;
 
-    padding: 0 22px;
+    background:white;
 
-    position: relative;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    box-shadow:0 2px 8px #ddd;
+
 }
 
 
-/* HAMBURGER */
+.menu-icon{
 
-.menu-button {
-    width: 45px;
-    height: 45px;
+    border:none;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+    background:none;
 
-    cursor: pointer;
-}
+    font-size:32px;
 
-.menu-button span {
-    width: 30px;
-    height: 4px;
+    color:#285a9c;
 
-    background: #3159a2;
-    border-radius: 3px;
+    cursor:pointer;
+
 }
 
 
-/* RIGHT ICONS */
+.dashboard-actions{
 
-.top-right {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    font-size:28px;
+
+    color:#285a9c;
+
 }
 
-.notification {
-    font-size: 28px;
-    color: #3159a2;
+
+.profile-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#ddd;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
 }
 
-.profile-small {
-    width: 55px;
-    height: 55px;
 
-    border-radius: 50%;
+.profile-icon img{
 
-    background: #4aa5df;
+    width:100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height:100%;
 
-    font-size: 30px;
+    object-fit:cover;
 
-    border: 3px solid #fff;
-
-    overflow: hidden;
 }
 
 
 /* =====================================================
-   MEMBER HEADER
+   MEMBER INFO HEADER
 ===================================================== */
 
-.member-header {
-    background: #ffffff;
+.member-info{
 
-    padding: 15px 25px 17px;
+    background:white;
 
-    border-bottom: 1px solid #ddd;
+    padding:15px 25px 17px;
 
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    box-shadow:0 3px 8px #ccc;
+
 }
 
-.member-name {
-    font-size: 20px;
-    font-weight: 400;
 
-    margin-bottom: 5px;
+.member-name{
+
+    font-size:20px;
+
+    font-weight:400;
+
 }
 
-.member-number {
-    font-size: 17px;
 
-    margin-bottom: 9px;
+.member-number{
+
+    font-size:18px;
+
+    margin-top:5px;
+
 }
 
-.member-date {
-    color: #31558e;
 
-    font-size: 17px;
+.member-date{
 
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    margin-top:10px;
+
+    font-size:17px;
+
+    color:#315a9c;
+
+}
+
+
+/* =====================================================
+   FLOATING CALENDAR
+===================================================== */
+
+.calendar{
+
+    position:fixed;
+
+    right:0;
+
+    top:365px;
+
+    background:#b9dcff;
+
+    padding:25px 18px;
+
+    border-radius:20px 0 0 20px;
+
+    font-size:38px;
+
+    color:#285a9c;
+
+    z-index:500;
+
+    opacity:.9;
 }
 
 
@@ -160,178 +224,216 @@ body {
    MAIN CONTENT
 ===================================================== */
 
-.page-container {
-    width: 100%;
-    max-width: 1000px;
+.main-content{
 
-    margin: 0 auto;
+    width:100%;
 
-    padding: 28px 20px 80px;
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:20px 20px 80px;
 }
 
 
 /* =====================================================
-   BREADCRUMB
+   MEMBER TITLE
 ===================================================== */
 
-.breadcrumb {
-    font-size: 21px;
+.member-title{
 
-    margin-bottom: 20px;
+    font-size:21px;
 
-    color: #333;
+    margin:10px 0 18px;
+
+    color:#555;
+
 }
 
-.breadcrumb span {
-    color: #999;
+
+.member-title span{
+
+    color:#333;
+
 }
 
 
 /* =====================================================
-   CONTRIBUTION MAIN CARD
+   MEMBER DETAILS CARD
 ===================================================== */
 
-.contribution-card {
-    background: #ffffff;
+.member-details{
 
-    border-radius: 9px;
+    background:white;
 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border-radius:9px;
 
-    padding: 30px 25px 35px;
+    overflow:hidden;
 
-    width: 100%;
+    box-shadow:0 2px 8px rgba(0,0,0,.14);
 
-    position: relative;
+    margin-bottom:35px;
+
+}
+
+
+/* COVER */
+
+.cover{
+
+    height:210px;
+
+    background:
+    linear-gradient(
+        120deg,
+        #a9d8f3 0%,
+        #5eaddd 35%,
+        #3396d0 70%,
+        #2782b7 100%
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* diagonal design */
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:300px;
+
+    left:70px;
+
+    top:-30px;
+
+    background:rgba(255,255,255,.18);
+
+    transform:skewX(-30deg);
+
+}
+
+
+.cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:300px;
+
+    right:80px;
+
+    top:-30px;
+
+    background:rgba(255,255,255,.12);
+
+    transform:skewX(-30deg);
+
+}
+
+
+/* AVATAR */
+
+.avatar{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#55a9df;
+
+    border:7px solid white;
+
+    position:relative;
+
+    margin:-70px auto 0;
+
+    z-index:10;
+
+    overflow:hidden;
+
+}
+
+
+.avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* MEMBER CARD CONTENT */
+
+.member-details h2{
+
+    text-align:center;
+
+    font-size:29px;
+
+    font-weight:400;
+
+    margin:30px 20px 25px;
+
+}
+
+
+.member-details p{
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#777;
+
+    line-height:1.55;
+
+    margin:15px 20px;
+
+}
+
+
+.member-details p i{
+
+    color:#777;
+
+    margin-right:7px;
+
 }
 
 
 /* =====================================================
-   YEAR NAVIGATION
+   MEMBER DROPDOWN
 ===================================================== */
 
-.year-navigation {
-    width: 100%;
+.member-dropdown{
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width:100%;
 
-    margin-bottom: 10px;
-}
+    border:none;
 
-.year-arrow {
-    width: 55px;
-    height: 55px;
+    background:#3159a2;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color:white;
 
-    font-size: 50px;
-    font-weight: 200;
+    padding:15px;
 
-    color: #3159a2;
+    border-radius:8px;
 
-    cursor: pointer;
-
-    user-select: none;
-}
-
-.year-arrow:hover {
-    opacity: 0.7;
-}
-
-.year-title {
-    flex: 1;
-
-    text-align: center;
-
-    background: #dff1fb;
-
-    color: #5b6b78;
-
-    padding: 12px;
-
-    font-size: 22px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   TABLE
-===================================================== */
-
-.table-container {
-    width: 100%;
-
-    overflow-x: auto;
-
-    -webkit-overflow-scrolling: touch;
-}
-
-.contribution-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    table-layout: fixed;
-}
-
-.contribution-table th {
-    background: #a9d5ed;
-
-    color: #526777;
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    letter-spacing: 1px;
-
-    padding: 15px 10px;
-
-    border-right: 1px solid #e7f3f9;
-}
-
-.contribution-table th:first-child {
-    width: 34%;
-}
-
-.contribution-table th:last-child {
-    width: 66%;
-}
-
-.contribution-table td {
-    padding: 13px 12px;
-
-    font-size: 20px;
-
-    border-bottom: 1px solid #e5e5e5;
-
-    height: 66px;
-}
-
-.contribution-table td:first-child {
-    background: #a9d5ed;
-
-    text-align: center;
-
-    color: #344b5d;
-
-    border-right: 1px solid #ffffff;
-}
-
-.contribution-table td:last-child {
-    text-align: right;
-
-    padding-right: 18px;
-
-    color: #333;
-
-    background: #fafcfd;
-}
-
-
-/* ================
+    
