@@ -1336,34 +1336,30 @@ td:last-child{
 
 
     <div
-    class="info-box"
-    id="memberInfoBox">
-
-        <div class="info-item">
-
-            <i class="fa-regular fa-id-card"></i>
-
-            &nbsp; My Details
-
-        </div>
+  <div
+class="info-box"
+id="memberInfoBox"
+style="display:none;">
 
 
-        <div class="info-item">
+    <div class="info-item">
 
-            <i class="fa-regular fa-user"></i>
+        <i class="fa-solid fa-user"></i>
 
-            &nbsp; Personal Information
+        &nbsp; Member Details
 
-        </div>
+    </div>
 
 
-        <div class="info-item">
 
-            <i class="fa-solid fa-location-dot"></i>
+    <div class="info-item">
 
-            &nbsp; Address Information
+        <i class="fa-solid fa-wallet"></i>
 
-        </div>
+        &nbsp; My Contributions
+
+    </div>
+
 
     </div>
 
@@ -1923,38 +1919,39 @@ setInterval(
 function toggleMemberInfo(){
 
     const box =
-        document.getElementById(
-            "memberInfoBox"
-        );
+    document.getElementById("memberInfoBox");
 
 
     const arrow =
-        document.getElementById(
-            "dropdownArrow"
-        );
+    document.getElementById("dropdownArrow");
 
 
-    if(
-        box.style.display === "none"
-    ){
+    if(box.style.display === "none" || box.style.display === ""){
+
 
         box.style.display = "block";
+
 
         arrow.classList.remove(
             "fa-chevron-down"
         );
 
+
         arrow.classList.add(
             "fa-chevron-up"
         );
 
+
     }else{
 
+
         box.style.display = "none";
+
 
         arrow.classList.remove(
             "fa-chevron-up"
         );
+
 
         arrow.classList.add(
             "fa-chevron-down"
@@ -1985,6 +1982,7 @@ function toggleMenu(){
 ===================================================== */
 
 loadYear();
+      document.getElementById("memberInfoBox").style.display="none";
 
 </script>
 
