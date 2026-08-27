@@ -1397,8 +1397,8 @@ SUMMARY
 
 (A) Total Number of Contributions Displayed
 
-<div class="summary-value" id="displayedCount">
-10
+<div class="summary-value">
+105
 </div>
 
 </div>
@@ -1419,7 +1419,7 @@ SUMMARY
 
 Total Number of Contributions Posted (A)+(B)
 
-<div class="summary-value" id="postedCount">
+<div class="summary-value">
 105
 </div>
 
@@ -1430,7 +1430,7 @@ Total Number of Contributions Posted (A)+(B)
 
 Total Amount of Contributions
 
-<div class="summary-value" id="totalAmount">
+<div class="summary-value">
 ₱120,647.00
 </div>
 
@@ -1881,34 +1881,6 @@ function loadYear(){
 
         }
     );
-
-
-
-    document.getElementById(
-        "displayedCount"
-    ).textContent = displayed;
-
-
-    document.getElementById(
-        "postedCount"
-    ).textContent = displayed;
-
-
-    document.getElementById(
-        "totalAmount"
-    ).textContent =
-
-        "₱" +
-
-        total.toLocaleString(
-            "en-PH",
-            {
-                minimumFractionDigits:2,
-
-                maximumFractionDigits:2
-            }
-        );
-
 
 
     updateDots();
