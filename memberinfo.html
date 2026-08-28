@@ -1,230 +1,570 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Member Information</title>
 
+
+<link 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+
+<link 
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+
+
 <style>
 
+
 *{
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+box-sizing:border-box;
 }
+
 
 body{
 
-    margin:0;
-    background:#edf6ff;
-    color:#555;
+margin:0;
+
+font-family:"Montserrat",sans-serif;
+
+background:#eef6fc;
+
+color:#444;
 
 }
 
 
-/* HEADER */
+
+/* =========================
+TOP HEADER
+========================= */
+
 
 .header{
 
-    height:70px;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
-    border-bottom:1px solid #ddd;
+height:75px;
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 22px;
+
+box-shadow:0 2px 8px #ddd;
+
+position:sticky;
+
+top:0;
+
+z-index:999;
 
 }
 
 
-.menu{
 
-    font-size:35px;
-    color:#285a9c;
-    cursor:pointer;
+.menu-icon{
 
-}
+font-size:32px;
 
-
-.icons{
-
-    display:flex;
-    gap:25px;
-    align-items:center;
+color:#285a9c;
 
 }
 
 
-.bell{
 
-    font-size:28px;
-    color:#285a9c;
+.header-right{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+color:#285a9c;
+
+font-size:28px;
 
 }
+
 
 
 .profile{
 
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#ddd;
-}
+width:55px;
 
+height:55px;
 
+border-radius:50%;
 
-/* USER INFO */
-
-.user-info{
-
-    background:white;
-    padding:18px 25px;
-    border-bottom:1px solid #ddd;
-
-}
-
-
-.name{
-
-    font-size:22px;
-    color:#555;
-
-}
-
-
-.ssn{
-
-    margin-top:5px;
-    font-size:18px;
-
-}
-
-
-.datetime{
-
-    margin-top:12px;
-    color:#315c91;
-    font-size:18px;
+overflow:hidden;
 
 }
 
 
 
-/* CONTENT */
+.profile img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+/* =========================
+MEMBER HEADER
+========================= */
+
+
+.member-header{
+
+background:white;
+
+padding:15px 25px 18px;
+
+box-shadow:0 3px 8px #ccc;
+
+}
+
+
+
+.member-name{
+
+font-size:20px;
+
+font-weight:400;
+
+}
+
+
+
+.member-number{
+
+font-size:18px;
+
+margin-top:5px;
+
+}
+
+
+
+.member-date{
+
+margin-top:10px;
+
+font-size:17px;
+
+color:#315a9c;
+
+}
+
+
+
+
+/* =========================
+FLOATING CALENDAR
+========================= */
+
+
+.calendar{
+
+position:fixed;
+
+right:0;
+
+top:365px;
+
+background:#b9dcff;
+
+padding:25px 18px;
+
+border-radius:20px 0 0 20px;
+
+font-size:38px;
+
+color:#285a9c;
+
+z-index:500;
+
+opacity:.9;
+
+}
+
+
+
+/* =========================
+MAIN
+========================= */
+
 
 .container{
 
-    width:95%;
-    max-width:650px;
-    margin:20px auto;
+max-width:900px;
+
+margin:auto;
+
+padding:20px;
 
 }
+
+
+
+/* =========================
+CARD
+========================= */
 
 
 .card{
 
-    background:white;
-    border-radius:10px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px #ccc;
+background:white;
 
-}
+border-radius:10px;
 
+box-shadow:0 2px 8px rgba(0,0,0,.15);
 
-/* TITLE BUTTON */
+padding:30px;
 
-.section-title{
-
-    display:inline-block;
-    background:#e8f1f7;
-    padding:10px 15px;
-    border-radius:6px;
-
-    color:#285a9c;
-
-    font-size:20px;
-
-    margin-bottom:20px;
+margin-bottom:25px;
 
 }
 
 
 
-.data{
+.title{
 
-    margin-bottom:35px;
+display:inline-block;
+
+background:#edf1f4;
+
+padding:10px 18px;
+
+border-radius:5px;
+
+font-size:20px;
+
+color:#315a9c;
+
+margin-bottom:25px;
 
 }
+
+
+
+/* =========================
+DETAIL ITEMS
+========================= */
+
+
+.item{
+
+margin:28px 0;
+
+}
+
 
 
 .label{
 
-    font-size:18px;
-    color:#777;
+display:block;
+
+font-size:17px;
+
+color:#777;
+
+margin-bottom:5px;
 
 }
+
 
 
 .value{
 
-    font-size:22px;
-    color:#333;
+font-size:20px;
 
-    margin-top:5px;
+color:#333;
+
+line-height:1.4;
 
 }
 
 
 
-/* COVERAGE */
+/* BUTTON */
+
+.update-btn{
+
+display:inline-block;
+
+background:#3159a2;
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:5px;
+
+font-size:17px;
+
+margin-top:10px;
+
+}
+
+
+
+
+/* =========================
+COVERAGE TIMELINE
+========================= */
+
 
 .timeline{
 
-    border-left:2px solid #ddd;
-    margin-left:20px;
-    padding-left:30px;
+border-left:2px solid #ddd;
+
+padding-left:35px;
+
+margin-left:20px;
 
 }
+
 
 
 .history{
 
-    margin-bottom:45px;
-    position:relative;
+position:relative;
+
+margin-bottom:50px;
 
 }
+
 
 
 .history:before{
 
-    content:"";
-    width:18px;
-    height:18px;
+content:"";
 
-    background:#2ebbd8;
+position:absolute;
 
-    border-radius:50%;
+left:-46px;
 
-    position:absolute;
+top:5px;
 
-    left:-42px;
+width:18px;
 
-    top:5px;
+height:18px;
+
+border-radius:50%;
+
+background:#21b5d8;
 
 }
 
 
 
-.row{
+.history:nth-child(2):before{
+
+background:#4d45d9;
+
+}
+
+
+
+.history:nth-child(3):before{
+
+background:#efa515;
+
+}
+
+
+
+
+.badge{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#e7f8ff;
+
+color:#20a8ca;
+
+margin-right:12px;
+
+font-weight:500;
+
+}
+
+
+
+.company{
+
+font-size:20px;
+
+font-weight:500;
+
+color:#333;
+
+}
+
+
+
+.coverage-row{
 
 display:flex;
+
 justify-content:space-between;
+
+margin-top:20px;
 
 }
 
+
+
+.coverage-box{
+
+width:45%;
+
+font-size:17px;
+
+}
+
+
+
+.coverage-title{
+
+color:#777;
+
+display:block;
+
+margin-bottom:5px;
+
+}
+
+
+
+.coverage-value{
+
+font-size:20px;
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:600px){
+
+
+.member-name{
+
+font-size:19px;
+
+}
+
+
+
+.member-number{
+
+font-size:17px;
+
+}
+
+
+
+.member-date{
+
+font-size:15px;
+
+white-space:nowrap;
+
+}
+
+
+
+.container{
+
+padding:15px;
+
+}
+
+
+
+.card{
+
+padding:25px;
+
+}
+
+
+
+.value{
+
+font-size:18px;
+
+}
+
+
+
+.coverage-row{
+
+display:block;
+
+}
+
+
+
+.coverage-box{
+
+width:100%;
+
+margin-bottom:15px;
+
+}
+
+
+
+.calendar{
+
+top:360px;
+
+font-size:32px;
+
+padding:20px 15px;
+
+}
+
+
+}
 
 
 </style>
+
 
 </head>
 
@@ -232,59 +572,95 @@ justify-content:space-between;
 <body>
 
 
+<!-- =========================
+HEADER
+========================= -->
 
-<!-- TOP BAR -->
 
 <div class="header">
 
-<div class="menu">
-☰
-</div>
 
+    <div class="menu-icon">
 
-<div class="icons">
+        <i class="fa-solid fa-bars"></i>
 
-<div class="bell">
-🔔
-</div>
-
-
-<img class="profile"
-src="profile.png">
-
-</div>
-
-
-</div>
+    </div>
 
 
 
-
-<!-- USER -->
-
-<div class="user-info">
+    <div class="header-right">
 
 
-<div class="name">
-SANTIAGO, ANJANETTE RAMOS
-</div>
+        <i class="fa-solid fa-bell"></i>
 
 
-<div class="ssn">
-34-7743593-3
-</div>
+        <div class="profile">
+
+            <img src="Lprof.jpeg">
+
+        </div>
 
 
-
-<div class="datetime">
-
-📅 <span id="dateTime"></span>
-
-</div>
-
+    </div>
 
 
 </div>
+
+
+
+
+
+<!-- =========================
+MEMBER INFO HEADER
+========================= -->
+
+
+<div class="member-header">
+
+
+    <div class="member-name">
+
+        SANTIAGO, MARK LESTER NARAG
+
+    </div>
+
+
+    <div class="member-number">
+
+        01-3599294-4
+
+    </div>
+
+
+
+    <div class="member-date">
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        Saturday, August 22, 2026 at 3:56:11 PM
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- FLOATING CALENDAR -->
+
+
+<div class="calendar">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+
+
 
 
 
@@ -294,136 +670,67 @@ SANTIAGO, ANJANETTE RAMOS
 
 
 
-<!-- MY DETAILS -->
+
+
+
+<!-- =========================
+UMID DETAILS
+========================= -->
 
 
 <div class="card">
 
 
-<div class="section-title">
+<div class="title">
 
-👤 My Details
+<i class="fa-solid fa-id-card"></i>
 
-</div>
+&nbsp;
 
-
-
-<div class="data">
-
-<div class="label">
-SS Number Status
-</div>
-
-<div class="value">
-ACTIVE
-</div>
-
-</div>
-
-
-
-<div class="data">
-
-<div class="label">
-Document Compliance
-</div>
-
-<div class="value">
-APPLICATION THRU THE WEB
-</div>
+UMID/SSS ID Details
 
 </div>
 
 
 
 
-<div class="data">
-
-<div class="label">
-Membership Status
-</div>
-
-<div class="value">
-PERMANENT
-</div>
-
-</div>
+<div class="item">
 
 
+<span class="label">
 
-
-<div class="data">
-
-<div class="label">
-Date of SS Number Issuance
-</div>
-
-<div class="value">
-Jul 16, 2018
-</div>
-
-</div>
-
-
-
-
-<div class="data">
-
-<div class="label">
-Sex
-</div>
-
-<div class="value">
-FEMALE
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<!-- EMPLOYMENT -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-💼 Employment Details
-
-</div>
-
-
-
-<div class="data">
-
-<div class="label">
-Membership Type
-</div>
-
-<div class="value">
-VOLUNTARY PAYING
-</div>
-
-</div>
-
-
-
-
-<div class="data">
-
-<div class="label">
 Change in Coverage Status
-</div>
+
+</span>
+
 
 <div class="value">
+
 NO STATUS CHANGE
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+
+<span class="label">
+
+Date of Loan Disqualification
+
+</span>
+
+
+<div class="value">
+
+&nbsp;
+
 </div>
 
 
@@ -431,67 +738,45 @@ NO STATUS CHANGE
 
 
 
-<div class="data">
 
-<div class="label">
+
+<div class="item">
+
+
+<span class="label">
+
+SS Number Withdrawal Reason
+
+</span>
+
+
+<div class="value">
+
+&nbsp;
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="item">
+
+
+<span class="label">
+
 Record Location
-</div>
+
+</span>
+
 
 <div class="value">
+
 TUGUEGARAO
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- OTHER DETAILS -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-ⓘ Other Details
-
-</div>
-
-
-
-<div class="data">
-
-<div class="label">
-Claim Flag Status
-</div>
-
-<div class="value">
-NO FINAL/FUNERAL CLAIM
-</div>
-
-
-</div>
-
-
-
-<div class="data">
-
-<div class="label">
-Transferred to (New SS Number)
-</div>
-
-<div class="value">
-
-</div>
-
 
 </div>
 
@@ -503,44 +788,67 @@ Transferred to (New SS Number)
 
 
 
-
-<!-- UMID -->
-
-
-<div class="card">
+<div class="item">
 
 
-<div class="section-title">
+<span class="label">
 
-🪪 UMID/SSS ID Details
-
-</div>
-
-
-
-<div class="data">
-
-<div class="label">
 Capture Site
-</div>
+
+</span>
+
 
 <div class="value">
+
 CUBAO
-</div>
-
 
 </div>
 
 
+</div>
 
-<div class="data">
 
-<div class="label">
+
+
+
+<div class="item">
+
+
+<span class="label">
+
 Capture Date/Enrollment Date
-</div>
+
+</span>
+
 
 <div class="value">
+
 APR 11, 2019
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="item">
+
+
+<span class="label">
+
+Card Serial/Transaction Number
+
+</span>
+
+
+<div class="value">
+
+0120190411C1D013031
+
 </div>
 
 
@@ -548,31 +856,44 @@ APR 11, 2019
 
 
 
-<div class="data">
 
-<div class="label">
+
+<div class="item">
+
+
+<span class="label">
+
 Card Type
-</div>
+
+</span>
+
 
 <div class="value">
+
 UMID
-</div>
-
 
 </div>
 
 
+</div>
 
-<div class="data">
 
-<div class="label">
+
+
+
+<div class="item">
+
+
+<span class="label">
+
 Transaction Status
-</div>
+
+</span>
+
 
 <div class="value">
+
 CARD GENERATED
-</div>
-
 
 </div>
 
@@ -583,35 +904,114 @@ CARD GENERATED
 
 
 
+</div>
 
 
 
-<!-- ADDRESS -->
+
+
+
+
+
+
+<!-- =========================
+ADDRESS
+========================= -->
+
 
 <div class="card">
 
 
-<div class="section-title">
 
-📍 Address
+<div class="title">
+
+
+<i class="fa-solid fa-location-dot"></i>
+
+
+&nbsp;
+
+Address
+
 
 </div>
 
 
 
-<div class="data">
 
-<div class="label">
+<div class="update-btn">
+
+
+<i class="fa-solid fa-rotate"></i>
+
+Update Information
+
+
+</div>
+
+
+
+
+
+<div class="item">
+
+
+<span class="label">
+
 Local Home Address
-</div>
+
+</span>
+
+
 
 <div class="value">
 
-1168 MAHARLIKA HIGHWAY ZONE 7<br>
-CAGGAY TUGUEGARAO CITY
+
+1168 MAHARLIKA HIGHWAY ZONE 7
+
+<br>
+
+CAGGAY TUGUEGARAO CITY (CAPITAL)
+
+<br>
+
+CAGAYAN 3500
+
 
 </div>
 
+
+</div>
+
+
+
+
+
+
+<div class="item">
+
+
+<span class="label">
+
+Local Mailing Address
+
+</span>
+
+
+<div class="value">
+
+
+1168 MAHARLIKA HIGHWAY ZONE 7
+
+<br>
+
+CAGGAY TUGUEGARAO CITY (CAPITAL)
+
+<br>
+
+CAGAYAN 3500
+
+
 </div>
 
 
@@ -622,20 +1022,62 @@ CAGGAY TUGUEGARAO CITY
 
 
 
+<div class="item">
+
+
+<span class="label">
+
+Foreign Home Address
+
+</span>
+
+
+<div class="value">
+
+&nbsp;
+
+</div>
+
+
+</div>
 
 
 
-<!-- COVERAGE -->
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+COVERAGE HISTORY
+========================= -->
+
 
 
 <div class="card">
 
 
-<div class="section-title">
 
-◷ Coverage History
+<div class="title">
+
+
+<i class="fa-regular fa-clock"></i>
+
+
+&nbsp;
+
+Coverage History
+
 
 </div>
+
+
+
 
 
 
@@ -643,94 +1085,202 @@ CAGGAY TUGUEGARAO CITY
 
 
 
+
+
+
+<!-- HISTORY 1 -->
+
+
 <div class="history">
 
 
-<div class="row">
 
 <div>
 
-EFFECTIVITY DATE<br>
 
-Jan 01, 2026
+<span class="badge">
 
-</div>
+VM
 
-
-<div>
-
-REPORTING DATE<br>
-
-Feb 01, 2026
-
-</div>
+</span>
 
 
-</div>
-
-
-<br>
-
-<b>VM</b>
+<span class="company">
 
 VOLUNTARY MEMBER
 
-<br>
-
-88-8888800-6
+</span>
 
 
 </div>
 
 
 
+
+<div class="coverage-row">
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+EFFECTIVITY DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Jan 01, 2026
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+REPORTING DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Feb 01, 2026
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="item">
+
+
+<div class="value">
+
+88-8888000-6
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- HISTORY 2 -->
 
 
 <div class="history">
 
 
-<div class="row">
 
 <div>
 
-EFFECTIVITY DATE<br>
 
-Jun 01, 2019
+<span class="badge">
 
-</div>
+P
 
-
-<div>
-
-REPORTING DATE<br>
-
-Feb 01, 2021
-
-</div>
+</span>
 
 
-</div>
-
-
-<br>
-
-
-<b>P</b>
+<span class="company">
 
 PRIME MOVER BUSINESS SOLUTIONS
 
-<br>
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="coverage-row">
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+EFFECTIVITY DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Jun 01, 2019
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+REPORTING DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Feb 01, 2021
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="item">
+
+
+<div class="value">
 
 03-9115370-5
 
-
-</div>
-
-
-
-
-
-
 </div>
 
 
@@ -744,38 +1294,134 @@ PRIME MOVER BUSINESS SOLUTIONS
 
 
 
-<script>
 
 
-function realtime(){
-
-let now=new Date();
-
-document.getElementById("dateTime").innerHTML =
-now.toLocaleString(
-' en-US ',
-{
-weekday:'long',
-year:'numeric',
-month:'long',
-day:'numeric',
-hour:'numeric',
-minute:'numeric',
-second:'numeric'
-}
-);
-
-}
 
 
-setInterval(realtime,1000);
-
-realtime();
+<!-- HISTORY 3 -->
 
 
-</script>
+<div class="history">
+
+
+
+<div>
+
+
+<span class="badge">
+
+SE
+
+</span>
+
+
+<span class="company">
+
+SELF-EMPLOYED
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="coverage-row">
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+EFFECTIVITY DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Feb 01, 2019
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="coverage-box">
+
+
+<span class="coverage-title">
+
+REPORTING DATE
+
+</span>
+
+
+<span class="coverage-value">
+
+Feb 01, 2019
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="item">
+
+
+<div class="value">
+
+00-0000000-0
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
 </body>
+
 </html>
