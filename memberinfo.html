@@ -1,249 +1,224 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Member Information</title>
 
-<link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<div class="dashboard-header">
-   <button class="menu-icon" id="menuButton" type="button">
-    <i class="fa-solid fa-bars"></i>
-</button>
-
-    <div class="dashboard-actions">
-        <i class="fa-solid fa-bell"></i>
-
-        <div class="profile-icon">
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </div>
-</div>
-
-<div class="member-info">
-    <div class="member-name">SANTIAGO, MARK LESTER NARAG</div>
-    <div class="member-number">01-3599294-4</div>
-
-    <div class="member-date">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="realTime"></span>
-</div>
-</div>
-
 <style>
 
+*{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 body{
-margin:0;
-background:#eaf4fb;
-font-family:"Montserrat",sans-serif;
-}
 
-
-
-/* TITLE */
-
-.page-title{
-
-padding:25px 20px 10px;
-
-font-size:24px;
-
-color:#777;
-
-}
-
-.page-title span{
-
-color:#222;
+    margin:0;
+    background:#edf6ff;
+    color:#555;
 
 }
 
 
+/* HEADER */
 
-/* PROFILE CARD */
+.header{
 
-
-.profile-card{
-
-background:white;
-
-width:90%;
-
-max-width:700px;
-
-margin:auto;
-
-border-radius:10px;
-
-overflow:hidden;
-
-box-shadow:0 3px 8px rgba(0,0,0,.15);
+    height:70px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid #ddd;
 
 }
 
 
+.menu{
 
-.profile-cover{
-
-height:220px;
-
-background:
-linear-gradient(120deg,#65b5e8,#1777bd);
+    font-size:35px;
+    color:#285a9c;
+    cursor:pointer;
 
 }
 
 
+.icons{
 
-.avatar{
-
-width:120px;
-
-height:120px;
-
-border-radius:50%;
-
-background:#eee;
-
-border:5px solid white;
-
-margin:-60px auto 20px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:60px;
-
-color:#4d9bd8;
+    display:flex;
+    gap:25px;
+    align-items:center;
 
 }
 
 
+.bell{
 
-.profile-content{
-
-text-align:center;
-
-padding-bottom:30px;
+    font-size:28px;
+    color:#285a9c;
 
 }
 
 
-.profile-name{
+.profile{
 
-font-size:28px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#ddd;
+}
 
-margin-bottom:15px;
+
+
+/* USER INFO */
+
+.user-info{
+
+    background:white;
+    padding:18px 25px;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+.name{
+
+    font-size:22px;
+    color:#555;
+
+}
+
+
+.ssn{
+
+    margin-top:5px;
+    font-size:18px;
+
+}
+
+
+.datetime{
+
+    margin-top:12px;
+    color:#315c91;
+    font-size:18px;
 
 }
 
 
 
-.profile-line{
+/* CONTENT */
 
-font-size:20px;
+.container{
 
-color:#777;
-
-margin:12px;
-
-}
-
-
-
-
-/* BLUE BUTTON */
-
-
-.info-bar{
-
-width:90%;
-
-max-width:700px;
-
-margin:20px auto;
-
-background:#315a9c;
-
-color:white;
-
-padding:15px;
-
-border-radius:5px;
-
-text-align:center;
-
-font-size:20px;
+    width:95%;
+    max-width:650px;
+    margin:20px auto;
 
 }
 
 
+.card{
 
-
-/* DETAILS */
-
-
-.details-card{
-
-background:white;
-
-width:90%;
-
-max-width:700px;
-
-margin:auto;
-
-padding:25px;
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px #ccc;
 
 }
 
 
+/* TITLE BUTTON */
 
 .section-title{
 
-display:inline-block;
+    display:inline-block;
+    background:#e8f1f7;
+    padding:10px 15px;
+    border-radius:6px;
 
-background:#e8f0f7;
+    color:#285a9c;
 
-padding:10px 18px;
+    font-size:20px;
 
-border-radius:5px;
-
-color:#315a9c;
-
-font-size:20px;
-
-margin-bottom:20px;
+    margin-bottom:20px;
 
 }
 
 
 
-.item{
+.data{
 
-margin-bottom:28px;
+    margin-bottom:35px;
 
 }
-
 
 
 .label{
 
-color:#777;
+    font-size:18px;
+    color:#777;
 
-font-size:18px;
+}
+
+
+.value{
+
+    font-size:22px;
+    color:#333;
+
+    margin-top:5px;
 
 }
 
 
 
-.value{
+/* COVERAGE */
 
-font-size:23px;
+.timeline{
+
+    border-left:2px solid #ddd;
+    margin-left:20px;
+    padding-left:30px;
+
+}
+
+
+.history{
+
+    margin-bottom:45px;
+    position:relative;
+
+}
+
+
+.history:before{
+
+    content:"";
+    width:18px;
+    height:18px;
+
+    background:#2ebbd8;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    left:-42px;
+
+    top:5px;
+
+}
+
+
+
+.row{
+
+display:flex;
+justify-content:space-between;
 
 }
 
@@ -251,74 +226,63 @@ font-size:23px;
 
 </style>
 
-
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
 
-<div class="dashboard-header">
+<!-- TOP BAR -->
 
+<div class="header">
 
-<button class="menu-icon">
-
-<i class="fa-solid fa-bars"></i>
-
-</button>
+<div class="menu">
+☰
+</div>
 
 
-<div class="dashboard-actions">
+<div class="icons">
 
-<i class="fa-solid fa-bell"></i>
+<div class="bell">
+🔔
+</div>
 
 
-<div class="profile-icon">
-
-<i class="fa-solid fa-user"></i>
+<img class="profile"
+src="profile.png">
 
 </div>
 
 
 </div>
 
-</div>
 
 
 
+<!-- USER -->
 
-<!-- MEMBER HEADER -->
+<div class="user-info">
 
 
-<div class="member-info">
-
-<div class="member-name">
+<div class="name">
 SANTIAGO, ANJANETTE RAMOS
 </div>
 
 
-<div class="member-number">
+<div class="ssn">
 34-7743593-3
 </div>
 
 
-<div class="member-date">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span id="realTime"></span>
+
+<div class="datetime">
+
+📅 <span id="dateTime"></span>
+
 </div>
 
 
-</div>
-
-
-
-
-<div class="page-title">
-
-Member Information /
-<span>Member Details</span>
 
 </div>
 
@@ -326,96 +290,25 @@ Member Information /
 
 
 
-<!-- PROFILE -->
-
-
-<div class="profile-card">
-
-
-<div class="profile-cover"></div>
+<div class="container">
 
 
 
-<div class="profile-content">
+<!-- MY DETAILS -->
 
 
-<div class="avatar">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-
-<div class="profile-name">
-SANTIAGO, MARK LESTER NARAG
-</div>
-
-
-
-<div class="profile-line">
-
-<i class="fa-solid fa-id-card"></i>
-
-SS Number 01-3599294-4
-
-</div>
-
-
-
-<div class="profile-line">
-
-<i class="fa-solid fa-calendar"></i>
-
-Your password will expire on Feb 14, 2027
-
-</div>
-
-
-
-<div class="profile-line">
-
-<i class="fa-solid fa-clock"></i>
-
-Your last login was on Sep 16, 2026
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div class="info-bar">
-
-<i class="fa-solid fa-user"></i>
-
-Member Information ▼
-
-</div>
-
-
-
-
-
-<div class="details-card">
+<div class="card">
 
 
 <div class="section-title">
 
-<i class="fa-solid fa-address-card"></i>
-
-My Details
+👤 My Details
 
 </div>
 
 
 
-
-<div class="item">
+<div class="data">
 
 <div class="label">
 SS Number Status
@@ -429,7 +322,7 @@ ACTIVE
 
 
 
-<div class="item">
+<div class="data">
 
 <div class="label">
 Document Compliance
@@ -443,7 +336,8 @@ APPLICATION THRU THE WEB
 
 
 
-<div class="item">
+
+<div class="data">
 
 <div class="label">
 Membership Status
@@ -455,149 +349,74 @@ PERMANENT
 
 </div>
 
-<div class="item">
 
-<div class="label">
-Prior Registrant
-</div>
 
-<div class="value">
-NO
-</div>
 
-</div>
-
-<div class="item">
+<div class="data">
 
 <div class="label">
 Date of SS Number Issuance
 </div>
 
 <div class="value">
-Feb 11, 2017
+Jul 16, 2018
 </div>
 
 </div>
 
 
 
-<div class="item">
+
+<div class="data">
 
 <div class="label">
 Sex
 </div>
 
 <div class="value">
-MALE
+FEMALE
 </div>
 
 </div>
 
+
+
+</div>
+
+
+
+
+
+
+<!-- EMPLOYMENT -->
+
+<div class="card">
 
 
 <div class="section-title">
 
-<i class="fa-solid fa-briefcase"></i>
-
-Employment Details
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Reporting Date
-</div>
-
-<div class="value">
-Mar 06, 2017
-</div>
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Reporting ID
-</div>
-
-<div class="value">
-03-9249624-1
-</div>
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Latest ER ID
-</div>
-
-<div class="value">
-80-0159722-6
-</div>
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Latest ER Name
-</div>
-
-<div class="value">
-LITTELFUSE PHILIPPINES, INC.
-</div>
+💼 Employment Details
 
 </div>
 
 
 
-<div class="section-title">
-
-<i class="fa-solid fa-circle-info"></i>
-
-Other Details
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Claim Flag Status
-</div>
-
-<div class="value">
-NO FINAL/FUNERAL CLAIM
-</div>
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-Transferred to(New SSS Number)
-</div>
-
-<div class="value">
-</div>
-
-</div>
-
-
-<div class="item">
+<div class="data">
 
 <div class="label">
 Membership Type
 </div>
 
 <div class="value">
-EMPLOYEE
+VOLUNTARY PAYING
 </div>
 
 </div>
 
-  <div class="item">
+
+
+
+<div class="data">
 
 <div class="label">
 Change in Coverage Status
@@ -607,33 +426,12 @@ Change in Coverage Status
 NO STATUS CHANGE
 </div>
 
-</div>
-
-  <div class="item">
-
-<div class="label">
-Date of Loan Disqualification
-</div>
-
-<div class="value">
-</div>
-
-</div>
-
-  <div class="item">
-
-<div class="label">
-SS Number Withdrawal Reason
-</div>
-
-<div class="value">
-</div>
 
 </div>
 
 
 
-<div class="item">
+<div class="data">
 
 <div class="label">
 Record Location
@@ -647,40 +445,336 @@ TUGUEGARAO
 
 
 
+</div>
+
+
+
+
+
+
+
+
+<!-- OTHER DETAILS -->
+
+<div class="card">
+
+
 <div class="section-title">
 
-<i class="fa-solid fa-id-card"></i>
-
-UMID/SSS ID Details
+ⓘ Other Details
 
 </div>
 
 
-<div class="item">
+
+<div class="data">
+
+<div class="label">
+Claim Flag Status
+</div>
+
+<div class="value">
+NO FINAL/FUNERAL CLAIM
+</div>
+
+
+</div>
+
+
+
+<div class="data">
+
+<div class="label">
+Transferred to (New SS Number)
+</div>
+
+<div class="value">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- UMID -->
+
+
+<div class="card">
+
+
+<div class="section-title">
+
+🪪 UMID/SSS ID Details
+
+</div>
+
+
+
+<div class="data">
 
 <div class="label">
 Capture Site
 </div>
 
 <div class="value">
+CUBAO
 </div>
 
+
 </div>
 
 
-<div class="item">
+
+<div class="data">
 
 <div class="label">
 Capture Date/Enrollment Date
 </div>
 
 <div class="value">
+APR 11, 2019
 </div>
+
+
+</div>
+
+
+
+<div class="data">
+
+<div class="label">
+Card Type
+</div>
+
+<div class="value">
+UMID
+</div>
+
+
+</div>
+
+
+
+<div class="data">
+
+<div class="label">
+Transaction Status
+</div>
+
+<div class="value">
+CARD GENERATED
+</div>
+
 
 </div>
 
 
 </div>
+
+
+
+
+
+
+
+
+<!-- ADDRESS -->
+
+<div class="card">
+
+
+<div class="section-title">
+
+📍 Address
+
+</div>
+
+
+
+<div class="data">
+
+<div class="label">
+Local Home Address
+</div>
+
+<div class="value">
+
+1168 MAHARLIKA HIGHWAY ZONE 7<br>
+CAGGAY TUGUEGARAO CITY
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- COVERAGE -->
+
+
+<div class="card">
+
+
+<div class="section-title">
+
+◷ Coverage History
+
+</div>
+
+
+
+<div class="timeline">
+
+
+
+<div class="history">
+
+
+<div class="row">
+
+<div>
+
+EFFECTIVITY DATE<br>
+
+Jan 01, 2026
+
+</div>
+
+
+<div>
+
+REPORTING DATE<br>
+
+Feb 01, 2026
+
+</div>
+
+
+</div>
+
+
+<br>
+
+<b>VM</b>
+
+VOLUNTARY MEMBER
+
+<br>
+
+88-8888800-6
+
+
+</div>
+
+
+
+
+
+<div class="history">
+
+
+<div class="row">
+
+<div>
+
+EFFECTIVITY DATE<br>
+
+Jun 01, 2019
+
+</div>
+
+
+<div>
+
+REPORTING DATE<br>
+
+Feb 01, 2021
+
+</div>
+
+
+</div>
+
+
+<br>
+
+
+<b>P</b>
+
+PRIME MOVER BUSINESS SOLUTIONS
+
+<br>
+
+03-9115370-5
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function realtime(){
+
+let now=new Date();
+
+document.getElementById("dateTime").innerHTML =
+now.toLocaleString(
+' en-US ',
+{
+weekday:'long',
+year:'numeric',
+month:'long',
+day:'numeric',
+hour:'numeric',
+minute:'numeric',
+second:'numeric'
+}
+);
+
+}
+
+
+setInterval(realtime,1000);
+
+realtime();
+
+
+</script>
+
 
 
 </body>
