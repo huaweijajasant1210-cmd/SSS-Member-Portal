@@ -1,0 +1,79 @@
+<div id="sideMenu" class="side-menu">
+
+
+    <div class="menu-title">
+        Menu
+
+        <span onclick="closeMenu()">
+            ×
+        </span>
+
+    </div>
+
+
+    <a>
+        ▦ Dashboard
+    </a>
+
+
+
+    <div class="menu-parent"
+    onclick="toggleMember()">
+
+        👥 Member Information
+
+    </div>
+
+
+
+    <div id="memberSubmenu"
+    class="submenu">
+
+
+        <a href="member-details.html">
+            👤 Member Details
+        </a>
+
+
+        <a href="contributions.html">
+            💼 My Contributions
+        </a>
+
+
+        <a class="disabled">
+
+            💬 Update Security Questions
+
+        </a>
+
+
+    </div>
+
+
+
+    <a>
+        Services
+    </a>
+
+
+    <a>
+        Loans
+    </a>
+
+
+    <a>
+        Benefits
+    </a>
+
+
+    <a>
+        Payment Reference Number
+    </a>
+
+
+    <a>
+        Sign Out
+    </a>
+
+
+</div>
