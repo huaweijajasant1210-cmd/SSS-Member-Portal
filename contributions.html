@@ -547,6 +547,22 @@ onclick="toggleMenu()">
 
 }
 
+.info-item{
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.info-item:hover{
+    background:#eef6fc;
+}
+
+
+.info-item.active{
+    color:#3159a2;
+    font-weight:600;
+}
+
 
 /* =====================================================
    CONTRIBUTION SECTION
@@ -1368,20 +1384,20 @@ type="button">
          MEMBER INFORMATION DROPDOWN
     ================================================== -->
 
-    <button
-    class="member-dropdown"
-    onclick="toggleMemberInfo()">
+  <button
+class="member-dropdown"
+onclick="toggleMemberInfo()">
 
-        <i class="fa-solid fa-user"></i>
+    <i class="fa-solid fa-wallet"></i>
 
-        &nbsp; Member Information
+    &nbsp; My Contributions
 
-        <i
-        id="dropdownArrow"
-        class="fa-solid fa-chevron-down">
-        </i>
+    <i
+    id="dropdownArrow"
+    class="fa-solid fa-chevron-down">
+    </i>
 
-    </button>
+</button>
 
 
 
@@ -1401,13 +1417,26 @@ style="display:none;">
 
 
 
-    <div class="info-item">
+   <div 
+class="info-item"
+onclick="openMemberDetails()">
 
-        <i class="fa-solid fa-wallet"></i>
+<i class="fa-solid fa-user"></i>
 
-        &nbsp; My Contributions
+&nbsp; Member Details
 
-    </div>
+</div>
+
+
+<div 
+class="info-item active"
+onclick="openContributions()">
+
+<i class="fa-solid fa-wallet"></i>
+
+&nbsp; My Contributions
+
+</div>
 
 
     </div>
@@ -2179,6 +2208,19 @@ function toggleMemberInfo(){
     }
 
 }
+
+function openMemberDetails(){
+
+    window.location.href="member-details.html";
+
+}
+
+
+function openContributions(){
+
+    window.location.href="contributions.html";
+
+}      
 
 
 
