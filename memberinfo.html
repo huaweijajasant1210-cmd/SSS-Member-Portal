@@ -562,6 +562,188 @@ padding:20px 15px;
 
 }
 
+ .member-details-title{
+    font-size:26px;
+    color:#7d8998;
+    padding:20px;
+}
+
+
+.member-card{
+
+    background:white;
+    max-width:650px;
+    margin:auto;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+
+.cover{
+
+height:210px;
+
+background:
+linear-gradient(120deg,
+#4fa5d8 0%,
+#2d8ccc 45%,
+#f5b76b 100%);
+
+position:relative;
+
+}
+
+
+
+.profile-big{
+
+width:130px;
+height:130px;
+border-radius:50%;
+
+position:absolute;
+
+bottom:-65px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+border:8px solid white;
+
+overflow:hidden;
+
+background:white;
+
+}
+
+
+
+.profile-big img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+
+
+.member-content{
+
+padding:85px 30px 35px;
+
+text-align:center;
+
+}
+
+
+
+.member-content h1{
+
+font-size:28px;
+font-weight:400;
+margin-bottom:25px;
+
+}
+
+
+
+.info-line{
+
+font-size:18px;
+
+color:#777;
+
+margin:18px 0;
+
+}
+
+
+
+.info-line i{
+
+font-size:22px;
+
+color:#607d9e;
+
+margin-right:10px;
+
+}
+
+
+
+
+.member-button{
+
+max-width:650px;
+
+margin:25px auto;
+
+background:#3159a2;
+
+color:white;
+
+padding:15px;
+
+border-radius:8px;
+
+text-align:center;
+
+font-size:18px;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+.member-details-title{
+
+font-size:22px;
+
+}
+
+
+.member-card{
+
+margin:0 20px;
+
+}
+
+
+.cover{
+
+height:190px;
+
+}
+
+
+.profile-big{
+
+width:120px;
+height:120px;
+
+}
+
+
+.member-content h1{
+
+font-size:23px;
+
+}
+
+
+.info-line{
+
+font-size:16px;
+
+}
+
+}
 
 </style>
 
@@ -653,6 +835,95 @@ MEMBER INFO HEADER
 <!-- =========================
 MEMBER DETAILS TOP CARD
 ========================= -->
+    <div class="member-details-title">
+
+Member Information / <span style="color:#333">
+Member Details
+</span>
+
+</div>
+
+
+
+<div class="member-card">
+
+
+<div class="cover">
+
+
+<div class="profile-big">
+
+<img src="Lprof.jpeg">
+
+</div>
+
+
+</div>
+
+
+
+<div class="member-content">
+
+
+<h1>
+SANTIAGO, MARK LESTER NARAG
+</h1>
+
+
+
+<div class="info-line">
+
+<i class="fa-solid fa-id-card"></i>
+
+SS Number 01-3599294-4
+
+</div>
+
+
+
+
+<div class="info-line">
+
+<i class="fa-solid fa-wallet"></i>
+
+Your password will expire on Feb 14, 2027
+
+</div>
+
+
+
+
+<div class="info-line">
+
+<i class="fa-regular fa-calendar-check"></i>
+
+Your last login was on Aug 22, 2026
+<br>
+03:54:52 PM through the SSS Website
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="member-button">
+
+<i class="fa-solid fa-user"></i>
+
+&nbsp;
+
+Member Information
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
 <div class="container">
 
 <div class="member-details-card">
