@@ -1,0 +1,33 @@
+<header class="top-header">
+
+    <div class="hamburger" onclick="openMenu()">
+        ☰
+    </div>
+
+
+    <div class="member-display">
+
+        <div id="memberName">
+            SANTIAGO, MARK LESTER NARAG
+        </div>
+
+        <div id="sssNumber">
+            01-3599294-4
+        </div>
+
+        <div id="realtimeDate">
+            
+        </div>
+
+    </div>
+
+
+    <div class="icons">
+
+        🔔
+        <img src="Lprof.jpeg">
+
+    </div>
+
+
+</header>
