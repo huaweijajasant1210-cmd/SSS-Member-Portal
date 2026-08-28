@@ -1379,3 +1379,147 @@ font-size:18px;
 
 }
 
+*{
+    box-sizing:border-box;
+}
+
+
+html, body{
+
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    margin:0;
+    padding:0;
+
+}
+
+
+body{
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+/* MAIN CONTAINER */
+
+.container,
+.main-container,
+.content-container{
+
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+
+}
+
+
+/* CARD */
+
+.card{
+
+    width:100%;
+    max-width:700px;
+    margin:auto;
+
+}
+
+
+/* HEADER NAME AREA */
+
+.member-header{
+
+    width:100%;
+    padding:15px;
+
+}
+
+
+/* TABLE RESPONSIVE */
+
+.table-wrapper{
+
+    width:100%;
+    overflow-x:auto;
+
+}
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+
+/* MOBILE VIEW */
+
+@media screen and (max-width:600px){
+
+
+    .container,
+    .main-container,
+    .content-container{
+
+        padding:10px;
+
+    }
+
+
+    .card{
+
+        width:100%;
+
+        border-radius:10px;
+
+    }
+
+
+    .member-header{
+
+        font-size:14px;
+
+    }
+
+
+    h1,h2,h3{
+
+        font-size:20px;
+
+    }
+
+
+    table{
+
+        font-size:13px;
+
+    }
+
+
+    .menu{
+
+        width:100%;
+
+    }
+
+
+    .profile-image{
+
+        width:70px;
+        height:70px;
+
+    }
+
+
+    button{
+
+        max-width:100%;
+
+    }
+
+
+}
