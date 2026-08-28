@@ -5,262 +5,562 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<title>Member Information</title>
-
-
-<link 
+<title>Contributions</title>
+<link rel="stylesheet" href="style.css">
+      
+<link
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 rel="stylesheet">
 
-
-<link 
+<link
 href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
 rel="stylesheet">
 
 
-
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
 
 body{
 
-margin:0;
+    margin:0;
 
-font-family:"Montserrat",sans-serif;
+    font-family:"Montserrat",sans-serif;
 
-background:#eef6fc;
+    background:#eef6fc;
 
-color:#444;
+    color:#444;
 
+  
+    overflow-x:visible;
+}
+
+<!-- SIDE MENU -->
+
+<div class="-menu" id="Menu">
+
+
+    <div class="menu-header">
+
+        <img src="Lprof.jpeg">
+
+        <div>
+            <b>SANTIAGO, MARK LESTER NARAG</b>
+            <small>Member</small>
+        </div>
+
+    </div>
+
+
+    <div class="menu-item">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </div>
+
+
+    <div class="menu-item">
+        <i class="fa-solid fa-user"></i>
+        Member Details
+    </div>
+
+
+    <div class="menu-item">
+        <i class="fa-solid fa-wallet"></i>
+        My Contributions
+    </div>
+
+
+    <div class="menu-item">
+        <i class="fa-solid fa-file"></i>
+        Loans
+    </div>
+
+
+    <div class="menu-item">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </div>
+
+
+</div>
+
+
+<!-- OVERLAY -->
+
+<div 
+class="overlay"
+id="overlay"
+onclick="toggleMenu()">
+</div>
+
+      <!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+/* =====================================================
+   STICKY HEADER
+===================================================== */
+
+.sticky-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:9999;
+
+    background:white;
 }
 
 
+/* =====================================================
+   TOP HEADER
+===================================================== */
 
-/* =========================
-TOP HEADER
-========================= */
+.dashboard-header{
 
+    height:75px;
 
-.header{
+    background:white;
 
-height:75px;
+    display:flex;
 
-background:white;
+    align-items:center;
 
-display:flex;
+    justify-content:space-between;
 
-align-items:center;
+    padding:0 22px;
 
-justify-content:space-between;
-
-padding:0 22px;
-
-box-shadow:0 2px 8px #ddd;
-
-position:sticky;
-
-top:0;
-
-z-index:999;
+    box-shadow:0 2px 8px #ddd;
 
 }
-
 
 
 .menu-icon{
 
-font-size:32px;
+    border:none;
 
-color:#285a9c;
+    background:none;
 
-}
+    font-size:32px;
 
+    color:#285a9c;
 
-
-.header-right{
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
-color:#285a9c;
-
-font-size:28px;
+    cursor:pointer;
 
 }
 
 
+.dashboard-actions{
 
-.profile{
+    display:flex;
 
-width:55px;
+    align-items:center;
 
-height:55px;
+    gap:25px;
 
-border-radius:50%;
+    font-size:28px;
 
-overflow:hidden;
-
-}
-
-
-
-.profile img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
+    color:#285a9c;
 
 }
 
 
+.profile-icon{
 
-/* =========================
-MEMBER HEADER
-========================= */
+    width:55px;
 
+    height:55px;
 
-.member-header{
+    border-radius:50%;
 
-background:white;
+    background:#ddd;
 
-padding:15px 25px 18px;
+    display:flex;
 
-box-shadow:0 3px 8px #ccc;
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
 
 }
 
+
+.profile-icon img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* =====================================================
+   MEMBER INFO HEADER
+===================================================== */
+
+.member-info{
+
+    background:white;
+
+    padding:15px 25px 17px;
+
+    box-shadow:0 3px 8px #ccc;
+
+}
 
 
 .member-name{
 
-font-size:20px;
+    font-size:20px;
 
-font-weight:400;
+    font-weight:400;
 
 }
-
 
 
 .member-number{
 
-font-size:18px;
+    font-size:18px;
 
-margin-top:5px;
+    margin-top:5px;
 
 }
-
 
 
 .member-date{
 
-margin-top:10px;
+    margin-top:10px;
 
-font-size:17px;
+    font-size:17px;
 
-color:#315a9c;
+    color:#315a9c;
 
 }
 
 
-
-
-/* =========================
-FLOATING CALENDAR
-========================= */
-
+/* =====================================================
+   FLOATING CALENDAR
+===================================================== */
 
 .calendar{
 
-position:fixed;
+    position:fixed;
 
-right:0;
+    right:0;
 
-top:365px;
+    top:365px;
 
-background:#b9dcff;
+    background:#b9dcff;
 
-padding:25px 18px;
+    padding:25px 18px;
 
-border-radius:20px 0 0 20px;
+    border-radius:20px 0 0 20px;
 
-font-size:38px;
+    font-size:38px;
 
-color:#285a9c;
+    color:#285a9c;
 
-z-index:500;
+    z-index:500;
 
-opacity:.9;
+    opacity:.9;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:20px 20px 80px;
+}
+
+
+/* =====================================================
+   MEMBER TITLE
+===================================================== */
+
+.member-title{
+
+    font-size:21px;
+
+    margin:10px 0 18px;
+
+    color:#555;
 
 }
 
 
+.member-title span{
 
-/* =========================
-MAIN
-========================= */
-
-
-.container{
-
-max-width:900px;
-
-margin:auto;
-
-padding:20px;
+    color:#333;
 
 }
 
 
+/* =====================================================
+   MEMBER DETAILS CARD
+===================================================== */
 
-/* =========================
-CARD
-========================= */
+.member-details{
 
+    background:white;
 
-.card{
+    border-radius:9px;
 
-background:white;
+    overflow:hidden;
 
-border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.14);
 
-box-shadow:0 2px 8px rgba(0,0,0,.15);
-
-padding:30px;
-
-margin-bottom:25px;
+    margin-bottom:35px;
 
 }
 
 
+/* COVER */
 
-.title{
+.cover{
 
-display:inline-block;
+    height:210px;
 
-background:#edf1f4;
+    background:
+    linear-gradient(
+        120deg,
+        #a9d8f3 0%,
+        #5eaddd 35%,
+        #3396d0 70%,
+        #2782b7 100%
+    );
 
-padding:10px 18px;
+    position:relative;
 
-border-radius:5px;
+    overflow:hidden;
 
-font-size:20px;
+}
 
-color:#315a9c;
 
-margin-bottom:25px;
+/* diagonal design */
 
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:300px;
+
+    left:70px;
+
+    top:-30px;
+
+    background:rgba(255,255,255,.18);
+
+    transform:skewX(-30deg);
+
+}
+
+
+.cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:300px;
+
+    right:80px;
+
+    top:-30px;
+
+    background:rgba(255,255,255,.12);
+
+    transform:skewX(-30deg);
+
+}
+
+
+/* AVATAR */
+
+.avatar{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:#55a9df;
+
+    border:7px solid white;
+
+    position:relative;
+
+    margin:-70px auto 0;
+
+    z-index:10;
+
+    overflow:hidden;
+
+}
+
+
+.avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* MEMBER CARD CONTENT */
+
+.member-details h2{
+
+    text-align:center;
+
+    font-size:29px;
+
+    font-weight:400;
+
+    margin:30px 20px 25px;
+
+}
+
+
+.member-details p{
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#777;
+
+    line-height:1.55;
+
+    margin:15px 20px;
+
+}
+
+
+.member-details p i{
+
+    color:#777;
+
+    margin-right:7px;
+
+}
+
+
+/* =====================================================
+   MEMBER DROPDOWN
+===================================================== */
+
+.member-dropdown{
+
+    width:100%;
+
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   MEMBER INFO BOX
+===================================================== */
+
+.info-box{
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+
+    margin-bottom:40px;
+
+}
+
+
+.info-item{
+
+    padding:14px 0;
+
+    border-bottom:1px solid #eee;
+
+    font-size:17px;
+
+    color:#555;
+
+}
+
+
+.info-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.info-item{
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.info-item:hover{
+    background:#eef6fc;
+}
+
+
+.info-item.active{
+    color:#3159a2;
+    font-weight:600;
 }
 
 
