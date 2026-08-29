@@ -35,6 +35,47 @@
 
 }
 
+.menu-group{
+    width:100%;
+}
+
+
+.member-toggle{
+    cursor:pointer;
+}
+
+
+.submenu{
+    display:none;
+    padding-left:40px;
+}
+
+
+.submenu.show{
+    display:block;
+}
+
+
+.submenu-item{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:18px 15px;
+    color:#315a9c;
+    text-decoration:none;
+    font-size:20px;
+}
+
+
+.submenu-item i{
+    width:25px;
+}
+
+
+.disabled{
+    color:#aab2c0;
+}
+
    
 </style>
 <div class="fixed-top">
@@ -268,10 +309,36 @@
         </a>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-user-tie"></i>
-            <span>Member Information</span>
+        <div class="menu-group">
+
+    <div class="menu-item member-toggle">
+        <i class="fa-solid fa-user-tie"></i>
+        <span>Member Information</span>
+    </div>
+
+
+    <div class="submenu">
+
+        <a href="memberinfo.html" class="submenu-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Member Details</span>
         </a>
+
+
+        <a href="contributions.html" class="submenu-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>My Contributions</span>
+        </a>
+
+
+        <a href="#" class="submenu-item disabled">
+            <i class="fa-solid fa-comments"></i>
+            <span>Update Security Questions</span>
+        </a>
+
+    </div>
+
+</div>
 
 
         <a href="#" class="menu-item">
@@ -339,6 +406,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+
+    const memberToggle = document.querySelector(".member-toggle");
+const submenu = document.querySelector(".submenu");
+
+memberToggle.onclick = function(){
+
+    submenu.classList.toggle("show");
+
+};
 </script>
 
 <script>
