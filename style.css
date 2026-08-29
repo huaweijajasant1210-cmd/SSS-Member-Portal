@@ -1539,7 +1539,7 @@ table{
 }
 
 
-/* para hindi matakpan ang cards */
+/* space para hindi matakpan ng header */
 .dashboard-container{
-    padding-top: 120px;
+    padding-top:140px !important;
 }
