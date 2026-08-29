@@ -1778,3 +1778,75 @@ img,
 }
 
 }
+
+@media (max-width:600px){
+
+    .dashboard-container{
+        width:100%;
+        max-width:100%;
+        padding:0 15px;
+        margin-top:90px;
+    }
+
+
+    .dashboard-card{
+        width:100%;
+        border-radius:12px;
+        padding:20px;
+    }
+
+
+    .dashboard-image{
+        width:100%;
+        height:auto;
+        aspect-ratio:16/9;
+        border-radius:10px;
+    }
+
+
+    .card-title{
+        display:flex;
+        align-items:center;
+        gap:12px;
+    }
+
+
+    .card-title span{
+        font-size:22px;
+    }
+
+
+    .contribution-amount{
+        font-size:28px;
+    }
+
+
+    .contribution-bottom{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+    }
+
+
+    .blue-button{
+        width:100%;
+        text-align:center;
+    }
+
+
+    .member-info{
+        width:100%;
+        padding:15px;
+    }
+
+
+    .member-name{
+        font-size:18px;
+    }
+
+
+    .member-date{
+        font-size:14px;
+    }
+
+}
