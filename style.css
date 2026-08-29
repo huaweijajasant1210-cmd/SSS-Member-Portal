@@ -1667,3 +1667,114 @@ table{
 
 }
 
+/* GLOBAL RESPONSIVE FIT */
+
+*{
+    box-sizing:border-box;
+}
+
+html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+
+/* lahat ng container */
+div,
+section,
+main,
+header,
+footer{
+    max-width:100%;
+}
+
+
+/* fixed header */
+.fixed-top{
+    width:100%;
+    left:0;
+    right:0;
+}
+
+
+/* main dashboard area */
+.dashboard-container{
+    width:100%;
+    max-width:100%;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+
+/* lahat ng cards */
+.dashboard-card{
+    width:100%;
+    max-width:100%;
+}
+
+
+/* lahat ng images */
+img,
+.dashboard-image{
+    max-width:100%;
+    height:auto;
+}
+
+
+/* icons at buttons hindi lalabas sa screen */
+button,
+a{
+    max-width:100%;
+}
+
+
+/* text hindi mag-ooverflow */
+span,
+p,
+h1,
+h2,
+h3{
+    max-width:100%;
+    overflow-wrap:break-word;
+}
+
+
+/* mobile */
+@media(max-width:600px){
+
+    .dashboard-container{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+
+    .dashboard-card{
+        width:100%;
+    }
+
+
+    .dashboard-header{
+        width:100%;
+    }
+
+
+    .member-info{
+        width:100%;
+    }
+
+   .dashboard-container,
+.dashboard-card,
+.member-info,
+.dashboard-header{
+    width:100%;
+    max-width:100%;
+}
+
+img,
+.dashboard-image{
+    max-width:100%;
+    height:auto;
+}
+
+}
