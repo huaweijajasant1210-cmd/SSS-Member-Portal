@@ -1400,7 +1400,7 @@ html, body{
 
 body{
 
-    font-family:Arial, sans-serif;
+    font-family:Montserrat, sans-serif;
 
 }
 
@@ -1542,3 +1542,128 @@ table{
 .dashboard-container{
     padding-top:100px !important;
 }
+
+
+/* RESPONSIVE MOBILE DESIGN */
+
+*{
+    box-sizing:border-box;
+}
+
+
+.fixed-top{
+    width:100%;
+}
+
+
+.dashboard-header{
+    height:auto;
+    min-height:70px;
+    padding:10px 15px;
+}
+
+
+.member-info{
+    padding:10px 15px;
+}
+
+
+.member-name{
+    font-size:clamp(14px, 3vw, 19px);
+}
+
+
+.member-number{
+    font-size:clamp(13px, 2.5vw, 18px);
+}
+
+
+.member-date{
+    font-size:clamp(12px, 2.5vw, 16px);
+}
+
+
+.dashboard-container{
+
+    width:94%;
+    max-width:700px;
+
+    /* responsive spacing sa ilalim ng fixed header */
+    margin:clamp(80px, 12vw, 100px) auto 40px;
+
+}
+
+
+.dashboard-card{
+
+    width:100%;
+}
+
+
+.card-title span{
+
+    font-size:clamp(16px, 4vw, 22px);
+
+}
+
+
+.dashboard-image{
+
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+
+}
+
+
+/* MOBILE VIEW */
+
+@media(max-width:600px){
+
+    .profile-icon{
+
+        width:45px;
+        height:45px;
+
+    }
+
+
+    .dashboard-actions{
+
+        gap:15px;
+
+    }
+
+
+    .menu-icon{
+
+        font-size:25px;
+
+    }
+
+
+    .dashboard-container{
+
+        width:92%;
+        margin-top:90px;
+
+    }
+
+
+    .contribution-bottom{
+
+        flex-direction:column;
+        gap:15px;
+
+    }
+
+
+    .blue-button{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+}
+
