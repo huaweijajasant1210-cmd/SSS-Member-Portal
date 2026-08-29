@@ -48,142 +48,6 @@ body{
     overflow-x:visible;
 }
 
-<!-- SIDE MENU -->
-<div class="side-menu" id="sideMenu">
-
-    <div class="side-menu-header">
-        <span>Menu</span>
-
-        <button class="close-menu" id="closeMenu">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
-
-
-    <div class="menu-items">
-
-        <a href="dashboard.html" class="menu-item active">
-            <i class="fa-solid fa-border-all"></i>
-            <span>Dashboard</span>
-        </a>
-
-
-        <div class="menu-group">
-
-    <div class="menu-item member-toggle">
-        <i class="fa-solid fa-user-tie"></i>
-        <span>Member Information</span>
-    </div>
-
-
-    <div class="submenu">
-
-        <a href="memberinfo.html" class="submenu-item">
-            <i class="fa-solid fa-user"></i>
-            <span>Member Details</span>
-        </a>
-
-
-        <a href="contributions.html" class="submenu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>My Contributions</span>
-        </a>
-
-
-        <a href="#" class="submenu-item disabled">
-            <i class="fa-solid fa-comments"></i>
-            <span>Update Security Questions</span>
-        </a>
-
-    </div>
-
-</div>
-
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-fingerprint"></i>
-            <span>Services</span>
-        </a>
-
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Loans</span>
-        </a>
-
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-network-wired"></i>
-            <span>Benefits</span>
-        </a>
-
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-barcode"></i>
-            <span>Payment Reference Number</span>
-        </a>
-
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Sign Out</span>
-        </a>
-
-    </div>
-
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
-
-    menuButton.onclick = function () {
-        sideMenu.classList.add("open");
-        menuOverlay.classList.add("open");
-
-        // Hide hamburger
-        menuButton.classList.add("menu-open");
-    };
-
-    closeMenu.onclick = function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-
-        // Show hamburger again
-        menuButton.classList.remove("menu-open");
-    };
-
-    menuOverlay.onclick = function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-
-        // Show hamburger again
-        menuButton.classList.remove("menu-open");
-    };
-
-});
-
-    const memberToggle = document.querySelector(".member-toggle");
-const submenu = document.querySelector(".submenu");
-
-memberToggle.onclick = function(){
-
-    submenu.classList.toggle("show");
-
-};
-</script>
-
-
-<!-- OVERLAY -->
-
-<div 
-class="overlay"
-id="overlay"
-onclick="toggleMenu()">
-</div>
 
       <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay"></div>
@@ -2360,7 +2224,128 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+        <span>Menu</span>
+
+        <button class="close-menu" id="closeMenu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+
+    <div class="menu-items">
+
+        <a href="dashboard.html" class="menu-item">
+            <i class="fa-solid fa-border-all"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <div class="menu-group">
+
+    <div class="menu-item member-toggle">
+        <i class="fa-solid fa-user-tie"></i>
+        <span>Member Information</span>
+    </div>
+
+
+    <div class="submenu">
+
+        <a href="memberinfo.html" class="submenu-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Member Details</span>
+        </a>
+
+
+        <a href="contributions.html" class="submenu-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>My Contributions</span>
+        </a>
+
+
+        <a href="#" class="submenu-item disabled">
+            <i class="fa-solid fa-comments"></i>
+            <span>Update Security Questions</span>
+        </a>
+
+    </div>
+
+</div>
+
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span>Services</span>
+        </a>
+
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Loans</span>
+        </a>
+
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Benefits</span>
+        </a>
+
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-barcode"></i>
+            <span>Payment Reference Number</span>
+        </a>
+
+
+        <a href="#" class="menu-item">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+        </a>
+
+    </div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("menuButton");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const closeMenu = document.getElementById("closeMenu");
+
+    menuButton.onclick = function () {
+        sideMenu.classList.add("open");
+        menuOverlay.classList.add("open");
+
+        // Hide hamburger
+        menuButton.classList.add("menu-open");
+    };
+
+    closeMenu.onclick = function () {
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+
+        // Show hamburger again
+        menuButton.classList.remove("menu-open");
+    };
+
+    menuOverlay.onclick = function () {
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+
+        // Show hamburger again
+        menuButton.classList.remove("menu-open");
+    };
+
+});
+</script>
       
 </body>
 
