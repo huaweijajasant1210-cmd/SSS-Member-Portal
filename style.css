@@ -103,7 +103,7 @@ body {
 .dashboard-container {
     width: 94%;
     max-width: 700px;
-    margin:130px auto 40px;
+    margin:120px auto 40px;
 }
 
 
@@ -1540,5 +1540,5 @@ table{
 
 /* space para hindi matakpan ng header */
 .dashboard-container{
-    padding-top:120px !important;
+    padding-top:100px !important;
 }
