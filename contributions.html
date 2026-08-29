@@ -1202,253 +1202,6 @@ margin-left:auto;
 
 }   
 
-/* =========================
-   SIDE MENU DESIGN
-========================= */
-
-.side-menu{
-
-    position:fixed;
-    top:0;
-    left:-320px;
-
-    width:310px;
-    height:100vh;
-
-    background:white;
-
-    z-index:10000;
-
-    transition:.3s ease;
-
-    box-shadow:3px 0 12px rgba(0,0,0,.15);
-
-    font-family:"Montserrat",sans-serif;
-
-}
-
-
-.side-menu.open{
-
-    left:0;
-
-}
-
-
-
-/* HEADER */
-
-.side-menu-header{
-
-    height:70px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 20px;
-
-    border-bottom:1px solid #eee;
-
-    font-size:21px;
-
-    color:#333;
-
-}
-
-
-
-.close-menu{
-
-    border:none;
-
-    background:none;
-
-    font-size:26px;
-
-    color:#aab4c0;
-
-    cursor:pointer;
-
-}
-
-
-
-/* MENU ITEMS */
-
-.menu-items{
-
-    padding:20px 18px;
-
-}
-
-
-.menu-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:14px 15px;
-
-    margin-bottom:4px;
-
-    border-radius:6px;
-
-    text-decoration:none;
-
-    color:#3f5f8a;
-
-    font-size:18px;
-
-    font-weight:400;
-
-    cursor:pointer;
-
-    transition:.2s;
-
-}
-
-
-.menu-item i{
-
-    width:22px;
-
-    text-align:center;
-
-    font-size:18px;
-
-}
-
-
-/* HOVER */
-
-.menu-item:hover{
-
-    background:#e6f3fb;
-
-}
-
-
-/* ACTIVE DASHBOARD */
-
-.menu-item.active{
-
-    background:#dceefa;
-
-}
-
-
-
-/* MEMBER INFORMATION ACTIVE */
-
-.member-toggle{
-
-    background:#e6f3fb;
-
-}
-
-
-
-/* SUBMENU */
-
-.submenu{
-
-    margin-left:38px;
-
-    margin-top:8px;
-
-}
-
-
-
-.submenu-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:12px 5px;
-
-    text-decoration:none;
-
-    color:#526b8c;
-
-    font-size:16px;
-
-}
-
-
-.submenu-item i{
-
-    font-size:15px;
-
-    width:18px;
-
-}
-
-
-
-/* ACTIVE CONTRIBUTION */
-
-.submenu-item.active{
-
-    color:#3f5f8a;
-
-}
-
-
-
-/* DISABLED ITEM */
-
-.submenu-item.disabled{
-
-    color:#b9bec7;
-
-    cursor:not-allowed;
-
-    pointer-events:none;
-
-}
-
-
-.submenu-item.disabled i{
-
-    color:#b9bec7;
-
-}
-
-
-
-/* OVERLAY */
-
-.menu-overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    z-index:9999;
-
-    display:none;
-
-}
-
-
-.menu-overlay.open{
-
-    display:block;
-
-}
-
 </style>
 
 </head>
@@ -2579,13 +2332,10 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
 
 
-       <a href="#" class="submenu-item disabled">
-    <i class="fa-solid fa-comments"></i>
-    <span>
-       Update Security<br>
-       Questions
-    </span>
-</a>
+        <a href="#" class="submenu-item disabled">
+            <i class="fa-solid fa-comments"></i>
+            <span>Update Security Questions</span>
+        </a>
 
     </div>
 
@@ -2764,12 +2514,12 @@ My Contributions
 
 
 
-<a href="#" class="submenu-item disabled">
-    <i class="fa-solid fa-comments"></i>
-    <span>
-       Update Security<br>
-       Questions
-    </span>
+<a href="#">
+
+<i class="fa-solid fa-comments"></i>
+
+Update Security Questions
+
 </a>
 
 
