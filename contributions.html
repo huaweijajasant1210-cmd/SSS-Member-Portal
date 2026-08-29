@@ -2242,7 +2242,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="menu-items">
 
-        <a href="dashboard.html" class="menu-item">
+        <a href="dashboard.html" class="menu-item active">
             <i class="fa-solid fa-border-all"></i>
             <span>Dashboard</span>
         </a>
@@ -2345,7 +2345,18 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+
+    const memberToggle = document.querySelector(".member-toggle");
+const submenu = document.querySelector(".submenu");
+
+memberToggle.onclick = function(){
+
+    submenu.classList.toggle("show");
+
+};
 </script>
+
+
       
 </body>
 
