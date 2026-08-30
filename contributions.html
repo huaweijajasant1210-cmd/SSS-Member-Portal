@@ -3160,10 +3160,35 @@ function toggleLoan(){
 </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-barcode"></i>
-            <span>Payment Reference Number</span>
+      <div class="menu-group">
+
+    <div class="menu-item prn-toggle">
+
+        <i class="fa-solid fa-barcode"></i>
+
+        <span>Payment Reference Number</span>
+
+    </div>
+
+
+    <div class="submenu prn-submenu">
+
+
+        <a href="#">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Contributions</span>
         </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <span>Loans</span>
+        </a>
+
+
+    </div>
+
+</div>
 
 
         <a href="#" class="menu-item">
@@ -3251,6 +3276,20 @@ submenu.classList.toggle("show");
 
 };
 
+const prnToggle =
+document.querySelector(".prn-toggle");
+
+
+const prnSubmenu =
+document.querySelector(".prn-submenu");
+
+
+prnToggle.onclick=function(){
+
+    prnSubmenu.classList.toggle("show");
+
+};
+                          
 });
 
 
