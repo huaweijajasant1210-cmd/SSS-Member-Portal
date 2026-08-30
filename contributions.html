@@ -1650,6 +1650,34 @@ margin-left:auto;
 
 }
 
+.benefits-submenu a{
+
+    padding:18px 0;
+
+    font-size:20px;
+
+    color:#526987;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+.benefits-submenu a i{
+
+    width:30px;
+
+    font-size:24px;
+
+    color:#3159a2;
+
+}
+      
+
 </style>
 
 </head>
@@ -2891,6 +2919,16 @@ function toggleLoan(){
     loanMenu.classList.toggle("show");
 
 }
+
+      function toggleBenefits(){
+
+    const benefitsMenu =
+    document.querySelector(".benefits-submenu");
+
+
+    benefitsMenu.classList.toggle("show");
+
+}
       
 </script>
 
@@ -3061,10 +3099,65 @@ function toggleLoan(){
 </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-network-wired"></i>
-            <span>Benefits</span>
-        </a>
+       <div class="menu-group">
+
+<div class="menu-item benefits-toggle" onclick="toggleBenefits()">
+
+    <i class="fa-solid fa-network-wired"></i>
+
+    <span>Benefits</span>
+
+</div>
+
+
+<div class="submenu benefits-submenu">
+
+
+<a href="#">
+    <i class="fa-solid fa-person-pregnant"></i>
+    <span>Maternity Benefit</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-briefcase"></i>
+    <span>Unemployment Benefit</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-bed-pulse"></i>
+    <span>Sickness Benefit</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-wheelchair"></i>
+    <span>Disability Claim</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-person-cane"></i>
+    <span>Retirement Claim</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-box"></i>
+    <span>Funeral Claim</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-monument"></i>
+    <span>Death Claim</span>
+</a>
+
+
+</div>
+
+</div>
 
 
         <a href="#" class="menu-item">
@@ -3158,8 +3251,10 @@ submenu.classList.toggle("show");
 
 };
 
-
 });
+
+
+      
 </script>
 
 
