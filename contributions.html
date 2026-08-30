@@ -130,73 +130,6 @@ onclick="toggleMenu()">
 
     color:#285a9c;
 
-
-    <div class="profile-panel" id="profilePanel">
-
-    <button class="close-profile" id="closeProfile">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <div class="profile-top">
-
-        <img src="Lprof.jpeg">
-
-        <div>
-            <h3>SANTIAGO, MARK LESTER NARAG</h3>
-            <p>01-3599294-4</p>
-        </div>
-
-    </div>
-
-
-    <div class="profile-info">
-
-        <i class="fa-solid fa-circle-info"></i>
-
-        Your password will expire on Feb 14, 2027
-        <br>
-        Your last login was on Sep 15, 2026
-        <br>
-        03:54:52 PM through the SSS Website
-
-    </div>
-
-
-    <div class="profile-links">
-
-        <a href="memberinfo.html">
-            <i class="fa-solid fa-user"></i>
-            My Details
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-lock"></i>
-            Change Password
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-user-lock"></i>
-            Setup Time-based One-Time Password
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-phone"></i>
-            Contact Us
-        </a>
-
-
-        <a href="javascript:void(0)" onclick="logout()">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-        </a>
-
-
-    </div>
-
-</div>  
 }
 
 
@@ -2032,6 +1965,12 @@ margin-left:auto;
 
 }
 
+.profile-icon{
+    border:none;
+    cursor:pointer;
+    padding:0;
+}
+
 </style>
 
 </head>
@@ -2097,13 +2036,11 @@ type="button">
 </div>
 
 
-            <div class="profile-icon">
+           <button class="profile-icon" id="profileIcon">
 
-                <img
-                src="Lprof.jpeg"
-                alt="Profile">
+    <img src="Lprof.jpeg" alt="Profile">
 
-            </div>
+</button>
 
 
         </div>
@@ -3286,7 +3223,7 @@ document.addEventListener("click",function(){
 
 });
 
-const profileIcon = document.querySelector(".profile-icon");
+const profileIcon = document.getElementById("profileIcon");
 const profilePanel = document.getElementById("profilePanel");
 const closeProfile = document.getElementById("closeProfile");
 
@@ -3834,7 +3771,74 @@ Update Security Questions
 
 
 </div>
-      
+
+ 
+    <div class="profile-panel" id="profilePanel">
+
+    <button class="close-profile" id="closeProfile">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="profile-top">
+
+        <img src="Lprof.jpeg">
+
+        <div>
+            <h3>SANTIAGO, MARK LESTER NARAG</h3>
+            <p>01-3599294-4</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-info">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Your password will expire on Feb 14, 2027
+        <br>
+        Your last login was on Sep 15, 2026
+        <br>
+        03:54:52 PM through the SSS Website
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+            <i class="fa-solid fa-user"></i>
+            My Details
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            Change Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-user-lock"></i>
+            Setup Time-based One-Time Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+
+        <a href="javascript:void(0)" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </a>
+
+
+    </div>
+
+</div>       
 </body>
 
 </html>
