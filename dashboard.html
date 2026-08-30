@@ -77,6 +77,101 @@
     color:#aab2c0;
 }
 
+    .profile-icon{
+    border:none;
+    cursor:pointer;
+    padding:0;
+}
+
+
+.profile-panel{
+
+    position:fixed;
+
+    top:0;
+
+    right:-420px;
+
+    width:420px;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:99999;
+
+    box-shadow:-5px 0 15px rgba(0,0,0,.2);
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+
+.profile-panel.show{
+
+    right:0;
+
+}
+
+
+.close-profile{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    border:none;
+
+    background:none;
+
+    font-size:28px;
+
+}
+
+
+.profile-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+
+.profile-top img{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+}
+
+
+.profile-links a{
+
+    display:flex;
+
+    gap:15px;
+
+    padding:18px 0;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:20px;
+
+}
    
 </style>
 <div class="fixed-top">
@@ -88,11 +183,11 @@
     <div class="dashboard-actions">
         <i class="fa-solid fa-bell"></i>
 
-        <div class="profile-icon">
-              <img
-                src="Lprof.jpeg"
-                alt="Profile">
-        </div>
+        <button class="profile-icon" id="profileIcon">
+
+    <img src="Lprof.jpeg" alt="Profile">
+
+</button>
     </div>
 </div>
 
@@ -374,6 +469,77 @@
     </div>
 
 </div>
+
+<!-- PROFILE PANEL -->
+
+<div class="profile-panel" id="profilePanel">
+
+    <button class="close-profile" id="closeProfile">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="profile-top">
+
+        <img src="Lprof.jpeg">
+
+        <div>
+            <h3>SANTIAGO, MARK LESTER NARAG</h3>
+            <p>01-3599294-4</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-info">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Your password will expire on Feb 14, 2027
+        <br>
+        Your last login was on Sep 15, 2026
+        <br>
+        03:54:52 PM through the SSS Website
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+            <i class="fa-solid fa-user"></i>
+            My Details
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            Change Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-user-lock"></i>
+            Setup Time-based One-Time Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+
+        <a href="index.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </a>
+
+
+    </div>
+
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -414,6 +580,24 @@ const submenu = document.querySelector(".submenu");
 memberToggle.onclick = function(){
 
     submenu.classList.toggle("show");
+
+};
+
+const profileIcon = document.getElementById("profileIcon");
+const profilePanel = document.getElementById("profilePanel");
+const closeProfile = document.getElementById("closeProfile");
+
+
+profileIcon.onclick=function(){
+
+    profilePanel.classList.add("show");
+
+};
+
+
+closeProfile.onclick=function(){
+
+    profilePanel.classList.remove("show");
 
 };
 </script>
