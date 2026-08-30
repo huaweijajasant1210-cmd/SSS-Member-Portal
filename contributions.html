@@ -1329,6 +1329,174 @@ margin-left:auto;
 
 }
 
+/* ===============================
+ APPOINTMENT MODAL
+================================ */
+
+
+.appointment-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:99999;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.appointment-overlay.show{
+
+    display:flex;
+
+}
+
+
+
+.appointment-box{
+
+    width:640px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.3);
+
+    position:relative;
+
+}
+
+
+
+.close-appointment{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    border:none;
+
+    background:#eee;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:8px;
+
+    font-size:20px;
+
+    color:#777;
+
+}
+
+
+
+.appointment-box h2{
+
+    font-size:28px;
+
+    font-weight:400;
+
+    color:#444;
+
+}
+
+
+
+.appointment-box h3{
+
+    color:#526987;
+
+    font-size:25px;
+
+    font-weight:400;
+
+    margin-top:25px;
+
+}
+
+
+.appointment-box p{
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.4;
+
+}
+
+
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    background:#eef3f7;
+
+    font-family:"Montserrat";
+
+    font-size:17px;
+
+}
+
+
+.appointment-box textarea{
+
+    height:130px;
+
+    resize:none;
+
+}
+
+
+
+.next-btn{
+
+    float:right;
+
+    margin-top:20px;
+
+    background:#3159a2;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:6px;
+
+    font-size:17px;
+
+}
+
 </style>
 
 </head>
@@ -1423,18 +1591,76 @@ type="button">
      FLOATING CALENDAR
 ===================================================== -->
 
-<div class="calendar" onclick="toggleCalendar()">
+<div class="calendar" onclick="openAppointment()">
 
     <i class="fa-solid fa-calendar-days"></i>
 
+</div>
 
-    <div class="calendar-menu" id="calendarMenu">
 
-        <div class="calendar-header">
-            Calendar
-        </div>
+<!-- APPOINTMENT MODAL -->
+
+<div class="appointment-overlay" id="appointmentModal">
+
+    <div class="appointment-box">
+
+
+        <button class="close-appointment" onclick="closeAppointment()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <h2>
+            <i class="fa-solid fa-calendar-days"></i>
+            Set Appointment
+        </h2>
+
+
+        <hr>
+
+
+        <h3>
+            Say goodbye to waiting in line!
+        </h3>
+
+
+        <p>
+            Experience ultimate convenience by setting your appointments online with just a few clicks.
+        </p>
+
+
+
+        <select>
+            <option>Select Purpose</option>
+        </select>
+
+
+        <select>
+            <option>Select Region</option>
+        </select>
+
+
+        <select>
+            <option>Select Branch</option>
+        </select>
+
 
         <input type="date">
+
+
+        <select>
+            <option>Select Time</option>
+        </select>
+
+
+        <textarea placeholder="Concern(s)"></textarea>
+
+
+
+        <button class="next-btn">
+            Next <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
 
     </div>
 
@@ -2431,6 +2657,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     menu.classList.toggle("show");
+
+}
+
+ function openAppointment(){
+
+    document
+    .getElementById("appointmentModal")
+    .classList.add("show");
+
+}
+
+
+
+function closeAppointment(){
+
+    document
+    .getElementById("appointmentModal")
+    .classList.remove("show");
 
 }
 
