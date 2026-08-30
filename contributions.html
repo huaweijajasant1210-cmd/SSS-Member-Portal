@@ -1969,8 +1969,8 @@ margin-left:auto;
     border:none;
     cursor:pointer;
     padding:0;
+    background:#ddd;
 }
-
 </style>
 
 </head>
@@ -3223,23 +3223,27 @@ document.addEventListener("click",function(){
 
 });
 
+document.addEventListener("DOMContentLoaded",function(){
+
 const profileIcon = document.getElementById("profileIcon");
 const profilePanel = document.getElementById("profilePanel");
 const closeProfile = document.getElementById("closeProfile");
 
 
-profileIcon.onclick=function(){
+profileIcon.addEventListener("click",function(){
 
     profilePanel.classList.add("show");
 
-};
+});
 
 
-closeProfile.onclick=function(){
+closeProfile.addEventListener("click",function(){
 
     profilePanel.classList.remove("show");
 
-};
+});
+
+});
       
 </script>
 
