@@ -1682,9 +1682,9 @@ margin-left:auto;
 ================================ */
 
 .notification-box{
-
     position:relative;
-
+    display:flex;
+    align-items:center;
 }
 
 
@@ -1701,17 +1701,19 @@ margin-left:auto;
 
     position:absolute;
 
-    right:-20px;
+    right:0;
 
-    top:45px;
+    top:55px;
 
     width:370px;
 
+    max-width:90vw;
+
     background:white;
 
-    border-radius:8px;
+    border-radius:10px;
 
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 
     z-index:99999;
 
@@ -1796,6 +1798,20 @@ margin-left:auto;
     font-size:17px;
 
     cursor:pointer;
+
+}
+
+      @media(max-width:600px){
+
+.notification-popup{
+
+    right:-20px;
+
+    top:50px;
+
+    width:370px;
+
+}
 
 }
 
