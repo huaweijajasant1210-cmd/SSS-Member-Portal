@@ -3138,17 +3138,7 @@ function toggleLoan(){
 
 </div>
 
-<!-- SIGN OUT -->
-<a href="javascript:void(0)" class="menu-item" onclick="logout()">
-
-    <i class="fa-solid fa-right-from-bracket"></i>
-
-    <span>Sign Out</span>
-
-</a>
-
-
-</div>
+<a href="#" class="menu-item logout">
 
     </div>
 
@@ -3235,13 +3225,18 @@ submenu.classList.toggle("show");
 
 // SIGN OUT
 
-function logout(){
+const logoutBtn=document.querySelector(".logout");
 
-    localStorage.removeItem("loggedIn");
 
-    window.location.href="index.html";
+if(logoutBtn){
 
-}
+logoutBtn.onclick=function(){
+
+localStorage.removeItem("loggedIn");
+
+window.location.href="index.html";
+
+};
 
 }
 
