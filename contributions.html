@@ -1157,40 +1157,85 @@ td:last-child{
 width:100%;
 }
 
+/* ================================
+   SUBMENU STYLE
+================================ */
 
 .submenu{
 
-display:none;
+    display:none;
 
-padding-left:45px;
+    padding-left:45px;
 
 }
-
 
 
 .submenu.show{
 
-display:block;
+    display:block;
+
+}
+
+
+.submenu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 0;
+
+    text-decoration:none;
+
+    color:#526987; /* kapareho ng main menu */
+
+    font-size:17px; /* pinalaki */
+
+    font-weight:400;
+
+}
+
+
+/* submenu icons */
+
+.submenu a i{
+
+    font-size:16px;
+
+    color:#526987; /* same color */
+
+    width:20px;
 
 }
 
 
 
-.submenu a{
+/* hover */
 
-display:flex;
+.submenu a:hover{
 
-align-items:center;
+    background:#eef6fc;
 
-gap:15px;
+}
 
-padding:12px 0;
 
-text-decoration:none;
 
-color:#526987;
+/* Disabled Update Security Questions */
 
-font-size:15px;
+.submenu a.disabled{
+
+    color:#bfc6cc;
+
+    pointer-events:none;
+
+}
+
+
+.submenu a.disabled i{
+
+    color:#bfc6cc;
 
 }
 
