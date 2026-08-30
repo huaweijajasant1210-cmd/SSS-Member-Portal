@@ -1596,6 +1596,33 @@ margin-left:auto;
 
 }
 
+.service-submenu a{
+
+    padding:18px 0;
+
+    font-size:20px;
+
+    color:#526987;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+.service-submenu a i{
+
+    width:30px;
+
+    font-size:24px;
+
+    color:#3159a2;
+
+}
+
 </style>
 
 </head>
@@ -2888,10 +2915,70 @@ function closeAppointment(){
 </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-fingerprint"></i>
-            <span>Services</span>
-        </a>
+        <<div class="menu-group">
+
+
+<div class="menu-item service-toggle">
+
+    <i class="fa-solid fa-fingerprint"></i>
+
+    <span>Services</span>
+
+    <i class="fa-solid fa-chevron-down arrow"></i>
+
+</div>
+
+
+
+<div class="submenu service-submenu">
+
+
+<a href="#">
+    <i class="fa-solid fa-building-columns"></i>
+    <span>Disbursement Account</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <span>Benefit Re-disbursement</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-money-check-dollar"></i>
+    <span>Auto Debit Arrangement</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-people-roof"></i>
+    <span>Pension Booster</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-barcode"></i>
+    <span>RTC/CPO Reference Number Inquiry</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-calendar-days"></i>
+    <span>Set Appointment</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-id-card"></i>
+    <span>MySSS Card</span>
+</a>
+
+
+</div>
+
+
+</div>
 
 
         <a href="#" class="menu-item">
@@ -2968,6 +3055,21 @@ overlay.classList.remove("open");
 
 const memberToggle=
 document.querySelector(".member-toggle");
+
+const serviceToggle =
+document.querySelector(".service-toggle");
+
+
+const serviceSubmenu =
+document.querySelector(".service-submenu");
+
+
+
+serviceToggle.onclick=function(){
+
+    serviceSubmenu.classList.toggle("show");
+
+};
 
 
 const submenu=
