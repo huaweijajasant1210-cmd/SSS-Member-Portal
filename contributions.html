@@ -3190,11 +3190,10 @@ function toggleLoan(){
 
 </div>
 
-
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Sign Out</span>
-        </a>
+<a href="index.html" class="menu-item" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Sign Out</span>
+</a>
 
     </div>
 
@@ -3289,6 +3288,14 @@ prnToggle.onclick=function(){
     prnSubmenu.classList.toggle("show");
 
 };
+
+      function logout(){
+
+    localStorage.removeItem("loggedIn");
+
+    window.location.href = "index.html";
+
+}
                           
 });
 
