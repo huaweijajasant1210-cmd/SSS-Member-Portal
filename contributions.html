@@ -1676,7 +1676,128 @@ margin-left:auto;
     color:#3159a2;
 
 }
-      
+
+/* ===============================
+   NOTIFICATION POPUP
+================================ */
+
+.notification-box{
+
+    position:relative;
+
+}
+
+
+#notificationBtn{
+
+    cursor:pointer;
+
+}
+
+
+.notification-popup{
+
+    display:none;
+
+    position:absolute;
+
+    right:-20px;
+
+    top:45px;
+
+    width:370px;
+
+    background:white;
+
+    border-radius:8px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+
+    z-index:99999;
+
+    overflow:hidden;
+
+}
+
+
+.notification-popup.show{
+
+    display:block;
+
+}
+
+
+
+.notification-popup h2{
+
+    padding:25px;
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:400;
+
+    color:#444;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.notification-message{
+
+    margin:25px;
+
+    padding:25px;
+
+    background:#c9f3ff;
+
+    border-radius:8px;
+
+    display:flex;
+
+    gap:15px;
+
+    color:#526987;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+.notification-message i{
+
+    font-size:20px;
+
+}
+
+
+
+.notification-popup button{
+
+    width:90%;
+
+    margin:0 5% 25px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#3159a2;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
 
 </style>
 
@@ -1712,7 +1833,35 @@ type="button">
         <div class="dashboard-actions">
 
 
-            <i class="fa-solid fa-bell"></i>
+            <div class="notification-box">
+
+    <i class="fa-solid fa-bell" id="notificationBtn"></i>
+
+
+    <div class="notification-popup" id="notificationPopup">
+
+        <h2>Notification</h2>
+
+        <div class="notification-message">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+            You currently have no notifications.<br>
+            Your 10 most recent notifications will be<br>
+            displayed here.
+            </span>
+
+        </div>
+
+
+        <button>
+            VIEW ALL NOTIFICATIONS
+        </button>
+
+    </div>
+
+</div>
 
 
             <div class="profile-icon">
@@ -2877,6 +3026,32 @@ function toggleLoan(){
     benefitsMenu.classList.toggle("show");
 
 }
+
+
+const notificationBtn =
+document.getElementById("notificationBtn");
+
+
+const notificationPopup =
+document.getElementById("notificationPopup");
+
+
+
+notificationBtn.onclick=function(e){
+
+    e.stopPropagation();
+
+    notificationPopup.classList.toggle("show");
+
+};
+
+
+
+document.addEventListener("click",function(){
+
+    notificationPopup.classList.remove("show");
+
+});
       
 </script>
 
