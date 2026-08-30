@@ -1623,6 +1623,33 @@ margin-left:auto;
 
 }
 
+      .loan-submenu a{
+
+    padding:18px 0;
+
+    font-size:20px;
+
+    color:#526987;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+.loan-submenu a i{
+
+    width:30px;
+
+    font-size:24px;
+
+    color:#3159a2;
+
+}
+
 </style>
 
 </head>
@@ -2857,6 +2884,20 @@ function closeAppointment(){
 
 }
 
+const loanToggle =
+document.querySelector(".loan-toggle");
+
+
+const loanSubmenu =
+document.querySelector(".loan-submenu");
+
+
+loanToggle.onclick=function(){
+
+    loanSubmenu.classList.toggle("show");
+
+};
+      
 </script>
 
 <!-- MENU OVERLAY -->
@@ -2980,10 +3021,50 @@ function closeAppointment(){
 </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Loans</span>
-        </a>
+        <div class="menu-group">
+
+
+<div class="menu-item loan-toggle">
+
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+    <span>Loans</span>
+
+</div>
+
+
+
+<div class="submenu loan-submenu">
+
+
+<a href="#">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <span>Salary Loan</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-house-chimney"></i>
+    <span>Calamity/Emergency Loan</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-person-cane"></i>
+    <span>Pension Loan</span>
+</a>
+
+
+<a href="#">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <span>Loan Penalty Condonation</span>
+</a>
+
+
+</div>
+
+
+</div>
 
 
         <a href="#" class="menu-item">
