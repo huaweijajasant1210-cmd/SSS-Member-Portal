@@ -130,6 +130,73 @@ onclick="toggleMenu()">
 
     color:#285a9c;
 
+
+    <div class="profile-panel" id="profilePanel">
+
+    <button class="close-profile" id="closeProfile">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="profile-top">
+
+        <img src="Lprof.jpeg">
+
+        <div>
+            <h3>SANTIAGO, MARK LESTER NARAG</h3>
+            <p>01-3599294-4</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-info">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Your password will expire on Feb 14, 2027
+        <br>
+        Your last login was on Sep 15, 2026
+        <br>
+        03:54:52 PM through the SSS Website
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+            <i class="fa-solid fa-user"></i>
+            My Details
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-lock"></i>
+            Change Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-user-lock"></i>
+            Setup Time-based One-Time Password
+        </a>
+
+
+        <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+
+        <a href="javascript:void(0)" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+        </a>
+
+
+    </div>
+
+</div>  
 }
 
 
@@ -1815,6 +1882,156 @@ margin-left:auto;
 
 }
 
+.profile-panel{
+
+    position:fixed;
+
+    top:0;
+
+    right:-420px;
+
+    width:420px;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:99999;
+
+    box-shadow:-5px 0 15px rgba(0,0,0,.2);
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+
+.profile-panel.show{
+
+    right:0;
+
+}
+
+
+.close-profile{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    border:none;
+
+    background:none;
+
+    font-size:28px;
+
+    color:#777;
+
+}
+
+
+
+.profile-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+
+.profile-top img{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+}
+
+
+
+.profile-top h3{
+
+    font-size:20px;
+
+    font-weight:400;
+
+    margin:0;
+
+}
+
+
+.profile-top p{
+
+    margin:5px 0;
+
+}
+
+
+
+.profile-info{
+
+    margin-top:45px;
+
+    background:#c9f3ff;
+
+    padding:20px;
+
+    border-radius:8px;
+
+    line-height:1.6;
+
+    color:#526987;
+
+}
+
+
+
+.profile-links{
+
+    margin-top:30px;
+
+}
+
+
+
+.profile-links a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 0;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:20px;
+
+}
+
+
+
+.profile-links i{
+
+    width:25px;
+
+    color:#3159a2;
+
+}
+
 </style>
 
 </head>
@@ -3068,6 +3285,24 @@ document.addEventListener("click",function(){
     notificationPopup.classList.remove("show");
 
 });
+
+const profileIcon = document.querySelector(".profile-icon");
+const profilePanel = document.getElementById("profilePanel");
+const closeProfile = document.getElementById("closeProfile");
+
+
+profileIcon.onclick=function(){
+
+    profilePanel.classList.add("show");
+
+};
+
+
+closeProfile.onclick=function(){
+
+    profilePanel.classList.remove("show");
+
+};
       
 </script>
 
