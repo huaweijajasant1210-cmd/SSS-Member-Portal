@@ -2884,19 +2884,13 @@ function closeAppointment(){
 
 }
 
-const loanToggle =
-document.querySelector(".loan-toggle");
+function toggleLoan(){
 
+    const loanMenu = document.querySelector(".loan-submenu");
 
-const loanSubmenu =
-document.querySelector(".loan-submenu");
+    loanMenu.classList.toggle("show");
 
-
-loanToggle.onclick=function(){
-
-    loanSubmenu.classList.toggle("show");
-
-};
+}
       
 </script>
 
@@ -3024,7 +3018,7 @@ loanToggle.onclick=function(){
         <div class="menu-group">
 
 
-<div class="menu-item loan-toggle">
+<div class="menu-item loan-toggle" onclick="toggleLoan()">
 
     <i class="fa-solid fa-hand-holding-dollar"></i>
 
