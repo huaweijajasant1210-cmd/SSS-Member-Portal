@@ -1497,6 +1497,105 @@ margin-left:auto;
 
 }
 
+      /* =================================
+ CONTRIBUTION DROPDOWN
+================================= */
+
+
+.contribution-select{
+
+    width:100%;
+
+    height:55px;
+
+    border:1px solid #555;
+
+    border-radius:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:20px;
+
+    color:#555;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.contribution-menu{
+
+    display:none;
+
+    background:white;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+
+    margin-bottom:20px;
+
+}
+
+
+
+.contribution-menu.show{
+
+    display:block;
+
+}
+
+
+
+.contribution-menu div{
+
+    padding:14px 25px;
+
+    font-size:20px;
+
+    font-weight:400;
+
+    color:#444;
+
+    font-family:"Montserrat",sans-serif;
+
+}
+
+
+
+.contribution-menu div:hover{
+
+    background:#f1f5f8;
+
+}
+
+
+
+.contribution-menu .active-option{
+
+    background:#1769ff;
+
+    color:white;
+
+    font-size:22px;
+
+    letter-spacing:.5px;
+
+}
+
 </style>
 
 </head>
@@ -1829,6 +1928,49 @@ onclick="window.location.href='contributions.html'">
           <!-- SUMMARY TOP -->
 
 <div class="summary">
+
+      <div class="contribution-select" onclick="toggleContributionMenu()">
+
+    <span id="selectedContribution">
+        Contributions
+    </span>
+
+    <i class="fa-solid fa-chevron-down"></i>
+
+
+</div>
+
+
+<div class="contribution-menu" id="contributionMenu">
+
+    <div class="active-option">
+        MONTHLY CONTRIBUTIONS
+    </div>
+
+
+    <div>
+        SE/VM CONTRIBUTIONS
+    </div>
+
+
+    <div>
+        FLEXI-FUND
+    </div>
+
+
+    <div>
+        MANDATORY PROVIDENT FUND
+    </div>
+
+
+    <div>
+        PENSION BOOSTER
+    </div>
+
+
+</div>
+
+
 
 
 <div class="summary-title">
@@ -2675,6 +2817,16 @@ function closeAppointment(){
     document
     .getElementById("appointmentModal")
     .classList.remove("show");
+
+}
+
+      function toggleContributionMenu(){
+
+    const menu =
+    document.getElementById("contributionMenu");
+
+
+    menu.classList.toggle("show");
 
 }
 
