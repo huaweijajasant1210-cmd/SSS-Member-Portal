@@ -45,6 +45,35 @@
     cursor:pointer;
 }
 
+.dropdown-toggle{
+    cursor:pointer;
+}
+
+
+.menu-item{
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 15px;
+
+    color:#526987;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+}
+
+
+.menu-item i{
+
+    width:25px;
+
+}
+
 
 .submenu{
     display:none;
@@ -590,36 +619,172 @@
 </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-fingerprint"></i>
-            <span>Services</span>
-        </a>
+       <!-- SERVICES -->
+
+<div class="menu-group">
+
+<div class="menu-item dropdown-toggle">
+
+<i class="fa-solid fa-fingerprint"></i>
+
+<span>Services</span>
+
+</div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Loans</span>
-        </a>
+<div class="submenu">
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+<span>Salary Loan</span>
+
+</a>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-network-wired"></i>
-            <span>Benefits</span>
-        </a>
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-person-cane"></i>
+
+<span>Pension Loan</span>
+
+</a>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-barcode"></i>
-            <span>Payment Reference Number</span>
-        </a>
+</div>
+
+</div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Sign Out</span>
-        </a>
 
-    </div>
+<!-- LOANS -->
+
+<div class="menu-group">
+
+<div class="menu-item dropdown-toggle">
+
+<i class="fa-solid fa-hand-holding-dollar"></i>
+
+<span>Loans</span>
+
+</div>
+
+
+<div class="submenu">
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+<span>Loan Status</span>
+
+</a>
+
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-money-bill"></i>
+
+<span>Loan Payment</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- BENEFITS -->
+
+<div class="menu-group">
+
+<div class="menu-item dropdown-toggle">
+
+<i class="fa-solid fa-network-wired"></i>
+
+<span>Benefits</span>
+
+</div>
+
+
+<div class="submenu">
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-person-pregnant"></i>
+
+<span>Maternity Benefit</span>
+
+</a>
+
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-wheelchair"></i>
+
+<span>Disability Benefit</span>
+
+</a>
+
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-chair"></i>
+
+<span>Retirement Benefit</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- PRN -->
+
+<div class="menu-group">
+
+<div class="menu-item dropdown-toggle">
+
+<i class="fa-solid fa-barcode"></i>
+
+<span>Payment Reference Number</span>
+
+</div>
+
+
+<div class="submenu">
+
+<a href="#" class="submenu-item">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>Generate PRN</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- SIGN OUT -->
+
+<a href="index.html" class="menu-item">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Sign Out</span>
+
+</a>
 
 </div>
 
@@ -755,32 +920,70 @@ document.addEventListener("DOMContentLoaded", function () {
         menuButton.classList.remove("menu-open");
     };
 
-    document.addEventListener("click", function(e){
+  document.addEventListener("click", function(e){
 
-    if(
-        !sideMenu.contains(e.target) &&
-        !menuButton.contains(e.target)
-    ){
+if(
+!sideMenu.contains(e.target) &&
+!menuButton.contains(e.target)
+){
 
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
+sideMenu.classList.remove("open");
 
-        menuButton.classList.remove("menu-open");
+menuOverlay.classList.remove("open");
 
-    }
+menuButton.classList.remove("menu-open");
+
+
+document.querySelectorAll(".submenu").forEach(function(menu){
+
+menu.classList.remove("show");
 
 });
 
+
+}
+
 });
 
-    const memberToggle = document.querySelector(".member-toggle");
-const submenu = document.querySelector(".submenu");
 
-memberToggle.onclick = function(){
+  const dropdownMenus = document.querySelectorAll(
+".member-toggle, .dropdown-toggle"
+);
 
-    submenu.classList.toggle("show");
+
+dropdownMenus.forEach(function(item){
+
+
+item.onclick=function(e){
+
+e.stopPropagation();
+
+
+let submenu = this.nextElementSibling;
+
+
+// isara lahat muna
+
+document.querySelectorAll(".submenu").forEach(function(menu){
+
+if(menu !== submenu){
+
+menu.classList.remove("show");
+
+}
+
+});
+
+
+// open selected
+
+submenu.classList.toggle("show");
+
 
 };
+
+
+});
 
 const profileIcon = document.getElementById("profileIcon");
 const profilePanel = document.getElementById("profilePanel");
