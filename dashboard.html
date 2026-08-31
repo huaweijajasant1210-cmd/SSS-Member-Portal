@@ -151,7 +151,7 @@
 
 .profile-top h3{
 
-    font-size:15px;
+    font-size:20px;
 
     font-weight:500;
 
@@ -164,7 +164,7 @@
 
 .profile-top p{
 
-    font-size:12px;
+    font-size:16px;
 
     color:#777;
 
@@ -184,7 +184,7 @@
 
     border-radius:4px;
 
-    font-size:12px;
+    font-size:16px;
 
     line-height:1.5;
 
@@ -215,7 +215,7 @@
 
     color:#60758b;
 
-    font-size:16px;
+    font-size:20px;
 
 }
 
@@ -226,7 +226,6 @@
 
     color:#4169a1;
 
-}
 }
 
 .notification-icon{
@@ -249,11 +248,11 @@
 
     position:fixed;
 
-    top:80px;
+    top:75px;
 
-    left:20px;
+    right:90px;
 
-    width:540px;
+    width:420px;
 
     background:white;
 
@@ -266,7 +265,6 @@
     display:none;
 
 }
-
 
 .notification-panel.show{
 
@@ -789,7 +787,11 @@ const profilePanel = document.getElementById("profilePanel");
 const closeProfile = document.getElementById("closeProfile");
 
 
-profileIcon.onclick=function(){
+profileIcon.onclick=function(e){
+
+    e.stopPropagation();
+
+    notificationPanel.classList.remove("show");
 
     profilePanel.classList.add("show");
 
@@ -813,15 +815,35 @@ notificationIcon.onclick=function(e){
 
     e.stopPropagation();
 
+    profilePanel.classList.remove("show");
+
     notificationPanel.classList.toggle("show");
 
 };
 
 
+document.addEventListener("click",function(e){
 
-document.addEventListener("click",function(){
 
-    notificationPanel.classList.remove("show");
+if(
+!notificationPanel.contains(e.target) &&
+!notificationIcon.contains(e.target)
+){
+
+notificationPanel.classList.remove("show");
+
+}
+
+
+if(
+!profilePanel.contains(e.target) &&
+!profileIcon.contains(e.target)
+){
+
+profilePanel.classList.remove("show");
+
+}
+
 
 });
 </script>
