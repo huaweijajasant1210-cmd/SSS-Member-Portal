@@ -228,6 +228,103 @@
 
 }
 }
+
+.notification-icon{
+
+    border:none;
+    background:none;
+
+    font-size:28px;
+
+    color:#2f6db3;
+
+    cursor:pointer;
+
+}
+
+
+/* NOTIFICATION PANEL */
+
+.notification-panel{
+
+    position:fixed;
+
+    top:80px;
+
+    left:20px;
+
+    width:540px;
+
+    background:white;
+
+    border-radius:8px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    z-index:99999;
+
+    display:none;
+
+}
+
+
+.notification-panel.show{
+
+    display:block;
+
+}
+
+
+.notification-title{
+
+    font-size:30px;
+
+    padding:25px;
+
+    border-bottom:1px solid #ddd;
+
+    color:#333;
+
+}
+
+
+.notification-box{
+
+    background:#c8f3ff;
+
+    margin:25px;
+
+    padding:25px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    color:#567;
+
+}
+
+
+
+.notification-button{
+
+    margin:0 25px 25px;
+
+    background:#315aa6;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:5px;
+
+    font-size:18px;
+
+}
    
 </style>
 <div class="fixed-top">
@@ -237,7 +334,9 @@
 </button>
 
     <div class="dashboard-actions">
-        <i class="fa-solid fa-bell"></i>
+        <button class="notification-icon" id="notificationIcon">
+    <i class="fa-solid fa-bell"></i>
+</button>
 
         <button class="profile-icon" id="profileIcon">
 
@@ -596,6 +695,36 @@
 
 </div>
 
+<!-- NOTIFICATION PANEL -->
+
+<div class="notification-panel" id="notificationPanel">
+
+    <div class="notification-title">
+        Notification
+    </div>
+
+
+    <div class="notification-box">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        You currently have no notifications.
+
+        <br>
+
+        Your 10 most recent notifications will be displayed here.
+
+    </div>
+
+
+    <div class="notification-button">
+
+        VIEW ALL NOTIFICATIONS
+
+    </div>
+
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -672,6 +801,29 @@ closeProfile.onclick=function(){
     profilePanel.classList.remove("show");
 
 };
+
+ const notificationIcon =
+document.getElementById("notificationIcon");
+
+const notificationPanel =
+document.getElementById("notificationPanel");
+
+
+notificationIcon.onclick=function(e){
+
+    e.stopPropagation();
+
+    notificationPanel.classList.toggle("show");
+
+};
+
+
+
+document.addEventListener("click",function(){
+
+    notificationPanel.classList.remove("show");
+
+});
 </script>
 
 <script>
