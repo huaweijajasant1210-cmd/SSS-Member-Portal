@@ -114,13 +114,14 @@
 .close-profile{
 
     position:absolute;
-    right:20px;
-    top:20px;
+    right:18px;
+    top:18px;
 
     border:none;
     background:none;
 
-    font-size:25px;
+    font-size:24px;
+
     color:#777;
 
 }
@@ -130,7 +131,8 @@
 
     display:flex;
     align-items:center;
-    gap:15px;
+
+    gap:12px;
 
     margin-top:35px;
 
@@ -149,8 +151,13 @@
 
 .profile-top h3{
 
-    font-size:16px;
+    font-size:15px;
+
     font-weight:500;
+
+    line-height:1.2;
+
+    color:#4d5968;
 
 }
 
@@ -161,26 +168,37 @@
 
     color:#777;
 
+    margin-top:3px;
+
 }
 
 
 
 .profile-info{
 
-    background:#c8f1ff;
+    background:#c9f2ff;
 
-    padding:15px;
+    padding:12px;
 
-    margin-top:30px;
+    margin-top:25px;
 
-    border-radius:5px;
+    border-radius:4px;
 
-    font-size:13px;
+    font-size:12px;
+
+    line-height:1.5;
 
     color:#60758b;
 
 }
 
+
+
+.profile-links{
+
+    margin-top:15px;
+
+}
 
 
 .profile-links a{
@@ -609,6 +627,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Show hamburger again
         menuButton.classList.remove("menu-open");
     };
+
+    document.addEventListener("click", function(e){
+
+    if(
+        !sideMenu.contains(e.target) &&
+        !menuButton.contains(e.target)
+    ){
+
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+
+        menuButton.classList.remove("menu-open");
+
+    }
+
+});
 
 });
 
