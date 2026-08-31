@@ -788,6 +788,8 @@
 
 </div>
 
+</div>
+
 <!-- PROFILE PANEL -->
 
 <div class="profile-panel" id="profilePanel">
@@ -920,68 +922,53 @@ document.addEventListener("DOMContentLoaded", function () {
         menuButton.classList.remove("menu-open");
     };
 
-  document.addEventListener("click", function(e){
+document.addEventListener("click", function(e){
 
-if(
-!sideMenu.contains(e.target) &&
-!menuButton.contains(e.target)
-){
+    if(
+    !sideMenu.contains(e.target) &&
+    !menuButton.contains(e.target)
+    ){
 
-sideMenu.classList.remove("open");
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+        menuButton.classList.remove("menu-open");
 
-menuOverlay.classList.remove("open");
-
-menuButton.classList.remove("menu-open");
-
-
-document.querySelectorAll(".submenu").forEach(function(menu){
-
-menu.classList.remove("show");
+    }
 
 });
 
 
-}
+// DROPDOWN MENU
 
-});
-
-
-  const dropdownMenus = document.querySelectorAll(
-".member-toggle, .dropdown-toggle"
-);
+const dropdownMenus = document.querySelectorAll(".menu-group .menu-item");
 
 
 dropdownMenus.forEach(function(item){
 
+    item.onclick=function(e){
 
-item.onclick=function(e){
-
-e.stopPropagation();
-
-
-let submenu = this.nextElementSibling;
+        e.stopPropagation();
 
 
-// isara lahat muna
+        let submenu = this.nextElementSibling;
 
-document.querySelectorAll(".submenu").forEach(function(menu){
 
-if(menu !== submenu){
+        document.querySelectorAll(".submenu").forEach(function(menu){
 
-menu.classList.remove("show");
+            if(menu !== submenu){
 
-}
+                menu.classList.remove("show");
+
+            }
+
+        });
+
+
+        submenu.classList.toggle("show");
+
+    };
 
 });
-
-
-// open selected
-
-submenu.classList.toggle("show");
-
-
-};
-
 
 });
 
