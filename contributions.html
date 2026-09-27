@@ -5,12 +5,12 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contributions</title>
+
 <link rel="stylesheet" href="style.css">
-      
+
 <link
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 rel="stylesheet">
@@ -35,32 +35,16 @@ html{
 }
 
 body{
-
     margin:0;
-
     font-family:"Montserrat",sans-serif;
-
-    background:#eef6fc;
-
-    color:#444;
-
-  
-    overflow-x:visible;
+    background:#eaf5fc;
+    color:#555;
+    overflow-x:hidden;
 }
 
-<!-- OVERLAY -->
-
-<div 
-class="overlay"
-id="overlay"
-onclick="toggleMenu()">
-</div>
-
-      <!-- MENU OVERLAY -->
-<div class="menu-overlay" id="menuOverlay"></div>
 
 /* =====================================================
-   STICKY HEADER
+   FIXED DESKTOP HEADER
 ===================================================== */
 
 .sticky-header{
@@ -68,80 +52,26 @@ onclick="toggleMenu()">
     position:fixed;
 
     top:0;
-
     left:0;
 
     width:100%;
 
+    height:82px;
+
+    background:#fff;
+
     z-index:9999;
 
-    background:white;
+    border-bottom:1px solid #d9e3ea;
 
 }
 
 
-/* =====================================================
-   TOP HEADER
-===================================================== */
+/* TOP HEADER */
 
-.dashboard-header{
+.top-header{
 
-    height:75px;
-
-    background:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 22px;
-
-    box-shadow:0 2px 8px #ddd;
-
-}
-
-
-.menu-icon{
-
-    border:none;
-
-    background:none;
-
-    font-size:32px;
-
-    color:#285a9c;
-
-    cursor:pointer;
-
-}
-
-
-.dashboard-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
-    font-size:28px;
-
-    color:#285a9c;
-
-}
-
-
-.profile-icon{
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    background:#ddd;
+    height:42px;
 
     display:flex;
 
@@ -149,60 +79,173 @@ onclick="toggleMenu()">
 
     justify-content:center;
 
+    position:relative;
+
+    border-bottom:1px solid #e5e9ed;
+
+}
+
+
+/* LOGO */
+
+.sss-logo{
+
+    position:absolute;
+
+    left:calc(50% - 570px);
+
+    top:5px;
+
+    height:32px;
+
+    width:auto;
+
+}
+
+
+/* DATE */
+
+.header-date{
+
+    position:absolute;
+
+    right:calc(50% - 570px);
+
+    top:5px;
+
+    height:32px;
+
+    padding:7px 13px;
+
+    background:#f7f8fa;
+
+    border:1px solid #e2e5e8;
+
+    border-radius:3px;
+
+    font-size:11px;
+
+    color:#64717d;
+
+}
+
+.header-date i{
+
+    color:#315a9c;
+
+    margin-right:7px;
+
+}
+
+
+/* HEADER ICONS */
+
+.header-icons{
+
+    position:absolute;
+
+    right:calc(50% - 670px);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    color:#315a9c;
+
+    font-size:16px;
+
+}
+
+
+.header-profile{
+
+    width:29px;
+
+    height:29px;
+
+    border-radius:50%;
+
     overflow:hidden;
 
 }
 
 
-.profile-icon img{
+.header-profile img{
 
     width:100%;
-
     height:100%;
-
     object-fit:cover;
 
 }
 
 
 /* =====================================================
-   MEMBER INFO HEADER
+   DESKTOP NAVIGATION
 ===================================================== */
 
-.member-info{
+.desktop-nav{
 
-    background:white;
+    height:40px;
 
-    padding:15px 25px 17px;
+    display:flex;
 
-    box-shadow:0 3px 8px #ccc;
+    justify-content:center;
 
-}
+    align-items:center;
 
-
-.member-name{
-
-    font-size:20px;
-
-    font-weight:400;
+    gap:5px;
 
 }
 
 
-.member-number{
+.desktop-nav a,
+.nav-dropdown{
 
-    font-size:18px;
+    height:32px;
 
-    margin-top:5px;
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:0 14px;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    border-radius:4px;
 
 }
 
 
-.member-date{
+.desktop-nav a:hover,
+.nav-dropdown:hover{
 
-    margin-top:10px;
+    background:#e5f2fb;
 
-    font-size:17px;
+}
+
+
+.desktop-nav i{
+
+    color:#315a9c;
+
+    font-size:13px;
+
+}
+
+
+.nav-dropdown.active{
+
+    background:#d9edf9;
 
     color:#315a9c;
 
@@ -210,45 +253,70 @@ onclick="toggleMenu()">
 
 
 /* =====================================================
-   FLOATING CALENDAR
+   DROPDOWN MENU
 ===================================================== */
 
-/* ===============================
-   FLOATING CALENDAR BUTTON
-================================ */
+.nav-group{
 
-.calendar{
-
-    position:absolute;
-
-    right:0;
-
-    top:365px;
-
-    background:#b9dcff;
-
-    padding:22px 16px;
-
-    border-radius:20px 0 0 20px;
-
-    font-size:35px;
-
-    color:#285a9c;
-
-    z-index:500;
-
-    opacity:.55;
-
-    cursor:pointer;
-
-    transition:.3s;
+    position:relative;
 
 }
 
 
-.calendar:hover{
+.nav-submenu{
 
-    opacity:.85;
+    display:none;
+
+    position:absolute;
+
+    top:32px;
+
+    left:0;
+
+    width:230px;
+
+    background:#fff;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.18);
+
+    border:1px solid #e5e5e5;
+
+    border-radius:4px;
+
+    padding:7px 0;
+
+    z-index:10001;
+
+}
+
+
+.nav-group:hover .nav-submenu{
+
+    display:block;
+
+}
+
+
+.nav-submenu a{
+
+    display:flex;
+
+    width:100%;
+
+    height:auto;
+
+    padding:10px 15px;
+
+    font-size:12px;
+
+    border-radius:0;
+
+}
+
+
+.nav-submenu a:hover{
+
+    background:#eef6fc;
 
 }
 
@@ -259,157 +327,152 @@ onclick="toggleMenu()">
 
 .main-content{
 
-    width:100%;
-    max-width:900px;
+    width:1050px;
+
+    max-width:calc(100% - 40px);
+
     margin:0 auto;
 
-    padding-top:220px;
+    padding-top:98px;
 
-    padding-left:20px;
-    padding-right:20px;
-
-    padding-bottom:80px;
-
-}
-
-/* =====================================================
-   MEMBER TITLE
-===================================================== */
-
-.member-title{
-
-    font-size:21px;
-
-    margin:10px 0 18px;
-
-    color:#555;
-
-}
-
-
-.member-title span{
-
-    color:#333;
+    padding-bottom:60px;
 
 }
 
 
 /* =====================================================
-   MEMBER DETAILS CARD
+   BREADCRUMB
 ===================================================== */
 
-.member-details{
+.breadcrumb{
+
+    font-size:12px;
+
+    color:#65717c;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   CALENDAR BUTTON
+===================================================== */
+
+.calendar-button{
+
+    position:fixed;
+
+    right:0;
+
+    top:126px;
+
+    width:48px;
+
+    height:55px;
+
+    background:#c6e6fa;
+
+    color:#315a9c;
+
+    border-radius:9px 0 0 9px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.1);
+
+    cursor:pointer;
+
+    z-index:100;
+
+}
+
+
+/* =====================================================
+   MEMBER CARD
+===================================================== */
+
+.member-card{
 
     background:white;
 
-    border-radius:9px;
+    border-radius:5px;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.14);
 
     overflow:hidden;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.14);
-
-    margin-bottom:35px;
+    margin-bottom:15px;
 
 }
 
 
 /* COVER */
 
-.cover{
+.member-cover{
 
-    height:210px;
+    height:92px;
 
     background:
+
     linear-gradient(
-        120deg,
-        #a9d8f3 0%,
-        #5eaddd 35%,
-        #3396d0 70%,
-        #2782b7 85%,
-        #f6b35f 85%,
-        #f6b35f 100%
+        125deg,
+        #acd8ef 0%,
+        #acd8ef 30%,
+        #61afe0 30%,
+        #61afe0 46%,
+        #379bd4 46%,
+        #379bd4 58%,
+        #2b88bf 58%,
+        #2b88bf 70%,
+        #f3b477 70%,
+        #f3b477 100%
     );
 
-    position:relative;
+}
 
-    overflow:hidden;
+
+/* PROFILE INFORMATION */
+
+.member-profile{
+
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 20px;
 
 }
 
 
-/* diagonal design */
+.profile-picture{
 
-.cover::before{
+    width:67px;
 
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:300px;
-
-    left:70px;
-
-    top:-30px;
-
-    background:rgba(255,255,255,.18);
-
-    transform:skewX(-30deg);
-
-}
-
-
-.cover::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:300px;
-
-    right:80px;
-
-    top:-30px;
-
-    background:rgba(255,255,255,.12);
-
-    transform:skewX(-30deg);
-
-}
-
-
-/* AVATAR */
-
-.avatar{
-
-    width:140px;
-
-    height:140px;
+    height:67px;
 
     border-radius:50%;
 
-    background:#55a9df;
-
-    border:7px solid white;
-
-    position:relative;
-
-    margin:-70px auto 0;
-
-    z-index:10;
-
     overflow:hidden;
+
+    margin-right:16px;
+
+    flex-shrink:0;
 
 }
 
 
-.avatar img{
+.profile-picture img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -417,378 +480,429 @@ onclick="toggleMenu()">
 }
 
 
-/* MEMBER CARD CONTENT */
+.profile-details{
 
-.member-details h2{
+    display:flex;
 
-    text-align:center;
+    flex-direction:column;
 
-    font-size:29px;
-
-    font-weight:400;
-
-    margin:30px 20px 25px;
+    justify-content:center;
 
 }
 
 
-.member-details p{
-
-    text-align:center;
+.profile-name{
 
     font-size:18px;
 
-    color:#777;
+    color:#555;
 
-    line-height:1.55;
-
-    margin:15px 20px;
+    margin-bottom:9px;
 
 }
 
 
-.member-details p i{
+.profile-information{
 
-    color:#777;
+    display:flex;
 
-    margin-right:7px;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:0;
+
+    font-size:11px;
+
+    color:#89929a;
+
+}
+
+
+.profile-information span{
+
+    padding-right:10px;
+
+    margin-right:10px;
+
+    border-right:1px solid #ddd;
+
+}
+
+
+.profile-information span:last-child{
+
+    border-right:none;
+
+}
+
+
+.profile-information i{
+
+    margin-right:4px;
+
+    color:#858e96;
 
 }
 
 
 /* =====================================================
-   MEMBER DROPDOWN
+   MEMBER TABS
 ===================================================== */
 
-.member-dropdown{
+.member-tabs{
 
-    width:100%;
+    display:flex;
 
-    border:none;
+    gap:5px;
 
-    background:#3159a2;
+    margin-bottom:17px;
+
+}
+
+
+.member-tab{
+
+    padding:8px 14px;
+
+    border-radius:4px;
+
+    color:#526987;
+
+    font-size:12px;
+
+    text-decoration:none;
+
+}
+
+
+.member-tab:hover{
+
+    background:#dceefa;
+
+}
+
+
+.member-tab.active{
+
+    background:#315fa8;
 
     color:white;
 
-    padding:15px;
-
-    border-radius:8px;
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-    margin-bottom:20px;
+    box-shadow:0 2px 4px rgba(0,0,0,.18);
 
 }
 
 
 /* =====================================================
-   MEMBER INFO BOX
+   CONTRIBUTIONS MAIN PANEL
 ===================================================== */
 
-.info-box{
+.contribution-panel{
 
-    background:white;
+    background:#fff;
 
-    border-radius:8px;
+    border-radius:4px;
 
-    padding:25px;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
 
-    box-shadow:0 2px 8px rgba(0,0,0,.10);
-
-    margin-bottom:40px;
+    padding:22px;
 
 }
 
 
-.info-item{
+/* TITLE */
 
-    padding:14px 0;
+.panel-title{
 
-    border-bottom:1px solid #eee;
+    height:34px;
 
-    font-size:17px;
+    border-bottom:1px solid #e5e5e5;
+
+    color:#555;
+
+    font-size:13px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    margin-bottom:30px;
+
+}
+
+
+.panel-title i{
+
+    color:#333;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTION CONTENT
+===================================================== */
+
+.contribution-content{
+
+    display:grid;
+
+    grid-template-columns:215px 1fr;
+
+    gap:55px;
+
+    align-items:start;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTION TYPES
+===================================================== */
+
+.contribution-types{
+
+    width:215px;
+
+}
+
+
+.contribution-type{
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 15px;
+
+    background:#d7ebf8;
+
+    border-bottom:1px solid #c6dfef;
+
+    color:#526987;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+}
+
+
+.contribution-type:first-child{
+
+    background:#fff;
+
+    border-bottom:none;
 
     color:#555;
 
 }
 
 
-.info-item:last-child{
+.contribution-type:hover{
 
-    border-bottom:none;
+    background:#c9e5f5;
 
-}
-
-.info-item{
-    cursor:pointer;
-    transition:.3s;
-}
-
-
-.info-item:hover{
-    background:#eef6fc;
-}
-
-
-.info-item.active{
-    color:#3159a2;
-    font-weight:600;
 }
 
 
 /* =====================================================
-   CONTRIBUTION SECTION
+   TABLE SIDE
 ===================================================== */
 
-.contributions-section{
-    width:100%;
+.table-side{
+
+    min-width:0;
+
+}
+
+
+/* ENTRIES */
+
+.entries-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-bottom:5px;
+
+    font-size:10px;
+
+    color:#555;
+
+}
+
+
+.entries-select{
+
+    width:50px;
+
+    height:22px;
+
+    border:1px solid #ddd;
+
+    border-radius:2px;
+
+    font-size:10px;
+
     background:white;
-    border-radius:9px;
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-    padding:25px;
-    margin-top:20px;
-    overflow:visible;
-}
-
-
-/* YEAR */
-
-.year-navigation{
-
-    display:flex;
-
-    align-items:center;
-
-    width:100%;
-
-    margin-bottom:0;
-
-}
-
-
-.year-arrow{
-
-    width:55px;
-
-    height:55px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#285a9c;
-
-    font-size:55px;
-
-    cursor:pointer;
-
-    user-select:none;
-
-}
-
-
-.year{
-
-    flex:1;
-
-    background:#dff2ff;
-
-    padding:15px;
-
-    text-align:center;
-
-    font-size:22px;
-
-    color:#52606d;
 
 }
 
 
 /* =====================================================
-   TABLE AREA
+   CONTRIBUTION TABLE
 ===================================================== */
 
-.table-area{
-
-    position:relative;
-
-    width:100%;
-
-}
-
-
-/* SIDE ARROWS */
-
-.side-arrow{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    font-size:55px;
-
-    background:none;
-
-    border:none;
-
-    color:#285a9c;
-
-    cursor:pointer;
-
-    z-index:10;
-
-}
-
-
-.side-arrow.left{
-
-    left:-55px;
-
-}
-
-
-.side-arrow.right{
-
-    right:-55px;
-
-}
-
-
-/* =====================================================
-   TABLE
-===================================================== */
-
-.table-wrapper{
-
-    width:100%;
-
-    overflow:hidden;
-
-}
-
-
-table{
+.contribution-table{
 
     width:100%;
 
     border-collapse:collapse;
 
-    font-size:20px;
+    table-layout:fixed;
+
+    font-size:10px;
 
 }
 
 
-th{
+.contribution-table th{
 
-    background:#b0d7ee;
+    height:25px;
 
-    padding:15px;
-
-    color:#52606d;
+    color:#7b858e;
 
     font-weight:500;
 
     text-align:center;
 
-    border-right:1px solid rgba(255,255,255,.6);
+    background:white;
+
+    padding:3px;
 
 }
 
 
-th:first-child{
+.contribution-table th:first-child{
 
-    width:35%;
-
-}
-
-
-th:last-child{
-
-    width:65%;
+    width:48px;
 
 }
 
 
-td{
+.contribution-table td{
 
-    padding:14px;
+    height:29px;
 
-    height:66px;
-
-    border-bottom:1px solid #eee;
-
-}
-
-
-td:first-child{
-
-    background:#acd5ee;
-
-    width:35%;
+    padding:4px 5px;
 
     text-align:center;
 
+    color:#444;
+
+    white-space:nowrap;
+
 }
 
 
-td:last-child{
+.contribution-table tbody tr:nth-child(odd){
 
-    text-align:right;
+    background:#eeeeee;
 
-    padding-right:18px;
+}
 
-    background:#fafcfd;
+
+.contribution-table tbody tr:nth-child(even){
+
+    background:#f8f8f8;
+
+}
+
+
+.contribution-table td:first-child{
+
+    font-weight:500;
 
 }
 
 
 /* =====================================================
-   YEAR DOTS
+   TABLE BOTTOM
 ===================================================== */
 
-.year-dots{
+.table-bottom{
+
+    margin-top:5px;
 
     display:flex;
 
-    justify-content:center;
+    align-items:center;
+
+    justify-content:space-between;
+
+    font-size:10px;
+
+    color:#666;
+
+}
+
+
+.pagination{
+
+    display:flex;
 
     align-items:center;
 
-    gap:16px;
-
-    margin-top:28px;
+    gap:10px;
 
 }
 
 
-.dot{
+.pagination span{
 
-    width:15px;
-
-    height:15px;
-
-    border-radius:50%;
-
-    background:#d0d0d0;
+    cursor:pointer;
 
 }
 
 
-.dot.active{
+.pagination .page{
 
-    width:25px;
+    width:30px;
 
-    height:25px;
+    height:29px;
 
-    background:#3159a2;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:2px solid #b5aef5;
+
+    border-radius:3px;
+
+    color:#777;
+
+}
+
+
+.table-scroll{
+
+    height:5px;
+
+    margin-top:3px;
+
+    background:#777;
+
+    border-radius:3px;
 
 }
 
@@ -799,310 +913,181 @@ td:last-child{
 
 .summary{
 
-    background:white;
-
-    border-radius:9px;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
-
-    margin-top:30px;
-
-    padding:25px;
+    margin-top:35px;
 
 }
 
 
 .summary-title{
 
-    text-align:center;
+    font-size:11px;
 
-    background:#edf1f3;
+    font-weight:500;
 
-    padding:10px;
+    color:#555;
 
-    font-size:20px;
-
-    color:#777;
-
-    margin-bottom:20px;
+    margin-bottom:8px;
 
 }
 
 
-.summary-item{
+.summary-table{
 
-    margin-top:25px;
+    width:100%;
 
-    font-size:16px;
+    border-collapse:collapse;
 
-    color:#666;
-
-    line-height:1.5;
+    font-size:11px;
 
 }
 
 
-.summary-value{
+.summary-table td{
 
-    font-size:25px;
+    height:27px;
 
-    margin-top:7px;
+    border:1px solid #eeeeee;
 
-    color:#333;
+    padding:5px 9px;
 
 }
 
 
-/* =====================================================
-   DEMO NOTICE
-===================================================== */
+.summary-table td:first-child{
 
-.demo-notice{
+    width:50%;
 
-  text-align:left;
-    font-size:13px;
-    color:#777;
-    padding:20px 0;
+    color:#555;
+
+}
+
+
+.summary-table td:last-child{
+
+    color:#555;
 
 }
 
 
 /* =====================================================
-   MOBILE
+   MOBILE FALLBACK
 ===================================================== */
 
-@media(max-width:600px){
+@media(max-width:800px){
 
-    .dashboard-header{
+    .sticky-header{
 
         height:65px;
 
-        padding:0 20px;
+    }
+
+    .top-header{
+
+        height:65px;
 
     }
 
+    .sss-logo{
 
-    .menu-icon{
+        left:20px;
 
-        font-size:31px;
-
-    }
-
-
-    .dashboard-actions{
-
-        gap:18px;
-
-        font-size:25px;
+        height:30px;
 
     }
 
+    .header-date{
 
-    .profile-icon{
-
-        width:55px;
-
-        height:55px;
+        display:none;
 
     }
 
+    .header-icons{
 
-    .member-info{
-
-        padding:15px 25px 17px;
-
-    }
-
-
-    .member-name{
-
-        font-size:19px;
+        right:15px;
 
     }
 
+    .desktop-nav{
 
-    .member-number{
-
-        font-size:17px;
-
-    }
-
-
-    .member-date{
-
-        font-size:16px;
-
-        white-space:nowrap;
+        display:none;
 
     }
-
 
     .main-content{
 
-        padding:20px 20px 70px;
+        width:100%;
+
+        max-width:none;
+
+        padding:85px 15px 50px;
 
     }
 
+    .member-cover{
 
-    .member-title{
-
-        font-size:20px;
-
-    }
-
-
-    .cover{
-
-        height:210px;
+        height:130px;
 
     }
 
+    .member-profile{
 
-    .avatar{
+        height:auto;
 
-        width:140px;
+        min-height:105px;
 
-        height:140px;
-
-    }
-
-
-    .member-details h2{
-
-        font-size:26px;
+        padding:12px;
 
     }
 
+    .profile-picture{
 
-    .member-details p{
+        width:65px;
 
-        font-size:16px;
-
-    }
-
-
-    .contributions-section{
-
-        padding:20px 25px 30px;
+        height:65px;
 
     }
 
+    .profile-information{
 
-    .year{
+        display:block;
 
-        font-size:21px;
-
-        padding:14px 5px;
-
-    }
-
-
-    .year-arrow{
-
-        width:38px;
-
-        font-size:45px;
+        line-height:1.7;
 
     }
 
+    .profile-information span{
 
-    .table-area{
+        border:none;
 
-        margin-top:0;
-
-    }
-
-
-    .side-arrow{
-
-        font-size:52px;
+        display:block;
 
     }
 
+    .contribution-content{
 
-    .side-arrow.left{
-
-        left:-42px;
-
-    }
-
-
-    .side-arrow.right{
-
-        right:-42px;
+        display:block;
 
     }
 
+    .contribution-types{
 
-    table{
+        width:100%;
 
-        font-size:20px;
-
-    }
-
-
-    th{
-
-        font-size:17px;
-
-        padding:14px 8px;
+        margin-bottom:20px;
 
     }
 
+    .table-side{
 
-    td{
+        width:100%;
 
-        font-size:20px;
-
-        height:66px;
-
-        padding:13px 8px;
+        overflow-x:auto;
 
     }
 
+    .contribution-table{
 
-    td:last-child{
-
-        padding-right:14px;
-
-    }
-
-
-    .calendar{
-
-        top:365px;
-
-        padding:22px 16px;
-
-        font-size:35px;
-
-    }
-
-
-    .summary{
-
-        padding:22px 20px;
-
-    }
-
-
-    .summary-title{
-
-        font-size:19px;
-
-    }
-
-
-    .summary-item{
-
-        font-size:15px;
-
-    }
-
-
-    .summary-value{
-
-        font-size:24px;
+        min-width:760px;
 
     }
 
@@ -1110,867 +1095,31 @@ td:last-child{
 
 
 /* =====================================================
-   SMALL PHONES
+   PRINT
 ===================================================== */
 
-@media(max-width:380px){
+@media print{
 
-    .member-name{
+    .sticky-header{
 
-        font-size:17px;
-
-    }
-
-
-    .member-number{
-
-        font-size:15px;
+        position:static;
 
     }
 
+    .calendar-button{
 
-    .member-date{
-
-        font-size:14px;
+        display:none;
 
     }
-
 
     .main-content{
 
-        padding-left:15px;
-
-        padding-right:15px;
-
-    }
-
-
-    .contributions-section{
-
-        padding-left:20px;
-
-        padding-right:20px;
-
-    }
-
-
-    .side-arrow.left{
-
-        left:-35px;
-
-    }
-
-
-    .side-arrow.right{
-
-        right:-35px;
+        padding-top:20px;
 
     }
 
 }
 
-   .menu-group{
-width:100%;
-}
-
-/* ================================
-   SUBMENU STYLE
-================================ */
-
-.submenu{
-
-    display:none;
-
-    padding-left:45px;
-
-}
-
-
-.submenu.show{
-
-    display:block;
-
-}
-
-
-.submenu a{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:14px 0;
-
-    text-decoration:none;
-
-    color:#526987; /* kapareho ng main menu */
-
-    font-size:20px; /* pinalaki */
-
-    font-weight:400;
-
-}
-
-
-/* submenu icons */
-
-.submenu a i{
-
-    font-size:20px;
-
-    color:#526987; /* same color */
-
-    width:20px;
-
-}
-
-
-
-/* hover */
-
-.submenu a:hover{
-
-    background:#eef6fc;
-
-}
-
-
-
-/* Disabled Update Security Questions */
-
-.submenu a.disabled{
-
-    color:#bfc6cc;
-
-    pointer-events:none;
-
-}
-
-
-.submenu a.disabled i{
-
-    color:#bfc6cc;
-
-}
-
-
-
-.member-toggle{
-
-cursor:pointer;
-
-}
-
-
-.arrow{
-
-margin-left:auto;
-
-}   
-
-/* ===============================
-   CALENDAR POPUP
-================================ */
-
-.calendar-menu{
-
-    display:none;
-
-    position:absolute;
-
-    right:70px;
-
-    top:0;
-
-    width:220px;
-
-    background:white;
-
-    padding:20px;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
-
-    color:#555;
-
-}
-
-
-.calendar-menu.show{
-
-    display:block;
-
-}
-
-
-.calendar-header{
-
-    font-size:18px;
-
-    color:#285a9c;
-
-    margin-bottom:15px;
-
-}
-
-
-.calendar-menu input{
-
-    width:100%;
-
-    padding:8px;
-
-    border:1px solid #ddd;
-
-    border-radius:6px;
-
-}
-
-/* ===============================
- APPOINTMENT MODAL
-================================ */
-
-
-.appointment-overlay{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    z-index:99999;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.appointment-overlay.show{
-
-    display:flex;
-
-}
-
-
-
-.appointment-box{
-
-    width:640px;
-
-    max-width:90%;
-
-    background:white;
-
-    border-radius:12px;
-
-    padding:25px;
-
-    box-shadow:0 5px 25px rgba(0,0,0,.3);
-
-    position:relative;
-
-}
-
-
-
-.close-appointment{
-
-    position:absolute;
-
-    right:15px;
-
-    top:15px;
-
-    border:none;
-
-    background:#eee;
-
-    width:35px;
-
-    height:35px;
-
-    border-radius:8px;
-
-    font-size:20px;
-
-    color:#777;
-
-}
-
-
-
-.appointment-box h2{
-
-    font-size:28px;
-
-    font-weight:400;
-
-    color:#444;
-
-}
-
-
-
-.appointment-box h3{
-
-    color:#526987;
-
-    font-size:25px;
-
-    font-weight:400;
-
-    margin-top:25px;
-
-}
-
-
-.appointment-box p{
-
-    color:#555;
-
-    font-size:17px;
-
-    line-height:1.4;
-
-}
-
-
-
-.appointment-box select,
-.appointment-box input,
-.appointment-box textarea{
-
-    width:100%;
-
-    margin-top:18px;
-
-    padding:16px;
-
-    border-radius:8px;
-
-    border:1px solid #ddd;
-
-    background:#eef3f7;
-
-    font-family:"Montserrat";
-
-    font-size:17px;
-
-}
-
-
-.appointment-box textarea{
-
-    height:130px;
-
-    resize:none;
-
-}
-
-
-
-.next-btn{
-
-    float:right;
-
-    margin-top:20px;
-
-    background:#3159a2;
-
-    color:white;
-
-    border:none;
-
-    padding:12px 25px;
-
-    border-radius:6px;
-
-    font-size:17px;
-
-}
-
-      /* =================================
- CONTRIBUTION DROPDOWN
-================================= */
-
-
-.contribution-select{
-
-    width:100%;
-
-    height:55px;
-
-    border:1px solid #555;
-
-    border-radius:8px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
-    font-size:20px;
-
-    color:#555;
-
-    background:#fff;
-
-    cursor:pointer;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.contribution-menu{
-
-    display:none;
-
-    background:white;
-
-    border-radius:8px;
-
-    overflow:hidden;
-
-    box-shadow:0 3px 12px rgba(0,0,0,.25);
-
-    margin-bottom:20px;
-
-}
-
-
-
-.contribution-menu.show{
-
-    display:block;
-
-}
-
-
-
-.contribution-menu div{
-
-    padding:14px 25px;
-
-    font-size:20px;
-
-    font-weight:400;
-
-    color:#444;
-
-    font-family:"Montserrat",sans-serif;
-
-}
-
-
-
-.contribution-menu div:hover{
-
-    background:#f1f5f8;
-
-}
-
-
-
-.contribution-menu .active-option{
-
-    background:#1769ff;
-
-    color:white;
-
-    font-size:22px;
-
-    letter-spacing:.5px;
-
-}
-
-.service-submenu a{
-
-    padding:18px 0;
-
-    font-size:20px;
-
-    color:#526987;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-
-.service-submenu a i{
-
-    width:30px;
-
-    font-size:24px;
-
-    color:#3159a2;
-
-}
-
-      .loan-submenu a{
-
-    padding:18px 0;
-
-    font-size:20px;
-
-    color:#526987;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-
-.loan-submenu a i{
-
-    width:30px;
-
-    font-size:24px;
-
-    color:#3159a2;
-
-}
-
-.benefits-submenu a{
-
-    padding:18px 0;
-
-    font-size:20px;
-
-    color:#526987;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-
-.benefits-submenu a i{
-
-    width:30px;
-
-    font-size:24px;
-
-    color:#3159a2;
-
-}
-
-/* ===============================
-   NOTIFICATION POPUP
-================================ */
-
-.notification-box{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
-
-
-#notificationBtn{
-
-    cursor:pointer;
-
-}
-
-
-.notification-popup{
-
-    display:none;
-
-    position:absolute;
-
-    right:0;
-
-    top:55px;
-
-    width:370px;
-
-    max-width:90vw;
-
-    background:white;
-
-    border-radius:10px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-
-    z-index:99999;
-
-    overflow:hidden;
-
-}
-
-
-.notification-popup.show{
-
-    display:block;
-
-}
-
-
-
-.notification-popup h2{
-
-    padding:25px;
-
-    margin:0;
-
-    font-size:28px;
-
-    font-weight:400;
-
-    color:#444;
-
-    border-bottom:1px solid #ddd;
-
-}
-
-
-
-.notification-message{
-
-    margin:25px;
-
-    padding:25px;
-
-    background:#c9f3ff;
-
-    border-radius:8px;
-
-    display:flex;
-
-    gap:15px;
-
-    color:#526987;
-
-    font-size:16px;
-
-    line-height:1.7;
-
-}
-
-
-.notification-message i{
-
-    font-size:20px;
-
-}
-
-
-
-.notification-popup button{
-
-    width:90%;
-
-    margin:0 5% 25px;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:5px;
-
-    background:#3159a2;
-
-    color:white;
-
-    font-size:17px;
-
-    cursor:pointer;
-
-}
-
-      @media(max-width:600px){
-
-.notification-popup{
-
-    right:-20px;
-
-    top:50px;
-
-    width:370px;
-
-}
-
-}
-
-.profile-panel{
-
-    position:fixed;
-
-    top:0;
-
-    right:-420px;
-
-    width:420px;
-
-    height:100vh;
-
-    background:white;
-
-    z-index:99999;
-
-    box-shadow:-5px 0 15px rgba(0,0,0,.2);
-
-    padding:30px;
-
-    transition:.3s;
-
-}
-
-
-.profile-panel.show{
-
-    right:0;
-
-}
-
-
-.close-profile{
-
-    position:absolute;
-
-    right:20px;
-
-    top:20px;
-
-    border:none;
-
-    background:none;
-
-    font-size:28px;
-
-    color:#777;
-
-}
-
-
-
-.profile-top{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-top:40px;
-
-}
-
-
-.profile-top img{
-
-    width:65px;
-
-    height:65px;
-
-    border-radius:50%;
-
-}
-
-
-
-.profile-top h3{
-
-    font-size:20px;
-
-    font-weight:400;
-
-    margin:0;
-
-}
-
-
-.profile-top p{
-
-    margin:5px 0;
-
-}
-
-
-
-.profile-info{
-
-    margin-top:45px;
-
-    background:#c9f3ff;
-
-    padding:20px;
-
-    border-radius:8px;
-
-    line-height:1.6;
-
-    color:#526987;
-
-}
-
-
-
-.profile-links{
-
-    margin-top:30px;
-
-}
-
-
-
-.profile-links a{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:18px 0;
-
-    text-decoration:none;
-
-    color:#526987;
-
-    font-size:20px;
-
-}
-
-
-
-.profile-links i{
-
-    width:25px;
-
-    color:#3159a2;
-
-}
-
-.profile-icon{
-    border:none;
-    cursor:pointer;
-    padding:0;
-    background:#ddd;
-}
 </style>
 
 </head>
@@ -1980,647 +1129,962 @@ margin-left:auto;
 
 
 <!-- =====================================================
-     STICKY HEADER
+     FIXED HEADER
 ===================================================== -->
 
-<div class="sticky-header">
-<!-- MENU OVERLAY -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-    <!-- TOP HEADER -->
-    <div class="fixed-top">
-    <div class="dashboard-header">
+<header class="sticky-header">
 
 
-        <button 
-class="menu-icon" 
-id="menuButton" 
-type="button">
+    <!-- TOP -->
 
-<i class="fa-solid fa-bars"></i>
-
-</button>
+    <div class="top-header">
 
 
-        <div class="dashboard-actions">
+        <!-- SSS LOGO -->
+
+        <img
+        src="sss-logo.png"
+        class="sss-logo"
+        alt="Social Security System">
 
 
-            <div class="notification-box">
+        <!-- DATE -->
 
-    <i class="fa-solid fa-bell" id="notificationBtn"></i>
+        <div class="header-date">
 
-
-    <div class="notification-popup" id="notificationPopup">
-
-        <h2>Notification</h2>
-
-        <div class="notification-message">
-
-            <i class="fa-solid fa-circle-info"></i>
-
-            <span>
-            You currently have no notifications.<br>
-            Your 10 most recent notifications will be<br>
-            displayed here.
-            </span>
-
-        </div>
-
-
-        <button>
-            VIEW ALL NOTIFICATIONS
-        </button>
-
-    </div>
-
-</div>
-
-
-           <button class="profile-icon" id="profileIcon">
-
-    <img src="Lprof.jpeg" alt="Profile">
-
-</button>
-
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MEMBER INFO -->
-
-    <div class="member-info">
-
-
-        <div class="member-name">
-
-            SANTIAGO, MARK LESTER NARAG
-
-        </div>
-
-
-        <div class="member-number">
-
-           01-3599294-4
-
-        </div>
-
-
-        <div class="member-date">
-
-            <i class="fa-solid fa-calendar-days"></i>
+            <i class="fa-regular fa-calendar"></i>
 
             <span id="currentDate">
-
                 Loading...
-
             </span>
 
         </div>
 
 
+        <!-- ICONS -->
+
+        <div class="header-icons">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <i class="fa-solid fa-bell"></i>
+
+            <div class="header-profile">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="desktop-nav">
+
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-border-all"></i>
+
+            Dashboard
+
+        </a>
+
+
+
+        <!-- MEMBER INFORMATION -->
+
+        <div class="nav-group">
+
+            <div class="nav-dropdown active">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Member Information
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="nav-submenu">
+
+                <a href="memberinfo.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Member Details
+
+                </a>
+
+
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    My Contributions
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    Update Security Questions
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="nav-group">
+
+            <div class="nav-dropdown">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                Services
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="nav-submenu">
+
+                <a href="#">Disbursement Account</a>
+
+                <a href="#">Benefit Re-disbursement</a>
+
+                <a href="#">Auto Debit Arrangement</a>
+
+                <a href="#">Pension Booster</a>
+
+                <a href="#">RTC/CPO Reference Number Inquiry</a>
+
+                <a href="#">Set Appointment</a>
+
+                <a href="#">MySSS Card</a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOANS -->
+
+        <div class="nav-group">
+
+            <div class="nav-dropdown">
+
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                Loans
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="nav-submenu">
+
+                <a href="#">Salary Loan</a>
+
+                <a href="#">Calamity/Emergency Loan</a>
+
+                <a href="#">Pension Loan</a>
+
+                <a href="#">Loan Penalty Condonation</a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BENEFITS -->
+
+        <div class="nav-group">
+
+            <div class="nav-dropdown">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                Benefits
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="nav-submenu">
+
+                <a href="#">Maternity Benefit</a>
+
+                <a href="#">Unemployment Benefit</a>
+
+                <a href="#">Sickness Benefit</a>
+
+                <a href="#">Disability Claim</a>
+
+                <a href="#">Retirement Claim</a>
+
+                <a href="#">Funeral Claim</a>
+
+                <a href="#">Death Claim</a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRN -->
+
+        <div class="nav-group">
+
+            <div class="nav-dropdown">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                Payment Reference Number
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="nav-submenu">
+
+                <a href="#">Contributions</a>
+
+                <a href="#">Loans</a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SIGN OUT -->
+
+        <a
+        href="index.html"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Sign Out
+
+        </a>
+
+
+    </nav>
+
+</header>
 
 
 
 <!-- =====================================================
-     FLOATING CALENDAR
+     CALENDAR
 ===================================================== -->
 
-<div class="calendar" onclick="openAppointment()">
+<div class="calendar-button"
+onclick="openAppointment()">
 
     <i class="fa-solid fa-calendar-days"></i>
 
 </div>
 
 
-<!-- APPOINTMENT MODAL -->
-
-<div class="appointment-overlay" id="appointmentModal">
-
-    <div class="appointment-box">
-
-
-        <button class="close-appointment" onclick="closeAppointment()">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-
-        <h2>
-            <i class="fa-solid fa-calendar-days"></i>
-            Set Appointment
-        </h2>
-
-
-        <hr>
-
-
-        <h3>
-            Say goodbye to waiting in line!
-        </h3>
-
-
-        <p>
-            Experience ultimate convenience by setting your appointments online with just a few clicks.
-        </p>
-
-
-
-        <select>
-            <option>Select Purpose</option>
-        </select>
-
-
-        <select>
-            <option>Select Region</option>
-        </select>
-
-
-        <select>
-            <option>Select Branch</option>
-        </select>
-
-
-        <input type="date">
-
-
-        <select>
-            <option>Select Time</option>
-        </select>
-
-
-        <textarea placeholder="Concern(s)"></textarea>
-
-
-
-        <button class="next-btn">
-            Next <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-
-    </div>
-
-</div>
-
-
 
 <!-- =====================================================
-     MAIN CONTENT
+     MAIN
 ===================================================== -->
 
 <main class="main-content">
 
- <!-- TITLE SA ILALIM NG HEADER -->
 
-    <div class="member-title">
+    <!-- BREADCRUMB -->
 
-        <span>Member Information</span>
-        / Contributions
+    <div class="breadcrumb">
 
-    </div>
-
-    <!-- =================================================
-         MEMBER DETAILS
-    ================================================== -->
-
-
-
-    <div class="member-details">
-
-
-        <!-- COVER -->
-
-        <div class="cover"></div>
-
-
-        <!-- PROFILE -->
-
-        <div class="avatar">
-
-            <img
-            src="Lprof.jpeg"
-            alt="Profile">
-
-        </div>
-
-
-        <!-- NAME -->
-
-        <h2>
-
-            SANTIAGO, MARK LESTER NARAG
-
-        </h2>
-
-
-        <!-- SS NUMBER -->
-
-        <p>
-
-            <i class="fa-solid fa-id-card"></i>
-
-            SS Number 01-3599294-4
-
-        </p>
-
-
-        <!-- PASSWORD -->
-
-        <p>
-
-            <i class="fa-regular fa-calendar"></i>
-
-            Your password will expire on Feb 14, 2027
-
-        </p>
-
-
-        <!-- LAST LOGIN -->
-
-        <p>
-
-            <i class="fa-regular fa-calendar-check"></i>
-
-            Your last login was on Sep 15, 2026
-
-            <br>
-
-            03:54:52 PM through the SSS Website
-
-        </p>
-
+        Member Information / Contributions
 
     </div>
 
 
 
     <!-- =================================================
-         MEMBER INFORMATION DROPDOWN
+         MEMBER CARD
     ================================================== -->
 
-  <button
-class="member-dropdown"
-onclick="toggleMemberInfo()">
+    <section class="member-card">
 
-    <i class="fa-solid fa-wallet"></i>
 
-    &nbsp; My Contributions
+        <div class="member-cover"></div>
 
-    <i
-    id="dropdownArrow"
-    class="fa-solid fa-chevron-down">
-    </i>
 
-</button>
+        <div class="member-profile">
 
-    <div
-class="info-box"
-id="memberInfoBox"
-style="display:none;">
 
+            <div class="profile-picture">
 
-
-
-
-
-   <div 
-class="info-item"
-onclick="window.location.href='memberinfo.html'"
-
-<i class="fa-solid fa-user"></i>
-
-&nbsp; Member Details
-
-</div>
-
-
-<div 
-class="info-item active"
-onclick="window.location.href='contributions.html'">
-
-<i class="fa-solid fa-wallet"></i>
-
-&nbsp; My Contributions
-
-</div>
-
-
-    </div>
-
-
-
-
-
-    <!-- =================================================
-         CONTRIBUTIONS
-    ================================================== -->
-
-
-
-    <!-- TABLE ONLY CHANGES -->
-
-
-    <section class="contributions-section">
-
-          <!-- SUMMARY TOP -->
-
-<div class="summary">
-
-      <div class="contribution-select" onclick="toggleContributionMenu()">
-
-    <span id="selectedContribution">
-        Contributions
-    </span>
-
-    <i class="fa-solid fa-chevron-down"></i>
-
-
-</div>
-
-
-<div class="contribution-menu" id="contributionMenu">
-
-    <div class="active-option">
-        MONTHLY CONTRIBUTIONS
-    </div>
-
-
-    <div>
-        SE/VM CONTRIBUTIONS
-    </div>
-
-
-    <div>
-        FLEXI-FUND
-    </div>
-
-
-    <div>
-        MANDATORY PROVIDENT FUND
-    </div>
-
-
-    <div>
-        PENSION BOOSTER
-    </div>
-
-
-</div>
-
-
-
-
-<div class="summary-title">
-SUMMARY
-</div>
-
-
-<div class="summary-item">
-
-(A) Total Number of Contributions Displayed
-
-<div class="summary-value">
-105
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-(B) Total Number of Contributions not Displayed
-
-<div class="summary-value">
-0
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-Total Number of Contributions Posted (A)+(B)
-
-<div class="summary-value">
-105
-</div>
-
-</div>
-
-
-<div class="summary-item">
-
-Total Amount of Contributions
-
-<div class="summary-value">
-₱120,647.00
-</div>
-
-</div>
-
-
-</div>
-
-
-<hr>
-
-
-
-        <!-- YEAR NAVIGATION -->
-
-        <div class="year-navigation">
-
-
-
-
-            <div
-            class="year"
-            id="yearTitle">
-
-                2026
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
 
             </div>
 
 
+            <div class="profile-details">
+
+
+                <div class="profile-name">
+
+                    SANTIAGO, MARK LESTER NARAG
+
+                </div>
+
+
+                <div class="profile-information">
+
+
+                    <span>
+
+                        <i class="fa-regular fa-id-card"></i>
+
+                        SS Number 01-3599294-4
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Your password will expire on Feb 04, 2027
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                        Your last login was on Sep 13, 2026 09:51:30 AM through the SSS Website
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
 
         </div>
-
-
-
-        <!-- TABLE AREA -->
-
-        <div class="table-area">
-
-
-            <!-- LEFT ARROW -->
-
-            <button
-            class="side-arrow left"
-            onclick="previousYear()">
-
-                ‹
-
-            </button>
-
-
-
-            <!-- TABLE -->
-
-            <div class="table-wrapper">
-
-
-                <table>
-
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-
-                                MONTH
-
-                            </th>
-
-
-                            <th>
-
-                                CONTRIBUTION
-
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody
-                    id="contributionBody">
-
-                    </tbody>
-
-
-                </table>
-
-
-            </div>
-
-
-
-            <!-- RIGHT ARROW -->
-
-            <button
-            class="side-arrow right"
-            onclick="nextYear()">
-
-                ›
-
-            </button>
-
-
-        </div>
-
-
-
-        <!-- DOTS -->
-
-        <div class="year-dots">
-
-
-            <div
-            class="dot active"
-            id="dot0">
-
-            </div>
-
-
-            <div
-            class="dot"
-            id="dot1">
-
-            </div>
-
-            <div
-            class="dot"
-            id="dot2">
-
-            </div>
-
-            <div
-            class="dot"
-            id="dot3">
-
-            </div>
-
-            <div
-            class="dot active"
-            id="dot4">
-
-            </div>
-
-
-            <div
-            class="dot"
-            id="dot5">
-
-            </div>
-
-            <div
-            class="dot"
-            id="dot6">
-
-            </div>
-
-            <div
-            class="dot"
-            id="dot7">
-
-            </div>
-
-
-
-            <div
-            class="dot"
-            id="dot8">
-
-            </div>
-
-            <div
-            class="dot"
-            id="dot9">
-
-            </div>
-
-              
-
-        </div>
-              
-
-        </div>
-          
-
 
     </section>
 
 
 
     <!-- =================================================
-         SUMMARY
+         MEMBER TABS
     ================================================== -->
 
+    <div class="member-tabs">
 
 
-    <!-- DEMO NOTICE -->
+        <a
+        href="memberinfo.html"
+        class="member-tab">
 
-    <div class="demo-notice">
+            <i class="fa-solid fa-user"></i>
 
-        @2024 Social Security System
+            Member Details
+
+        </a>
+
+
+        <a
+        href="contributions.html"
+        class="member-tab active">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            My Contributions
+
+        </a>
+
 
     </div>
+
+
+
+    <!-- =================================================
+         CONTRIBUTION PANEL
+    ================================================== -->
+
+    <section class="contribution-panel">
+
+
+        <div class="panel-title">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            Contributions
+
+        </div>
+
+
+
+        <div class="contribution-content">
+
+
+            <!-- LEFT MENU -->
+
+            <div class="contribution-types">
+
+
+                <div class="contribution-type">
+
+                    MONTHLY CONTRIBUTIONS
+
+                </div>
+
+
+                <div class="contribution-type">
+
+                    SE/VM CONTRIBUTIONS
+
+                </div>
+
+
+                <div class="contribution-type">
+
+                    FLEXI-FUND
+
+                </div>
+
+
+                <div class="contribution-type">
+
+                    MANDATORY PROVIDENT FUND
+
+                </div>
+
+
+                <div class="contribution-type">
+
+                    PENSION BOOSTER
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-side">
+
+
+                <div class="entries-row">
+
+                    <select class="entries-select">
+
+                        <option>10</option>
+
+                    </select>
+
+                    entries per page
+
+                </div>
+
+
+
+                <table class="contribution-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>YEAR</th>
+
+                            <th>JAN</th>
+
+                            <th>FEB</th>
+
+                            <th>MAR</th>
+
+                            <th>APR</th>
+
+                            <th>MAY</th>
+
+                            <th>JUN</th>
+
+                            <th>JUL</th>
+
+                            <th>AUG</th>
+
+                            <th>SEP</th>
+
+                            <th>OCT</th>
+
+                            <th>NOV</th>
+
+                            <th>DEC</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>2026</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2025</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                            <td>1,466.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2024</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                            <td>1,361.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2023</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                            <td>1,250.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2022</td>
+
+                            <td>0.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                            <td>1,144.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2021</td>
+
+                            <td>0.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2020</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                            <td>1,130.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2019</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                            <td>1,020.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2018</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                            <td>914.00</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>2017</td>
+
+                            <td>0.00</td>
+
+                            <td>0.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                            <td>806.00</td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+
+
+                <div class="table-bottom">
+
+
+                    <span>
+
+                        Showing 1 to 10 of 10 entries
+
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <span>«</span>
+
+                        <span>‹</span>
+
+                        <span class="page">1</span>
+
+                        <span>›</span>
+
+                        <span>»</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-scroll"></div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <div class="summary">
+
+
+            <div class="summary-title">
+
+                SUMMARY
+
+            </div>
+
+
+            <table class="summary-table">
+
+
+                <tr>
+
+                    <td>
+                        (A) Total Number of Contributions Displayed
+                    </td>
+
+                    <td>
+                        106
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        (B) Total Number of Contributions not Displayed
+                    </td>
+
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Total Number of Contributions Posted (A) + (B)
+                    </td>
+
+                    <td>
+                        106
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Total Amount of Contributions
+                    </td>
+
+                    <td>
+                        122,113.00
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+        </div>
+
+
+    </section>
 
 
 </main>
@@ -2630,396 +2094,12 @@ Total Amount of Contributions
 <script>
 
 /* =====================================================
-   CONTRIBUTION DATA
-===================================================== */
-
-const contributionData = {
-
-    2026: {
-
-        Jan: "1,466.00",
-        Feb: "1,466.00",
-        Mar: "1,466.00",
-        Apr: "1,466.00",
-        May: "1,466.00",
-        Jun: "1,466.00",
-        Jul: "1,466.00",
-        Aug: "1,466.00",
-        Sep: "1,466.00",
-        Oct: "0.00",
-        Nov: "0.00",
-        Dec: "0.00"
-
-    },
-
-
-    2025: {
-
-        Jan: "1,361.00",
-        Feb: "1,361.00",
-        Mar: "1,361.00",
-        Apr: "1,466.00",
-        May: "1,466.00",
-        Jun: "1,466.00",
-        Jul: "1,466.00",
-        Aug: "1,466.00",
-        Sep: "1,466.00",
-        Oct: "1,466.00",
-        Nov: "1,466.00",
-        Dec: "1,466.00"
-
-    },
-
-     2024: {
-
-        Jan: "1,250.00",
-        Feb: "1,250.00",
-        Mar: "1,361.00",
-        Apr: "1,361.00",
-        May: "1,361.00",
-        Jun: "1,361.00",
-        Jul: "1,361.00",
-        Aug: "1,361.00",
-        Sep: "1,361.00",
-        Oct: "1,361.00",
-        Nov: "1,361.00",
-        Dec: "1,361.00"
-
-    },
-
-    2023: {
-
-        Jan: "1,144.00",
-        Feb: "1,144.00",
-        Mar: "1,250.00",
-        Apr: "1,250.00",
-        May: "1,250.00",
-        Jun: "1,250.00",
-        Jul: "1,250.00",
-        Aug: "1,250.00",
-        Sep: "1,250.00",
-        Oct: "1,250.00",
-        Nov: "1,250.00",
-        Dec: "1,250.00"
-
-    },
-
-    2022: {
-
-        Jan: "0.00",
-        Feb: "1,144.00",
-        Mar: "1,144.00",
-        Apr: "1,144.00",
-        May: "1,144.00",
-        Jun: "1,144.00",
-        Jul: "1,144.00",
-        Aug: "1,144.00",
-        Sep: "1,144.00",
-        Oct: "1,144.00",
-        Nov: "1,144.00",
-        Dec: "1,144.00"
-
-    },
-
-     2021: {
-
-        Jan: "0.00",
-        Feb: "1,130.00",
-        Mar: "1,130.00",
-        Apr: "1,130.00",
-        May: "0.00",
-        Jun: "0.00",
-        Jul: "0.00",
-        Aug: "0.00",
-        Sep: "0.00",
-        Oct: "0.00",
-        Nov: "0.00",
-        Dec: "0.00"
-
-    },  
-
-     2020: {
-
-        Jan: "1,020.00",
-        Feb: "1,020.00",
-        Mar: "1,020.00",
-        Apr: "1,020.00",
-        May: "1,130.00",
-        Jun: "1,130.00",
-        Jul: "1,130.00",
-        Aug: "1,130.00",
-        Sep: "1,130.00",
-        Oct: "1,130.00",
-        Nov: "1,130.00",
-        Dec: "1,130.00"
-
-    },      
-
-     2019: {
-
-        Jan: "914.00",
-        Feb: "914.00",
-        Mar: "914.00",
-        Apr: "914.00",
-        May: "1,020.00",
-        Jun: "1,020.00",
-        Jul: "1,020.00",
-        Aug: "1,020.00",
-        Sep: "1,020.00",
-        Oct: "1,020.00",
-        Nov: "1,020.00",
-        Dec: "1,020.00"
-
-    }, 
-
-       2018: {
-
-        Jan: "806.00",
-        Feb: "806.00",
-        Mar: "806.00",
-        Apr: "806.00",
-        May: "914.00",
-        Jun: "914.00",
-        Jul: "914.00",
-        Aug: "914.00",
-        Sep: "914.00",
-        Oct: "914.00",
-        Nov: "914.00",
-        Dec: "914.00"
-
-    },     
-        2017: {
-
-        Jan: "0.00",
-        Feb: "0.00",
-        Mar: "806.00",
-        Apr: "806.00",
-        May: "806.00",
-        Jun: "806.00",
-        Jul: "806.00",
-        Aug: "806.00",
-        Sep: "806.00",
-        Oct: "806.00",
-        Nov: "806.00",
-        Dec: "806.00"
-
-        }     
-};
-
-
-
-/* =====================================================
-   YEAR LIST
-===================================================== */
-
-const years = [
-
-    2026,
-
-    2025,
-
-    2024,
-
-    2023,
-
-    2022,
-
-    2021,
-
-    2020,
-
-    2019,
-
-    2018,
-
-    2017
-      
-
-];
-
-
-let currentYearIndex = 0;
-
-
-
-/* =====================================================
-   LOAD YEAR
-===================================================== */
-
-function loadYear(){
-
-    const year =
-        years[currentYearIndex];
-
-
-    document.getElementById(
-        "yearTitle"
-    ).textContent = year;
-
-
-    const tbody =
-        document.getElementById(
-            "contributionBody"
-        );
-
-
-    tbody.innerHTML = "";
-
-
-    const data =
-        contributionData[year];
-
-
-    let displayed = 0;
-
-    let total = 0;
-
-
-
-    Object.entries(data).forEach(
-        ([month, amount]) => {
-
-
-            const row =
-                document.createElement("tr");
-
-
-            const monthCell =
-                document.createElement("td");
-
-
-            monthCell.textContent =
-                month;
-
-
-            const amountCell =
-                document.createElement("td");
-
-
-            amountCell.textContent =
-                amount;
-
-
-            row.appendChild(monthCell);
-
-            row.appendChild(amountCell);
-
-            tbody.appendChild(row);
-
-
-
-            const number =
-                parseFloat(
-                    amount.replace(/,/g,"")
-                );
-
-
-            if(number > 0){
-
-                displayed++;
-
-                total += number;
-
-            }
-
-        }
-    );
-
-
-    updateDots();
-
-}
-
-
-
-/* =====================================================
-   PREVIOUS YEAR
-===================================================== */
-
-function previousYear(){
-
-    currentYearIndex--;
-
-
-    if(currentYearIndex < 0){
-
-        currentYearIndex =
-            years.length - 1;
-
-    }
-
-
-    loadYear();
-
-}
-
-
-
-/* =====================================================
-   NEXT YEAR
-===================================================== */
-
-function nextYear(){
-
-    currentYearIndex++;
-
-
-    if(
-        currentYearIndex >=
-        years.length
-    ){
-
-        currentYearIndex = 0;
-
-    }
-
-
-    loadYear();
-
-}
-
-
-
-/* =====================================================
-   DOTS
-===================================================== */
-
-function updateDots(){
-
-    const dots = document.querySelectorAll(".dot");
-
-
-    dots.forEach(dot => {
-
-        dot.classList.remove("active");
-
-    });
-
-
-    const activeDot =
-    document.getElementById(
-        "dot" + currentYearIndex
-    );
-
-
-    if(activeDot){
-
-        activeDot.classList.add("active");
-
-    }
-
-}
-
-
-
-/* =====================================================
    REAL TIME DATE
 ===================================================== */
 
 function updateDateTime(){
 
     const now = new Date();
-
 
     const options = {
 
@@ -3041,581 +2121,21 @@ function updateDateTime(){
 
     };
 
-
-    const formatted =
-        now.toLocaleString(
-            "en-US",
-            options
-        );
-
-
-    document.getElementById(
-        "currentDate"
-    ).textContent =
-        formatted;
+    document.getElementById("currentDate")
+    .textContent =
+    now.toLocaleString("en-US",options);
 
 }
 
 
 updateDateTime();
 
-
-setInterval(
-    updateDateTime,
-    1000
-);
-
+setInterval(updateDateTime,1000);
 
 
 /* =====================================================
-   MEMBER INFORMATION DROPDOWN
+   LOGOUT
 ===================================================== */
-
-function toggleMemberInfo(){
-
-    const box =
-    document.getElementById("memberInfoBox");
-
-
-    const arrow =
-    document.getElementById("dropdownArrow");
-
-
-    if(box.style.display === "none" || box.style.display === ""){
-
-
-        box.style.display = "block";
-
-
-        arrow.classList.remove(
-            "fa-chevron-down"
-        );
-
-
-        arrow.classList.add(
-            "fa-chevron-up"
-        );
-
-
-    }else{
-
-
-        box.style.display = "none";
-
-
-        arrow.classList.remove(
-            "fa-chevron-up"
-        );
-
-
-        arrow.classList.add(
-            "fa-chevron-down"
-        );
-
-    }
-
-}
-
-function openMemberDetails(){
-
-    window.location.href="member-details.html";
-
-}
-
-
-function openContributions(){
-
-    window.location.href="contributions.html";
-
-}      
-
-
-
-
-/* =====================================================
-   INITIALIZE
-===================================================== */
-
-loadYear();
-      document.getElementById("memberInfoBox").style.display="none";
-
-
-
-      function toggleCalendar(){
-
-    const menu =
-    document.getElementById("calendarMenu");
-
-
-    menu.classList.toggle("show");
-
-}
-
- function openAppointment(){
-
-    document
-    .getElementById("appointmentModal")
-    .classList.add("show");
-
-}
-
-
-
-function closeAppointment(){
-
-    document
-    .getElementById("appointmentModal")
-    .classList.remove("show");
-
-}
-
-      function toggleContributionMenu(){
-
-    const menu =
-    document.getElementById("contributionMenu");
-
-
-    menu.classList.toggle("show");
-
-}
-
-function toggleLoan(){
-
-    const loanMenu = document.querySelector(".loan-submenu");
-
-    loanMenu.classList.toggle("show");
-
-}
-
-      function toggleBenefits(){
-
-    const benefitsMenu =
-    document.querySelector(".benefits-submenu");
-
-
-    benefitsMenu.classList.toggle("show");
-
-}
-
-
-const notificationBtn =
-document.getElementById("notificationBtn");
-
-
-const notificationPopup =
-document.getElementById("notificationPopup");
-
-
-
-notificationBtn.onclick=function(e){
-
-    e.stopPropagation();
-
-    notificationPopup.classList.toggle("show");
-
-};
-
-
-
-document.addEventListener("click",function(){
-
-    notificationPopup.classList.remove("show");
-
-});
-
-document.addEventListener("DOMContentLoaded",function(){
-
-const profileIcon = document.getElementById("profileIcon");
-const profilePanel = document.getElementById("profilePanel");
-const closeProfile = document.getElementById("closeProfile");
-
-
-profileIcon.addEventListener("click",function(){
-
-    profilePanel.classList.add("show");
-
-});
-
-
-closeProfile.addEventListener("click",function(){
-
-    profilePanel.classList.remove("show");
-
-});
-
-});
-      
-</script>
-
-<!-- MENU OVERLAY -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-
-<!-- SIDE MENU -->
-<div class="side-menu" id="sideMenu">
-
-    <div class="side-menu-header">
-        <span>Menu</span>
-
-        <button class="close-menu" id="closeMenu">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
-
-
-    <div class="menu-items">
-
-        <a href="dashboard.html" class="menu-item">
-            <i class="fa-solid fa-border-all"></i>
-            <span>Dashboard</span>
-        </a>
-
-
-        <div class="menu-group">
-
-    <div class="menu-item member-toggle">
-        <i class="fa-solid fa-user-tie"></i>
-        <span>Member Information</span>
-    </div>
-
-
-    <div class="submenu">
-
-        <a href="memberinfo.html" class="submenu-item">
-            <i class="fa-solid fa-user"></i>
-            <span>Member Details</span>
-        </a>
-
-
-        <a href="contributions.html" class="submenu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>My Contributions</span>
-        </a>
-
-
-        <a href="#" class="submenu-item disabled">
-            <i class="fa-solid fa-comments"></i>
-            <span>Update Security Questions</span>
-        </a>
-
-    </div>
-
-</div>
-
-
-        <div class="menu-group">
-
-
-<div class="menu-item service-toggle">
-
-    <i class="fa-solid fa-fingerprint"></i>
-
-    <span>Services</span>
-
-
-</div>
-
-
-
-<div class="submenu service-submenu">
-
-
-<a href="#">
-    <i class="fa-solid fa-building-columns"></i>
-    <span>Disbursement Account</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-hand-holding-dollar"></i>
-    <span>Benefit Re-disbursement</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-money-check-dollar"></i>
-    <span>Auto Debit Arrangement</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-people-roof"></i>
-    <span>Pension Booster</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-barcode"></i>
-    <span>RTC/CPO Reference Number Inquiry</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-calendar-days"></i>
-    <span>Set Appointment</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-id-card"></i>
-    <span>MySSS Card</span>
-</a>
-
-
-</div>
-
-
-</div>
-
-
-        <div class="menu-group">
-
-
-<div class="menu-item loan-toggle" onclick="toggleLoan()">
-
-    <i class="fa-solid fa-hand-holding-dollar"></i>
-
-    <span>Loans</span>
-
-</div>
-
-
-
-<div class="submenu loan-submenu">
-
-
-<a href="#">
-    <i class="fa-solid fa-hand-holding-dollar"></i>
-    <span>Salary Loan</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-house-chimney"></i>
-    <span>Calamity/Emergency Loan</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-person-cane"></i>
-    <span>Pension Loan</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-hand-holding-dollar"></i>
-    <span>Loan Penalty Condonation</span>
-</a>
-
-
-</div>
-
-
-</div>
-
-
-       <div class="menu-group">
-
-<div class="menu-item benefits-toggle" onclick="toggleBenefits()">
-
-    <i class="fa-solid fa-network-wired"></i>
-
-    <span>Benefits</span>
-
-</div>
-
-
-<div class="submenu benefits-submenu">
-
-
-<a href="#">
-    <i class="fa-solid fa-person-pregnant"></i>
-    <span>Maternity Benefit</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-briefcase"></i>
-    <span>Unemployment Benefit</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-bed-pulse"></i>
-    <span>Sickness Benefit</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-wheelchair"></i>
-    <span>Disability Claim</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-person-cane"></i>
-    <span>Retirement Claim</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-box"></i>
-    <span>Funeral Claim</span>
-</a>
-
-
-<a href="#">
-    <i class="fa-solid fa-monument"></i>
-    <span>Death Claim</span>
-</a>
-
-
-</div>
-
-</div>
-
-
-      <div class="menu-group">
-
-    <div class="menu-item prn-toggle">
-
-        <i class="fa-solid fa-barcode"></i>
-
-        <span>Payment Reference Number</span>
-
-    </div>
-
-
-    <div class="submenu prn-submenu">
-
-
-        <a href="#">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Contributions</span>
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Loans</span>
-        </a>
-
-
-    </div>
-
-</div>
-
-<a href="javascript:void(0)" class="menu-item" onclick="logout()">
-
-    <i class="fa-solid fa-right-from-bracket"></i>
-
-    <span>Sign Out</span>
-
-</a>
-
-    </div>
-
-</div>
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-
-const menuButton=document.getElementById("menuButton");
-const sideMenu=document.getElementById("sideMenu");
-const overlay=document.getElementById("menuOverlay");
-const closeMenu=document.getElementById("closeMenu");
-
-
-menuButton.onclick=function(){
-
-sideMenu.classList.add("open");
-overlay.classList.add("open");
-
-};
-
-
-closeMenu.onclick=function(){
-
-sideMenu.classList.remove("open");
-overlay.classList.remove("open");
-
-};
-
-
-overlay.onclick=function(){
-
-sideMenu.classList.remove("open");
-overlay.classList.remove("open");
-
-};
-
-
-
-// AUTO CLOSE OTHER SUBMENU
-
-const groups=document.querySelectorAll(".menu-group");
-
-
-groups.forEach(group=>{
-
-
-const toggle=group.querySelector(".menu-item");
-const submenu=group.querySelector(".submenu");
-
-
-if(toggle && submenu){
-
-
-toggle.onclick=function(){
-
-
-groups.forEach(other=>{
-
-const otherSub=other.querySelector(".submenu");
-
-if(otherSub && otherSub!==submenu){
-
-otherSub.classList.remove("show");
-
-}
-
-});
-
-
-
-submenu.classList.toggle("show");
-
-
-};
-
-
-}
-
-
-
-});
-
-
-
-// SIGN OUT
-
-const logoutBtn=document.querySelector(".logout");
-
-
-if(logoutBtn){
-
-logoutBtn.onclick=function(){
-
-localStorage.removeItem("loggedIn");
-
-window.location.href="index.html";
-
-};
-
-}
-
-      
-
-});
 
 function logout(){
 
@@ -3624,225 +2144,21 @@ function logout(){
     window.location.href="index.html";
 
 }
-      
+
+
+/* =====================================================
+   APPOINTMENT
+===================================================== */
+
+function openAppointment(){
+
+    alert("Appointment feature");
+
+}
+
 </script>
 
 
- <!-- MENU OVERLAY -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-
-<!-- SIDE MENU -->
-<div class="side-menu" id="sideMenu">
-
-
-<div class="side-menu-header">
-
-<span>Menu</span>
-
-<button class="close-menu" id="closeMenu">
-
-<i class="fa-solid fa-xmark"></i>
-
-</button>
-
-</div>
-
-
-
-<div class="menu-items">
-
-
-<a href="dashboard.html" class="menu-item">
-
-<i class="fa-solid fa-border-all"></i>
-
-<span>Dashboard</span>
-
-</a>
-
-
-
-<div class="menu-group">
-
-
-<div class="menu-item member-toggle">
-
-<i class="fa-solid fa-user-tie"></i>
-
-<span>
-Member Information
-</span>
-
-<i class="fa-solid fa-chevron-down arrow"></i>
-
-</div>
-
-
-
-<div class="submenu">
-
-
-<a href="memberinfo.html">
-
-<i class="fa-solid fa-user"></i>
-
-Member Details
-
-</a>
-
-
-
-<a href="contributions.html">
-
-<i class="fa-solid fa-wallet"></i>
-
-My Contributions
-
-</a>
-
-
-
-<a href="#">
-
-<i class="fa-solid fa-comments"></i>
-
-Update Security Questions
-
-</a>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<a href="#" class="menu-item">
-
-<i class="fa-solid fa-fingerprint"></i>
-
-<span>Services</span>
-
-</a>
-
-
-
-<a href="#" class="menu-item">
-
-<i class="fa-solid fa-hand-holding-dollar"></i>
-
-<span>Loans</span>
-
-</a>
-
-
-
-<a href="#" class="menu-item">
-
-<i class="fa-solid fa-network-wired"></i>
-
-<span>Benefits</span>
-
-</a>
-
-
-
-<a href="#" class="menu-item">
-
-<i class="fa-solid fa-barcode"></i>
-
-<span>Payment Reference Number</span>
-
-</a>
-
-
-
-<a href="#" class="menu-item">
-
-<i class="fa-solid fa-right-from-bracket"></i>
-
-<span>Sign Out</span>
-
-</a>
-
-
-</div>
-
-
-</div>
-
- 
-    <div class="profile-panel" id="profilePanel">
-
-    <button class="close-profile" id="closeProfile">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <div class="profile-top">
-
-        <img src="Lprof.jpeg">
-
-        <div>
-            <h3>SANTIAGO, MARK LESTER NARAG</h3>
-            <p>01-3599294-4</p>
-        </div>
-
-    </div>
-
-
-    <div class="profile-info">
-
-        <i class="fa-solid fa-circle-info"></i>
-
-        Your password will expire on Feb 14, 2027
-        <br>
-        Your last login was on Sep 15, 2026
-        <br>
-        03:54:52 PM through the SSS Website
-
-    </div>
-
-
-    <div class="profile-links">
-
-        <a href="memberinfo.html">
-            <i class="fa-solid fa-user"></i>
-            My Details
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-lock"></i>
-            Change Password
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-user-lock"></i>
-            Setup Time-based One-Time Password
-        </a>
-
-
-        <a href="#">
-            <i class="fa-solid fa-phone"></i>
-            Contact Us
-        </a>
-
-
-        <a href="javascript:void(0)" onclick="logout()">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Sign Out
-        </a>
-
-
-    </div>
-
-</div>       
 </body>
 
 </html>
