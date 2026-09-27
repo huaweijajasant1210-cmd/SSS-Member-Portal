@@ -5,117 +5,550 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-.profile-icon{
 
-    width:55px;
+/* ================================
+   DASHBOARD MAIN
+================================ */
 
-    height:55px;
+body{
+    margin:0;
+    font-family:"Montserrat",sans-serif;
+    background:#eaf6fc;
+    color:#526170;
+}
 
-    border-radius:50%;
+.dashboard-container{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:190px 20px 50px;
 
-    background:#ddd;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+
+/* ================================
+   DASHBOARD CARD
+================================ */
+
+.dashboard-card{
+    background:#fff;
+    border-radius:6px;
+    padding:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+    position:relative;
+}
+
+
+/* ================================
+   VIEW CONTRIBUTIONS
+================================ */
+
+.dashboard-card:first-child{
+    grid-column:1 / -1;
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:18px;
+    color:#4f5963;
+
+    margin-bottom:16px;
+}
+
+.card-icon{
+    width:42px;
+    height:42px;
 
     display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e4f7fc;
+    color:#3575a8;
+
+    border-radius:10px;
+
+    font-size:20px;
+}
+
+
+.dashboard-image{
+    width:100%;
+    height:300px;
+
+    border-radius:5px;
+
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* CONTRIBUTIONS IMAGE */
+
+.contributions-image{
+    background-image:
+    url("contributions.jpg");
+}
+
+
+/* ================================
+   AMOUNT
+================================ */
+
+.contribution-amount{
+    margin-top:15px;
+
+    font-size:21px;
+    font-weight:500;
+
+    color:#555;
+}
+
+.amount-label{
+    font-size:12px;
+    color:#777;
+    margin-top:2px;
+}
+
+
+/* ================================
+   CONTRIBUTION BOTTOM
+================================ */
+
+.contribution-bottom{
+    display:flex;
+    align-items:center;
+
+    margin-top:15px;
+
+    gap:10px;
+}
+
+.contribution-number{
+    min-width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #b7e5e9;
+    border-radius:5px;
+
+    color:#55a6a0;
+    font-size:13px;
+}
+
+.contribution-description{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+
+    color:#4fa49d;
+    font-size:12px;
+}
+
+.contribution-description small{
+    color:#888;
+    font-size:9px;
+}
+
+
+/* ================================
+   BLUE BUTTON
+================================ */
+
+.blue-button{
+    position:absolute;
+
+    right:18px;
+    bottom:18px;
+
+    background:#315da8;
+    color:white;
+
+    padding:9px 14px;
+
+    border-radius:4px;
+
+    text-decoration:none;
+
+    font-size:11px;
+}
+
+.blue-button:hover{
+    background:#274d8d;
+}
+
+
+/* ================================
+   PAY CONTRIBUTIONS / LOANS
+================================ */
+
+.dashboard-card:nth-child(2),
+.dashboard-card:nth-child(3){
+    min-height:280px;
+}
+
+.pay-contributions-image,
+.loans-image{
+    height:130px;
+
+    background-size:cover;
+    background-position:center;
+
+    border-radius:5px;
+}
+
+
+/* ================================
+   LOAN NOTICE
+================================ */
+
+.loan-notice{
+    display:flex;
+    gap:8px;
+
+    margin-top:12px;
+
+    background:#c8f2fb;
+
+    padding:12px;
+
+    border-radius:5px;
+
+    font-size:11px;
+    line-height:1.5;
+
+    color:#607887;
+}
+
+
+/* ================================
+   SERVICES
+================================ */
+
+.services-card{
+    grid-column:1 / -1;
+}
+
+.services-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:25px 15px;
+
+    padding:15px 5px;
+}
+
+.service-item{
+    display:flex;
+
+    flex-direction:column;
 
     align-items:center;
 
     justify-content:center;
 
-    overflow:hidden;
+    gap:8px;
+
+    text-align:center;
+
+    color:#315a9c;
+
+    font-size:11px;
+}
+
+.service-item i{
+    font-size:25px;
+}
+
+
+/* ================================
+   QUICK LINKS
+================================ */
+
+.dashboard-card:last-child{
+    grid-column:1 / -1;
+}
+
+.quick-link{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    color:#52749a;
+
+    text-decoration:none;
+
+    font-size:12px;
+}
+
+.quick-link-icon{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e0f3fa;
+
+    color:#3974a5;
+
+    border-radius:5px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:700px){
+
+    .dashboard-container{
+        padding:105px 8px 40px;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:7px;
+    }
+
+
+    .dashboard-card{
+        padding:10px;
+
+        border-radius:4px;
+    }
+
+
+    .dashboard-card:first-child{
+        grid-column:1 / -1;
+    }
+
+
+    .card-title{
+        font-size:13px;
+
+        gap:6px;
+
+        margin-bottom:8px;
+    }
+
+
+    .card-icon{
+        width:28px;
+        height:28px;
+
+        font-size:13px;
+
+        border-radius:6px;
+    }
+
+
+    .dashboard-image{
+        height:170px;
+    }
+
+
+    .contribution-amount{
+        font-size:16px;
+    }
+
+
+    .amount-label{
+        font-size:8px;
+    }
+
+
+    .contribution-number{
+        min-width:28px;
+        height:28px;
+
+        font-size:10px;
+    }
+
+
+    .contribution-description{
+        font-size:9px;
+    }
+
+
+    .blue-button{
+        right:10px;
+        bottom:10px;
+
+        font-size:8px;
+
+        padding:7px 9px;
+    }
+
+
+    .pay-contributions-image,
+    .loans-image{
+        height:80px;
+    }
+
+
+    .loan-notice{
+        font-size:8px;
+
+        padding:8px;
+    }
+
+
+    .services-card{
+        grid-column:1 / -1;
+    }
+
+
+    .services-list{
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:18px 5px;
+    }
+
+
+    .service-item{
+        font-size:8px;
+
+        gap:5px;
+    }
+
+
+    .service-item i{
+        font-size:19px;
+    }
+
+
+    .dashboard-card:last-child{
+        grid-column:1 / -1;
+    }
 
 }
 
 
-.profile-icon img{
+/* ================================
+   NOTIFICATION
+================================ */
 
-    width:100%;
+.notification-panel{
+    position:fixed;
 
-    height:100%;
+    top:75px;
+    right:90px;
 
-    object-fit:cover;
+    width:460px;
 
-}
+    background:white;
 
-.menu-group{
-    width:100%;
-}
+    border-radius:7px;
 
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.22);
 
-.member-toggle{
-    cursor:pointer;
-}
+    z-index:99999;
 
-
-.submenu{
     display:none;
-    padding-left:40px;
+
+    overflow:hidden;
 }
 
-
-.submenu.show{
+.notification-panel.show{
     display:block;
 }
 
+.notification-title{
+    padding:28px;
 
-.submenu-item{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    padding:18px 15px;
-    color:#315a9c;
-    text-decoration:none;
-    font-size:20px;
+    font-size:28px;
+
+    color:#444;
+
+    border-bottom:1px solid #eee;
+}
+
+.notification-box{
+    margin:28px;
+
+    padding:25px;
+
+    background:#c8f2fb;
+
+    border-radius:5px;
+
+    color:#607887;
+
+    font-size:17px;
+
+    line-height:1.55;
+}
+
+.notification-button{
+    margin:0 28px 28px;
+
+    padding:17px;
+
+    background:#315da8;
+
+    color:white;
+
+    text-align:center;
+
+    border-radius:4px;
+
+    font-size:15px;
 }
 
 
-.submenu-item i{
-    width:25px;
-}
-
-
-.disabled{
-    color:#aab2c0;
-}
-
-    .profile-icon{
-    border:none;
-    cursor:pointer;
-    padding:0;
-}
-
+/* ================================
+   PROFILE PANEL
+================================ */
 
 .profile-panel{
-
     position:fixed;
-    top:0;
-    right:-350px;
 
-    width:350px;
+    top:0;
+    right:-400px;
+
+    width:390px;
+
     height:100vh;
 
     background:white;
 
-    z-index:99999;
+    z-index:100000;
 
-    box-shadow:-5px 0 15px rgba(0,0,0,.15);
+    box-shadow:-5px 0 18px rgba(0,0,0,.20);
 
-    padding:25px;
+    padding:30px;
 
-    transition:.3s;
+    transition:right .3s ease;
 
+    overflow-y:auto;
 }
-
 
 .profile-panel.show{
     right:0;
 }
 
-
 .close-profile{
-
     position:absolute;
-    right:18px;
+
     top:18px;
+    right:20px;
 
     border:none;
     background:none;
@@ -124,85 +557,67 @@
 
     color:#777;
 
+    cursor:pointer;
 }
-
 
 .profile-top{
-
     display:flex;
+
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
     margin-top:35px;
-
 }
 
-
 .profile-top img{
-
-    width:50px;
-    height:50px;
+    width:58px;
+    height:58px;
 
     border-radius:50%;
 
+    object-fit:cover;
 }
 
-
 .profile-top h3{
+    margin:0;
 
-    font-size:20px;
+    font-size:18px;
 
     font-weight:500;
 
-    line-height:1.2;
-
-    color:#4d5968;
-
+    color:#59636e;
 }
-
 
 .profile-top p{
+    margin:5px 0 0;
 
-    font-size:16px;
+    font-size:13px;
 
     color:#777;
-
-    margin-top:3px;
-
 }
-
-
 
 .profile-info{
-
-    background:#c9f2ff;
-
-    padding:12px;
-
     margin-top:25px;
 
-    border-radius:4px;
+    padding:15px;
 
-    font-size:16px;
+    background:#c8f2fb;
 
-    line-height:1.5;
+    border-radius:5px;
 
-    color:#60758b;
+    font-size:13px;
 
+    line-height:1.6;
+
+    color:#607887;
 }
-
-
 
 .profile-links{
-
     margin-top:15px;
-
 }
 
-
 .profile-links a{
-
     display:flex;
 
     align-items:center;
@@ -211,119 +626,65 @@
 
     padding:15px 0;
 
+    color:#607887;
+
     text-decoration:none;
 
-    color:#60758b;
+    font-size:15px;
+}
 
-    font-size:20px;
+.profile-links a i{
+    width:22px;
 
+    color:#315a9c;
 }
 
 
-.profile-links i{
+/* ================================
+   MOBILE NOTIFICATION
+================================ */
 
-    width:20px;
+@media(max-width:700px){
 
-    color:#4169a1;
+    .notification-panel{
+        top:38px;
+        right:5px;
 
-}
+        width:calc(100vw - 10px);
 
-.notification-icon{
+        max-width:420px;
+    }
 
-    border:none;
-    background:none;
+    .notification-title{
+        font-size:20px;
 
-    font-size:28px;
+        padding:18px;
+    }
 
-    color:#2f6db3;
+    .notification-box{
+        margin:18px;
 
-    cursor:pointer;
+        padding:18px;
 
-}
+        font-size:12px;
+    }
+
+    .notification-button{
+        margin:0 18px 18px;
+
+        padding:12px;
+
+        font-size:11px;
+    }
 
 
-/* NOTIFICATION PANEL */
-
-.notification-panel{
-
-    position:fixed;
-
-    top:75px;
-
-    right:90px;
-
-    width:420px;
-
-    background:white;
-
-    border-radius:8px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-
-    z-index:99999;
-
-    display:none;
-
-}
-
-.notification-panel.show{
-
-    display:block;
+    .profile-panel{
+        width:320px;
+        max-width:90%;
+    }
 
 }
 
-
-.notification-title{
-
-    font-size:30px;
-
-    padding:25px;
-
-    border-bottom:1px solid #ddd;
-
-    color:#333;
-
-}
-
-
-.notification-box{
-
-    background:#c8f3ff;
-
-    margin:25px;
-
-    padding:25px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    line-height:1.6;
-
-    color:#567;
-
-}
-
-
-
-.notification-button{
-
-    margin:0 25px 25px;
-
-    background:#315aa6;
-
-    color:white;
-
-    text-align:center;
-
-    padding:18px;
-
-    border-radius:5px;
-
-    font-size:18px;
-
-}
-   
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
@@ -523,12 +884,53 @@
 <div class="dashboard-card">
 
     <div class="card-title">
+
         <div class="card-icon">
             <i class="fa-solid fa-link"></i>
         </div>
 
         <span>Quick Links</span>
+
     </div>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+        </div>
+
+        <span>
+            Payment Reference Number (PRN) Loans
+        </span>
+
+    </a>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <span>
+            Disbursement Account Enrollment Module
+        </span>
+
+    </a>
+
+
+    <a href="#" class="quick-link">
+
+        <div class="quick-link-icon">
+            <i class="fa-solid fa-coins"></i>
+        </div>
+
+        <span>
+            Pension Booster
+        </span>
+
+    </a>
 
 </div>
 
@@ -724,128 +1126,177 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-    const closeMenu = document.getElementById("closeMenu");
+document.addEventListener("DOMContentLoaded", function(){
 
-    menuButton.onclick = function () {
+    /* ================================
+       ELEMENTS
+    ================================ */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const sideMenu =
+        document.getElementById("sideMenu");
+
+    const menuOverlay =
+        document.getElementById("menuOverlay");
+
+    const closeMenu =
+        document.getElementById("closeMenu");
+
+
+    const profileIcon =
+        document.getElementById("profileIcon");
+
+    const profilePanel =
+        document.getElementById("profilePanel");
+
+    const closeProfile =
+        document.getElementById("closeProfile");
+
+
+    const notificationIcon =
+        document.getElementById("notificationIcon");
+
+    const notificationPanel =
+        document.getElementById("notificationPanel");
+
+
+    /* ================================
+       SIDE MENU
+    ================================ */
+
+    menuButton.onclick = function(e){
+
+        e.stopPropagation();
+
         sideMenu.classList.add("open");
         menuOverlay.classList.add("open");
 
-        // Hide hamburger
-        menuButton.classList.add("menu-open");
     };
 
-    closeMenu.onclick = function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
 
-        // Show hamburger again
-        menuButton.classList.remove("menu-open");
-    };
-
-    menuOverlay.onclick = function () {
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-
-        // Show hamburger again
-        menuButton.classList.remove("menu-open");
-    };
-
-    document.addEventListener("click", function(e){
-
-    if(
-        !sideMenu.contains(e.target) &&
-        !menuButton.contains(e.target)
-    ){
+    closeMenu.onclick = function(){
 
         sideMenu.classList.remove("open");
         menuOverlay.classList.remove("open");
 
-        menuButton.classList.remove("menu-open");
+    };
+
+
+    menuOverlay.onclick = function(){
+
+        sideMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+
+    };
+
+
+    /* ================================
+       MEMBER SUBMENU
+    ================================ */
+
+    const memberToggle =
+        document.querySelector(".member-toggle");
+
+    const submenu =
+        document.querySelector(".submenu");
+
+
+    if(memberToggle && submenu){
+
+        memberToggle.onclick = function(){
+
+            submenu.classList.toggle("show");
+
+        };
 
     }
 
-});
+
+    /* ================================
+       PROFILE
+    ================================ */
+
+    profileIcon.onclick = function(e){
+
+        e.stopPropagation();
+
+
+        /* CLOSE NOTIFICATION FIRST */
+
+        notificationPanel.classList.remove("show");
+
+
+        /* OPEN PROFILE */
+
+        profilePanel.classList.add("show");
+
+    };
+
+
+    closeProfile.onclick = function(){
+
+        profilePanel.classList.remove("show");
+
+    };
+
+
+    /* ================================
+       NOTIFICATION
+    ================================ */
+
+    notificationIcon.onclick = function(e){
+
+        e.stopPropagation();
+
+
+        /* CLOSE PROFILE FIRST */
+
+        profilePanel.classList.remove("show");
+
+
+        /* TOGGLE NOTIFICATION */
+
+        notificationPanel.classList.toggle("show");
+
+    };
+
+
+    /* ================================
+       OUTSIDE CLICK
+    ================================ */
+
+    document.addEventListener("click", function(e){
+
+        /* CLOSE NOTIFICATION */
+
+        if(
+            !notificationPanel.contains(e.target) &&
+            !notificationIcon.contains(e.target)
+        ){
+
+            notificationPanel.classList.remove("show");
+
+        }
+
+
+        /* CLOSE PROFILE */
+
+        if(
+            !profilePanel.contains(e.target) &&
+            !profileIcon.contains(e.target)
+        ){
+
+            profilePanel.classList.remove("show");
+
+        }
+
+    });
 
 });
 
-    const memberToggle = document.querySelector(".member-toggle");
-const submenu = document.querySelector(".submenu");
-
-memberToggle.onclick = function(){
-
-    submenu.classList.toggle("show");
-
-};
-
-const profileIcon = document.getElementById("profileIcon");
-const profilePanel = document.getElementById("profilePanel");
-const closeProfile = document.getElementById("closeProfile");
-
-
-profileIcon.onclick=function(e){
-
-    e.stopPropagation();
-
-    notificationPanel.classList.remove("show");
-
-    profilePanel.classList.add("show");
-
-};
-
-
-closeProfile.onclick=function(){
-
-    profilePanel.classList.remove("show");
-
-};
-
- const notificationIcon =
-document.getElementById("notificationIcon");
-
-const notificationPanel =
-document.getElementById("notificationPanel");
-
-
-notificationIcon.onclick=function(e){
-
-    e.stopPropagation();
-
-    profilePanel.classList.remove("show");
-
-    notificationPanel.classList.toggle("show");
-
-};
-
-
-document.addEventListener("click",function(e){
-
-
-if(
-!notificationPanel.contains(e.target) &&
-!notificationIcon.contains(e.target)
-){
-
-notificationPanel.classList.remove("show");
-
-}
-
-
-if(
-!profilePanel.contains(e.target) &&
-!profileIcon.contains(e.target)
-){
-
-profilePanel.classList.remove("show");
-
-}
-
-
-});
 </script>
 
 <script>
