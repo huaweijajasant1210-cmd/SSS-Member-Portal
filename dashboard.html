@@ -685,6 +685,177 @@ body{
 
 }
 
+   /* =========================================
+   FIX MEMBER INFORMATION SUBMENU
+========================================= */
+
+.menu-group{
+    width:100%;
+}
+
+.member-toggle{
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+    width:100%;
+    box-sizing:border-box;
+    cursor:pointer;
+}
+
+
+/* SUBMENU CONTAINER */
+
+.submenu{
+    display:none;
+
+    width:100%;
+
+    padding:4px 0 8px 52px;
+
+    box-sizing:border-box;
+
+    background:#fff;
+}
+
+
+/* WHEN OPEN */
+
+.submenu.show{
+    display:block;
+}
+
+
+/* SUBMENU LINKS */
+
+.submenu .submenu-item{
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:14px !important;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:11px 15px !important;
+
+    margin:0 !important;
+
+    color:#315a9c !important;
+
+    background:transparent !important;
+
+    text-decoration:none !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:14px !important;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    border:none;
+
+}
+
+
+/* REMOVE PURPLE / UNDERLINE */
+
+.submenu .submenu-item:link,
+.submenu .submenu-item:visited,
+.submenu .submenu-item:hover,
+.submenu .submenu-item:active{
+    color:#315a9c !important;
+    text-decoration:none !important;
+}
+
+
+/* SUBMENU ICON */
+
+.submenu .submenu-item i{
+    width:20px;
+
+    min-width:20px;
+
+    text-align:center;
+
+    color:#315a9c !important;
+
+    font-size:14px;
+}
+
+
+/* HOVER */
+
+.submenu .submenu-item:hover{
+    background:#f1f8fc !important;
+
+    border-radius:5px;
+}
+
+
+/* DISABLED ITEM */
+
+.submenu .submenu-item.disabled{
+    color:#aab2c0 !important;
+
+    cursor:default;
+
+    background:transparent !important;
+}
+
+.submenu .submenu-item.disabled i{
+    color:#aab2c0 !important;
+}
+
+
+/* =========================================
+   SIDE MENU GENERAL FIX
+========================================= */
+
+.side-menu .menu-items{
+    width:100%;
+}
+
+.side-menu .menu-item{
+    box-sizing:border-box;
+}
+
+.side-menu .menu-item span{
+    white-space:normal;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .submenu{
+        padding-left:38px;
+        padding-top:3px;
+        padding-bottom:6px;
+    }
+
+    .submenu .submenu-item{
+        padding:10px 10px !important;
+
+        font-size:12px !important;
+
+        gap:10px !important;
+    }
+
+    .submenu .submenu-item i{
+        width:17px;
+        min-width:17px;
+        font-size:12px;
+    }
+
+}
+
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
