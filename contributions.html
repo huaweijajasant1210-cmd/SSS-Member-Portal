@@ -2361,7 +2361,7 @@ id="sideMenu">
 
                 <span>Member Information</span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+           
 
             </div>
 
@@ -2417,7 +2417,7 @@ id="sideMenu">
 
                 <span>Services</span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+             
 
             </div>
 
@@ -2509,7 +2509,7 @@ id="sideMenu">
 
                 <span>Loans</span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+           
 
             </div>
 
@@ -2574,7 +2574,7 @@ id="sideMenu">
 
                 <span>Benefits</span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+         
 
             </div>
 
@@ -2666,7 +2666,7 @@ id="sideMenu">
 
                 <span>Payment Reference Number</span>
 
-                <i class="fa-solid fa-chevron-down arrow"></i>
+              
 
             </div>
 
@@ -3063,113 +3063,46 @@ menuOverlay.onclick =
 
 
 /* =====================================================
-   ONLY ONE SUBMENU OPEN
+   SUBMENU
 ===================================================== */
 
 const menuToggles =
-    document.querySelectorAll(
-        ".menu-toggle"
-    );
+    document.querySelectorAll(".menu-toggle");
 
 
 menuToggles.forEach(toggle => {
 
-    toggle.addEventListener(
-        "click",
-        function(){
+    toggle.addEventListener("click", function(){
 
-            const targetId =
-                this.dataset.target;
+        const targetId =
+            this.dataset.target;
 
-
-            const target =
-                document.getElementById(
-                    targetId
-                );
+        const target =
+            document.getElementById(targetId);
 
 
-            menuToggles.forEach(other => {
+        menuToggles.forEach(other => {
 
-                if(other !== this){
+            if(other !== this){
 
-                    const otherId =
-                        other.dataset.target;
+                const otherId =
+                    other.dataset.target;
 
+                const otherMenu =
+                    document.getElementById(otherId);
 
-                    const otherMenu =
-                        document.getElementById(
-                            otherId
-                        );
-
-
-                    otherMenu.classList.remove(
-                        "show"
-                    );
-
-
-                    const otherArrow =
-                        other.querySelector(
-                            ".arrow"
-                        );
-
-
-                    if(otherArrow){
-
-                        otherArrow.classList.remove(
-                            "fa-chevron-up"
-                        );
-
-                        otherArrow.classList.add(
-                            "fa-chevron-down"
-                        );
-
-                    }
-
-                }
-
-            });
-
-
-            target.classList.toggle("show");
-
-
-            const arrow =
-                this.querySelector(
-                    ".arrow"
-                );
-
-
-            if(
-                target.classList.contains(
-                    "show"
-                )
-            ){
-
-                arrow.classList.remove(
-                    "fa-chevron-down"
-                );
-
-                arrow.classList.add(
-                    "fa-chevron-up"
-                );
-
-            }else{
-
-                arrow.classList.remove(
-                    "fa-chevron-up"
-                );
-
-                arrow.classList.add(
-                    "fa-chevron-down"
-                );
+                otherMenu.classList.remove("show");
 
             }
 
-        }
-    );
+        });
+
+
+        target.classList.toggle("show");
+
+    });
 
 });
-
 
 /* =====================================================
    LOGOUT
