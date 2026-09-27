@@ -1964,6 +1964,137 @@ td:first-child{
 
 }
 
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+
+.notification-icon{
+    cursor:pointer;
+}
+
+
+.notification-panel{
+
+    position:absolute;
+
+    top:50px;
+
+    right:0;
+
+    width:460px;
+
+    background:white;
+
+    border-radius:6px;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.20);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:10000;
+
+}
+
+
+.notification-panel.show{
+    display:block;
+}
+
+
+.notification-title{
+
+    font-size:30px;
+
+    font-weight:400;
+
+    color:#444;
+
+    padding:28px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+.notification-body{
+
+    padding:28px;
+
+}
+
+
+.notification-message{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    background:#c9f1fb;
+
+    border-radius:5px;
+
+    padding:25px;
+
+    color:#607080;
+
+    font-size:18px;
+
+    line-height:1.55;
+
+}
+
+
+.notification-message i{
+
+    margin-top:4px;
+
+    font-size:18px;
+
+}
+
+
+.view-notifications{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:4px;
+
+    background:#315da8;
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+.view-notifications:hover{
+
+    background:#284f91;
+
+}
+
 </style>
 
 </head>
@@ -1991,20 +2122,51 @@ td:first-child{
         </button>
 
 
-        <div class="dashboard-actions">
+     <div class="dashboard-actions">
 
-            <i class="fa-solid fa-bell"></i>
+    <div class="notification-wrapper">
 
+        <i class="fa-solid fa-bell notification-icon"
+           id="notificationButton"></i>
 
-            <div class="profile-icon">
+        <div class="notification-panel" id="notificationPanel">
 
-                <img
-                src="Lprof.jpeg"
-                alt="Profile">
+            <div class="notification-title">
+                Notification
+            </div>
+
+            <div class="notification-body">
+
+                <div class="notification-message">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        You currently have no notifications.<br>
+                        Your 10 most recent notifications<br>
+                        will be displayed here.
+                    </span>
+
+                </div>
+
+                <button class="view-notifications">
+                    VIEW ALL NOTIFICATIONS
+                </button>
 
             </div>
 
         </div>
+
+    </div>
+
+
+    <div class="profile-icon" id="profileButton">
+
+        <img src="Lprof.jpeg" alt="Profile">
+
+    </div>
+
+</div>
 
     </div>
 
@@ -3476,6 +3638,39 @@ profileOverlay.addEventListener(
     "click",
     closeProfile
 );
+
+      /* =====================================================
+   NOTIFICATION PANEL
+===================================================== */
+
+const notificationButton =
+    document.getElementById("notificationButton");
+
+const notificationPanel =
+    document.getElementById("notificationPanel");
+
+
+notificationButton.addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+    notificationPanel.classList.toggle("show");
+
+});
+
+
+document.addEventListener("click", function(e){
+
+    if(
+        !notificationPanel.contains(e.target) &&
+        e.target !== notificationButton
+    ){
+
+        notificationPanel.classList.remove("show");
+
+    }
+
+});
 
 /* =====================================================
    APPOINTMENT
