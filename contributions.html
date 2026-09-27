@@ -1974,23 +1974,26 @@ td:first-child{
     align-items:center;
 }
 
-
 .notification-icon{
     cursor:pointer;
+    position:relative;
+    z-index:2;
 }
 
+
+/* NOTIFICATION PANEL */
 
 .notification-panel{
 
     position:absolute;
 
     top:50px;
-
     right:0;
 
     width:460px;
+    max-width:calc(100vw - 30px);
 
-    background:white;
+    background:#fff;
 
     border-radius:6px;
 
@@ -2000,15 +2003,26 @@ td:first-child{
 
     overflow:hidden;
 
-    z-index:10000;
-
+    z-index:10002;
 }
 
+
+/* IMPORTANT:
+   CLOSED = COMPLETELY HIDDEN */
+
+.notification-panel:not(.show){
+    display:none !important;
+}
+
+
+/* OPEN */
 
 .notification-panel.show{
-    display:block;
+    display:block !important;
 }
 
+
+/* TITLE */
 
 .notification-title{
 
@@ -2025,12 +2039,16 @@ td:first-child{
 }
 
 
+/* BODY */
+
 .notification-body{
 
     padding:28px;
 
 }
 
+
+/* MESSAGE */
 
 .notification-message{
 
@@ -2064,6 +2082,8 @@ td:first-child{
 }
 
 
+/* BUTTON */
+
 .view-notifications{
 
     width:100%;
@@ -2092,6 +2112,71 @@ td:first-child{
 .view-notifications:hover{
 
     background:#284f91;
+
+}
+
+
+/* =====================================================
+   NOTIFICATION MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .notification-panel{
+
+        position:fixed;
+
+        top:48px;
+
+        right:10px;
+
+        left:auto;
+
+        width:calc(100vw - 20px);
+
+        max-width:420px;
+
+        border-radius:6px;
+
+    }
+
+
+    .notification-title{
+
+        font-size:20px;
+
+        padding:18px;
+
+    }
+
+
+    .notification-body{
+
+        padding:18px;
+
+    }
+
+
+    .notification-message{
+
+        padding:16px;
+
+        font-size:13px;
+
+        line-height:1.5;
+
+    }
+
+
+    .view-notifications{
+
+        margin-top:18px;
+
+        padding:13px;
+
+        font-size:12px;
+
+    }
 
 }
 
@@ -3622,10 +3707,13 @@ function closeProfile(){
 }
 
 
-profileIcon.addEventListener(
-    "click",
-    openProfile
-);
+profileIcon.addEventListener("click", function(){
+
+    notificationPanel.classList.remove("show");
+
+    openProfile();
+
+});
 
 
 profileClose.addEventListener(
@@ -3659,18 +3747,20 @@ notificationButton.addEventListener("click", function(e){
 });
 
 
-document.addEventListener("click", function(e){
+notificationPanel.addEventListener("click", function(e){
 
-    if(
-        !notificationPanel.contains(e.target) &&
-        e.target !== notificationButton
-    ){
-
-        notificationPanel.classList.remove("show");
-
-    }
+    e.stopPropagation();
 
 });
+
+
+document.addEventListener("click", function(){
+
+    notificationPanel.classList.remove("show");
+
+});
+
+
 
 /* =====================================================
    APPOINTMENT
