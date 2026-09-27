@@ -856,6 +856,70 @@ body{
 
 }
 
+   /* =========================================
+   BELL & AVATAR
+========================================= */
+
+.profile-icon{
+    width:48px !important;
+    height:48px !important;
+    min-width:48px;
+    min-height:48px;
+
+    padding:0 !important;
+    border:none !important;
+    border-radius:50% !important;
+
+    background:#ddd !important;
+
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden !important;
+    cursor:pointer;
+}
+
+.profile-icon img{
+    width:100% !important;
+    height:100% !important;
+
+    object-fit:cover !important;
+    border-radius:50% !important;
+
+    display:block;
+}
+
+.notification-icon{
+    border:none !important;
+    background:none !important;
+
+    color:#2f6db3 !important;
+
+    font-size:21px !important;
+
+    padding:5px !important;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.notification-icon i{
+    color:#2f6db3 !important;
+    font-size:21px !important;
+}
+
+.dashboard-header .profile-icon:hover{
+    background:#ddd !important;
+}
+
+.dashboard-header .notification-icon:hover{
+    background:transparent !important;
+    color:#2f6db3 !important;
+}
+
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
