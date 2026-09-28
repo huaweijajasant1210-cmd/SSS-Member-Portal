@@ -1,540 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Member Details | MySSS</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Member Details</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
-    background:#edf8fd;
+    margin:0;
+    font-family:"Montserrat",sans-serif;
+    background:#eaf6fc;
     color:#555;
-    font-size:13px;
+    overflow-x:hidden;
 }
 
-button{
-    font-family:inherit;
+
+/* =====================================================
+   FIXED HEADER
+===================================================== */
+
+.sticky-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
 
-/* =========================
+/* =====================================================
    TOP HEADER
-========================= */
-
-.fixed-top{
-    position:relative;
-    background:#fff;
-    box-shadow:0 2px 7px rgba(0,0,0,.16);
-    z-index:1000;
-}
+===================================================== */
 
 .dashboard-header{
-    height:55px;
-    background:#fff;
-    border-bottom:1px solid #e5e5e5;
+    height:75px;
+    background:white;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:0 22px;
+    padding:0 25px;
 }
 
 .menu-icon{
     border:none;
     background:none;
-    color:#2f669d;
-    font-size:27px;
+    font-size:30px;
+    color:#285a9c;
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .dashboard-actions{
     display:flex;
     align-items:center;
-    gap:20px;
-}
-
-.notification-icon{
-    border:none;
-    background:none;
-    color:#2f669d;
-    font-size:21px;
-    cursor:pointer;
+    gap:25px;
+    font-size:25px;
+    color:#285a9c;
 }
 
 .profile-icon{
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
 
-    padding:3px;
     border-radius:50%;
-    border:1px solid #ddd;
+    overflow:hidden;
 
-    background:#fff;
+    background:#ddd;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    box-shadow:0 2px 5px rgba(0,0,0,.15);
+    border:none;
+    padding:0;
 
     cursor:pointer;
-    overflow:hidden;
 }
 
 .profile-icon img{
     width:100%;
     height:100%;
     object-fit:cover;
-    border-radius:50%;
 }
 
-/* =========================
-   MEMBER MINI INFORMATION
-========================= */
+
+/* =====================================================
+   MEMBER INFO
+===================================================== */
 
 .member-info{
-    background:#fff;
-    padding:12px 25px 14px;
+    background:white;
+
+    padding:12px 25px 15px;
+
+    border-top:1px solid #eee;
 }
 
 .member-name{
-    font-size:18px;
-    font-weight:500;
-    color:#555;
-    margin-bottom:4px;
+    font-size:19px;
+    font-weight:400;
+    color:#444;
 }
 
 .member-number{
-    font-size:14px;
-    color:#555;
-    margin-bottom:7px;
+    font-size:16px;
+    margin-top:4px;
 }
 
 .member-date{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    color:#55718b;
-    font-size:13px;
+    margin-top:7px;
+    font-size:15px;
+    color:#315a9c;
 }
 
-.member-date i{
-    color:#315f91;
-    font-size:14px;
-}
 
-/* =========================
-   PAGE
-========================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
-.page-container{
+.main-content{
     width:100%;
-    max-width:760px;
+    max-width:1050px;
+
     margin:0 auto;
-    padding:35px 25px 60px;
+
+    padding:190px 20px 70px;
 }
 
-.page-title{
-    color:#71808b;
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.member-title{
     font-size:14px;
-    margin-bottom:14px;
+    color:#526987;
+    margin-bottom:15px;
 }
 
-/* =========================
-   SSS BANNER
-========================= */
 
-.sss-banner{
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.member-details{
+    background:white;
+
+    border-radius:6px;
+    overflow:hidden;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.16);
+
+    margin-bottom:15px;
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover{
     height:145px;
-    border-radius:5px 5px 0 0;
-
-    position:relative;
-    overflow:visible;
 
     background:
     linear-gradient(
         120deg,
-        #a8daf2 0%,
-        #a8daf2 27%,
-        #5ca9d6 27%,
-        #5ca9d6 48%,
-        #3797cf 48%,
-        #3797cf 68%,
-        #287fb5 68%,
-        #287fb5 78%,
-        #f2b071 78%,
-        #f2b071 100%
+        #a9d8f3 0%,
+        #a9d8f3 27%,
+        #5eaddd 27%,
+        #5eaddd 45%,
+        #3497d1 45%,
+        #3497d1 63%,
+        #2784b9 63%,
+        #2784b9 70%,
+        #f3b176 70%,
+        #f3b176 100%
     );
 }
 
-/* =========================
-   PROFILE CARD
-========================= */
 
-.profile-card{
-    background:#fff;
+/* =====================================================
+   PROFILE CONTENT
+===================================================== */
 
-    min-height:105px;
-
-    border-radius:0 0 5px 5px;
-
-    box-shadow:0 2px 7px rgba(0,0,0,.12);
-
-    position:relative;
-
-    padding:15px 18px 15px 105px;
-}
-
-.profile-photo{
-    position:absolute;
-
-    left:25px;
-    top:-28px;
-
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    background:#fff;
-    padding:5px;
-
-    box-shadow:0 2px 5px rgba(0,0,0,.12);
-}
-
-.profile-photo img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:50%;
-}
-
-.profile-name{
-    font-size:18px;
-    color:#555;
-    font-weight:500;
-    margin-bottom:10px;
-}
-
-.profile-details{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px 18px;
-}
-
-.profile-detail{
+.profile-content{
     display:flex;
     align-items:center;
-    gap:7px;
 
-    font-size:11px;
-    color:#888;
+    gap:18px;
+
+    padding:0 20px 18px;
+
+    position:relative;
 }
 
-.profile-detail i{
-    color:#416e99;
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    margin-top:-38px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    background:#55a9df;
 }
 
-/* =========================
-   TABS
-========================= */
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 
-.tabs{
+
+.profile-text{
+    padding-top:13px;
+}
+
+.profile-text h2{
+    margin:0 0 8px;
+
+    font-size:20px;
+    font-weight:400;
+
+    color:#555;
+}
+
+.profile-info{
     display:flex;
-    margin-top:18px;
-    background:#fff;
+    flex-wrap:wrap;
 
-    border-bottom:1px solid #dfe7eb;
-}
-
-.tab{
-    flex:1;
-
-    padding:12px 7px;
-
-    text-align:center;
+    gap:12px;
 
     font-size:12px;
     color:#777;
+}
 
+.profile-info span{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+
+/* =====================================================
+   MEMBER TABS
+===================================================== */
+
+.member-tabs{
+    display:flex;
+
+    gap:10px;
+
+    margin:12px 0 15px;
+}
+
+.member-tab{
     border:none;
-    background:#fff;
+
+    background:transparent;
+
+    color:#526987;
+
+    padding:8px 13px;
+
+    border-radius:5px;
+
+    font-family:"Montserrat";
+
+    font-size:13px;
 
     cursor:pointer;
 }
 
-.tab.active{
-    color:#fff;
-    background:#347db2;
-    font-weight:600;
+.member-tab.active{
+    background:#3159a2;
+
+    color:white;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.2);
 }
 
-/* =========================
-   MAIN INFORMATION CARD
-========================= */
 
-.info-card{
-    background:#fff;
+/* =====================================================
+   MEMBER DETAILS CARD
+===================================================== */
 
-    margin-top:12px;
+.details-section{
+    background:white;
 
-    padding:15px;
+    border-radius:6px;
 
-    border-radius:5px;
+    padding:25px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.10);
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
 }
 
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:8px;
 
-    background:#eef5f8;
+/* =====================================================
+   SECTION TITLE
+===================================================== */
 
-    color:#607d8b;
-
-    font-size:12px;
-    font-weight:600;
-
-    padding:9px 11px;
-
-    border-radius:3px;
-
-    margin-bottom:8px;
-    margin-top:12px;
-}
-
-.section-title:first-child{
-    margin-top:0;
-}
-
-.section-title i{
-    color:#47769b;
-}
-
-/* =========================
-   INFORMATION ROWS
-========================= */
-
-.info-row{
-    display:grid;
-    grid-template-columns:48% 52%;
-
-    border-bottom:1px solid #edf0f2;
-
-    min-height:38px;
-}
-
-.info-label{
-    padding:9px 8px;
-
-    color:#7a8790;
-
-    font-size:10.5px;
-    line-height:1.35;
-}
-
-.info-value{
-    padding:9px 8px;
+.detail-section-title{
+    font-size:14px;
 
     color:#555;
 
-    font-size:10.5px;
-    line-height:1.35;
+    padding-bottom:14px;
 
-    word-break:break-word;
+    border-bottom:1px solid #eee;
+
+    margin-bottom:15px;
+
+    margin-top:25px;
+}
+
+.detail-section-title:first-child{
+    margin-top:0;
+}
+
+.detail-section-title i{
+    color:#315a9c;
+
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   DETAILS TABLE
+===================================================== */
+
+.detail-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:12px;
+}
+
+.detail-table tr{
+    border-bottom:1px solid #eee;
+}
+
+.detail-table td{
+    padding:9px 8px;
+
+    vertical-align:top;
+}
+
+.detail-table td:first-child{
+    width:42%;
+
+    color:#777;
+
+    font-weight:400;
+}
+
+.detail-table td:last-child{
+    width:58%;
+
+    color:#555;
+
+    font-weight:400;
 }
 
 .status-active{
-    color:#27925c;
-    font-weight:600;
+    color:#29925b !important;
+    font-weight:500 !important;
 }
 
-/* =========================
-   ADDRESS CARD
-========================= */
 
-.address-card{
-    background:#fff;
+/* =====================================================
+   ADDRESS
+===================================================== */
 
-    margin-top:12px;
+.address-section{
+    background:white;
 
-    padding:15px;
+    border-radius:6px;
 
-    border-radius:5px;
+    padding:25px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.10);
+    margin-top:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
 }
 
 .address-header{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
-    margin-bottom:8px;
+    border-bottom:1px solid #eee;
+
+    padding-bottom:14px;
+
+    margin-bottom:15px;
 }
 
 .address-title{
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    color:#607d8b;
-    font-size:12px;
-    font-weight:600;
+    font-size:14px;
+    color:#555;
 }
 
 .address-title i{
-    color:#47769b;
+    color:#315a9c;
+    margin-right:7px;
 }
 
-.update-btn{
+.update-button{
     border:none;
-    background:#347db2;
-    color:#fff;
 
-    padding:7px 10px;
+    background:#3159a2;
 
-    border-radius:3px;
+    color:white;
 
-    font-size:9px;
+    padding:7px 11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat";
+
+    font-size:10px;
 
     cursor:pointer;
 }
 
-/* =========================
+.update-button:hover{
+    background:#284c8c;
+}
+
+
+/* =====================================================
    CONTACT
-========================= */
+===================================================== */
 
 .contact-title{
-    display:flex;
-    align-items:center;
-    gap:8px;
+    font-size:14px;
 
-    background:#eef5f8;
+    color:#555;
 
-    color:#607d8b;
+    border-bottom:1px solid #eee;
 
-    font-size:12px;
-    font-weight:600;
+    padding-bottom:14px;
 
-    padding:9px 11px;
+    margin-top:25px;
 
-    border-radius:3px;
-
-    margin-top:14px;
-    margin-bottom:8px;
+    margin-bottom:15px;
 }
 
 .contact-title i{
-    color:#47769b;
+    color:#315a9c;
+    margin-right:7px;
 }
 
-/* =========================
+
+/* =====================================================
    COVERAGE HISTORY
-========================= */
+===================================================== */
 
-.coverage-card{
-    background:#fff;
+.coverage-section{
+    background:white;
 
-    margin-top:12px;
+    border-radius:6px;
 
-    padding:15px;
+    padding:25px;
 
-    border-radius:5px;
+    margin-top:15px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.10);
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
 }
 
 .coverage-title{
-    display:flex;
-    align-items:center;
-    gap:8px;
+    font-size:14px;
 
-    background:#eef5f8;
+    color:#555;
 
-    color:#607d8b;
+    padding-bottom:14px;
 
-    font-size:12px;
-    font-weight:600;
+    border-bottom:1px solid #eee;
 
-    padding:9px 11px;
-
-    border-radius:3px;
-
-    margin-bottom:16px;
+    margin-bottom:25px;
 }
 
 .coverage-title i{
-    color:#47769b;
+    color:#315a9c;
+    margin-right:7px;
 }
 
-/* timeline */
 
-.timeline{
+/* =====================================================
+   COVERAGE TIMELINE
+===================================================== */
+
+.coverage-timeline{
     position:relative;
-    padding-left:28px;
+
+    padding-left:30px;
 }
 
-.timeline::before{
+.coverage-timeline::before{
     content:"";
 
     position:absolute;
 
-    left:7px;
+    left:8px;
     top:5px;
-    bottom:8px;
+    bottom:10px;
 
     width:2px;
 
-    background:#c8dce8;
+    background:#c8ddeb;
 }
 
-.timeline-item{
+.coverage-item{
     position:relative;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-.timeline-item:last-child{
-    margin-bottom:3px;
+.coverage-item:last-child{
+    margin-bottom:0;
 }
 
-.timeline-dot{
+.coverage-dot{
     position:absolute;
 
-    left:-26px;
+    left:-28px;
     top:3px;
 
     width:14px;
@@ -542,231 +574,93 @@ a{
 
     border-radius:50%;
 
-    background:#347db2;
+    background:#3159a2;
 
-    border:3px solid #dff0f8;
+    border:3px solid #d8edf8;
 }
 
-.company-name{
-    font-size:11px;
-    font-weight:600;
+.coverage-company{
     color:#555;
+
+    font-size:12px;
+
+    font-weight:500;
 
     margin-bottom:3px;
 }
 
-.company-id{
-    font-size:10px;
-    color:#87939b;
+.coverage-er{
+    color:#777;
 
-    margin-bottom:7px;
+    font-size:11px;
+
+    margin-bottom:8px;
 }
 
 .coverage-date{
-    font-size:9.5px;
     color:#777;
 
-    line-height:1.6;
+    font-size:11px;
+
+    line-height:1.7;
 }
 
 .coverage-date strong{
-    color:#607d8b;
+    color:#526987;
+
+    font-weight:500;
 }
 
-/* =========================
-   FLOATING CALENDAR
-========================= */
 
-.floating-calendar{
+/* =====================================================
+   CALENDAR
+===================================================== */
+
+.calendar{
     position:fixed;
 
     right:0;
-    top:29%;
 
-    width:48px;
-    height:58px;
+    top:200px;
 
-    border:none;
+    background:#b9dcff;
 
-    background:#cce8fb;
+    color:#285a9c;
 
-    color:#356b9d;
+    padding:15px 13px;
 
-    border-radius:10px 0 0 10px;
+    border-radius:12px 0 0 12px;
 
-    font-size:22px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    cursor:pointer;
+    font-size:25px;
 
     z-index:900;
 
-    box-shadow:0 2px 6px rgba(0,0,0,.12);
-}
-
-/* =========================
-   SIDE MENU
-========================= */
-
-.menu-overlay{
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.35);
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.25s;
-
-    z-index:1998;
-}
-
-.menu-overlay.open{
-    opacity:1;
-    visibility:visible;
-}
-
-.side-menu{
-    position:fixed;
-
-    top:0;
-    left:-300px;
-
-    width:285px;
-    height:100vh;
-
-    background:#fff;
-
-    z-index:1999;
-
-    box-shadow:3px 0 12px rgba(0,0,0,.20);
-
-    transition:.3s;
-
-    overflow-y:auto;
-}
-
-.side-menu.open{
-    left:0;
-}
-
-.menu-header{
-    height:65px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 18px;
-
-    background:#347db2;
-    color:#fff;
-}
-
-.menu-header-title{
-    font-size:15px;
-    font-weight:600;
-}
-
-.close-menu{
-    border:none;
-    background:none;
-    color:#fff;
-
-    font-size:22px;
+    opacity:.85;
 
     cursor:pointer;
 }
 
-.menu-item{
-    min-height:52px;
 
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-
-    padding:0 20px;
-
-    color:#56656e;
-
-    border-bottom:1px solid #edf0f2;
-
-    cursor:pointer;
-
-    font-size:12px;
-}
-
-.menu-item i{
-    width:20px;
-    text-align:center;
-
-    color:#347db2;
-
-    font-size:16px;
-}
-
-.menu-item:hover{
-    background:#f1f8fc;
-}
-
-.submenu{
-    display:none;
-
-    background:#f7fbfd;
-}
-
-.submenu.show{
-    display:block;
-}
-
-.submenu a{
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    min-height:45px;
-
-    padding-left:54px;
-
-    border-bottom:1px solid #edf0f2;
-
-    color:#65747d;
-
-    font-size:11px;
-}
-
-.submenu a i{
-    width:15px;
-    color:#4b82ad;
-}
-
-.menu-arrow{
-    margin-left:auto;
-    font-size:11px;
-}
-
-/* =========================
+/* =====================================================
    APPOINTMENT MODAL
-========================= */
+===================================================== */
 
 .appointment-overlay{
     position:fixed;
+
     inset:0;
+
+    width:100%;
+    height:100%;
 
     background:rgba(0,0,0,.45);
 
     display:none;
+
     align-items:center;
     justify-content:center;
 
-    z-index:3000;
+    z-index:11000;
 
     padding:20px;
 }
@@ -775,856 +669,1867 @@ a{
     display:flex;
 }
 
-.appointment-modal{
+.appointment-box{
     width:100%;
-    max-width:390px;
+
+    max-width:520px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:8px;
+
+    padding:28px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+    position:relative;
+
+    animation:appointmentOpen .2s ease;
+}
+
+@keyframes appointmentOpen{
+
+    from{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.close-appointment{
+    position:absolute;
+
+    top:15px;
+    right:18px;
+
+    border:none;
+
+    background:none;
+
+    color:#777;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.close-appointment:hover{
+    color:#285a9c;
+}
+
+.appointment-box h2{
+    margin:0;
+
+    color:#315a9c;
+
+    font-size:20px;
+
+    font-weight:500;
+}
+
+.appointment-box h2 i{
+    margin-right:8px;
+}
+
+.appointment-box hr{
+    border:none;
+
+    border-top:1px solid #eee;
+
+    margin:18px 0;
+}
+
+.appointment-box h3{
+    margin:0 0 8px;
+
+    color:#555;
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+.appointment-box p{
+    margin:0 0 20px;
+
+    color:#777;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+.appointment-box select,
+.appointment-box input,
+.appointment-box textarea{
+    width:100%;
+
+    padding:11px 12px;
+
+    margin-bottom:12px;
+
+    border:1px solid #d5d5d5;
+
+    border-radius:4px;
+
+    background:white;
+
+    color:#555;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    outline:none;
+}
+
+.appointment-box select:focus,
+.appointment-box input:focus,
+.appointment-box textarea:focus{
+    border-color:#5ca6d8;
+
+    box-shadow:0 0 0 2px rgba(92,166,216,.12);
+}
+
+.appointment-box textarea{
+    height:90px;
+
+    resize:none;
+}
+
+.next-btn{
+    width:100%;
+
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   SIDE MENU OVERLAY
+===================================================== */
+
+.menu-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+}
+
+.menu-overlay.open{
+    display:block;
+}
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+.side-menu{
+    position:fixed;
+
+    top:0;
+
+    left:-390px;
+
+    width:370px;
+
+    max-width:88%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.2);
+
+    transition:.3s ease;
+
+    overflow-y:auto;
+}
+
+.side-menu.open{
+    left:0;
+}
+
+.side-menu-header{
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    border-bottom:1px solid #eee;
+}
+
+.side-menu-header span{
+    font-size:25px;
+    color:#444;
+}
+
+.close-menu{
+    border:none;
+
+    background:none;
+
+    font-size:24px;
+
+    color:#999;
+
+    cursor:pointer;
+}
+
+.menu-items{
+    padding:15px 25px 30px;
+}
+
+.menu-item{
+    min-height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#315a9c;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    padding:10px;
+
+    border-radius:6px;
+}
+
+.menu-item:hover{
+    background:#eef6fc;
+}
+
+.menu-item i{
+    width:25px;
+
+    text-align:center;
+}
+
+.menu-group{
+    width:100%;
+}
+
+.submenu{
+    display:none;
+
+    padding-left:25px;
+}
+
+.submenu.show{
+    display:block;
+}
+
+.submenu a{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px 8px;
+
+    text-decoration:none;
+
+    color:#526987;
+
+    font-size:16px;
+}
+
+.submenu a:hover{
+    background:#eef6fc;
+}
+
+.submenu a i{
+    width:25px;
+
+    color:#315a9c;
+}
+
+
+/* =====================================================
+   PROFILE SIDE PANEL
+===================================================== */
+
+.profile-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:10000;
+
+    display:none;
+}
+
+.profile-overlay.show{
+    display:block;
+}
+
+.profile-panel{
+    position:fixed;
+
+    top:0;
+
+    right:-400px;
+
+    width:390px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    box-shadow:-4px 0 15px rgba(0,0,0,.20);
+
+    transition:right .3s ease;
+
+    overflow-y:auto;
+
+    padding:80px 28px 30px;
+}
+
+.profile-panel.open{
+    right:0;
+}
+
+.profile-close{
+    position:absolute;
+
+    top:18px;
+    right:25px;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    color:#999;
+
+    cursor:pointer;
+}
+
+.profile-panel-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:40px;
+}
+
+.profile-panel-avatar{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+}
+
+.profile-panel-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-panel-name{
+    color:#59616b;
+
+    font-size:21px;
+
+    line-height:1.2;
+}
+
+.profile-panel-name span{
+    display:block;
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#777;
+}
+
+.profile-notice{
+    display:flex;
+
+    gap:8px;
+
+    background:#c7f0fb;
+
+    padding:14px 12px;
+
+    margin-bottom:25px;
+
+    color:#687887;
+
+    font-size:15px;
+
+    line-height:1.55;
+}
+
+.profile-notice i{
+    font-size:13px;
+}
+
+.profile-links{
+    display:flex;
+
+    flex-direction:column;
+}
+
+.profile-links a{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:14px 0;
+
+    text-decoration:none;
+
+    color:#687887;
+
+    font-size:17px;
+}
+
+.profile-links a i{
+    width:20px;
+
+    color:#38659b;
+
+    font-size:19px;
+}
+
+.profile-links a:hover{
+    color:#315a9c;
+}
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.notification-wrapper{
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+}
+
+.notification-icon{
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.notification-panel{
+    position:absolute;
+
+    top:50px;
+    right:0;
+
+    width:460px;
+
+    max-width:calc(100vw - 30px);
 
     background:#fff;
 
     border-radius:6px;
 
-    box-shadow:0 5px 25px rgba(0,0,0,.25);
+    box-shadow:0 4px 18px rgba(0,0,0,.20);
+
+    display:none;
 
     overflow:hidden;
+
+    z-index:10002;
 }
 
-.appointment-header{
-    height:52px;
+.notification-panel:not(.show){
+    display:none !important;
+}
 
-    background:#347db2;
-    color:#fff;
+.notification-panel.show{
+    display:block !important;
+}
 
+.notification-title{
+    font-size:30px;
+
+    font-weight:400;
+
+    color:#444;
+
+    padding:28px;
+
+    border-bottom:1px solid #eee;
+}
+
+.notification-body{
+    padding:28px;
+}
+
+.notification-message{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
 
-    padding:0 16px;
-}
+    align-items:flex-start;
 
-.appointment-title{
-    display:flex;
-    align-items:center;
-    gap:9px;
+    gap:12px;
 
-    font-size:14px;
-    font-weight:600;
-}
-
-.appointment-close{
-    border:none;
-    background:none;
-    color:#fff;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-.appointment-content{
-    padding:18px;
-}
-
-.appointment-content h3{
-    font-size:14px;
-    color:#555;
-    margin-bottom:7px;
-}
-
-.appointment-description{
-    font-size:10px;
-    color:#888;
-    line-height:1.5;
-    margin-bottom:14px;
-}
-
-.appointment-select,
-.appointment-remarks{
-    width:100%;
-
-    border:1px solid #d8e1e6;
-
-    border-radius:3px;
-
-    padding:10px;
-
-    margin-bottom:9px;
-
-    font-family:inherit;
-    font-size:10px;
-
-    background:#fff;
-}
-
-.appointment-remarks{
-    height:65px;
-    resize:none;
-}
-
-.appointment-next{
-    width:100%;
-
-    border:none;
-
-    background:#347db2;
-    color:#fff;
-
-    padding:11px;
-
-    border-radius:3px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-
-    cursor:pointer;
-
-    font-size:11px;
-}
-
-/* =========================
-   PROFILE / NOTIFICATION
-========================= */
-
-.profile-panel,
-.notification-panel{
-    position:fixed;
-
-    top:62px;
-    right:15px;
-
-    width:280px;
-
-    background:#fff;
+    background:#c9f1fb;
 
     border-radius:5px;
 
-    box-shadow:0 3px 15px rgba(0,0,0,.18);
+    padding:25px;
 
-    z-index:1500;
+    color:#607080;
 
-    display:none;
+    font-size:18px;
+
+    line-height:1.55;
 }
 
-.profile-panel.show,
-.notification-panel.show{
-    display:block;
+.notification-message i{
+    margin-top:4px;
+
+    font-size:18px;
 }
 
-.panel-header{
-    padding:13px;
+.view-notifications{
+    width:100%;
 
-    background:#347db2;
-    color:#fff;
+    margin-top:28px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    padding:18px;
 
-    font-size:12px;
-}
-
-.panel-close{
     border:none;
-    background:none;
-    color:#fff;
+
+    border-radius:4px;
+
+    background:#315da8;
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
     cursor:pointer;
 }
 
-.panel-body{
-    padding:15px;
 
-    font-size:11px;
-    color:#777;
-}
-
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:700px){
 
-    body{
-        font-size:12px;
-    }
+    /* HEADER */
 
     .dashboard-header{
-        height:55px;
-        padding:0 17px;
+        height:38px;
+
+        padding:0 10px;
     }
 
     .menu-icon{
-        font-size:26px;
-    }
-
-    .dashboard-actions{
-        gap:15px;
-    }
-
-    .notification-icon{
         font-size:20px;
     }
 
-    .profile-icon{
-        width:42px;
-        height:42px;
+    .dashboard-actions{
+        gap:12px;
+
+        font-size:17px;
     }
 
+    .profile-icon{
+        width:28px;
+        height:28px;
+    }
+
+
+    /* MEMBER INFO */
+
     .member-info{
-        padding:11px 18px 13px;
+        padding:7px 8px 8px;
     }
 
     .member-name{
-        font-size:15px;
+        font-size:9px;
     }
 
     .member-number{
-        font-size:12px;
+        font-size:9px;
+
+        margin-top:2px;
     }
 
     .member-date{
-        font-size:11px;
+        font-size:9px;
+
+        margin-top:3px;
     }
 
-    .page-container{
-        padding:28px 12px 50px;
+
+    /* MAIN */
+
+    .main-content{
+        padding:115px 8px 50px;
     }
 
-    .page-title{
-        font-size:11px;
-        margin-left:3px;
+    .member-title{
+        display:none;
+    }
+
+
+    /* PROFILE */
+
+    .member-details{
+        border-radius:4px;
+
         margin-bottom:12px;
     }
 
-    .sss-banner{
-        height:125px;
+    .cover{
+        height:80px;
     }
 
-    .profile-card{
-        min-height:120px;
+    .profile-content{
+        gap:10px;
 
-        padding:15px 12px 13px 88px;
+        padding:0 10px 10px;
     }
 
-    .profile-photo{
-        left:18px;
-        top:-24px;
+    .avatar{
+        width:58px;
+        height:58px;
 
-        width:62px;
-        height:62px;
+        border-width:4px;
+
+        margin-top:-30px;
     }
 
-    .profile-name{
-        font-size:14px;
-        margin-bottom:9px;
+    .profile-text{
+        padding-top:8px;
     }
 
-    .profile-details{
+    .profile-text h2{
+        font-size:15px;
+
+        margin-bottom:7px;
+    }
+
+    .profile-info{
         display:block;
-    }
 
-    .profile-detail{
-        margin-bottom:5px;
-        font-size:9.5px;
-    }
-
-    .tabs{
-        margin-top:12px;
-    }
-
-    .tab{
-        padding:11px 5px;
-        font-size:10px;
-    }
-
-    .info-card,
-    .address-card,
-    .coverage-card{
-        padding:10px;
-    }
-
-    .section-title,
-    .contact-title,
-    .coverage-title{
-        font-size:10px;
-        padding:8px 9px;
-    }
-
-    .info-row{
-        grid-template-columns:46% 54%;
-    }
-
-    .info-label,
-    .info-value{
         font-size:9px;
-        padding:8px 6px;
+
+        line-height:1.8;
+    }
+
+    .profile-info span{
+        display:inline-flex;
+
+        margin-right:5px;
+    }
+
+
+    /* TABS */
+
+    .member-tabs{
+        margin:8px 0 12px;
+
+        gap:5px;
+    }
+
+    .member-tab{
+        font-size:10px;
+
+        padding:7px 10px;
+    }
+
+
+    /* DETAILS */
+
+    .details-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .detail-section-title{
+        font-size:12px;
+
+        margin-bottom:15px;
+
+        margin-top:25px;
+    }
+
+    .detail-table{
+        font-size:10px;
+    }
+
+    .detail-table td{
+        padding:8px 5px;
+
+        line-height:1.45;
+    }
+
+    .detail-table td:first-child{
+        width:45%;
+    }
+
+    .detail-table td:last-child{
+        width:55%;
+    }
+
+
+    /* ADDRESS */
+
+    .address-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
     }
 
     .address-header{
-        align-items:center;
+        align-items:flex-start;
     }
 
     .address-title{
-        font-size:10px;
+        font-size:12px;
     }
 
-    .update-btn{
+    .update-button{
         font-size:8px;
-        padding:6px 8px;
+
+        padding:7px 8px;
     }
 
-    .timeline{
-        padding-left:24px;
+    .contact-title{
+        font-size:12px;
     }
 
-    .timeline-dot{
-        left:-22px;
+
+    /* COVERAGE */
+
+    .coverage-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
     }
 
-    .company-name{
+    .coverage-title{
+        font-size:12px;
+    }
+
+    .coverage-timeline{
+        padding-left:25px;
+    }
+
+    .coverage-timeline::before{
+        left:6px;
+    }
+
+    .coverage-dot{
+        left:-25px;
+
+        width:13px;
+        height:13px;
+    }
+
+    .coverage-company{
         font-size:10px;
     }
 
-    .company-id{
+    .coverage-er{
         font-size:9px;
     }
 
     .coverage-date{
-        font-size:8.5px;
+        font-size:9px;
     }
 
-    .floating-calendar{
-        width:43px;
-        height:54px;
-        font-size:19px;
+
+    /* CALENDAR */
+
+    .calendar{
+        top:290px;
+
+        padding:12px;
+
+        font-size:22px;
+
+        border-radius:10px 0 0 10px;
     }
 
-}
 
-/* =========================
-   EXTRA SMALL PHONES
-========================= */
+    /* SIDE MENU */
 
-@media(max-width:380px){
+    .side-menu{
+        width:320px;
+    }
 
-    .member-name{
+    .side-menu-header{
+        height:60px;
+
+        padding:0 20px;
+    }
+
+    .side-menu-header span{
+        font-size:21px;
+    }
+
+    .menu-items{
+        padding:10px 18px 25px;
+    }
+
+    .menu-item{
+        min-height:50px;
+
+        font-size:16px;
+    }
+
+    .submenu a{
+        font-size:15px;
+
+        padding:11px 5px;
+    }
+
+
+    /* PROFILE */
+
+    .profile-panel{
+        width:90%;
+
+        max-width:360px;
+
+        padding:65px 20px 25px;
+    }
+
+    .profile-panel-name{
+        font-size:16px;
+    }
+
+    .profile-panel-name span{
+        font-size:12px;
+
+        margin-top:10px;
+    }
+
+    .profile-notice{
+        font-size:11px;
+
+        padding:12px;
+    }
+
+    .profile-links a{
         font-size:13px;
     }
 
-    .member-number{
-        font-size:11px;
+
+    /* NOTIFICATION */
+
+    .notification-panel{
+        position:fixed;
+
+        top:48px;
+
+        right:10px;
+        left:auto;
+
+        width:calc(100vw - 20px);
+
+        max-width:420px;
+
+        border-radius:6px;
     }
 
-    .member-date{
-        font-size:9.5px;
+    .notification-title{
+        font-size:20px;
+
+        padding:18px;
     }
 
-    .profile-name{
+    .notification-body{
+        padding:18px;
+    }
+
+    .notification-message{
+        padding:16px;
+
+        font-size:13px;
+
+        line-height:1.5;
+    }
+
+    .view-notifications{
+        margin-top:18px;
+
+        padding:13px;
+
         font-size:12px;
     }
 
-    .profile-detail{
-        font-size:8.5px;
+
+    /* APPOINTMENT */
+
+    .appointment-overlay{
+        padding:15px;
     }
 
-    .info-label,
-    .info-value{
-        font-size:8.3px;
+    .appointment-box{
+        max-width:100%;
+
+        padding:22px 18px;
+
+        border-radius:7px;
     }
 
-    .floating-calendar{
-        width:39px;
-        height:49px;
+    .appointment-box h2{
+        font-size:17px;
     }
+
+    .appointment-box h3{
+        font-size:13px;
+    }
+
+    .appointment-box p{
+        font-size:10px;
+    }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea{
+        font-size:11px;
+
+        padding:10px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media(max-width:380px){
+
+    .profile-text h2{
+        font-size:13px;
+    }
+
+    .profile-info{
+        font-size:8px;
+    }
+
+    .detail-table{
+        font-size:9px;
+    }
+
+    .detail-table td{
+        padding:7px 4px;
+    }
+
+    .coverage-company{
+        font-size:9px;
+    }
+
+    .coverage-date{
+        font-size:8px;
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
 
-<div class="fixed-top">
+<!-- =====================================================
+     FIXED HEADER
+===================================================== -->
+
+<header class="sticky-header">
 
     <div class="dashboard-header">
 
-        <button class="menu-icon" id="menuButton" type="button">
+        <button
+        class="menu-icon"
+        id="menuButton"
+        type="button">
+
             <i class="fa-solid fa-bars"></i>
+
         </button>
+
 
         <div class="dashboard-actions">
 
-            <button class="notification-icon" id="notificationIcon" type="button">
-                <i class="fa-solid fa-bell"></i>
-            </button>
+            <div class="notification-wrapper">
 
-            <button class="profile-icon" id="profileIcon" type="button">
-                <img src="Lprof.jpeg" alt="Profile">
+                <i
+                class="fa-solid fa-bell notification-icon"
+                id="notificationButton">
+                </i>
+
+
+                <div
+                class="notification-panel"
+                id="notificationPanel">
+
+                    <div class="notification-title">
+                        Notification
+                    </div>
+
+
+                    <div class="notification-body">
+
+                        <div class="notification-message">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                You currently have no notifications.<br>
+                                Your 10 most recent notifications<br>
+                                will be displayed here.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                        class="view-notifications"
+                        type="button">
+
+                            VIEW ALL NOTIFICATIONS
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+            class="profile-icon"
+            id="profileButton"
+            type="button">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
             </button>
 
         </div>
 
     </div>
+
 
     <div class="member-info">
 
         <div class="member-name">
+
             SANTIAGO, MARK LESTER NARAG
+
         </div>
+
 
         <div class="member-number">
+
             01-3599294-4
+
         </div>
+
 
         <div class="member-date">
+
             <i class="fa-solid fa-calendar-days"></i>
-            <span id="realTime"></span>
+
+            <span id="currentDate">
+                Loading...
+            </span>
+
         </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PROFILE SIDE PANEL
+===================================================== -->
+
+<div
+class="profile-overlay"
+id="profileOverlay">
+</div>
+
+
+<div
+class="profile-panel"
+id="profilePanel">
+
+
+    <button
+    class="profile-close"
+    id="profileClose"
+    type="button">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="profile-panel-header">
+
+        <div class="profile-panel-avatar">
+
+            <img
+            src="Lprof.jpeg"
+            alt="Profile">
+
+        </div>
+
+
+        <div class="profile-panel-name">
+
+            <div>
+                SANTIAGO, MARK
+            </div>
+
+            <div>
+                LESTER NARAG
+            </div>
+
+            <span>
+                01-3599294-4
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-notice">
+
+        <div>
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+
+            Your password will expire on
+            Feb 14, 2027
+
+            <br>
+
+            Your last login was on Sep 15, 2026
+            03:54:52 PM through the SSS Website
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-links">
+
+        <a href="memberinfo.html">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+                My Details
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <span>
+                Change Password
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-user-lock"></i>
+
+            <span>
+                Setup Time-based One-Time Password
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>
+                Contact Us
+            </span>
+
+        </a>
+
+
+        <a
+        href="index.html"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Sign Out
+            </span>
+
+        </a>
 
     </div>
 
 </div>
 
 
-<!-- =========================
-     SIDE MENU
-========================= -->
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
 
-<div class="menu-overlay" id="menuOverlay"></div>
+<div
+class="calendar"
+id="calendarButton">
 
-<div class="side-menu" id="sideMenu">
+    <i class="fa-solid fa-calendar-days"></i>
 
-    <div class="menu-header">
+</div>
 
-        <div class="menu-header-title">
-            MySSS Menu
-        </div>
 
-        <button class="close-menu" id="closeMenu" type="button">
+<!-- =====================================================
+     APPOINTMENT
+===================================================== -->
+
+<div
+class="appointment-overlay"
+id="appointmentModal">
+
+
+    <div class="appointment-box">
+
+
+        <button
+        class="close-appointment"
+        id="closeAppointment"
+        type="button">
+
             <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <h2>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Set Appointment
+
+        </h2>
+
+
+        <hr>
+
+
+        <h3>
+
+            Say goodbye to waiting in line!
+
+        </h3>
+
+
+        <p>
+
+            Experience ultimate convenience by setting your appointments online with just a few clicks.
+
+        </p>
+
+
+        <select id="appointmentPurpose">
+
+            <option value="">
+                Select Purpose
+            </option>
+
+            <option>
+                Member Data Update
+            </option>
+
+            <option>
+                Benefit Inquiry
+            </option>
+
+            <option>
+                Loan Inquiry
+            </option>
+
+            <option>
+                Other
+            </option>
+
+        </select>
+
+
+        <select id="appointmentRegion">
+
+            <option value="">
+                Select Region
+            </option>
+
+            <option>
+                Region II
+            </option>
+
+            <option>
+                NCR
+            </option>
+
+            <option>
+                Other Region
+            </option>
+
+        </select>
+
+
+        <select id="appointmentBranch">
+
+            <option value="">
+                Select Branch
+            </option>
+
+            <option>
+                Tuguegarao Branch
+            </option>
+
+            <option>
+                Other SSS Branch
+            </option>
+
+        </select>
+
+
+        <input
+        type="date"
+        id="appointmentDate">
+
+
+        <select id="appointmentTime">
+
+            <option value="">
+                Select Time
+            </option>
+
+            <option>
+                08:00 AM
+            </option>
+
+            <option>
+                09:00 AM
+            </option>
+
+            <option>
+                10:00 AM
+            </option>
+
+            <option>
+                11:00 AM
+            </option>
+
+            <option>
+                01:00 PM
+            </option>
+
+            <option>
+                02:00 PM
+            </option>
+
+            <option>
+                03:00 PM
+            </option>
+
+        </select>
+
+
+        <textarea
+        id="appointmentConcern"
+        placeholder="Concern(s)">
+        </textarea>
+
+
+        <button
+        class="next-btn"
+        id="appointmentNext"
+        type="button">
+
+            Next
+
+            <i class="fa-solid fa-chevron-right"></i>
+
         </button>
 
     </div>
-
-
-    <a href="dashboard.html" class="menu-item">
-        <i class="fa-solid fa-house"></i>
-        <span>Dashboard</span>
-    </a>
-
-
-    <div class="menu-group">
-
-        <div class="menu-item menu-toggle" data-target="memberSubmenu">
-
-            <i class="fa-solid fa-user-tie"></i>
-
-            <span>Member Information</span>
-
-            <i class="fa-solid fa-chevron-down menu-arrow"></i>
-
-        </div>
-
-        <div class="submenu" id="memberSubmenu">
-
-            <a href="memberinfo.html">
-                <i class="fa-solid fa-user"></i>
-                <span>Member Details</span>
-            </a>
-
-            <a href="contributions.html">
-                <i class="fa-solid fa-wallet"></i>
-                <span>My Contributions</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-comments"></i>
-                <span>Update Security Questions</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="menu-group">
-
-        <div class="menu-item menu-toggle" data-target="servicesSubmenu">
-
-            <i class="fa-solid fa-gear"></i>
-
-            <span>Services</span>
-
-            <i class="fa-solid fa-chevron-down menu-arrow"></i>
-
-        </div>
-
-        <div class="submenu" id="servicesSubmenu">
-
-            <a href="#">
-                <i class="fa-solid fa-file-lines"></i>
-                <span>Request Records</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span>Set Appointment</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="menu-group">
-
-        <div class="menu-item menu-toggle" data-target="loansSubmenu">
-
-            <i class="fa-solid fa-money-bill-transfer"></i>
-
-            <span>Loans</span>
-
-            <i class="fa-solid fa-chevron-down menu-arrow"></i>
-
-        </div>
-
-        <div class="submenu" id="loansSubmenu">
-
-            <a href="#">
-                <i class="fa-solid fa-money-bill"></i>
-                <span>Salary Loan</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-house"></i>
-                <span>Calamity Loan</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="menu-group">
-
-        <div class="menu-item menu-toggle" data-target="benefitsSubmenu">
-
-            <i class="fa-solid fa-hand-holding-heart"></i>
-
-            <span>Benefits</span>
-
-            <i class="fa-solid fa-chevron-down menu-arrow"></i>
-
-        </div>
-
-        <div class="submenu" id="benefitsSubmenu">
-
-            <a href="#">
-                <i class="fa-solid fa-person"></i>
-                <span>Retirement</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-wheelchair"></i>
-                <span>Disability</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-heart"></i>
-                <span>Funeral</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <a href="#" class="menu-item">
-
-        <i class="fa-solid fa-receipt"></i>
-
-        <span>Payment Reference Number</span>
-
-    </a>
-
-
-    <a href="#" class="menu-item">
-
-        <i class="fa-solid fa-right-from-bracket"></i>
-
-        <span>Sign Out</span>
-
-    </a>
 
 </div>
 
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-<main class="page-container">
+<main class="main-content">
 
-    <div class="page-title">
+
+    <div class="member-title">
+
         Member Information / Member Details
-    </div>
-
-
-    <!-- BANNER -->
-
-    <div class="sss-banner"></div>
-
-
-    <!-- PROFILE -->
-
-    <div class="profile-card">
-
-        <div class="profile-photo">
-            <img src="Lprof.jpeg" alt="Profile">
-        </div>
-
-        <div class="profile-name">
-            SANTIAGO, MARK LESTER NARAG
-        </div>
-
-        <div class="profile-details">
-
-            <div class="profile-detail">
-                <i class="fa-solid fa-id-card"></i>
-                <span>SS Number 01-3599294-4</span>
-            </div>
-
-            <div class="profile-detail">
-                <i class="fa-solid fa-lock"></i>
-                <span>Your password will expire on Feb 14, 2027</span>
-            </div>
-
-            <div class="profile-detail">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span>Your last login was on Sep 15, 2026 03:54:52 PM through the SSS Website</span>
-            </div>
-
-        </div>
 
     </div>
 
 
-    <!-- TABS -->
+    <!-- =================================================
+         PROFILE CARD
+    ================================================== -->
 
-    <div class="tabs">
+    <div class="member-details">
 
-        <button class="tab active" type="button">
+
+        <div class="cover"></div>
+
+
+        <div class="profile-content">
+
+
+            <div class="avatar">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </div>
+
+
+            <div class="profile-text">
+
+
+                <h2>
+
+                    SANTIAGO, MARK LESTER NARAG
+
+                </h2>
+
+
+                <div class="profile-info">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        SS Number 01-3599294-4
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        Your password will expire on Feb 14, 2027
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                        Your last login was on Sep 15, 2026 03:54:52 PM through the SSS Website
+
+                    </span>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TABS
+    ================================================== -->
+
+    <div class="member-tabs">
+
+
+        <button
+        class="member-tab active"
+        type="button">
+
+            <i class="fa-solid fa-user"></i>
+
             Member Details
+
         </button>
 
-        <button class="tab" type="button" onclick="location.href='contributions.html'">
+
+        <button
+        class="member-tab"
+        type="button"
+        onclick="location.href='contributions.html'">
+
+            <i class="fa-solid fa-wallet"></i>
+
             My Contributions
+
         </button>
 
     </div>
 
 
-    <!-- =========================
+    <!-- =================================================
          MEMBER DETAILS
-    ========================== -->
+    ================================================== -->
 
-    <div class="info-card">
+    <section class="details-section">
 
 
         <!-- MY DETAILS -->
 
-        <div class="section-title">
+        <div class="detail-section-title">
+
             <i class="fa-solid fa-user"></i>
-            <span>My Details</span>
+
+            My Details
+
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">SS Number Status</div>
-            <div class="info-value status-active">ACTIVE</div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Document Compliance</div>
-            <div class="info-value">APPLICATION THRU SSS WEB/MOBILE APP</div>
-        </div>
+            <tr>
+                <td>SS Number Status</td>
+                <td class="status-active">ACTIVE</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Membership Status</div>
-            <div class="info-value">PERMANENT</div>
-        </div>
+            <tr>
+                <td>Document Compliance</td>
+                <td>
+                    APPLICATION THRU SSS WEB/MOBILE APP
+                </td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Prior Registrant</div>
-            <div class="info-value">NO</div>
-        </div>
+            <tr>
+                <td>Membership Status</td>
+                <td>PERMANENT</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Date of SS Number Issuance</div>
-            <div class="info-value">FEB 11, 2017</div>
-        </div>
+            <tr>
+                <td>Prior Registrant</td>
+                <td>NO</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Sex</div>
-            <div class="info-value">MALE</div>
-        </div>
+            <tr>
+                <td>Date of SS Number Issuance</td>
+                <td>FEB 11, 2017</td>
+            </tr>
+
+            <tr>
+                <td>Sex</td>
+                <td>MALE</td>
+            </tr>
+
+        </table>
 
 
         <!-- EMPLOYMENT -->
 
-        <div class="section-title">
+        <div class="detail-section-title">
+
             <i class="fa-solid fa-briefcase"></i>
-            <span>Employment Details</span>
+
+            Employment Details
+
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">Reporting Date</div>
-            <div class="info-value">MAR 06, 2017</div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Reporting ID</div>
-            <div class="info-value">03-9249624-1</div>
-        </div>
+            <tr>
+                <td>Reporting Date</td>
+                <td>MAR 06, 2017</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Latest ER ID</div>
-            <div class="info-value">80-0159722-6</div>
-        </div>
+            <tr>
+                <td>Reporting ID</td>
+                <td>03-9249624-1</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Latest ER Name</div>
-            <div class="info-value">LITTELFUSE PHILIPPINES INC.</div>
-        </div>
+            <tr>
+                <td>Latest ER ID</td>
+                <td>80-0159722-6</td>
+            </tr>
+
+            <tr>
+                <td>Latest ER Name</td>
+                <td>
+                    LITTELFUSE PHILIPPINES INC.
+                </td>
+            </tr>
+
+        </table>
 
 
         <!-- OTHER DETAILS -->
 
-        <div class="section-title">
+        <div class="detail-section-title">
+
             <i class="fa-solid fa-circle-info"></i>
-            <span>Other Details</span>
+
+            Other Details
+
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">Claim Flag Status</div>
-            <div class="info-value">NO FINAL/FUNERAL CLAIM</div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Transferred to (New SS Number)</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Claim Flag Status</td>
+                <td>
+                    NO FINAL/FUNERAL CLAIM
+                </td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Membership Type</div>
-            <div class="info-value">EMPLOYEE</div>
-        </div>
+            <tr>
+                <td>Transferred to (New SS Number)</td>
+                <td>&nbsp;</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Change in Coverage Status</div>
-            <div class="info-value">NO STATUS CHANGE</div>
-        </div>
+            <tr>
+                <td>Membership Type</td>
+                <td>EMPLOYEE</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Date of Loan Disqualification</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Change in Coverage Status</td>
+                <td>NO STATUS CHANGE</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">SS Number Withdrawal Reason</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Date of Loan Disqualification</td>
+                <td>&nbsp;</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Record Location</div>
-            <div class="info-value">TUGUEGARAO</div>
-        </div>
+            <tr>
+                <td>SS Number Withdrawal Reason</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Record Location</td>
+                <td>TUGUEGARAO</td>
+            </tr>
+
+        </table>
 
 
         <!-- UMID -->
 
-        <div class="section-title">
+        <div class="detail-section-title">
+
             <i class="fa-solid fa-id-card"></i>
-            <span>UMID/SSS ID Details</span>
+
+            UMID/SSS ID Details
+
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">Capture Site</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Capture Date/Enrollment Date</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Capture Site</td>
+                <td>&nbsp;</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Card Serial/Transaction Number</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Capture Date/Enrollment Date</td>
+                <td>&nbsp;</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Card Type</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Card Serial/Transaction Number</td>
+                <td>&nbsp;</td>
+            </tr>
 
-        <div class="info-row">
-            <div class="info-label">Transaction Status</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+            <tr>
+                <td>Card Type</td>
+                <td>&nbsp;</td>
+            </tr>
 
-    </div>
+            <tr>
+                <td>Transaction Status</td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </table>
+
+    </section>
 
 
-    <!-- =========================
+    <!-- =================================================
          ADDRESS
-    ========================== -->
+    ================================================== -->
 
-    <div class="address-card">
+    <section class="address-section">
+
 
         <div class="address-header">
 
             <div class="address-title">
+
                 <i class="fa-solid fa-location-dot"></i>
-                <span>Address</span>
+
+                Address
+
             </div>
 
-            <button class="update-btn" type="button">
+
+            <button
+            class="update-button"
+            type="button">
+
                 Update Information
+
             </button>
 
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">Local Home Address</div>
-            <div class="info-value">
-                1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
-            </div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Local Mailing Address</div>
-            <div class="info-value">
-                1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
-            </div>
-        </div>
+            <tr>
 
-        <div class="info-row">
-            <div class="info-label">Foreign Home Address</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+                <td>
+                    Local Home Address
+                </td>
 
-        <div class="info-row">
-            <div class="info-label">Foreign Mailing Address</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Local Mailing Address
+                </td>
+
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAYAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Home Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Mailing Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+        </table>
 
 
         <!-- CONTACT -->
@@ -1633,150 +2538,248 @@ a{
 
             <i class="fa-solid fa-address-book"></i>
 
-            <span>Contact Information</span>
+            Contact Information
 
         </div>
 
 
-        <div class="info-row">
-            <div class="info-label">Landline</div>
-            <div class="info-value">&nbsp;</div>
-        </div>
+        <table class="detail-table">
 
-        <div class="info-row">
-            <div class="info-label">Mobile</div>
-            <div class="info-value">0935-0621315</div>
-        </div>
+            <tr>
 
-        <div class="info-row">
-            <div class="info-label">Email Address</div>
-            <div class="info-value">lestantiago22@gmail.com</div>
-        </div>
+                <td>
+                    Landline
+                </td>
 
-    </div>
+                <td>&nbsp;</td>
+
+            </tr>
 
 
-    <!-- =========================
+            <tr>
+
+                <td>
+                    Mobile
+                </td>
+
+                <td>
+                    0935-0621315
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Email Address
+                </td>
+
+                <td>
+                    lestantiago22@gmail.com
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- =================================================
          COVERAGE HISTORY
-    ========================== -->
+    ================================================== -->
 
-    <div class="coverage-card">
+    <section class="coverage-section">
+
 
         <div class="coverage-title">
 
             <i class="fa-solid fa-clock-rotate-left"></i>
 
-            <span>Coverage History</span>
+            Coverage History
 
         </div>
 
 
-        <div class="timeline">
+        <div class="coverage-timeline">
 
 
-            <!-- 1 -->
+            <!-- 2026 -->
 
-            <div class="timeline-item">
+            <div class="coverage-item">
 
-                <div class="timeline-dot"></div>
+                <div class="coverage-dot"></div>
 
-                <div class="company-name">
+
+                <div class="coverage-company">
+
                     LITTELFUSE PHILIPPINES INC.
+
                 </div>
 
-                <div class="company-id">
+
+                <div class="coverage-er">
+
                     80-0159722-6
+
                 </div>
+
 
                 <div class="coverage-date">
-                    <strong>EFFECTIVITY DATE:</strong>
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
                     Jan 01, 2026
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>REPORTING DATE:</strong>
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
                     Sep 01, 2026
+
                 </div>
 
             </div>
 
 
-            <!-- 2 -->
+            <!-- 2022 -->
 
-            <div class="timeline-item">
+            <div class="coverage-item">
 
-                <div class="timeline-dot"></div>
+                <div class="coverage-dot"></div>
 
-                <div class="company-name">
+
+                <div class="coverage-company">
+
                     LITTELFUSE PHILIPPINES INC.
+
                 </div>
 
-                <div class="company-id">
+
+                <div class="coverage-er">
+
                     80-0159722-6
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>EFFECTIVITY DATE:</strong>
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
                     Feb 01, 2022
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>REPORTING DATE:</strong>
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
                     May 01, 2025
+
                 </div>
 
             </div>
 
 
-            <!-- 3 -->
+            <!-- 2019 -->
 
-            <div class="timeline-item">
+            <div class="coverage-item">
 
-                <div class="timeline-dot"></div>
+                <div class="coverage-dot"></div>
 
-                <div class="company-name">
+
+                <div class="coverage-company">
+
                     K&amp;K MOLDING INC.
+
                 </div>
 
-                <div class="company-id">
+
+                <div class="coverage-er">
+
                     06-8529635-2
+
                 </div>
+
 
                 <div class="coverage-date">
-                    <strong>EFFECTIVITY DATE:</strong>
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
                     Dec 01, 2019
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>REPORTING DATE:</strong>
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
                     Apr 01, 2021
+
                 </div>
 
             </div>
 
 
-            <!-- 4 -->
+            <!-- 2017 -->
 
-            <div class="timeline-item">
+            <div class="coverage-item">
 
-                <div class="timeline-dot"></div>
+                <div class="coverage-dot"></div>
 
-                <div class="company-name">
+
+                <div class="coverage-company">
+
                     K&amp;K MOLDING INC.
+
                 </div>
 
-                <div class="company-id">
+
+                <div class="coverage-er">
+
                     06-8529635-2
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>EFFECTIVITY DATE:</strong>
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
                     Feb 11, 2017
+
                 </div>
 
+
                 <div class="coverage-date">
-                    <strong>REPORTING DATE:</strong>
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
                     Mar 06, 2017
+
                 </div>
 
             </div>
@@ -1784,187 +2787,472 @@ a{
 
         </div>
 
-    </div>
+    </section>
+
 
 </main>
 
 
-<!-- =========================
-     FLOATING CALENDAR
-========================= -->
+<!-- =====================================================
+     SIDE MENU OVERLAY
+===================================================== -->
 
-<button
-    class="floating-calendar"
-    id="floatingCalendar"
-    type="button">
-
-    <i class="fa-solid fa-calendar-days"></i>
-
-</button>
+<div
+class="menu-overlay"
+id="menuOverlay">
+</div>
 
 
-<!-- =========================
-     PROFILE PANEL
-========================= -->
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
 
-<div class="profile-panel" id="profilePanel">
+<div
+class="side-menu"
+id="sideMenu">
 
-    <div class="panel-header">
 
-        <span>Profile</span>
+    <div class="side-menu-header">
 
-        <button class="panel-close" id="closeProfile">
+        <span>
+            Menu
+        </span>
+
+
+        <button
+        class="close-menu"
+        id="closeMenu"
+        type="button">
+
             <i class="fa-solid fa-xmark"></i>
+
         </button>
 
     </div>
 
-    <div class="panel-body">
 
-        <strong>SANTIAGO, MARK LESTER NARAG</strong>
-
-        <br><br>
-
-        SS Number: 01-3599294-4
-
-    </div>
-
-</div>
+    <div class="menu-items">
 
 
-<!-- =========================
-     NOTIFICATION PANEL
-========================= -->
+        <!-- DASHBOARD -->
 
-<div class="notification-panel" id="notificationPanel">
+        <a
+        href="dashboard.html"
+        class="menu-item">
 
-    <div class="panel-header">
+            <i class="fa-solid fa-border-all"></i>
 
-        <span>Notifications</span>
+            <span>
+                Dashboard
+            </span>
 
-    </div>
-
-    <div class="panel-body">
-
-        No new notifications.
-
-    </div>
-
-</div>
+        </a>
 
 
-<!-- =========================
-     APPOINTMENT MODAL
-========================= -->
+        <!-- MEMBER INFORMATION -->
 
-<div class="appointment-overlay" id="appointmentOverlay">
+        <div class="menu-group">
 
-    <div class="appointment-modal">
 
-        <div class="appointment-header">
+            <div
+            class="menu-item menu-toggle"
+            data-target="memberSubmenu">
 
-            <div class="appointment-title">
+                <i class="fa-solid fa-user-tie"></i>
 
-                <i class="fa-solid fa-calendar-days"></i>
-
-                <span>Set Appointment</span>
+                <span>
+                    Member Information
+                </span>
 
             </div>
 
-            <button
-                class="appointment-close"
-                id="appointmentClose"
-                type="button">
 
-                <i class="fa-solid fa-xmark"></i>
+            <div
+            class="submenu"
+            id="memberSubmenu">
 
-            </button>
+
+                <a href="memberinfo.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Member Details
+                    </span>
+
+                </a>
+
+
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>
+                        My Contributions
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <span>
+                        Update Security Questions
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="serviceSubmenu">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="serviceSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>
+                        Disbursement Account
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Benefit Re-disbursement
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                    <span>
+                        Auto Debit Arrangement
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-roof"></i>
+
+                    <span>
+                        Pension Booster
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <span>
+                        RTC/CPO Reference Number Inquiry
+                    </span>
+
+                </a>
+
+
+                <a
+                href="#"
+                onclick="openAppointment(); return false;">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>
+                        Set Appointment
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <span>
+                        MySSS Card
+                    </span>
+
+                </a>
+
+            </div>
 
         </div>
 
 
-        <div class="appointment-content">
+        <!-- LOANS -->
 
-            <h3>Say goodbye to waiting in line!</h3>
-
-            <p class="appointment-description">
-                Experience ultimate convenience by setting your appointments online with just a few clicks.
-            </p>
+        <div class="menu-group">
 
 
-            <select id="appointmentPurpose" class="appointment-select">
+            <div
+            class="menu-item menu-toggle"
+            data-target="loanSubmenu">
 
-                <option value="">Select Purpose</option>
+                <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                <option>Member Data Update</option>
-                <option>SSS Number Inquiry</option>
-                <option>Benefit Inquiry</option>
-                <option>Loan Inquiry</option>
-                <option>Other</option>
+                <span>
+                    Loans
+                </span>
 
-            </select>
-
-
-            <select id="appointmentRegion" class="appointment-select">
-
-                <option value="">Select Region</option>
-
-                <option>Region II</option>
-                <option>NCR</option>
-                <option>Other Region</option>
-
-            </select>
+            </div>
 
 
-            <select id="appointmentBranch" class="appointment-select">
-
-                <option value="">Select Branch</option>
-
-                <option>Tuguegarao Branch</option>
-                <option>Other SSS Branch</option>
-
-            </select>
+            <div
+            class="submenu"
+            id="loanSubmenu">
 
 
-            <input
-                type="date"
-                id="appointmentDate"
-                class="appointment-select">
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Salary Loan
+                    </span>
+
+                </a>
 
 
-            <select id="appointmentTime" class="appointment-select">
+                <a href="#">
 
-                <option value="">Select Time</option>
+                    <i class="fa-solid fa-house-chimney"></i>
 
-                <option>08:00 AM</option>
-                <option>09:00 AM</option>
-                <option>10:00 AM</option>
-                <option>11:00 AM</option>
-                <option>01:00 PM</option>
-                <option>02:00 PM</option>
-                <option>03:00 PM</option>
+                    <span>
+                        Calamity/Emergency Loan
+                    </span>
 
-            </select>
+                </a>
 
 
-            <textarea
-                id="appointmentRemarks"
-                class="appointment-remarks"
-                placeholder="Remarks"></textarea>
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>
+                        Pension Loan
+                    </span>
+
+                </a>
 
 
-            <button
-                class="appointment-next"
-                id="appointmentNext"
-                type="button">
+                <a href="#">
 
-                <span>Next</span>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                <i class="fa-solid fa-chevron-right"></i>
+                    <span>
+                        Loan Penalty Condonation
+                    </span>
 
-            </button>
+                </a>
+
+            </div>
 
         </div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="benefitsSubmenu">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <span>
+                    Benefits
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="benefitsSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-pregnant"></i>
+
+                    <span>
+                        Maternity Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>
+                        Unemployment Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-bed-pulse"></i>
+
+                    <span>
+                        Sickness Benefit
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-wheelchair"></i>
+
+                    <span>
+                        Disability Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>
+                        Retirement Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>
+                        Funeral Claim
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-monument"></i>
+
+                    <span>
+                        Death Claim
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRN -->
+
+        <div class="menu-group">
+
+
+            <div
+            class="menu-item menu-toggle"
+            data-target="prnSubmenu">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <span>
+                    Payment Reference Number
+                </span>
+
+            </div>
+
+
+            <div
+            class="submenu"
+            id="prnSubmenu">
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Contributions
+                    </span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>
+                        Loans
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIGN OUT -->
+
+        <a
+        href="index.html"
+        class="menu-item"
+        onclick="logout()">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Sign Out
+            </span>
+
+        </a>
 
     </div>
 
@@ -1973,285 +3261,445 @@ a{
 
 <script>
 
-/* =========================
-   REAL TIME
-========================= */
+/* =====================================================
+   REAL TIME DATE
+===================================================== */
 
-function updateTime(){
+function updateDateTime(){
 
     const now = new Date();
 
     const options = {
 
-        timeZone:"Asia/Manila",
-
         weekday:"long",
+
         year:"numeric",
+
         month:"long",
+
         day:"numeric",
 
         hour:"numeric",
-        minute:"numeric",
-        second:"numeric",
+
+        minute:"2-digit",
+
+        second:"2-digit",
 
         hour12:true
 
     };
 
-    document.getElementById("realTime").textContent =
-        new Intl.DateTimeFormat("en-US", options).format(now);
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        now.toLocaleString(
+            "en-US",
+            options
+        );
 
 }
 
-updateTime();
+updateDateTime();
 
-setInterval(updateTime,1000);
+setInterval(
+    updateDateTime,
+    1000
+);
 
 
-/* =========================
-   ELEMENTS
-========================= */
+/* =====================================================
+   SIDE MENU
+===================================================== */
 
 const menuButton =
-    document.getElementById("menuButton");
+    document.getElementById(
+        "menuButton"
+    );
 
 const sideMenu =
-    document.getElementById("sideMenu");
+    document.getElementById(
+        "sideMenu"
+    );
 
 const menuOverlay =
-    document.getElementById("menuOverlay");
+    document.getElementById(
+        "menuOverlay"
+    );
 
 const closeMenu =
-    document.getElementById("closeMenu");
-
-const floatingCalendar =
-    document.getElementById("floatingCalendar");
-
-const appointmentOverlay =
-    document.getElementById("appointmentOverlay");
-
-const appointmentClose =
-    document.getElementById("appointmentClose");
-
-const appointmentNext =
-    document.getElementById("appointmentNext");
-
-const profileIcon =
-    document.getElementById("profileIcon");
-
-const profilePanel =
-    document.getElementById("profilePanel");
-
-const closeProfile =
-    document.getElementById("closeProfile");
-
-const notificationIcon =
-    document.getElementById("notificationIcon");
-
-const notificationPanel =
-    document.getElementById("notificationPanel");
+    document.getElementById(
+        "closeMenu"
+    );
 
 
-/* =========================
-   BURGER MENU
-========================= */
-
-menuButton.onclick = function(e){
-
-    e.stopPropagation();
+function openMenu(){
 
     sideMenu.classList.add("open");
 
     menuOverlay.classList.add("open");
 
-};
+}
 
 
-closeMenu.onclick = function(){
-
-    sideMenu.classList.remove("open");
-
-    menuOverlay.classList.remove("open");
-
-};
-
-
-menuOverlay.onclick = function(){
+function closeSideMenu(){
 
     sideMenu.classList.remove("open");
 
     menuOverlay.classList.remove("open");
 
-};
+}
 
 
-/* =========================
+menuButton.onclick =
+    openMenu;
+
+
+closeMenu.onclick =
+    closeSideMenu;
+
+
+menuOverlay.onclick =
+    closeSideMenu;
+
+
+/* =====================================================
    SUBMENUS
-========================= */
+===================================================== */
 
 const menuToggles =
-    document.querySelectorAll(".menu-toggle");
+    document.querySelectorAll(
+        ".menu-toggle"
+    );
 
-menuToggles.forEach(function(toggle){
 
-    toggle.onclick = function(e){
+menuToggles.forEach(toggle => {
+
+    toggle.addEventListener(
+        "click",
+        function(){
+
+            const targetId =
+                this.dataset.target;
+
+            const target =
+                document.getElementById(
+                    targetId
+                );
+
+
+            menuToggles.forEach(other => {
+
+                if(other !== this){
+
+                    const otherId =
+                        other.dataset.target;
+
+                    const otherMenu =
+                        document.getElementById(
+                            otherId
+                        );
+
+                    otherMenu.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            });
+
+
+            target.classList.toggle(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    localStorage.removeItem(
+        "loggedIn"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   PROFILE PANEL
+===================================================== */
+
+const profileIcon =
+    document.getElementById(
+        "profileButton"
+    );
+
+const profilePanel =
+    document.getElementById(
+        "profilePanel"
+    );
+
+const profileOverlay =
+    document.getElementById(
+        "profileOverlay"
+    );
+
+const profileClose =
+    document.getElementById(
+        "profileClose"
+    );
+
+
+function openProfile(){
+
+    profilePanel.classList.add(
+        "open"
+    );
+
+    profileOverlay.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeProfile(){
+
+    profilePanel.classList.remove(
+        "open"
+    );
+
+    profileOverlay.classList.remove(
+        "show"
+    );
+
+}
+
+
+profileIcon.addEventListener(
+    "click",
+    function(){
+
+        notificationPanel.classList.remove(
+            "show"
+        );
+
+        openProfile();
+
+    }
+);
+
+
+profileClose.addEventListener(
+    "click",
+    closeProfile
+);
+
+
+profileOverlay.addEventListener(
+    "click",
+    closeProfile
+);
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+const notificationButton =
+    document.getElementById(
+        "notificationButton"
+    );
+
+const notificationPanel =
+    document.getElementById(
+        "notificationPanel"
+    );
+
+
+notificationButton.addEventListener(
+    "click",
+    function(e){
 
         e.stopPropagation();
 
-        const targetId =
-            toggle.getAttribute("data-target");
+        profilePanel.classList.remove(
+            "open"
+        );
 
-        const targetMenu =
-            document.getElementById(targetId);
+        profileOverlay.classList.remove(
+            "show"
+        );
 
-        if(targetMenu){
+        notificationPanel.classList.toggle(
+            "show"
+        );
 
-            targetMenu.classList.toggle("show");
+    }
+);
+
+
+notificationPanel.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+    }
+);
+
+
+document.addEventListener(
+    "click",
+    function(){
+
+        notificationPanel.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   APPOINTMENT
+===================================================== */
+
+const calendarButton =
+    document.getElementById(
+        "calendarButton"
+    );
+
+const appointmentModal =
+    document.getElementById(
+        "appointmentModal"
+    );
+
+const closeAppointmentButton =
+    document.getElementById(
+        "closeAppointment"
+    );
+
+
+function openAppointment(){
+
+    appointmentModal.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeAppointment(){
+
+    appointmentModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+calendarButton.addEventListener(
+    "click",
+    openAppointment
+);
+
+
+closeAppointmentButton.addEventListener(
+    "click",
+    closeAppointment
+);
+
+
+appointmentModal.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target === appointmentModal
+        ){
+
+            closeAppointment();
 
         }
 
-    };
-
-});
-
-
-/* =========================
-   FLOATING CALENDAR
-========================= */
-
-floatingCalendar.onclick = function(e){
-
-    e.stopPropagation();
-
-    appointmentOverlay.classList.add("show");
-
-};
-
-
-/* =========================
-   CLOSE APPOINTMENT
-========================= */
-
-appointmentClose.onclick = function(){
-
-    appointmentOverlay.classList.remove("show");
-
-};
-
-
-appointmentOverlay.onclick = function(e){
-
-    if(e.target === appointmentOverlay){
-
-        appointmentOverlay.classList.remove("show");
-
     }
+);
 
-};
 
-
-/* =========================
+/* =====================================================
    APPOINTMENT NEXT
-========================= */
+===================================================== */
 
-appointmentNext.onclick = function(){
+document.getElementById(
+    "appointmentNext"
+).addEventListener(
+    "click",
+    function(){
 
-    const purpose =
-        document.getElementById("appointmentPurpose").value;
+        const purpose =
+            document.getElementById(
+                "appointmentPurpose"
+            ).value;
 
-    const region =
-        document.getElementById("appointmentRegion").value;
+        const region =
+            document.getElementById(
+                "appointmentRegion"
+            ).value;
 
-    const branch =
-        document.getElementById("appointmentBranch").value;
+        const branch =
+            document.getElementById(
+                "appointmentBranch"
+            ).value;
 
-    const date =
-        document.getElementById("appointmentDate").value;
+        const date =
+            document.getElementById(
+                "appointmentDate"
+            ).value;
 
-    const time =
-        document.getElementById("appointmentTime").value;
-
-
-    if(!purpose || !region || !branch || !date || !time){
-
-        alert("Please complete all appointment details.");
-
-        return;
-
-    }
-
-
-    alert("Appointment details are ready for the next step.");
-
-};
-
-
-/* =========================
-   PROFILE
-========================= */
-
-profileIcon.onclick = function(e){
-
-    e.stopPropagation();
-
-    notificationPanel.classList.remove("show");
-
-    profilePanel.classList.add("show");
-
-};
+        const time =
+            document.getElementById(
+                "appointmentTime"
+            ).value;
 
 
-closeProfile.onclick = function(){
+        if(
+            !purpose ||
+            !region ||
+            !branch ||
+            !date ||
+            !time
+        ){
 
-    profilePanel.classList.remove("show");
+            alert(
+                "Please complete all appointment details."
+            );
 
-};
+            return;
 
-
-/* =========================
-   NOTIFICATION
-========================= */
-
-notificationIcon.onclick = function(e){
-
-    e.stopPropagation();
-
-    profilePanel.classList.remove("show");
-
-    notificationPanel.classList.toggle("show");
-
-};
+        }
 
 
-/* =========================
-   OUTSIDE CLICK
-========================= */
-
-document.addEventListener("click",function(e){
-
-    if(
-        !profilePanel.contains(e.target) &&
-        !profileIcon.contains(e.target)
-    ){
-
-        profilePanel.classList.remove("show");
+        alert(
+            "Appointment details are ready for the next step."
+        );
 
     }
-
-
-    if(
-        !notificationPanel.contains(e.target) &&
-        !notificationIcon.contains(e.target)
-    ){
-
-        notificationPanel.classList.remove("show");
-
-    }
-
-});
+);
 
 </script>
 
+
 </body>
+
 </html>
 ```0
