@@ -2180,6 +2180,88 @@ td:first-child{
 
 }
 
+      /* =========================
+   COVERAGE HISTORY COLORS
+   ========================= */
+
+.coverage-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 35px;
+}
+
+/* Timeline line */
+.coverage-item::after {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: 30px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background: #dfe4e8;
+}
+
+/* Timeline circle - DEFAULT BLUE */
+.coverage-item::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #20a9d6;
+    border: 5px solid #d9f5fb;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 2nd COLOR - PURPLE */
+.coverage-item:nth-child(3)::before {
+    background: #4d4bc8;
+    border-color: #e7e6ff;
+}
+
+/* 3rd COLOR - ORANGE */
+.coverage-item:nth-child(4)::before {
+    background: #f2a515;
+    border-color: #fff0d5;
+}
+
+/* 4th COLOR - ORANGE */
+.coverage-item:nth-child(5)::before {
+    background: #f2a515;
+    border-color: #fff0d5;
+}
+.coverage-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+/* BLUE - first */
+.coverage-item:nth-child(2) .coverage-avatar {
+    background: #d9f7fc;
+    color: #28a9c5;
+}
+
+/* PURPLE - second */
+.coverage-item:nth-child(3) .coverage-avatar {
+    background: #e8e7ff;
+    color: #5957c8;
+}
+
+/* ORANGE - third and fourth */
+.coverage-item:nth-child(4) .coverage-avatar,
+.coverage-item:nth-child(5) .coverage-avatar {
+    background: #fff0d5;
+    color: #e8a21b;
+}
 </style>
 
 </head>
