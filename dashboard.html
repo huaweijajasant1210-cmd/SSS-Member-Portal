@@ -1290,6 +1290,146 @@ body{
 
 }
 
+   /* =========================================
+   PAY CONTRIBUTIONS NOTICE
+========================================= */
+
+.contribution-notice{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:8px !important;
+
+    margin-top:12px !important;
+
+    background:#c8f2fb !important;
+
+    padding:12px !important;
+
+    border-radius:5px !important;
+
+    color:#607887 !important;
+
+    font-size:11px !important;
+
+    line-height:1.5 !important;
+}
+
+.contribution-notice i{
+    color:#607887 !important;
+    font-size:12px !important;
+    margin-top:2px;
+}
+
+.contribution-notice span{
+    color:#607887 !important;
+}
+
+.contribution-notice b{
+    font-weight:500 !important;
+}
+
+
+/* =========================================
+   SERVICES — MATCH FIRST SCREENSHOT
+========================================= */
+
+.services-list{
+    display:grid !important;
+
+    grid-template-columns:repeat(4, 1fr) !important;
+
+    gap:25px 15px !important;
+
+    padding:15px 5px !important;
+}
+
+.service-item{
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:8px !important;
+
+    text-align:center !important;
+
+    color:#315a9c !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:11px !important;
+
+    line-height:1.3 !important;
+}
+
+.service-item i{
+    display:block !important;
+
+    width:auto !important;
+    height:auto !important;
+
+    color:#315a9c !important;
+
+    font-size:25px !important;
+
+    line-height:1 !important;
+}
+
+.service-item span{
+    display:block !important;
+
+    color:#315a9c !important;
+
+    font-size:11px !important;
+
+    font-weight:400 !important;
+
+    text-decoration:none !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .contribution-notice{
+        font-size:8px !important;
+
+        padding:8px !important;
+
+        line-height:1.5 !important;
+    }
+
+    .contribution-notice i{
+        font-size:9px !important;
+    }
+
+    .services-list{
+        grid-template-columns:repeat(4,1fr) !important;
+
+        gap:18px 5px !important;
+
+        padding:12px 3px !important;
+    }
+
+    .service-item{
+        gap:5px !important;
+
+        font-size:8px !important;
+    }
+
+    .service-item i{
+        font-size:19px !important;
+    }
+
+    .service-item span{
+        font-size:8px !important;
+    }
+}
+
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
@@ -1368,19 +1508,30 @@ body{
 
     <!-- PAY CONTRIBUTIONS -->
 
-    <div class="dashboard-card">
 
-        <div class="card-title">
-            <div class="card-icon">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-            </div>
+<div class="dashboard-card">
 
-            <span>Pay Contributions</span>
+    <div class="card-title">
+        <div class="card-icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
         </div>
 
-        <div class="dashboard-image pay-contributions-image"></div>
-
+        <span>Pay Contributions</span>
     </div>
+
+    <div class="dashboard-image pay-contributions-image"></div>
+
+    <div class="loan-notice contribution-notice">
+        <i class="fa-solid fa-circle-info"></i>
+
+        <span>
+            You don't have a generated PRN to pay your
+            contribution yet. You can create one by
+            <b>Generating a PRN →</b>
+        </span>
+    </div>
+
+</div>
 
 
     <!-- PAY LOANS -->
@@ -2187,6 +2338,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+ 
 </script>
 
 <script>
