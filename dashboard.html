@@ -973,6 +973,319 @@ body{
 
 }
 
+   /* =========================================
+   SET APPOINTMENT MODAL
+========================================= */
+
+.appointment-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.48);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:99999;
+
+    padding:20px;
+
+    box-sizing:border-box;
+}
+
+.appointment-overlay.show{
+    display:flex;
+}
+
+
+/* MODAL */
+
+.appointment-modal{
+    width:100%;
+    max-width:650px;
+
+    max-height:92vh;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+
+    overflow:auto;
+
+    font-family:"Montserrat",sans-serif;
+}
+
+
+/* HEADER */
+
+.appointment-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:28px 30px 18px 30px;
+}
+
+
+.appointment-title{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#315d9d;
+
+    font-size:24px;
+
+    font-weight:500;
+}
+
+
+.appointment-title i{
+    color:#315d9d;
+
+    font-size:25px;
+}
+
+
+.appointment-close{
+    border:none;
+
+    background:transparent;
+
+    color:#777;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    padding:4px 8px;
+}
+
+
+.appointment-close:hover{
+    color:#333;
+}
+
+
+/* CONTENT */
+
+.appointment-content{
+    padding:0 35px 35px 35px;
+}
+
+
+.appointment-content h3{
+    margin:8px 0 10px;
+
+    color:#444;
+
+    font-size:18px;
+
+    font-weight:500;
+}
+
+
+.appointment-description{
+    margin:0 0 25px;
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* SELECT / DATE */
+
+.appointment-select{
+    width:100%;
+
+    height:48px;
+
+    margin-bottom:14px;
+
+    padding:0 18px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:5px;
+
+    background:#fff;
+
+    color:#777;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:14px;
+
+    box-sizing:border-box;
+
+    outline:none;
+}
+
+
+.appointment-select:focus{
+    border-color:#75b9d6;
+
+    box-shadow:0 0 4px rgba(67,160,200,.18);
+}
+
+
+/* DATE */
+
+.appointment-date{
+    color:#777;
+
+    appearance:auto;
+}
+
+
+/* TEXT AREA */
+
+.appointment-remarks{
+    width:100%;
+
+    height:110px;
+
+    margin-bottom:20px;
+
+    padding:15px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:5px;
+
+    resize:none;
+
+    box-sizing:border-box;
+
+    font-family:"Montserrat",sans-serif;
+
+    outline:none;
+}
+
+
+.appointment-remarks:focus{
+    border-color:#75b9d6;
+}
+
+
+/* NEXT BUTTON */
+
+.appointment-next{
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#3563a9;
+
+    color:#fff;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+}
+
+
+.appointment-next:hover{
+    background:#2e5795;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+    .appointment-overlay{
+        padding:12px;
+    }
+
+    .appointment-modal{
+        max-width:100%;
+
+        max-height:94vh;
+
+        border-radius:10px;
+    }
+
+    .appointment-header{
+        padding:20px 20px 12px;
+    }
+
+    .appointment-title{
+        font-size:19px;
+
+        gap:10px;
+    }
+
+    .appointment-title i{
+        font-size:21px;
+    }
+
+    .appointment-close{
+        font-size:22px;
+    }
+
+    .appointment-content{
+        padding:0 20px 22px;
+    }
+
+    .appointment-content h3{
+        font-size:16px;
+    }
+
+    .appointment-description{
+        font-size:12px;
+
+        line-height:1.6;
+
+        margin-bottom:18px;
+    }
+
+    .appointment-select{
+        height:46px;
+
+        font-size:13px;
+
+        margin-bottom:12px;
+    }
+
+    .appointment-remarks{
+        height:100px;
+    }
+
+    .appointment-next{
+        height:46px;
+
+        font-size:14px;
+    }
+
+}
+
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
@@ -1230,6 +1543,132 @@ body{
     <i class="fa-solid fa-calendar-days"></i>
 </button>
 
+<!-- ================================
+     SET APPOINTMENT MODAL
+================================ -->
+
+<div class="appointment-overlay" id="appointmentOverlay">
+
+    <div class="appointment-modal">
+
+        <!-- HEADER -->
+        <div class="appointment-header">
+
+            <div class="appointment-title">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Set Appointment</span>
+            </div>
+
+            <button class="appointment-close" id="appointmentClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="appointment-content">
+
+            <h3>Say goodbye to waiting in line!</h3>
+
+            <p class="appointment-description">
+                Experience ultimate convenience by setting your appointments online with just a few clicks.
+            </p>
+
+
+            <!-- PURPOSE -->
+
+            <select id="appointmentPurpose" class="appointment-select">
+                <option value="">Select Purpose</option>
+                <option>Member Inquiry</option>
+                <option>SSS Number / Membership</option>
+                <option>Benefits</option>
+                <option>Loans</option>
+                <option>Contribution</option>
+                <option>Other Services</option>
+            </select>
+
+
+            <!-- REGION -->
+
+            <select id="appointmentRegion" class="appointment-select">
+                <option value="">Select Region</option>
+                <option>National Capital Region (NCR)</option>
+                <option>Region I</option>
+                <option>Region II</option>
+                <option>Region III</option>
+                <option>Region IV-A</option>
+                <option>Region IV-B</option>
+                <option>Region V</option>
+                <option>Region VI</option>
+                <option>Region VII</option>
+                <option>Region VIII</option>
+                <option>Region IX</option>
+                <option>Region X</option>
+                <option>Region XI</option>
+                <option>Region XII</option>
+                <option>CAR</option>
+                <option>CARAGA</option>
+                <option>BARMM</option>
+            </select>
+
+
+            <!-- BRANCH -->
+
+            <select id="appointmentBranch" class="appointment-select">
+                <option value="">Select Branch</option>
+                <option>SSS Main Office</option>
+                <option>SSS Branch</option>
+                <option>SSS Service Office</option>
+            </select>
+
+
+            <!-- DATE -->
+
+            <input
+                type="date"
+                id="appointmentDate"
+                class="appointment-select appointment-date"
+            >
+
+
+            <!-- TIME -->
+
+            <select id="appointmentTime" class="appointment-select">
+                <option value="">Select Time</option>
+                <option>8:00 AM - 9:00 AM</option>
+                <option>9:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 11:00 AM</option>
+                <option>11:00 AM - 12:00 PM</option>
+                <option>1:00 PM - 2:00 PM</option>
+                <option>2:00 PM - 3:00 PM</option>
+                <option>3:00 PM - 4:00 PM</option>
+            </select>
+
+
+            <!-- REMARKS -->
+
+            <textarea
+                id="appointmentRemarks"
+                class="appointment-remarks"
+                placeholder=""
+            ></textarea>
+
+
+            <!-- NEXT -->
+
+            <button class="appointment-next" id="appointmentNext">
+                <span>Next</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -1426,11 +1865,57 @@ document.addEventListener("DOMContentLoaded", function(){
    const floatingCalendar =
     document.getElementById("floatingCalendar");
 
-floatingCalendar.onclick = function(){
+const floatingCalendar =
+    document.getElementById("floatingCalendar");
 
-    window.location.href = "contributions.html";
+const appointmentOverlay =
+    document.getElementById("appointmentOverlay");
 
-};
+const appointmentClose =
+    document.getElementById("appointmentClose");
+
+
+/* OPEN APPOINTMENT */
+
+if(floatingCalendar && appointmentOverlay){
+
+    floatingCalendar.onclick = function(){
+
+        appointmentOverlay.classList.add("show");
+
+    };
+
+}
+
+
+/* CLOSE APPOINTMENT */
+
+if(appointmentClose && appointmentOverlay){
+
+    appointmentClose.onclick = function(){
+
+        appointmentOverlay.classList.remove("show");
+
+    };
+
+}
+
+
+/* CLOSE WHEN CLICKING OUTSIDE MODAL */
+
+if(appointmentOverlay){
+
+    appointmentOverlay.onclick = function(e){
+
+        if(e.target === appointmentOverlay){
+
+            appointmentOverlay.classList.remove("show");
+
+        }
+
+    };
+
+}
     /* ================================
        ELEMENTS
     ================================ */
