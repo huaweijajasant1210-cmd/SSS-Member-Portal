@@ -1862,63 +1862,22 @@ body{
 
 document.addEventListener("DOMContentLoaded", function(){
 
-   const floatingCalendar =
-    document.getElementById("floatingCalendar");
-
-const floatingCalendar =
-    document.getElementById("floatingCalendar");
-
-const appointmentOverlay =
-    document.getElementById("appointmentOverlay");
-
-const appointmentClose =
-    document.getElementById("appointmentClose");
-
-
-/* OPEN APPOINTMENT */
-
-if(floatingCalendar && appointmentOverlay){
-
-    floatingCalendar.onclick = function(){
-
-        appointmentOverlay.classList.add("show");
-
-    };
-
-}
-
-
-/* CLOSE APPOINTMENT */
-
-if(appointmentClose && appointmentOverlay){
-
-    appointmentClose.onclick = function(){
-
-        appointmentOverlay.classList.remove("show");
-
-    };
-
-}
-
-
-/* CLOSE WHEN CLICKING OUTSIDE MODAL */
-
-if(appointmentOverlay){
-
-    appointmentOverlay.onclick = function(e){
-
-        if(e.target === appointmentOverlay){
-
-            appointmentOverlay.classList.remove("show");
-
-        }
-
-    };
-
-}
     /* ================================
        ELEMENTS
     ================================ */
+
+    const floatingCalendar =
+        document.getElementById("floatingCalendar");
+
+    const appointmentOverlay =
+        document.getElementById("appointmentOverlay");
+
+    const appointmentClose =
+        document.getElementById("appointmentClose");
+
+    const appointmentNext =
+        document.getElementById("appointmentNext");
+
 
     const menuButton =
         document.getElementById("menuButton");
@@ -1950,40 +1909,6 @@ if(appointmentOverlay){
         document.getElementById("notificationPanel");
 
 
-    /* ================================
-       SIDE MENU
-    ================================ */
-
-    menuButton.onclick = function(e){
-
-        e.stopPropagation();
-
-        sideMenu.classList.add("open");
-        menuOverlay.classList.add("open");
-
-    };
-
-
-    closeMenu.onclick = function(){
-
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-
-    };
-
-
-    menuOverlay.onclick = function(){
-
-        sideMenu.classList.remove("open");
-        menuOverlay.classList.remove("open");
-
-    };
-
-
-    /* ================================
-       MEMBER SUBMENU
-    ================================ */
-
     const memberToggle =
         document.querySelector(".member-toggle");
 
@@ -1991,9 +1916,159 @@ if(appointmentOverlay){
         document.querySelector(".submenu");
 
 
+    /* ================================
+       FLOATING CALENDAR
+    ================================ */
+
+    if(floatingCalendar && appointmentOverlay){
+
+        floatingCalendar.onclick = function(e){
+
+            e.stopPropagation();
+
+            appointmentOverlay.classList.add("show");
+
+        };
+
+    }
+
+
+    /* ================================
+       CLOSE APPOINTMENT
+    ================================ */
+
+    if(appointmentClose && appointmentOverlay){
+
+        appointmentClose.onclick = function(e){
+
+            e.stopPropagation();
+
+            appointmentOverlay.classList.remove("show");
+
+        };
+
+    }
+
+
+    /* ================================
+       CLICK OUTSIDE APPOINTMENT
+    ================================ */
+
+    if(appointmentOverlay){
+
+        appointmentOverlay.onclick = function(e){
+
+            if(e.target === appointmentOverlay){
+
+                appointmentOverlay.classList.remove("show");
+
+            }
+
+        };
+
+    }
+
+
+    /* ================================
+       APPOINTMENT NEXT
+    ================================ */
+
+    if(appointmentNext){
+
+        appointmentNext.onclick = function(){
+
+            const purpose =
+                document.getElementById("appointmentPurpose").value;
+
+            const region =
+                document.getElementById("appointmentRegion").value;
+
+            const branch =
+                document.getElementById("appointmentBranch").value;
+
+            const date =
+                document.getElementById("appointmentDate").value;
+
+            const time =
+                document.getElementById("appointmentTime").value;
+
+
+            if(
+                !purpose ||
+                !region ||
+                !branch ||
+                !date ||
+                !time
+            ){
+
+                alert("Please complete all appointment details.");
+
+                return;
+
+            }
+
+
+            alert("Appointment details are ready for the next step.");
+
+        };
+
+    }
+
+
+    /* ================================
+       SIDE MENU
+    ================================ */
+
+    if(menuButton){
+
+        menuButton.onclick = function(e){
+
+            e.stopPropagation();
+
+            sideMenu.classList.add("open");
+
+            menuOverlay.classList.add("open");
+
+        };
+
+    }
+
+
+    if(closeMenu){
+
+        closeMenu.onclick = function(){
+
+            sideMenu.classList.remove("open");
+
+            menuOverlay.classList.remove("open");
+
+        };
+
+    }
+
+
+    if(menuOverlay){
+
+        menuOverlay.onclick = function(){
+
+            sideMenu.classList.remove("open");
+
+            menuOverlay.classList.remove("open");
+
+        };
+
+    }
+
+
+    /* ================================
+       MEMBER INFORMATION SUBMENU
+    ================================ */
+
     if(memberToggle && submenu){
 
-        memberToggle.onclick = function(){
+        memberToggle.onclick = function(e){
+
+            e.stopPropagation();
 
             submenu.classList.toggle("show");
 
@@ -2006,49 +2081,69 @@ if(appointmentOverlay){
        PROFILE
     ================================ */
 
-    profileIcon.onclick = function(e){
+    if(profileIcon && profilePanel){
 
-        e.stopPropagation();
+        profileIcon.onclick = function(e){
 
-
-        /* CLOSE NOTIFICATION FIRST */
-
-        notificationPanel.classList.remove("show");
+            e.stopPropagation();
 
 
-        /* OPEN PROFILE */
+            /* CLOSE NOTIFICATION */
 
-        profilePanel.classList.add("show");
+            if(notificationPanel){
 
-    };
+                notificationPanel.classList.remove("show");
+
+            }
 
 
-    closeProfile.onclick = function(){
+            /* OPEN PROFILE */
 
-        profilePanel.classList.remove("show");
+            profilePanel.classList.add("show");
 
-    };
+        };
+
+    }
+
+
+    if(closeProfile && profilePanel){
+
+        closeProfile.onclick = function(){
+
+            profilePanel.classList.remove("show");
+
+        };
+
+    }
 
 
     /* ================================
        NOTIFICATION
     ================================ */
 
-    notificationIcon.onclick = function(e){
+    if(notificationIcon && notificationPanel){
 
-        e.stopPropagation();
+        notificationIcon.onclick = function(e){
 
-
-        /* CLOSE PROFILE FIRST */
-
-        profilePanel.classList.remove("show");
+            e.stopPropagation();
 
 
-        /* TOGGLE NOTIFICATION */
+            /* CLOSE PROFILE */
 
-        notificationPanel.classList.toggle("show");
+            if(profilePanel){
 
-    };
+                profilePanel.classList.remove("show");
+
+            }
+
+
+            /* TOGGLE NOTIFICATION */
+
+            notificationPanel.classList.toggle("show");
+
+        };
+
+    }
 
 
     /* ================================
@@ -2057,9 +2152,11 @@ if(appointmentOverlay){
 
     document.addEventListener("click", function(e){
 
-        /* CLOSE NOTIFICATION */
+        /* NOTIFICATION */
 
         if(
+            notificationPanel &&
+            notificationIcon &&
             !notificationPanel.contains(e.target) &&
             !notificationIcon.contains(e.target)
         ){
@@ -2069,9 +2166,11 @@ if(appointmentOverlay){
         }
 
 
-        /* CLOSE PROFILE */
+        /* PROFILE */
 
         if(
+            profilePanel &&
+            profileIcon &&
             !profilePanel.contains(e.target) &&
             !profileIcon.contains(e.target)
         ){
