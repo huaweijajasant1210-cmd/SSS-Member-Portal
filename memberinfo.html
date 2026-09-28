@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SSS Member Information</title>
+<title>Member Details | MySSS</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
@@ -22,683 +21,445 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    background:#eaf6fc;
-    font-family:"Montserrat",sans-serif;
+    font-family:'Montserrat',sans-serif;
+    background:#edf8fd;
     color:#555;
-    font-size:14px;
+    font-size:13px;
 }
 
 button{
-    font-family:"Montserrat",sans-serif;
+    font-family:inherit;
 }
 
 a{
     text-decoration:none;
+    color:inherit;
 }
 
-
 /* =========================
-   HEADER
+   TOP HEADER
 ========================= */
 
 .fixed-top{
     position:relative;
+    background:#fff;
+    box-shadow:0 2px 7px rgba(0,0,0,.16);
     z-index:1000;
 }
 
 .dashboard-header{
-    height:58px;
+    height:55px;
     background:#fff;
-    border-bottom:1px solid #e5e9ef;
+    border-bottom:1px solid #e5e5e5;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:0 18px;
-}
-
-.dashboard-header-left{
-    display:flex;
-    align-items:center;
-}
-
-.logo{
-    height:40px;
-    width:auto;
+    padding:0 22px;
 }
 
 .menu-icon{
-    display:none;
-
     border:none;
     background:none;
-
-    color:#315a9c;
-    font-size:20px;
-
+    color:#2f669d;
+    font-size:27px;
     cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .dashboard-actions{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:20px;
 }
 
-.notification-icon,
-.calendar-icon{
+.notification-icon{
     border:none;
     background:none;
-
-    color:#315a9c;
-    font-size:19px;
-
+    color:#2f669d;
+    font-size:21px;
     cursor:pointer;
-
-    padding:6px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
-
-.notification-icon:hover,
-.calendar-icon:hover{
-    color:#234b89;
-}
-
-
-/* PROFILE */
 
 .profile-icon{
-    width:38px;
-    height:38px;
+    width:48px;
+    height:48px;
 
-    border:none;
-    padding:0;
-
+    padding:3px;
     border-radius:50%;
+    border:1px solid #ddd;
 
-    overflow:hidden;
-
-    background:#ddd;
-
-    cursor:pointer;
+    background:#fff;
 
     display:flex;
     align-items:center;
     justify-content:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+
+    cursor:pointer;
+    overflow:hidden;
 }
 
 .profile-icon img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     border-radius:50%;
 }
 
-
-/* MEMBER HEADER INFORMATION */
+/* =========================
+   MEMBER MINI INFORMATION
+========================= */
 
 .member-info{
     background:#fff;
-
-    padding:9px 28px 10px;
-
-    border-bottom:1px solid #e3e8ee;
+    padding:12px 25px 14px;
 }
 
 .member-name{
-    font-size:13px;
+    font-size:18px;
     font-weight:500;
-    color:#444;
-
-    margin-bottom:3px;
+    color:#555;
+    margin-bottom:4px;
 }
 
 .member-number{
-    font-size:12px;
-    color:#666;
-
-    margin-bottom:4px;
+    font-size:14px;
+    color:#555;
+    margin-bottom:7px;
 }
 
 .member-date{
-    font-size:11px;
-    color:#526987;
-
     display:flex;
     align-items:center;
-    gap:5px;
-}
-
-
-/* =========================
-   SIDE MENU
-========================= */
-
-.side-menu{
-    position:fixed;
-
-    top:0;
-    left:-330px;
-
-    width:300px;
-    height:100vh;
-
-    background:#fff;
-
-    z-index:99999;
-
-    box-shadow:4px 0 15px rgba(0,0,0,.15);
-
-    transition:.3s ease;
-
-    overflow-y:auto;
-}
-
-.side-menu.open{
-    left:0;
-}
-
-.side-menu-header{
-    height:65px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 20px;
-
-    border-bottom:1px solid #eee;
-}
-
-.side-menu-title{
-    font-size:17px;
-    font-weight:600;
-    color:#315a9c;
-}
-
-.close-menu{
-    border:none;
-    background:none;
-
-    color:#555;
-
-    font-size:21px;
-
-    cursor:pointer;
-}
-
-.menu-list{
-    padding:15px 12px;
-}
-
-.menu-item{
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-
-    width:100%;
-
-    padding:13px 15px;
-
-    margin-bottom:4px;
-
-    border-radius:6px;
-
-    color:#526987;
-
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.menu-item:hover{
-    background:#eef6fc;
-    color:#315a9c;
-}
-
-.menu-item i{
-    width:23px;
-    min-width:23px;
-
-    text-align:center;
-
-    color:#315a9c;
-}
-
-.menu-group{
-    width:100%;
-}
-
-.submenu{
-    display:none;
-
-    width:100%;
-
-    padding-left:27px;
-}
-
-.submenu.show{
-    display:block;
-}
-
-.submenu a{
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:11px 14px;
-
-    color:#64758b;
-
+    gap:9px;
+    color:#55718b;
     font-size:13px;
-
-    border-radius:5px;
 }
 
-.submenu a:hover{
-    background:#eef6fc;
-    color:#315a9c;
+.member-date i{
+    color:#315f91;
+    font-size:14px;
 }
-
-.submenu a i{
-    width:20px;
-    text-align:center;
-    color:#315a9c;
-}
-
-.menu-overlay{
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.35);
-
-    z-index:99998;
-
-    display:none;
-}
-
-.menu-overlay.open{
-    display:block;
-}
-
 
 /* =========================
-   MAIN CONTENT
+   PAGE
 ========================= */
 
-.main-content{
-    max-width:1150px;
-
+.page-container{
+    width:100%;
+    max-width:760px;
     margin:0 auto;
-
-    padding:18px 25px 50px;
+    padding:35px 25px 60px;
 }
 
-.breadcrumb{
-    font-size:12px;
-
-    color:#718095;
-
-    margin-bottom:16px;
+.page-title{
+    color:#71808b;
+    font-size:14px;
+    margin-bottom:14px;
 }
-
 
 /* =========================
-   PROFILE BANNER
+   SSS BANNER
+========================= */
+
+.sss-banner{
+    height:145px;
+    border-radius:5px 5px 0 0;
+
+    position:relative;
+    overflow:visible;
+
+    background:
+    linear-gradient(
+        120deg,
+        #a8daf2 0%,
+        #a8daf2 27%,
+        #5ca9d6 27%,
+        #5ca9d6 48%,
+        #3797cf 48%,
+        #3797cf 68%,
+        #287fb5 68%,
+        #287fb5 78%,
+        #f2b071 78%,
+        #f2b071 100%
+    );
+}
+
+/* =========================
+   PROFILE CARD
 ========================= */
 
 .profile-card{
     background:#fff;
 
-    border-radius:5px;
+    min-height:105px;
 
-    overflow:hidden;
+    border-radius:0 0 5px 5px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.10);
-
-    margin-bottom:15px;
-}
-
-.profile-banner{
-    height:95px;
+    box-shadow:0 2px 7px rgba(0,0,0,.12);
 
     position:relative;
 
-    overflow:hidden;
-
-    background:#f1b27d;
+    padding:15px 18px 15px 105px;
 }
 
-.profile-banner:before{
-    content:"";
-
+.profile-photo{
     position:absolute;
 
-    left:-30px;
-    top:0;
+    left:25px;
+    top:-28px;
 
-    width:350px;
-    height:100%;
-
-    background:#a8d5ec;
-
-    transform:skewX(-30deg);
-}
-
-.profile-banner:after{
-    content:"";
-
-    position:absolute;
-
-    left:300px;
-    top:0;
-
-    width:360px;
-    height:100%;
-
-    background:#50a5d4;
-
-    transform:skewX(-30deg);
-
-    box-shadow:
-        100px 0 0 #3796cf,
-        200px 0 0 #2786bd;
-}
-
-.profile-content{
-    min-height:105px;
-
-    padding:20px 22px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-}
-
-.profile-avatar{
-    width:65px;
-    height:65px;
+    width:70px;
+    height:70px;
 
     border-radius:50%;
 
-    overflow:hidden;
+    background:#fff;
+    padding:5px;
 
-    flex-shrink:0;
-
-    background:#ddd;
+    box-shadow:0 2px 5px rgba(0,0,0,.12);
 }
 
-.profile-avatar img{
+.profile-photo img{
     width:100%;
     height:100%;
 
     object-fit:cover;
-}
 
-.profile-details{
-    flex:1;
+    border-radius:50%;
 }
 
 .profile-name{
     font-size:18px;
-
-    color:#444;
-
+    color:#555;
     font-weight:500;
-
     margin-bottom:10px;
 }
 
-.profile-meta{
+.profile-details{
     display:flex;
-
     flex-wrap:wrap;
-
-    gap:10px;
-
-    font-size:11px;
-
-    color:#777;
+    gap:8px 18px;
 }
 
-.profile-meta span{
-    display:flex;
-
-    align-items:center;
-
-    gap:5px;
-}
-
-.profile-last-login{
-    margin-top:7px;
-
-    font-size:11px;
-
-    color:#777;
-}
-
-
-/* =========================
-   FLOATING CALENDAR
-========================= */
-
-.floating-calendar{
-    position:fixed;
-
-    right:12px;
-    top:31%;
-
-    width:45px;
-    height:45px;
-
-    border:none;
-
-    border-radius:7px;
-
-    background:#d6efff;
-
-    color:#315da8;
-
-    font-size:20px;
-
+.profile-detail{
     display:flex;
     align-items:center;
-    justify-content:center;
+    gap:7px;
 
-    cursor:pointer;
-
-    z-index:9000;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    font-size:11px;
+    color:#888;
 }
 
-.floating-calendar:hover{
-    background:#c5e7fa;
+.profile-detail i{
+    color:#416e99;
 }
-
 
 /* =========================
    TABS
 ========================= */
 
-.member-tabs{
+.tabs{
     display:flex;
+    margin-top:18px;
+    background:#fff;
 
-    align-items:center;
-
-    gap:5px;
-
-    margin:12px 0 15px;
+    border-bottom:1px solid #dfe7eb;
 }
 
-.member-tab{
-    border:none;
+.tab{
+    flex:1;
 
-    background:transparent;
+    padding:12px 7px;
 
-    color:#526987;
-
-    padding:9px 13px;
-
-    border-radius:5px;
-
-    font-family:"Montserrat",sans-serif;
+    text-align:center;
 
     font-size:12px;
+    color:#777;
+
+    border:none;
+    background:#fff;
 
     cursor:pointer;
 }
 
-.member-tab i{
-    margin-right:5px;
-}
-
-.member-tab.active{
-    background:#315da8;
-
+.tab.active{
     color:#fff;
-
-    box-shadow:0 2px 4px rgba(49,93,168,.25);
+    background:#347db2;
+    font-weight:600;
 }
-
 
 /* =========================
-   INFORMATION GRID
+   MAIN INFORMATION CARD
 ========================= */
-
-.info-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1.35fr;
-
-    gap:18px;
-
-    align-items:start;
-}
 
 .info-card{
     background:#fff;
 
+    margin-top:12px;
+
+    padding:15px;
+
     border-radius:5px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.09);
-
-    padding:20px 22px;
-
-    margin-bottom:18px;
+    box-shadow:0 2px 7px rgba(0,0,0,.10);
 }
 
 .section-title{
-    display:inline-flex;
-
+    display:flex;
     align-items:center;
+    gap:8px;
 
-    gap:6px;
+    background:#eef5f8;
 
-    background:#edf2f6;
+    color:#607d8b;
 
-    color:#526987;
+    font-size:12px;
+    font-weight:600;
 
-    padding:5px 9px;
+    padding:9px 11px;
 
     border-radius:3px;
 
-    font-size:12px;
+    margin-bottom:8px;
+    margin-top:12px;
+}
 
-    font-weight:500;
-
-    margin-bottom:7px;
+.section-title:first-child{
+    margin-top:0;
 }
 
 .section-title i{
-    color:#315a9c;
+    color:#47769b;
 }
+
+/* =========================
+   INFORMATION ROWS
+========================= */
 
 .info-row{
     display:grid;
+    grid-template-columns:48% 52%;
 
-    grid-template-columns:45% 55%;
+    border-bottom:1px solid #edf0f2;
 
     min-height:38px;
-
-    border-bottom:1px solid #f0f1f3;
-
-    align-items:center;
-
-    font-size:12px;
-}
-
-.info-row:last-child{
-    border-bottom:none;
 }
 
 .info-label{
-    color:#606a76;
+    padding:9px 8px;
 
-    padding:6px 5px 6px 0;
+    color:#7a8790;
+
+    font-size:10.5px;
+    line-height:1.35;
 }
 
 .info-value{
+    padding:9px 8px;
+
     color:#555;
 
-    padding:6px 0;
+    font-size:10.5px;
+    line-height:1.35;
 
     word-break:break-word;
 }
 
-
-/* =========================
-   ADDRESS
-========================= */
-
-.card-header{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-bottom:7px;
+.status-active{
+    color:#27925c;
+    font-weight:600;
 }
 
-.update-button{
+/* =========================
+   ADDRESS CARD
+========================= */
+
+.address-card{
+    background:#fff;
+
+    margin-top:12px;
+
+    padding:15px;
+
+    border-radius:5px;
+
+    box-shadow:0 2px 7px rgba(0,0,0,.10);
+}
+
+.address-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:8px;
+}
+
+.address-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#607d8b;
+    font-size:12px;
+    font-weight:600;
+}
+
+.address-title i{
+    color:#47769b;
+}
+
+.update-btn{
     border:none;
-
-    background:#315da8;
-
+    background:#347db2;
     color:#fff;
 
-    padding:6px 10px;
+    padding:7px 10px;
 
     border-radius:3px;
 
-    font-size:11px;
+    font-size:9px;
 
     cursor:pointer;
 }
 
-.update-button:hover{
-    background:#244d91;
+/* =========================
+   CONTACT
+========================= */
+
+.contact-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#eef5f8;
+
+    color:#607d8b;
+
+    font-size:12px;
+    font-weight:600;
+
+    padding:9px 11px;
+
+    border-radius:3px;
+
+    margin-top:14px;
+    margin-bottom:8px;
 }
 
+.contact-title i{
+    color:#47769b;
+}
 
 /* =========================
    COVERAGE HISTORY
@@ -707,312 +468,289 @@ a{
 .coverage-card{
     background:#fff;
 
+    margin-top:12px;
+
+    padding:15px;
+
     border-radius:5px;
 
-    box-shadow:0 2px 7px rgba(0,0,0,.09);
-
-    padding:20px 22px;
-
-    margin-bottom:18px;
+    box-shadow:0 2px 7px rgba(0,0,0,.10);
 }
 
 .coverage-title{
-    display:inline-flex;
-
+    display:flex;
     align-items:center;
+    gap:8px;
 
-    gap:6px;
+    background:#eef5f8;
 
-    background:#edf2f6;
-
-    color:#526987;
-
-    padding:5px 9px;
-
-    border-radius:3px;
+    color:#607d8b;
 
     font-size:12px;
-}
+    font-weight:600;
 
-.latest-label{
-    display:inline-block;
-
-    margin-top:14px;
-
-    background:#dff1fa;
-
-    color:#547b95;
-
-    padding:4px 10px;
-
-    font-size:11px;
+    padding:9px 11px;
 
     border-radius:3px;
+
+    margin-bottom:16px;
 }
+
+.coverage-title i{
+    color:#47769b;
+}
+
+/* timeline */
 
 .timeline{
     position:relative;
-
-    margin-top:5px;
-
-    padding-left:42px;
+    padding-left:28px;
 }
 
-.timeline:before{
+.timeline::before{
     content:"";
 
     position:absolute;
 
-    left:14px;
+    left:7px;
+    top:5px;
+    bottom:8px;
 
-    top:12px;
+    width:2px;
 
-    bottom:15px;
-
-    width:1px;
-
-    background:#d9dfe4;
+    background:#c8dce8;
 }
 
 .timeline-item{
     position:relative;
 
-    padding:17px 0;
+    margin-bottom:20px;
+}
 
-    min-height:90px;
+.timeline-item:last-child{
+    margin-bottom:3px;
 }
 
 .timeline-dot{
     position:absolute;
 
-    left:-33px;
+    left:-26px;
+    top:3px;
 
-    top:23px;
-
-    width:11px;
-
-    height:11px;
+    width:14px;
+    height:14px;
 
     border-radius:50%;
 
-    background:#12a8c5;
+    background:#347db2;
 
-    border:2px solid #fff;
-
-    box-shadow:0 0 0 1px #d7e1e7;
-}
-
-.timeline-dot.orange{
-    background:#efa51a;
-}
-
-.timeline-dot.purple{
-    background:#514cc8;
-}
-
-.timeline-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
-    margin-bottom:7px;
-}
-
-.timeline-label{
-    font-size:10px;
-
-    color:#777;
-
-    font-weight:600;
-}
-
-.timeline-date{
-    font-size:11px;
-
-    color:#555;
-
-    margin-top:3px;
-}
-
-.company-info{
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    margin-top:5px;
-}
-
-.company-circle{
-    width:30px;
-    height:30px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#dff5fa;
-
-    color:#24a4bd;
-
-    font-size:11px;
-
-    flex-shrink:0;
-}
-
-.company-circle.orange{
-    background:#fff0d2;
-
-    color:#e49a10;
+    border:3px solid #dff0f8;
 }
 
 .company-name{
     font-size:11px;
-
+    font-weight:600;
     color:#555;
 
-    line-height:1.5;
+    margin-bottom:3px;
 }
 
-.timeline-end{
-    position:relative;
+.company-id{
+    font-size:10px;
+    color:#87939b;
 
-    width:17px;
-    height:17px;
-
-    border:1px solid #d9dfe4;
-
-    border-radius:50%;
-
-    margin-left:-36px;
-
-    background:#fff;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#aaa;
-
-    font-size:8px;
+    margin-bottom:7px;
 }
 
+.coverage-date{
+    font-size:9.5px;
+    color:#777;
+
+    line-height:1.6;
+}
+
+.coverage-date strong{
+    color:#607d8b;
+}
 
 /* =========================
-   PROFILE PANEL
+   FLOATING CALENDAR
 ========================= */
 
-.profile-panel{
+.floating-calendar{
+    position:fixed;
+
+    right:0;
+    top:29%;
+
+    width:48px;
+    height:58px;
+
+    border:none;
+
+    background:#cce8fb;
+
+    color:#356b9d;
+
+    border-radius:10px 0 0 10px;
+
+    font-size:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:900;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+}
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.menu-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s;
+
+    z-index:1998;
+}
+
+.menu-overlay.open{
+    opacity:1;
+    visibility:visible;
+}
+
+.side-menu{
     position:fixed;
 
     top:0;
-    right:-400px;
+    left:-300px;
 
-    width:390px;
+    width:285px;
     height:100vh;
 
     background:#fff;
 
-    z-index:100000;
+    z-index:1999;
 
-    box-shadow:-4px 0 15px rgba(0,0,0,.15);
+    box-shadow:3px 0 12px rgba(0,0,0,.20);
 
-    transition:.3s ease;
+    transition:.3s;
+
+    overflow-y:auto;
 }
 
-.profile-panel.show{
-    right:0;
+.side-menu.open{
+    left:0;
 }
 
-.profile-panel-header{
+.menu-header{
     height:65px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    padding:0 20px;
+    padding:0 18px;
 
-    border-bottom:1px solid #eee;
+    background:#347db2;
+    color:#fff;
 }
 
-.profile-panel-title{
-    font-size:16px;
-
+.menu-header-title{
+    font-size:15px;
     font-weight:600;
-
-    color:#315a9c;
 }
 
-.close-profile{
+.close-menu{
     border:none;
-
     background:none;
+    color:#fff;
 
-    font-size:20px;
+    font-size:22px;
 
     cursor:pointer;
 }
 
-.profile-panel-content{
-    padding:25px;
+.menu-item{
+    min-height:52px;
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 20px;
+
+    color:#56656e;
+
+    border-bottom:1px solid #edf0f2;
+
+    cursor:pointer;
+
+    font-size:12px;
 }
 
+.menu-item i{
+    width:20px;
+    text-align:center;
 
-/* =========================
-   NOTIFICATION
-========================= */
+    color:#347db2;
 
-.notification-panel{
-    position:fixed;
+    font-size:16px;
+}
 
-    top:70px;
-    right:80px;
+.menu-item:hover{
+    background:#f1f8fc;
+}
 
-    width:390px;
-
-    background:#fff;
-
-    border-radius:6px;
-
-    box-shadow:0 4px 18px rgba(0,0,0,.18);
-
-    z-index:99999;
-
+.submenu{
     display:none;
+
+    background:#f7fbfd;
 }
 
-.notification-panel.show{
+.submenu.show{
     display:block;
 }
 
-.notification-header{
-    padding:15px 18px;
+.submenu a{
+    display:flex;
+    align-items:center;
 
-    border-bottom:1px solid #eee;
+    gap:12px;
 
-    font-weight:600;
+    min-height:45px;
 
-    color:#315a9c;
+    padding-left:54px;
+
+    border-bottom:1px solid #edf0f2;
+
+    color:#65747d;
+
+    font-size:11px;
 }
 
-.notification-body{
-    padding:20px;
-
-    color:#777;
-
-    font-size:13px;
+.submenu a i{
+    width:15px;
+    color:#4b82ad;
 }
 
+.menu-arrow{
+    margin-left:auto;
+    font-size:11px;
+}
 
 /* =========================
    APPOINTMENT MODAL
@@ -1020,17 +758,15 @@ a{
 
 .appointment-overlay{
     position:fixed;
-
     inset:0;
 
-    background:rgba(0,0,0,.48);
+    background:rgba(0,0,0,.45);
 
     display:none;
-
     align-items:center;
     justify-content:center;
 
-    z-index:999999;
+    z-index:3000;
 
     padding:20px;
 }
@@ -1041,99 +777,87 @@ a{
 
 .appointment-modal{
     width:100%;
-
-    max-width:600px;
+    max-width:390px;
 
     background:#fff;
 
-    border-radius:8px;
+    border-radius:6px;
 
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
+    box-shadow:0 5px 25px rgba(0,0,0,.25);
 
     overflow:hidden;
 }
 
 .appointment-header{
-    background:#315da8;
+    height:52px;
 
+    background:#347db2;
     color:#fff;
 
-    padding:15px 20px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
+
+    padding:0 16px;
 }
 
 .appointment-title{
     display:flex;
-
     align-items:center;
-
     gap:9px;
 
-    font-size:15px;
-
+    font-size:14px;
     font-weight:600;
 }
 
 .appointment-close{
     border:none;
-
     background:none;
-
     color:#fff;
 
-    font-size:20px;
+    font-size:18px;
 
     cursor:pointer;
 }
 
 .appointment-content{
-    padding:22px;
+    padding:18px;
 }
 
 .appointment-content h3{
-    margin:0 0 8px;
-
-    color:#444;
-
-    font-size:18px;
+    font-size:14px;
+    color:#555;
+    margin-bottom:7px;
 }
 
 .appointment-description{
-    font-size:12px;
-
-    color:#777;
-
-    margin-bottom:18px;
+    font-size:10px;
+    color:#888;
+    line-height:1.5;
+    margin-bottom:14px;
 }
 
 .appointment-select,
 .appointment-remarks{
     width:100%;
 
-    padding:11px;
+    border:1px solid #d8e1e6;
 
-    margin-bottom:12px;
+    border-radius:3px;
 
-    border:1px solid #d8dee5;
+    padding:10px;
 
-    border-radius:4px;
+    margin-bottom:9px;
 
-    font-family:"Montserrat",sans-serif;
-
-    font-size:12px;
+    font-family:inherit;
+    font-size:10px;
 
     background:#fff;
 }
 
 .appointment-remarks{
-    min-height:90px;
-
-    resize:vertical;
+    height:65px;
+    resize:none;
 }
 
 .appointment-next{
@@ -1141,274 +865,283 @@ a{
 
     border:none;
 
-    background:#315da8;
-
+    background:#347db2;
     color:#fff;
 
-    padding:12px;
+    padding:11px;
 
-    border-radius:4px;
+    border-radius:3px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 
     cursor:pointer;
 
-    font-size:13px;
+    font-size:11px;
 }
-
 
 /* =========================
-   DESKTOP
+   PROFILE / NOTIFICATION
 ========================= */
 
-@media(min-width:801px){
+.profile-panel,
+.notification-panel{
+    position:fixed;
 
-    .dashboard-header{
-        padding:0 45px;
-    }
+    top:62px;
+    right:15px;
 
-    .member-info{
-        padding-left:45px;
-        padding-right:45px;
-    }
+    width:280px;
 
+    background:#fff;
+
+    border-radius:5px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.18);
+
+    z-index:1500;
+
+    display:none;
 }
 
+.profile-panel.show,
+.notification-panel.show{
+    display:block;
+}
+
+.panel-header{
+    padding:13px;
+
+    background:#347db2;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    font-size:12px;
+}
+
+.panel-close{
+    border:none;
+    background:none;
+    color:#fff;
+    cursor:pointer;
+}
+
+.panel-body{
+    padding:15px;
+
+    font-size:11px;
+    color:#777;
+}
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
     body{
         font-size:12px;
     }
 
     .dashboard-header{
-        height:42px;
-
-        padding:0 10px;
+        height:55px;
+        padding:0 17px;
     }
 
     .menu-icon{
-        display:flex;
-    }
-
-    .dashboard-header-left{
-        display:none;
+        font-size:26px;
     }
 
     .dashboard-actions{
-        margin-left:auto;
-
-        gap:8px;
+        gap:15px;
     }
 
-    .notification-icon,
-    .calendar-icon{
-        font-size:16px;
-
-        padding:4px;
+    .notification-icon{
+        font-size:20px;
     }
 
     .profile-icon{
-        width:30px;
-        height:30px;
+        width:42px;
+        height:42px;
     }
 
     .member-info{
-        padding:7px 10px 8px;
+        padding:11px 18px 13px;
     }
 
     .member-name{
-        font-size:10px;
+        font-size:15px;
     }
 
     .member-number{
-        font-size:9px;
+        font-size:12px;
     }
 
     .member-date{
-        font-size:9px;
+        font-size:11px;
     }
 
-    .main-content{
-        padding:8px 8px 35px;
+    .page-container{
+        padding:28px 12px 50px;
     }
 
-    .breadcrumb{
-        font-size:9px;
-
-        margin:8px 3px 12px;
+    .page-title{
+        font-size:11px;
+        margin-left:3px;
+        margin-bottom:12px;
     }
 
-    .profile-banner{
-        height:80px;
+    .sss-banner{
+        height:125px;
     }
 
-    .profile-content{
-        min-height:105px;
+    .profile-card{
+        min-height:120px;
 
-        padding:14px 16px;
-
-        gap:12px;
+        padding:15px 12px 13px 88px;
     }
 
-    .profile-avatar{
-        width:55px;
-        height:55px;
+    .profile-photo{
+        left:18px;
+        top:-24px;
+
+        width:62px;
+        height:62px;
     }
 
     .profile-name{
-        font-size:16px;
-
-        margin-bottom:7px;
+        font-size:14px;
+        margin-bottom:9px;
     }
 
-    .profile-meta{
-        gap:5px 8px;
-
-        font-size:9px;
-    }
-
-    .profile-last-login{
-        font-size:9px;
-    }
-
-    .member-tabs{
-        margin:10px 0 12px;
-
-        gap:2px;
-    }
-
-    .member-tab{
-        font-size:10px;
-
-        padding:8px 10px;
-    }
-
-    .info-grid{
+    .profile-details{
         display:block;
     }
 
+    .profile-detail{
+        margin-bottom:5px;
+        font-size:9.5px;
+    }
+
+    .tabs{
+        margin-top:12px;
+    }
+
+    .tab{
+        padding:11px 5px;
+        font-size:10px;
+    }
+
     .info-card,
+    .address-card,
     .coverage-card{
-        padding:15px 14px;
-
-        margin-bottom:12px;
-
-        border-radius:4px;
+        padding:10px;
     }
 
     .section-title,
+    .contact-title,
     .coverage-title{
         font-size:10px;
-
-        padding:5px 7px;
+        padding:8px 9px;
     }
 
     .info-row{
-        grid-template-columns:50% 50%;
-
-        min-height:37px;
-
-        font-size:10px;
+        grid-template-columns:46% 54%;
     }
 
     .info-label,
     .info-value{
-        padding:7px 3px;
+        font-size:9px;
+        padding:8px 6px;
     }
 
-    .update-button{
-        font-size:9px;
+    .address-header{
+        align-items:center;
+    }
 
+    .address-title{
+        font-size:10px;
+    }
+
+    .update-btn{
+        font-size:8px;
         padding:6px 8px;
     }
 
     .timeline{
-        padding-left:32px;
-    }
-
-    .timeline:before{
-        left:10px;
+        padding-left:24px;
     }
 
     .timeline-dot{
-        left:-25px;
-    }
-
-    .timeline-grid{
-        gap:8px;
-    }
-
-    .timeline-label{
-        font-size:8px;
-    }
-
-    .timeline-date{
-        font-size:9px;
+        left:-22px;
     }
 
     .company-name{
+        font-size:10px;
+    }
+
+    .company-id{
         font-size:9px;
     }
 
-    .company-circle{
-        width:27px;
-        height:27px;
-
-        font-size:9px;
+    .coverage-date{
+        font-size:8.5px;
     }
 
     .floating-calendar{
-        right:6px;
-
-        top:27%;
-
-        width:40px;
-        height:40px;
-
-        font-size:17px;
-    }
-
-    .notification-panel{
-        top:47px;
-
-        right:8px;
-
-        width:calc(100% - 16px);
-    }
-
-    .profile-panel{
-        width:85%;
+        width:43px;
+        height:54px;
+        font-size:19px;
     }
 
 }
 
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
 
-/* VERY SMALL PHONES */
+@media(max-width:380px){
 
-@media(max-width:400px){
+    .member-name{
+        font-size:13px;
+    }
+
+    .member-number{
+        font-size:11px;
+    }
+
+    .member-date{
+        font-size:9.5px;
+    }
 
     .profile-name{
-        font-size:14px;
+        font-size:12px;
     }
 
-    .info-row{
-        font-size:9px;
+    .profile-detail{
+        font-size:8.5px;
     }
 
-    .member-tab{
-        font-size:9px;
+    .info-label,
+    .info-value{
+        font-size:8.3px;
     }
 
+    .floating-calendar{
+        width:39px;
+        height:49px;
+    }
 }
 
 </style>
 </head>
 
 <body>
-
 
 <!-- =========================
      HEADER
@@ -1418,65 +1151,23 @@ a{
 
     <div class="dashboard-header">
 
-        <div class="dashboard-header-left">
-
-            <img
-                src="sss-logo.png"
-                class="logo"
-                alt="SSS Logo">
-
-        </div>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            class="menu-icon"
-            id="menuButton"
-            type="button">
-
+        <button class="menu-icon" id="menuButton" type="button">
             <i class="fa-solid fa-bars"></i>
-
         </button>
-
 
         <div class="dashboard-actions">
 
-            <button
-                class="notification-icon"
-                id="notificationIcon"
-                type="button">
-
+            <button class="notification-icon" id="notificationIcon" type="button">
                 <i class="fa-solid fa-bell"></i>
-
             </button>
 
-
-            <button
-                class="calendar-icon"
-                id="calendarIcon"
-                type="button">
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-            </button>
-
-
-            <button
-                class="profile-icon"
-                id="profileIcon"
-                type="button">
-
-                <img
-                    src="Lprof.jpeg"
-                    alt="Profile">
-
+            <button class="profile-icon" id="profileIcon" type="button">
+                <img src="Lprof.jpeg" alt="Profile">
             </button>
 
         </div>
 
     </div>
-
 
     <div class="member-info">
 
@@ -1489,1140 +1180,613 @@ a{
         </div>
 
         <div class="member-date">
-
             <i class="fa-solid fa-calendar-days"></i>
-
             <span id="realTime"></span>
-
         </div>
 
     </div>
 
 </div>
-
 
 
 <!-- =========================
      SIDE MENU
 ========================= -->
 
-<div
-    class="menu-overlay"
-    id="menuOverlay">
-</div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
+<div class="side-menu" id="sideMenu">
 
-<div
-    class="side-menu"
-    id="sideMenu">
+    <div class="menu-header">
 
-    <div class="side-menu-header">
-
-        <div class="side-menu-title">
-            SSS Member Portal
+        <div class="menu-header-title">
+            MySSS Menu
         </div>
 
-        <button
-            class="close-menu"
-            id="closeMenu">
-
+        <button class="close-menu" id="closeMenu" type="button">
             <i class="fa-solid fa-xmark"></i>
-
         </button>
 
     </div>
 
 
-    <div class="menu-list">
+    <a href="dashboard.html" class="menu-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
 
 
-        <!-- DASHBOARD -->
+    <div class="menu-group">
 
-        <a
-            href="dashboard.html"
-            class="menu-item">
+        <div class="menu-item menu-toggle" data-target="memberSubmenu">
 
-            <i class="fa-solid fa-table-cells-large"></i>
+            <i class="fa-solid fa-user-tie"></i>
 
-            <span>Dashboard</span>
+            <span>Member Information</span>
 
-        </a>
-
-
-        <!-- MEMBER INFORMATION -->
-
-        <div class="menu-group">
-
-            <div
-                class="menu-item menu-toggle"
-                data-target="memberSubmenu">
-
-                <i class="fa-solid fa-user-tie"></i>
-
-                <span>Member Information</span>
-
-            </div>
-
-
-            <div
-                class="submenu"
-                id="memberSubmenu">
-
-                <a href="memberinfo.html">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    <span>Member Details</span>
-
-                </a>
-
-                <a href="contributions.html">
-
-                    <i class="fa-solid fa-wallet"></i>
-
-                    <span>My Contributions</span>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fa-solid fa-comments"></i>
-
-                    <span>Update Security Questions</span>
-
-                </a>
-
-            </div>
+            <i class="fa-solid fa-chevron-down menu-arrow"></i>
 
         </div>
 
+        <div class="submenu" id="memberSubmenu">
 
-        <!-- SERVICES -->
+            <a href="memberinfo.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Member Details</span>
+            </a>
 
-        <div class="menu-group">
+            <a href="contributions.html">
+                <i class="fa-solid fa-wallet"></i>
+                <span>My Contributions</span>
+            </a>
 
-            <div
-                class="menu-item menu-toggle"
-                data-target="servicesSubmenu">
-
-                <i class="fa-solid fa-hand-holding-heart"></i>
-
-                <span>Services</span>
-
-            </div>
-
-
-            <div
-                class="submenu"
-                id="servicesSubmenu">
-
-                <a href="#">
-
-                    <i class="fa-solid fa-file-lines"></i>
-
-                    <span>Online Services</span>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fa-solid fa-calendar-check"></i>
-
-                    <span>Appointments</span>
-
-                </a>
-
-            </div>
+            <a href="#">
+                <i class="fa-solid fa-comments"></i>
+                <span>Update Security Questions</span>
+            </a>
 
         </div>
-
-
-        <!-- LOANS -->
-
-        <div class="menu-group">
-
-            <div
-                class="menu-item menu-toggle"
-                data-target="loansSubmenu">
-
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-
-                <span>Loans</span>
-
-            </div>
-
-
-            <div
-                class="submenu"
-                id="loansSubmenu">
-
-                <a href="#">
-
-                    <i class="fa-solid fa-money-bill-wave"></i>
-
-                    <span>Salary Loan</span>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fa-solid fa-house"></i>
-
-                    <span>Housing Loan</span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- BENEFITS -->
-
-        <div class="menu-group">
-
-            <div
-                class="menu-item menu-toggle"
-                data-target="benefitsSubmenu">
-
-                <i class="fa-solid fa-umbrella-beach"></i>
-
-                <span>Benefits</span>
-
-            </div>
-
-
-            <div
-                class="submenu"
-                id="benefitsSubmenu">
-
-                <a href="#">
-
-                    <i class="fa-solid fa-person-walking"></i>
-
-                    <span>Retirement</span>
-
-                </a>
-
-                <a href="#">
-
-                    <i class="fa-solid fa-heart-pulse"></i>
-
-                    <span>Sickness</span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRN -->
-
-        <div class="menu-group">
-
-            <div
-                class="menu-item menu-toggle"
-                data-target="prnSubmenu">
-
-                <i class="fa-solid fa-receipt"></i>
-
-                <span>Payment Reference Number</span>
-
-            </div>
-
-
-            <div
-                class="submenu"
-                id="prnSubmenu">
-
-                <a href="#">
-
-                    <i class="fa-solid fa-file-invoice"></i>
-
-                    <span>Generate PRN</span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- SIGN OUT -->
-
-        <a
-            href="#"
-            class="menu-item">
-
-            <i class="fa-solid fa-right-from-bracket"></i>
-
-            <span>Sign Out</span>
-
-        </a>
-
 
     </div>
+
+
+    <div class="menu-group">
+
+        <div class="menu-item menu-toggle" data-target="servicesSubmenu">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>Services</span>
+
+            <i class="fa-solid fa-chevron-down menu-arrow"></i>
+
+        </div>
+
+        <div class="submenu" id="servicesSubmenu">
+
+            <a href="#">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Request Records</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Set Appointment</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="menu-group">
+
+        <div class="menu-item menu-toggle" data-target="loansSubmenu">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <span>Loans</span>
+
+            <i class="fa-solid fa-chevron-down menu-arrow"></i>
+
+        </div>
+
+        <div class="submenu" id="loansSubmenu">
+
+            <a href="#">
+                <i class="fa-solid fa-money-bill"></i>
+                <span>Salary Loan</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-house"></i>
+                <span>Calamity Loan</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="menu-group">
+
+        <div class="menu-item menu-toggle" data-target="benefitsSubmenu">
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            <span>Benefits</span>
+
+            <i class="fa-solid fa-chevron-down menu-arrow"></i>
+
+        </div>
+
+        <div class="submenu" id="benefitsSubmenu">
+
+            <a href="#">
+                <i class="fa-solid fa-person"></i>
+                <span>Retirement</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-wheelchair"></i>
+                <span>Disability</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                <span>Funeral</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a href="#" class="menu-item">
+
+        <i class="fa-solid fa-receipt"></i>
+
+        <span>Payment Reference Number</span>
+
+    </a>
+
+
+    <a href="#" class="menu-item">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>Sign Out</span>
+
+    </a>
 
 </div>
 
 
-
 <!-- =========================
-     MAIN
+     MAIN CONTENT
 ========================= -->
 
-<main class="main-content">
+<main class="page-container">
 
-
-    <div class="breadcrumb">
-
-        Member Information /
-        <span>Member Details</span>
-
+    <div class="page-title">
+        Member Information / Member Details
     </div>
 
 
-    <!-- PROFILE CARD -->
+    <!-- BANNER -->
+
+    <div class="sss-banner"></div>
+
+
+    <!-- PROFILE -->
 
     <div class="profile-card">
 
+        <div class="profile-photo">
+            <img src="Lprof.jpeg" alt="Profile">
+        </div>
 
-        <div class="profile-banner"></div>
+        <div class="profile-name">
+            SANTIAGO, MARK LESTER NARAG
+        </div>
 
+        <div class="profile-details">
 
-        <div class="profile-content">
-
-
-            <div class="profile-avatar">
-
-                <img
-                    src="Lprof.jpeg"
-                    alt="Profile">
-
+            <div class="profile-detail">
+                <i class="fa-solid fa-id-card"></i>
+                <span>SS Number 01-3599294-4</span>
             </div>
 
+            <div class="profile-detail">
+                <i class="fa-solid fa-lock"></i>
+                <span>Your password will expire on Feb 14, 2027</span>
+            </div>
 
-            <div class="profile-details">
-
-                <div class="profile-name">
-                    SANTIAGO, MARK LESTER NARAG
-                </div>
-
-
-                <div class="profile-meta">
-
-                    <span>
-
-                        <i class="fa-regular fa-id-card"></i>
-
-                        SS Number 01-3599294-4
-
-                    </span>
-
-
-                    <span>
-
-                        <i class="fa-regular fa-calendar"></i>
-
-                        Your password will expire on Feb 04, 2027
-
-                    </span>
-
-                </div>
-
-
-                <div class="profile-last-login">
-
-                    <i class="fa-regular fa-calendar-check"></i>
-
-                    Your last login was on Sep 13, 2026 09:51:30 AM through the SSS Website
-
-                </div>
-
+            <div class="profile-detail">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Your last login was on Sep 15, 2026 03:54:52 PM through the SSS Website</span>
             </div>
 
         </div>
 
     </div>
-
 
 
     <!-- TABS -->
 
-    <div class="member-tabs">
+    <div class="tabs">
 
-        <button
-            class="member-tab active"
-            type="button">
-
-            <i class="fa-solid fa-user"></i>
-
+        <button class="tab active" type="button">
             Member Details
-
         </button>
 
-
-        <a
-            href="contributions.html"
-            class="member-tab">
-
-            <i class="fa-solid fa-building-columns"></i>
-
+        <button class="tab" type="button" onclick="location.href='contributions.html'">
             My Contributions
-
-        </a>
+        </button>
 
     </div>
 
 
+    <!-- =========================
+         MEMBER DETAILS
+    ========================== -->
 
-    <!-- INFORMATION -->
-
-    <div class="info-grid">
-
-
-        <!-- LEFT COLUMN -->
-
-        <div>
+    <div class="info-card">
 
 
-            <!-- MY DETAILS -->
+        <!-- MY DETAILS -->
 
-            <div class="info-card">
-
-                <div class="section-title">
-
-                    <i class="fa-regular fa-id-card"></i>
-
-                    My Details
-
-                </div>
+        <div class="section-title">
+            <i class="fa-solid fa-user"></i>
+            <span>My Details</span>
+        </div>
 
 
-                <div class="info-row">
+        <div class="info-row">
+            <div class="info-label">SS Number Status</div>
+            <div class="info-value status-active">ACTIVE</div>
+        </div>
 
-                    <div class="info-label">
-                        SS Number Status
-                    </div>
+        <div class="info-row">
+            <div class="info-label">Document Compliance</div>
+            <div class="info-value">APPLICATION THRU SSS WEB/MOBILE APP</div>
+        </div>
 
-                    <div class="info-value">
-                        ACTIVE
-                    </div>
+        <div class="info-row">
+            <div class="info-label">Membership Status</div>
+            <div class="info-value">PERMANENT</div>
+        </div>
 
-                </div>
+        <div class="info-row">
+            <div class="info-label">Prior Registrant</div>
+            <div class="info-value">NO</div>
+        </div>
 
+        <div class="info-row">
+            <div class="info-label">Date of SS Number Issuance</div>
+            <div class="info-value">FEB 11, 2017</div>
+        </div>
 
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Document Compliance
-                    </div>
-
-                    <div class="info-value">
-                        APPLICATION THRU SSS WEB/MOBILE APP
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Membership Status
-                    </div>
-
-                    <div class="info-value">
-                        PERMANENT
-                    </div>
-
-                </div>
+        <div class="info-row">
+            <div class="info-label">Sex</div>
+            <div class="info-value">MALE</div>
+        </div>
 
 
-                <div class="info-row">
+        <!-- EMPLOYMENT -->
 
-                    <div class="info-label">
-                        Prior Registrant
-                    </div>
-
-                    <div class="info-value">
-                        NO
-                    </div>
-
-                </div>
+        <div class="section-title">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Employment Details</span>
+        </div>
 
 
-                <div class="info-row">
+        <div class="info-row">
+            <div class="info-label">Reporting Date</div>
+            <div class="info-value">MAR 06, 2017</div>
+        </div>
 
-                    <div class="info-label">
-                        Date of SS Number Issuance
-                    </div>
+        <div class="info-row">
+            <div class="info-label">Reporting ID</div>
+            <div class="info-value">03-9249624-1</div>
+        </div>
 
-                    <div class="info-value">
-                        FEB 11, 2017
-                    </div>
+        <div class="info-row">
+            <div class="info-label">Latest ER ID</div>
+            <div class="info-value">80-0159722-6</div>
+        </div>
 
-                </div>
+        <div class="info-row">
+            <div class="info-label">Latest ER Name</div>
+            <div class="info-value">LITTELFUSE PHILIPPINES INC.</div>
+        </div>
 
 
-                <div class="info-row">
+        <!-- OTHER DETAILS -->
 
-                    <div class="info-label">
-                        Sex
-                    </div>
+        <div class="section-title">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Other Details</span>
+        </div>
 
-                    <div class="info-value">
-                        MALE
-                    </div>
 
-                </div>
+        <div class="info-row">
+            <div class="info-label">Claim Flag Status</div>
+            <div class="info-value">NO FINAL/FUNERAL CLAIM</div>
+        </div>
 
+        <div class="info-row">
+            <div class="info-label">Transferred to (New SS Number)</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Membership Type</div>
+            <div class="info-value">EMPLOYEE</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Change in Coverage Status</div>
+            <div class="info-value">NO STATUS CHANGE</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Date of Loan Disqualification</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">SS Number Withdrawal Reason</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Record Location</div>
+            <div class="info-value">TUGUEGARAO</div>
+        </div>
+
+
+        <!-- UMID -->
+
+        <div class="section-title">
+            <i class="fa-solid fa-id-card"></i>
+            <span>UMID/SSS ID Details</span>
+        </div>
+
+
+        <div class="info-row">
+            <div class="info-label">Capture Site</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Capture Date/Enrollment Date</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Card Serial/Transaction Number</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Card Type</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Transaction Status</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ADDRESS
+    ========================== -->
+
+    <div class="address-card">
+
+        <div class="address-header">
+
+            <div class="address-title">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Address</span>
             </div>
 
-
-
-            <!-- EMPLOYMENT -->
-
-            <div class="info-card">
-
-                <div class="section-title">
-
-                    <i class="fa-regular fa-calendar-check"></i>
-
-                    Employment Details
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Reporting Date
-                    </div>
-
-                    <div class="info-value">
-                        MAR 06, 2017
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Reporting ID
-                    </div>
-
-                    <div class="info-value">
-                        03-9249624-1
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Latest ER ID
-                    </div>
-
-                    <div class="info-value">
-                        80-0159722-6
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Latest ER Name
-                    </div>
-
-                    <div class="info-value">
-                        LITTELFUSE PHILIPPINES INC.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- OTHER DETAILS -->
-
-            <div class="info-card">
-
-                <div class="section-title">
-
-                    <i class="fa-solid fa-circle-info"></i>
-
-                    Other Details
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Claim Flag Status
-                    </div>
-
-                    <div class="info-value">
-                        NO FINAL/FUNERAL CLAIM
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Transferred to (New SS Number)
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Membership Type
-                    </div>
-
-                    <div class="info-value">
-                        EMPLOYEE
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Change in Coverage Status
-                    </div>
-
-                    <div class="info-value">
-                        NO STATUS CHANGE
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Date of Loan Disqualification
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        SS Number Withdrawal Reason
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Record Location
-                    </div>
-
-                    <div class="info-value">
-                        TUGUEGARAO
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- UMID -->
-
-            <div class="info-card">
-
-                <div class="section-title">
-
-                    <i class="fa-solid fa-id-card"></i>
-
-                    UMID/SSS ID Details
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Capture Site
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Capture Date/Enrollment Date
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Card Serial/Transaction Number
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Card Type
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Transaction Status
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-            </div>
+            <button class="update-btn" type="button">
+                Update Information
+            </button>
 
         </div>
 
 
+        <div class="info-row">
+            <div class="info-label">Local Home Address</div>
+            <div class="info-value">
+                1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+            </div>
+        </div>
 
-        <!-- RIGHT COLUMN -->
+        <div class="info-row">
+            <div class="info-label">Local Mailing Address</div>
+            <div class="info-value">
+                1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+            </div>
+        </div>
 
-        <div>
+        <div class="info-row">
+            <div class="info-label">Foreign Home Address</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
 
-
-            <!-- ADDRESS -->
-
-            <div class="info-card">
-
-                <div class="card-header">
-
-                    <div class="section-title">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        Address
-
-                    </div>
+        <div class="info-row">
+            <div class="info-label">Foreign Mailing Address</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
 
 
-                    <button
-                        class="update-button"
-                        type="button">
+        <!-- CONTACT -->
 
-                        <i class="fa-solid fa-rotate"></i>
+        <div class="contact-title">
 
-                        Update Information
+            <i class="fa-solid fa-address-book"></i>
 
-                    </button>
+            <span>Contact Information</span>
 
+        </div>
+
+
+        <div class="info-row">
+            <div class="info-label">Landline</div>
+            <div class="info-value">&nbsp;</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Mobile</div>
+            <div class="info-value">0935-0621315</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Email Address</div>
+            <div class="info-value">lestantiago22@gmail.com</div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         COVERAGE HISTORY
+    ========================== -->
+
+    <div class="coverage-card">
+
+        <div class="coverage-title">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <span>Coverage History</span>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- 1 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="company-name">
+                    LITTELFUSE PHILIPPINES INC.
                 </div>
 
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Local Home Address
-                    </div>
-
-                    <div class="info-value">
-                        1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY
-                        TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
-                    </div>
-
+                <div class="company-id">
+                    80-0159722-6
                 </div>
 
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Local Mailing Address
-                    </div>
-
-                    <div class="info-value">
-                        1168 ZONE 7 CAGGAY TUGUEGARAO CITY
-                        (CAPITAL) CAGAYAN 3500
-                    </div>
-
+                <div class="coverage-date">
+                    <strong>EFFECTIVITY DATE:</strong>
+                    Jan 01, 2026
                 </div>
 
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Foreign Home Address
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Foreign Mailing Address
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-
-                <div class="section-title" style="margin-top:16px;">
-
-                    <i class="fa-regular fa-address-book"></i>
-
-                    Contact Information
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Landline
-                    </div>
-
-                    <div class="info-value"></div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Mobile
-                    </div>
-
-                    <div class="info-value">
-                        0935-0621315
-                    </div>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <div class="info-label">
-                        Email Address
-                    </div>
-
-                    <div class="info-value">
-                        lestsantiago22@gmail.com
-                    </div>
-
+                <div class="coverage-date">
+                    <strong>REPORTING DATE:</strong>
+                    Sep 01, 2026
                 </div>
 
             </div>
 
 
+            <!-- 2 -->
 
-            <!-- COVERAGE HISTORY -->
+            <div class="timeline-item">
 
-            <div class="coverage-card">
+                <div class="timeline-dot"></div>
 
-                <div class="coverage-title">
-
-                    <i class="fa-regular fa-clock"></i>
-
-                    Coverage History
-
+                <div class="company-name">
+                    LITTELFUSE PHILIPPINES INC.
                 </div>
 
-
-                <br>
-
-
-                <span class="latest-label">
-                    LATEST
-                </span>
-
-
-                <div class="timeline">
-
-
-                    <!-- 2026 -->
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-
-                        <div class="timeline-grid">
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    EFFECTIVITY DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Jan 01, 2026
-                                </div>
-
-                            </div>
-
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    REPORTING DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Sep 01, 2026
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="company-info">
-
-                            <div class="company-circle">
-                                L
-                            </div>
-
-                            <div class="company-name">
-
-                                LITTELFUSE PHILIPPINES INC.<br>
-
-                                80-0159722-6
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- 2022 -->
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-
-                        <div class="timeline-grid">
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    EFFECTIVITY DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Feb 01, 2022
-                                </div>
-
-                            </div>
-
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    REPORTING DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    May 01, 2025
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="company-info">
-
-                            <div class="company-circle">
-                                L
-                            </div>
-
-                            <div class="company-name">
-
-                                LITTELFUSE PHILIPPINES INC.<br>
-
-                                80-0159722-6
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- 2019 -->
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot orange"></div>
-
-
-                        <div class="timeline-grid">
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    EFFECTIVITY DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Dec 01, 2019
-                                </div>
-
-                            </div>
-
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    REPORTING DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Apr 01, 2021
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="company-info">
-
-                            <div class="company-circle orange">
-                                K
-                            </div>
-
-                            <div class="company-name">
-
-                                K&K MOLDING INC<br>
-
-                                06-8529635-2
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- 2017 -->
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot orange"></div>
-
-
-                        <div class="timeline-grid">
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    EFFECTIVITY DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Feb 11, 2017
-                                </div>
-
-                            </div>
-
-
-                            <div>
-
-                                <div class="timeline-label">
-                                    REPORTING DATE
-                                </div>
-
-                                <div class="timeline-date">
-                                    Mar 06, 2017
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="company-info">
-
-                            <div class="company-circle orange">
-                                K
-                            </div>
-
-                            <div class="company-name">
-
-                                K&K MOLDING INC<br>
-
-                                06-8529635-2
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="timeline-end">
-
-                        <i class="fa-solid fa-chevron-down"></i>
-
-                    </div>
-
+                <div class="company-id">
+                    80-0159722-6
+                </div>
+
+                <div class="coverage-date">
+                    <strong>EFFECTIVITY DATE:</strong>
+                    Feb 01, 2022
+                </div>
+
+                <div class="coverage-date">
+                    <strong>REPORTING DATE:</strong>
+                    May 01, 2025
                 </div>
 
             </div>
+
+
+            <!-- 3 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="company-name">
+                    K&amp;K MOLDING INC.
+                </div>
+
+                <div class="company-id">
+                    06-8529635-2
+                </div>
+
+                <div class="coverage-date">
+                    <strong>EFFECTIVITY DATE:</strong>
+                    Dec 01, 2019
+                </div>
+
+                <div class="coverage-date">
+                    <strong>REPORTING DATE:</strong>
+                    Apr 01, 2021
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="company-name">
+                    K&amp;K MOLDING INC.
+                </div>
+
+                <div class="company-id">
+                    06-8529635-2
+                </div>
+
+                <div class="coverage-date">
+                    <strong>EFFECTIVITY DATE:</strong>
+                    Feb 11, 2017
+                </div>
+
+                <div class="coverage-date">
+                    <strong>REPORTING DATE:</strong>
+                    Mar 06, 2017
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
 
 </main>
-
 
 
 <!-- =========================
@@ -2639,24 +1803,48 @@ a{
 </button>
 
 
+<!-- =========================
+     PROFILE PANEL
+========================= -->
+
+<div class="profile-panel" id="profilePanel">
+
+    <div class="panel-header">
+
+        <span>Profile</span>
+
+        <button class="panel-close" id="closeProfile">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div class="panel-body">
+
+        <strong>SANTIAGO, MARK LESTER NARAG</strong>
+
+        <br><br>
+
+        SS Number: 01-3599294-4
+
+    </div>
+
+</div>
+
 
 <!-- =========================
      NOTIFICATION PANEL
 ========================= -->
 
-<div
-    class="notification-panel"
-    id="notificationPanel">
+<div class="notification-panel" id="notificationPanel">
 
-    <div class="notification-header">
+    <div class="panel-header">
 
-        <i class="fa-solid fa-bell"></i>
-
-        Notifications
+        <span>Notifications</span>
 
     </div>
 
-    <div class="notification-body">
+    <div class="panel-body">
 
         No new notifications.
 
@@ -2665,58 +1853,13 @@ a{
 </div>
 
 
-
-<!-- =========================
-     PROFILE PANEL
-========================= -->
-
-<div
-    class="profile-panel"
-    id="profilePanel">
-
-    <div class="profile-panel-header">
-
-        <div class="profile-panel-title">
-            My Profile
-        </div>
-
-        <button
-            class="close-profile"
-            id="closeProfile">
-
-            <i class="fa-solid fa-xmark"></i>
-
-        </button>
-
-    </div>
-
-
-    <div class="profile-panel-content">
-
-        <h3>
-            SANTIAGO, MARK LESTER NARAG
-        </h3>
-
-        <p>
-            SS Number: 01-3599294-4
-        </p>
-
-    </div>
-
-</div>
-
-
-
 <!-- =========================
      APPOINTMENT MODAL
 ========================= -->
 
-<div
-    class="appointment-overlay"
-    id="appointmentOverlay">
+<div class="appointment-overlay" id="appointmentOverlay">
 
     <div class="appointment-modal">
-
 
         <div class="appointment-header">
 
@@ -2728,10 +1871,10 @@ a{
 
             </div>
 
-
             <button
                 class="appointment-close"
-                id="appointmentClose">
+                id="appointmentClose"
+                type="button">
 
                 <i class="fa-solid fa-xmark"></i>
 
@@ -2742,72 +1885,43 @@ a{
 
         <div class="appointment-content">
 
-            <h3>
-                Say goodbye to waiting in line!
-            </h3>
-
+            <h3>Say goodbye to waiting in line!</h3>
 
             <p class="appointment-description">
-
-                Experience ultimate convenience by setting
-                your appointments online with just a few clicks.
-
+                Experience ultimate convenience by setting your appointments online with just a few clicks.
             </p>
 
 
-            <select
-                id="appointmentPurpose"
-                class="appointment-select">
+            <select id="appointmentPurpose" class="appointment-select">
 
-                <option value="">
-                    Select Appointment Purpose
-                </option>
+                <option value="">Select Purpose</option>
 
-                <option>
-                    Member Information
-                </option>
-
-                <option>
-                    UMID / SSS ID
-                </option>
-
-                <option>
-                    Benefits
-                </option>
-
-                <option>
-                    Loans
-                </option>
+                <option>Member Data Update</option>
+                <option>SSS Number Inquiry</option>
+                <option>Benefit Inquiry</option>
+                <option>Loan Inquiry</option>
+                <option>Other</option>
 
             </select>
 
 
-            <select
-                id="appointmentRegion"
-                class="appointment-select">
+            <select id="appointmentRegion" class="appointment-select">
 
-                <option value="">
-                    Select Region
-                </option>
+                <option value="">Select Region</option>
 
-                <option>
-                    Region II
-                </option>
+                <option>Region II</option>
+                <option>NCR</option>
+                <option>Other Region</option>
 
             </select>
 
 
-            <select
-                id="appointmentBranch"
-                class="appointment-select">
+            <select id="appointmentBranch" class="appointment-select">
 
-                <option value="">
-                    Select Branch
-                </option>
+                <option value="">Select Branch</option>
 
-                <option>
-                    SSS Tuguegarao
-                </option>
+                <option>Tuguegarao Branch</option>
+                <option>Other SSS Branch</option>
 
             </select>
 
@@ -2818,37 +1932,17 @@ a{
                 class="appointment-select">
 
 
-            <select
-                id="appointmentTime"
-                class="appointment-select">
+            <select id="appointmentTime" class="appointment-select">
 
-                <option value="">
-                    Select Time
-                </option>
+                <option value="">Select Time</option>
 
-                <option>
-                    8:00 AM
-                </option>
-
-                <option>
-                    9:00 AM
-                </option>
-
-                <option>
-                    10:00 AM
-                </option>
-
-                <option>
-                    1:00 PM
-                </option>
-
-                <option>
-                    2:00 PM
-                </option>
-
-                <option>
-                    3:00 PM
-                </option>
+                <option>08:00 AM</option>
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>01:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
 
             </select>
 
@@ -2856,13 +1950,13 @@ a{
             <textarea
                 id="appointmentRemarks"
                 class="appointment-remarks"
-                placeholder="Remarks">
-            </textarea>
+                placeholder="Remarks"></textarea>
 
 
             <button
                 class="appointment-next"
-                id="appointmentNext">
+                id="appointmentNext"
+                type="button">
 
                 <span>Next</span>
 
@@ -2877,8 +1971,42 @@ a{
 </div>
 
 
-
 <script>
+
+/* =========================
+   REAL TIME
+========================= */
+
+function updateTime(){
+
+    const now = new Date();
+
+    const options = {
+
+        timeZone:"Asia/Manila",
+
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric",
+
+        hour:"numeric",
+        minute:"numeric",
+        second:"numeric",
+
+        hour12:true
+
+    };
+
+    document.getElementById("realTime").textContent =
+        new Intl.DateTimeFormat("en-US", options).format(now);
+
+}
+
+updateTime();
+
+setInterval(updateTime,1000);
+
 
 /* =========================
    ELEMENTS
@@ -2896,6 +2024,18 @@ const menuOverlay =
 const closeMenu =
     document.getElementById("closeMenu");
 
+const floatingCalendar =
+    document.getElementById("floatingCalendar");
+
+const appointmentOverlay =
+    document.getElementById("appointmentOverlay");
+
+const appointmentClose =
+    document.getElementById("appointmentClose");
+
+const appointmentNext =
+    document.getElementById("appointmentNext");
+
 const profileIcon =
     document.getElementById("profileIcon");
 
@@ -2911,74 +2051,46 @@ const notificationIcon =
 const notificationPanel =
     document.getElementById("notificationPanel");
 
-const calendarIcon =
-    document.getElementById("calendarIcon");
-
-const floatingCalendar =
-    document.getElementById("floatingCalendar");
-
-const appointmentOverlay =
-    document.getElementById("appointmentOverlay");
-
-const appointmentClose =
-    document.getElementById("appointmentClose");
-
-const appointmentNext =
-    document.getElementById("appointmentNext");
-
 
 /* =========================
-   SIDE MENU
+   BURGER MENU
 ========================= */
 
-if(menuButton){
+menuButton.onclick = function(e){
 
-    menuButton.onclick = function(e){
+    e.stopPropagation();
 
-        e.stopPropagation();
+    sideMenu.classList.add("open");
 
-        sideMenu.classList.add("open");
+    menuOverlay.classList.add("open");
 
-        menuOverlay.classList.add("open");
-
-    };
-
-}
+};
 
 
-if(closeMenu){
+closeMenu.onclick = function(){
 
-    closeMenu.onclick = function(){
+    sideMenu.classList.remove("open");
 
-        sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("open");
 
-        menuOverlay.classList.remove("open");
-
-    };
-
-}
+};
 
 
-if(menuOverlay){
+menuOverlay.onclick = function(){
 
-    menuOverlay.onclick = function(){
+    sideMenu.classList.remove("open");
 
-        sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("open");
 
-        menuOverlay.classList.remove("open");
-
-    };
-
-}
+};
 
 
 /* =========================
-   MENU SUBMENUS
+   SUBMENUS
 ========================= */
 
 const menuToggles =
     document.querySelectorAll(".menu-toggle");
-
 
 menuToggles.forEach(function(toggle){
 
@@ -3004,253 +2116,142 @@ menuToggles.forEach(function(toggle){
 
 
 /* =========================
-   PROFILE
+   FLOATING CALENDAR
 ========================= */
 
-if(profileIcon && profilePanel){
+floatingCalendar.onclick = function(e){
 
-    profileIcon.onclick = function(e){
-
-        e.stopPropagation();
-
-        notificationPanel.classList.remove("show");
-
-        profilePanel.classList.add("show");
-
-    };
-
-}
-
-
-if(closeProfile){
-
-    closeProfile.onclick = function(){
-
-        profilePanel.classList.remove("show");
-
-    };
-
-}
-
-
-/* =========================
-   NOTIFICATION
-========================= */
-
-if(notificationIcon){
-
-    notificationIcon.onclick = function(e){
-
-        e.stopPropagation();
-
-        profilePanel.classList.remove("show");
-
-        notificationPanel.classList.toggle("show");
-
-    };
-
-}
-
-
-/* =========================
-   CALENDAR
-========================= */
-
-function openAppointment(){
+    e.stopPropagation();
 
     appointmentOverlay.classList.add("show");
 
-}
+};
 
 
-if(calendarIcon){
+/* =========================
+   CLOSE APPOINTMENT
+========================= */
 
-    calendarIcon.onclick = function(){
+appointmentClose.onclick = function(){
 
-        openAppointment();
+    appointmentOverlay.classList.remove("show");
 
-    };
-
-}
-
-
-if(floatingCalendar){
-
-    floatingCalendar.onclick = function(){
-
-        openAppointment();
-
-    };
-
-}
+};
 
 
-if(appointmentClose){
+appointmentOverlay.onclick = function(e){
 
-    appointmentClose.onclick = function(){
+    if(e.target === appointmentOverlay){
 
         appointmentOverlay.classList.remove("show");
 
-    };
+    }
 
-}
-
-
-if(appointmentOverlay){
-
-    appointmentOverlay.onclick = function(e){
-
-        if(e.target === appointmentOverlay){
-
-            appointmentOverlay.classList.remove("show");
-
-        }
-
-    };
-
-}
+};
 
 
 /* =========================
    APPOINTMENT NEXT
 ========================= */
 
-if(appointmentNext){
+appointmentNext.onclick = function(){
 
-    appointmentNext.onclick = function(){
+    const purpose =
+        document.getElementById("appointmentPurpose").value;
 
-        const purpose =
-            document.getElementById("appointmentPurpose").value;
+    const region =
+        document.getElementById("appointmentRegion").value;
 
-        const region =
-            document.getElementById("appointmentRegion").value;
+    const branch =
+        document.getElementById("appointmentBranch").value;
 
-        const branch =
-            document.getElementById("appointmentBranch").value;
+    const date =
+        document.getElementById("appointmentDate").value;
 
-        const date =
-            document.getElementById("appointmentDate").value;
-
-        const time =
-            document.getElementById("appointmentTime").value;
+    const time =
+        document.getElementById("appointmentTime").value;
 
 
-        if(
-            !purpose ||
-            !region ||
-            !branch ||
-            !date ||
-            !time
-        ){
+    if(!purpose || !region || !branch || !date || !time){
 
-            alert(
-                "Please complete all appointment details."
-            );
+        alert("Please complete all appointment details.");
 
-            return;
+        return;
 
-        }
+    }
 
 
-        alert(
-            "Appointment details are ready for the next step."
-        );
+    alert("Appointment details are ready for the next step.");
 
-    };
+};
 
-}
+
+/* =========================
+   PROFILE
+========================= */
+
+profileIcon.onclick = function(e){
+
+    e.stopPropagation();
+
+    notificationPanel.classList.remove("show");
+
+    profilePanel.classList.add("show");
+
+};
+
+
+closeProfile.onclick = function(){
+
+    profilePanel.classList.remove("show");
+
+};
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+notificationIcon.onclick = function(e){
+
+    e.stopPropagation();
+
+    profilePanel.classList.remove("show");
+
+    notificationPanel.classList.toggle("show");
+
+};
 
 
 /* =========================
    OUTSIDE CLICK
 ========================= */
 
-document.addEventListener(
-    "click",
-    function(e){
+document.addEventListener("click",function(e){
 
-        if(
-            notificationPanel &&
-            notificationIcon &&
-            !notificationPanel.contains(e.target) &&
-            !notificationIcon.contains(e.target)
-        ){
+    if(
+        !profilePanel.contains(e.target) &&
+        !profileIcon.contains(e.target)
+    ){
 
-            notificationPanel.classList.remove("show");
-
-        }
-
-
-        if(
-            profilePanel &&
-            profileIcon &&
-            !profilePanel.contains(e.target) &&
-            !profileIcon.contains(e.target)
-        ){
-
-            profilePanel.classList.remove("show");
-
-        }
-
-    }
-);
-
-
-/* =========================
-   REAL TIME
-========================= */
-
-function updateTime(){
-
-    const now = new Date();
-
-
-    const options = {
-
-        timeZone:"Asia/Manila",
-
-        weekday:"long",
-
-        year:"numeric",
-
-        month:"long",
-
-        day:"numeric",
-
-        hour:"numeric",
-
-        minute:"numeric",
-
-        second:"numeric",
-
-        hour12:true
-
-    };
-
-
-    const realTime =
-        document.getElementById("realTime");
-
-
-    if(realTime){
-
-        realTime.textContent =
-            new Intl.DateTimeFormat(
-                "en-US",
-                options
-            ).format(now);
+        profilePanel.classList.remove("show");
 
     }
 
-}
 
+    if(
+        !notificationPanel.contains(e.target) &&
+        !notificationIcon.contains(e.target)
+    ){
 
-updateTime();
+        notificationPanel.classList.remove("show");
 
-setInterval(updateTime,1000);
+    }
+
+});
 
 </script>
 
-
 </body>
 </html>
+```0
