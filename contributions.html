@@ -8,7 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Contributions</title>
+<title>Member Details</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -36,17 +36,11 @@ html{
 }
 
 body{
-
     margin:0;
-
     font-family:"Montserrat",sans-serif;
-
     background:#eaf6fc;
-
     color:#555;
-
     overflow-x:hidden;
-
 }
 
 
@@ -55,20 +49,13 @@ body{
 ===================================================== */
 
 .sticky-header{
-
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     z-index:9999;
-
     background:white;
-
     box-shadow:0 2px 8px rgba(0,0,0,.15);
-
 }
 
 
@@ -77,75 +64,51 @@ body{
 ===================================================== */
 
 .dashboard-header{
-
     height:75px;
-
     background:white;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:0 25px;
-
 }
-
 
 .menu-icon{
-
     border:none;
-
     background:none;
-
     font-size:30px;
-
     color:#285a9c;
-
     cursor:pointer;
-
 }
-
 
 .dashboard-actions{
-
     display:flex;
-
     align-items:center;
-
     gap:25px;
-
     font-size:25px;
-
     color:#285a9c;
-
 }
 
-
 .profile-icon{
-
     width:52px;
-
     height:52px;
 
     border-radius:50%;
-
     overflow:hidden;
 
     background:#ddd;
 
+    border:none;
+    padding:0;
+
+    cursor:pointer;
 }
 
-
 .profile-icon img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
 
 
@@ -154,61 +117,42 @@ body{
 ===================================================== */
 
 .member-info{
-
     background:white;
 
     padding:12px 25px 15px;
 
     border-top:1px solid #eee;
-
 }
-
 
 .member-name{
-
     font-size:19px;
-
     font-weight:400;
-
     color:#444;
-
 }
-
 
 .member-number{
-
     font-size:16px;
-
     margin-top:4px;
-
 }
 
-
 .member-date{
-
     margin-top:7px;
-
     font-size:15px;
-
     color:#315a9c;
-
 }
 
 
 /* =====================================================
-   MAIN CONTENT
+   MAIN
 ===================================================== */
 
 .main-content{
-
     width:100%;
-
     max-width:1050px;
 
     margin:0 auto;
 
     padding:190px 20px 70px;
-
 }
 
 
@@ -217,13 +161,9 @@ body{
 ===================================================== */
 
 .member-title{
-
     font-size:14px;
-
     color:#526987;
-
     margin-bottom:15px;
-
 }
 
 
@@ -232,24 +172,22 @@ body{
 ===================================================== */
 
 .member-details{
-
     background:white;
 
     border-radius:6px;
-
     overflow:hidden;
 
     box-shadow:0 2px 7px rgba(0,0,0,.16);
 
     margin-bottom:15px;
-
 }
 
 
-/* COVER */
+/* =====================================================
+   COVER
+===================================================== */
 
 .cover{
-
     height:145px;
 
     background:
@@ -266,16 +204,15 @@ body{
         #f3b176 70%,
         #f3b176 100%
     );
-
 }
 
 
-/* PROFILE CONTENT */
+/* =====================================================
+   PROFILE CONTENT
+===================================================== */
 
 .profile-content{
-
     display:flex;
-
     align-items:center;
 
     gap:18px;
@@ -283,16 +220,15 @@ body{
     padding:0 20px 18px;
 
     position:relative;
-
 }
 
 
-/* AVATAR */
+/* =====================================================
+   AVATAR
+===================================================== */
 
 .avatar{
-
     width:78px;
-
     height:78px;
 
     border-radius:50%;
@@ -306,64 +242,42 @@ body{
     flex-shrink:0;
 
     background:#55a9df;
-
 }
 
-
 .avatar img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
 
 
 .profile-text{
-
     padding-top:13px;
-
 }
 
-
 .profile-text h2{
-
     margin:0 0 8px;
 
     font-size:20px;
-
     font-weight:400;
 
     color:#555;
-
 }
 
-
 .profile-info{
-
     display:flex;
-
     flex-wrap:wrap;
 
     gap:12px;
 
     font-size:12px;
-
     color:#777;
-
 }
 
-
 .profile-info span{
-
     display:flex;
-
     align-items:center;
-
     gap:5px;
-
 }
 
 
@@ -372,18 +286,14 @@ body{
 ===================================================== */
 
 .member-tabs{
-
     display:flex;
 
     gap:10px;
 
     margin:12px 0 15px;
-
 }
 
-
 .member-tab{
-
     border:none;
 
     background:transparent;
@@ -399,27 +309,22 @@ body{
     font-size:13px;
 
     cursor:pointer;
-
 }
 
-
 .member-tab.active{
-
     background:#3159a2;
 
     color:white;
 
     box-shadow:0 2px 4px rgba(0,0,0,.2);
-
 }
 
 
 /* =====================================================
-   CONTRIBUTIONS CARD
+   MEMBER DETAILS CARD
 ===================================================== */
 
-.contributions-section{
-
+.details-section{
     background:white;
 
     border-radius:6px;
@@ -427,12 +332,186 @@ body{
     padding:25px;
 
     box-shadow:0 2px 8px rgba(0,0,0,.10);
-
 }
 
 
-.section-title{
+/* =====================================================
+   SECTION TITLE
+===================================================== */
 
+.detail-section-title{
+    font-size:14px;
+
+    color:#555;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #eee;
+
+    margin-bottom:15px;
+
+    margin-top:25px;
+}
+
+.detail-section-title:first-child{
+    margin-top:0;
+}
+
+.detail-section-title i{
+    color:#315a9c;
+
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   DETAILS TABLE
+===================================================== */
+
+.detail-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:12px;
+}
+
+.detail-table tr{
+    border-bottom:1px solid #eee;
+}
+
+.detail-table td{
+    padding:9px 8px;
+
+    vertical-align:top;
+}
+
+.detail-table td:first-child{
+    width:42%;
+
+    color:#777;
+
+    font-weight:400;
+}
+
+.detail-table td:last-child{
+    width:58%;
+
+    color:#555;
+
+    font-weight:400;
+}
+
+.status-active{
+    color:#29925b !important;
+    font-weight:500 !important;
+}
+
+
+/* =====================================================
+   ADDRESS
+===================================================== */
+
+.address-section{
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    margin-top:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+
+.address-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid #eee;
+
+    padding-bottom:14px;
+
+    margin-bottom:15px;
+}
+
+.address-title{
+    font-size:14px;
+    color:#555;
+}
+
+.address-title i{
+    color:#315a9c;
+    margin-right:7px;
+}
+
+.update-button{
+    border:none;
+
+    background:#3159a2;
+
+    color:white;
+
+    padding:7px 11px;
+
+    border-radius:4px;
+
+    font-family:"Montserrat";
+
+    font-size:10px;
+
+    cursor:pointer;
+}
+
+.update-button:hover{
+    background:#284c8c;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-title{
+    font-size:14px;
+
+    color:#555;
+
+    border-bottom:1px solid #eee;
+
+    padding-bottom:14px;
+
+    margin-top:25px;
+
+    margin-bottom:15px;
+}
+
+.contact-title i{
+    color:#315a9c;
+    margin-right:7px;
+}
+
+
+/* =====================================================
+   COVERAGE HISTORY
+===================================================== */
+
+.coverage-section{
+    background:white;
+
+    border-radius:6px;
+
+    padding:25px;
+
+    margin-top:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+
+.coverage-title{
     font-size:14px;
 
     color:#555;
@@ -442,294 +521,102 @@ body{
     border-bottom:1px solid #eee;
 
     margin-bottom:25px;
+}
 
+.coverage-title i{
+    color:#315a9c;
+    margin-right:7px;
 }
 
 
 /* =====================================================
-   CONTRIBUTION LAYOUT
+   COVERAGE TIMELINE
 ===================================================== */
 
-.contribution-layout{
+.coverage-timeline{
+    position:relative;
 
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:35px;
-
+    padding-left:30px;
 }
 
+.coverage-timeline::before{
+    content:"";
 
-/* =====================================================
-   CONTRIBUTION MENU
-===================================================== */
+    position:absolute;
 
-.contribution-menu{
+    left:8px;
+    top:5px;
+    bottom:10px;
 
-    width:220px;
+    width:2px;
 
-    flex-shrink:0;
-
+    background:#c8ddeb;
 }
 
+.coverage-item{
+    position:relative;
 
-.contribution-option{
-
-    padding:11px 15px;
-
-    background:#d9edf8;
-
-    color:#526987;
-
-    border-bottom:1px solid white;
-
-    font-size:13px;
-
-    cursor:pointer;
-
+    margin-bottom:25px;
 }
 
-
-.contribution-option:first-child{
-
-    background:#fff;
-
-    color:#555;
-
+.coverage-item:last-child{
+    margin-bottom:0;
 }
 
+.coverage-dot{
+    position:absolute;
 
-.contribution-option:hover{
+    left:-28px;
+    top:3px;
 
-    background:#c8e5f4;
+    width:14px;
+    height:14px;
 
-}
-
-
-/* =====================================================
-   TABLE AREA
-===================================================== */
-
-.contribution-content{
-
-    flex:1;
-
-    min-width:0;
-
-}
-
-
-.entries-label{
-
-    font-size:11px;
-
-    color:#777;
-
-    margin-bottom:7px;
-
-}
-
-
-.table-wrapper{
-
-    width:100%;
-
-    overflow-x:auto;
-
-}
-
-
-table{
-
-    width:100%;
-
-    min-width:700px;
-
-    border-collapse:collapse;
-
-    font-size:12px;
-
-}
-
-
-th{
-
-    color:#777;
-
-    font-weight:500;
-
-    padding:7px 5px;
-
-    text-align:center;
-
-    white-space:nowrap;
-
-}
-
-
-td{
-
-    padding:8px 5px;
-
-    text-align:center;
-
-    white-space:nowrap;
-
-    color:#555;
-
-}
-
-
-tbody tr:nth-child(odd){
-
-    background:#e9eaeb;
-
-}
-
-
-tbody tr:nth-child(even){
-
-    background:#f5f5f5;
-
-}
-
-
-td:first-child{
-
-    font-weight:500;
-
-}
-
-
-/* =====================================================
-   TABLE FOOTER
-===================================================== */
-
-.table-footer{
-
-    margin-top:10px;
-
-    font-size:11px;
-
-    color:#777;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.pagination{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-
-.pagination span{
-
-    cursor:pointer;
-
-}
-
-
-.pagination .page{
+    border-radius:50%;
 
     background:#3159a2;
 
-    color:white;
-
-    padding:6px 9px;
-
-    border-radius:3px;
-
+    border:3px solid #d8edf8;
 }
 
-
-/* =====================================================
-   SUMMARY
-===================================================== */
-
-.summary{
-
-    margin-top:25px;
-
-    border-top:1px solid #eee;
-
-    padding-top:15px;
-
-}
-
-
-.summary-title{
+.coverage-company{
+    color:#555;
 
     font-size:12px;
 
     font-weight:500;
 
-    color:#555;
-
-    margin-bottom:10px;
-
+    margin-bottom:3px;
 }
 
+.coverage-er{
+    color:#777;
 
-.summary-row{
+    font-size:11px;
 
-    display:flex;
-
-    border:1px solid #eee;
-
-    border-bottom:none;
-
-    font-size:12px;
-
+    margin-bottom:8px;
 }
 
+.coverage-date{
+    color:#777;
 
-.summary-row:last-child{
+    font-size:11px;
 
-    border-bottom:1px solid #eee;
-
+    line-height:1.7;
 }
 
+.coverage-date strong{
+    color:#526987;
 
-.summary-label{
-
-    width:55%;
-
-    padding:8px;
-
-    color:#555;
-
-}
-
-
-.summary-value{
-
-    width:45%;
-
-    padding:8px;
-
-    color:#555;
-
+    font-weight:500;
 }
 
 
 /* =====================================================
-   CALENDAR BUTTON
+   CALENDAR
 ===================================================== */
 
 .calendar{
-
     position:fixed;
 
     right:0;
@@ -751,15 +638,14 @@ td:first-child{
     opacity:.85;
 
     cursor:pointer;
-
 }
+
 
 /* =====================================================
    APPOINTMENT MODAL
 ===================================================== */
 
 .appointment-overlay{
-
     position:fixed;
 
     inset:0;
@@ -777,21 +663,13 @@ td:first-child{
     z-index:11000;
 
     padding:20px;
-
 }
-
 
 .appointment-overlay.show{
-
     display:flex;
-
 }
 
-
-/* APPOINTMENT BOX */
-
 .appointment-box{
-
     width:100%;
 
     max-width:520px;
@@ -811,39 +689,26 @@ td:first-child{
     position:relative;
 
     animation:appointmentOpen .2s ease;
-
 }
-
 
 @keyframes appointmentOpen{
 
     from{
-
         opacity:0;
-
         transform:translateY(-15px);
-
     }
 
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
 
 }
 
-
-/* CLOSE BUTTON */
-
 .close-appointment{
-
     position:absolute;
 
     top:15px;
-
     right:18px;
 
     border:none;
@@ -855,21 +720,13 @@ td:first-child{
     font-size:22px;
 
     cursor:pointer;
-
 }
-
 
 .close-appointment:hover{
-
     color:#285a9c;
-
 }
 
-
-/* TITLE */
-
 .appointment-box h2{
-
     margin:0;
 
     color:#315a9c;
@@ -877,30 +734,21 @@ td:first-child{
     font-size:20px;
 
     font-weight:500;
-
 }
-
 
 .appointment-box h2 i{
-
     margin-right:8px;
-
 }
 
-
 .appointment-box hr{
-
     border:none;
 
     border-top:1px solid #eee;
 
     margin:18px 0;
-
 }
 
-
 .appointment-box h3{
-
     margin:0 0 8px;
 
     color:#555;
@@ -908,12 +756,9 @@ td:first-child{
     font-size:15px;
 
     font-weight:500;
-
 }
 
-
 .appointment-box p{
-
     margin:0 0 20px;
 
     color:#777;
@@ -921,16 +766,11 @@ td:first-child{
     font-size:12px;
 
     line-height:1.6;
-
 }
-
-
-/* FORM CONTROLS */
 
 .appointment-box select,
 .appointment-box input,
 .appointment-box textarea{
-
     width:100%;
 
     padding:11px 12px;
@@ -950,32 +790,23 @@ td:first-child{
     font-size:12px;
 
     outline:none;
-
 }
-
 
 .appointment-box select:focus,
 .appointment-box input:focus,
 .appointment-box textarea:focus{
-
     border-color:#5ca6d8;
 
     box-shadow:0 0 0 2px rgba(92,166,216,.12);
-
 }
 
-
 .appointment-box textarea{
-
     height:90px;
 
     resize:none;
-
 }
 
-
 .next-btn{
-
     width:100%;
 
     border:none;
@@ -993,21 +824,14 @@ td:first-child{
     font-size:13px;
 
     cursor:pointer;
-
 }
 
 
-.next-btn:hover{
-
-    background:#264b8c;
-
-}
 /* =====================================================
    SIDE MENU OVERLAY
 ===================================================== */
 
 .menu-overlay{
-
     position:fixed;
 
     inset:0;
@@ -1017,14 +841,10 @@ td:first-child{
     z-index:10000;
 
     display:none;
-
 }
 
-
 .menu-overlay.open{
-
     display:block;
-
 }
 
 
@@ -1033,7 +853,6 @@ td:first-child{
 ===================================================== */
 
 .side-menu{
-
     position:fixed;
 
     top:0;
@@ -1055,19 +874,13 @@ td:first-child{
     transition:.3s ease;
 
     overflow-y:auto;
-
 }
-
 
 .side-menu.open{
-
     left:0;
-
 }
 
-
 .side-menu-header{
-
     height:75px;
 
     display:flex;
@@ -1079,21 +892,14 @@ td:first-child{
     padding:0 25px;
 
     border-bottom:1px solid #eee;
-
 }
-
 
 .side-menu-header span{
-
     font-size:25px;
-
     color:#444;
-
 }
 
-
 .close-menu{
-
     border:none;
 
     background:none;
@@ -1103,19 +909,13 @@ td:first-child{
     color:#999;
 
     cursor:pointer;
-
 }
-
 
 .menu-items{
-
     padding:15px 25px 30px;
-
 }
 
-
 .menu-item{
-
     min-height:55px;
 
     display:flex;
@@ -1135,51 +935,33 @@ td:first-child{
     padding:10px;
 
     border-radius:6px;
-
 }
-
 
 .menu-item:hover{
-
     background:#eef6fc;
-
 }
 
-
 .menu-item i{
-
     width:25px;
 
     text-align:center;
-
 }
-
 
 .menu-group{
-
     width:100%;
-
 }
 
-
 .submenu{
-
     display:none;
 
     padding-left:25px;
-
 }
-
 
 .submenu.show{
-
     display:block;
-
 }
 
-
 .submenu a{
-
     display:flex;
 
     align-items:center;
@@ -1193,564 +975,24 @@ td:first-child{
     color:#526987;
 
     font-size:16px;
-
 }
-
 
 .submenu a:hover{
-
     background:#eef6fc;
-
 }
 
-
 .submenu a i{
-
     width:25px;
 
     color:#315a9c;
-
 }
 
-
-.arrow{
-
-    margin-left:auto;
-
-    font-size:13px;
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.demo-notice{
-
-    font-size:12px;
-
-    color:#777;
-
-    padding:20px 0;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:700px){
-      /* APPOINTMENT MOBILE */
-
-.appointment-overlay{
-
-    padding:15px;
-
-}
-
-
-.appointment-box{
-
-    max-width:100%;
-
-    padding:22px 18px;
-
-    border-radius:7px;
-
-}
-
-
-.appointment-box h2{
-
-    font-size:17px;
-
-}
-
-
-.appointment-box h3{
-
-    font-size:13px;
-
-}
-
-
-.appointment-box p{
-
-    font-size:10px;
-
-}
-
-
-.appointment-box select,
-.appointment-box input,
-.appointment-box textarea{
-
-    font-size:11px;
-
-    padding:10px;
-
-}
-
-    /* HEADER */
-
-    .dashboard-header{
-
-        height:38px;
-
-        padding:0 10px;
-
-    }
-
-
-    .menu-icon{
-
-        font-size:20px;
-
-    }
-
-
-    .dashboard-actions{
-
-        gap:12px;
-
-        font-size:17px;
-
-    }
-
-
-    .profile-icon{
-
-        width:28px;
-
-        height:28px;
-
-    }
-
-
-    .member-info{
-
-        padding:7px 8px 8px;
-
-    }
-
-
-    .member-name{
-
-        font-size:9px;
-
-    }
-
-
-    .member-number{
-
-        font-size:9px;
-
-        margin-top:2px;
-
-    }
-
-
-    .member-date{
-
-        font-size:9px;
-
-        margin-top:3px;
-
-    }
-
-
-    /* MAIN */
-
-    .main-content{
-
-        padding:115px 8px 50px;
-
-    }
-
-
-    .member-title{
-
-        display:none;
-
-    }
-
-
-    /* PROFILE */
-
-    .member-details{
-
-        border-radius:4px;
-
-        margin-bottom:12px;
-
-    }
-
-
-    .cover{
-
-        height:80px;
-
-    }
-
-
-    .profile-content{
-
-        gap:10px;
-
-        padding:0 10px 10px;
-
-    }
-
-
-    .avatar{
-
-        width:58px;
-
-        height:58px;
-
-        border-width:4px;
-
-        margin-top:-30px;
-
-    }
-
-
-    .profile-text{
-
-        padding-top:8px;
-
-    }
-
-
-    .profile-text h2{
-
-        font-size:15px;
-
-        margin-bottom:7px;
-
-    }
-
-
-    .profile-info{
-
-        display:block;
-
-        font-size:9px;
-
-        line-height:1.8;
-
-    }
-
-
-    .profile-info span{
-
-        display:inline-flex;
-
-        margin-right:5px;
-
-    }
-
-
-    /* TABS */
-
-    .member-tabs{
-
-        margin:8px 0 12px;
-
-        gap:5px;
-
-    }
-
-
-    .member-tab{
-
-        font-size:10px;
-
-        padding:7px 10px;
-
-    }
-
-
-    /* CONTRIBUTIONS */
-
-    .contributions-section{
-
-        padding:20px 22px 25px;
-
-        border-radius:4px;
-
-    }
-
-
-    .section-title{
-
-        font-size:12px;
-
-        margin-bottom:25px;
-
-    }
-
-
-    .contribution-layout{
-
-        gap:15px;
-
-        align-items:flex-start;
-
-    }
-
-
-    .contribution-menu{
-
-        width:145px;
-
-    }
-
-
-    .contribution-option{
-
-        font-size:11px;
-
-        padding:9px 10px;
-
-        line-height:1.35;
-
-    }
-
-
-    .contribution-content{
-
-        width:calc(100% - 160px);
-
-        overflow:hidden;
-
-    }
-
-
-    .entries-label{
-
-        display:none;
-
-    }
-
-
-    .table-wrapper{
-
-        overflow-x:auto;
-
-        width:100%;
-
-    }
-
-
-    table{
-
-        min-width:560px;
-
-        font-size:10px;
-
-    }
-
-
-    th{
-
-        padding:6px 4px;
-
-    }
-
-
-    td{
-
-        padding:7px 4px;
-
-    }
-
-
-    .table-footer{
-
-        justify-content:center;
-
-        margin-top:10px;
-
-    }
-
-
-    .table-footer > span{
-
-        display:none;
-
-    }
-
-
-    .pagination{
-
-        gap:15px;
-
-    }
-
-
-    .summary{
-
-        margin-top:28px;
-
-    }
-
-
-    .summary-title{
-
-        font-size:10px;
-
-        padding:5px;
-
-        background:#eef3f5;
-
-    }
-
-
-    .summary-row{
-
-        font-size:10px;
-
-    }
-
-
-    .summary-label{
-
-        width:65%;
-
-        padding:8px;
-
-    }
-
-
-    .summary-value{
-
-        width:35%;
-
-        padding:8px;
-
-    }
-
-
-    /* CALENDAR */
-
-    .calendar{
-
-        top:290px;
-
-        padding:12px;
-
-        font-size:22px;
-
-        border-radius:10px 0 0 10px;
-
-    }
-
-
-    /* SIDE MENU */
-
-    .side-menu{
-
-        width:320px;
-
-    }
-
-
-    .side-menu-header{
-
-        height:60px;
-
-        padding:0 20px;
-
-    }
-
-
-    .side-menu-header span{
-
-        font-size:21px;
-
-    }
-
-
-    .menu-items{
-
-        padding:10px 18px 25px;
-
-    }
-
-
-    .menu-item{
-
-        min-height:50px;
-
-        font-size:16px;
-
-    }
-
-
-    .submenu a{
-
-        font-size:15px;
-
-        padding:11px 5px;
-
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL PHONE
-===================================================== */
-
-@media(max-width:380px){
-
-    .contribution-menu{
-
-        width:130px;
-
-    }
-
-
-    .contribution-content{
-
-        width:calc(100% - 145px);
-
-    }
-
-
-    .contribution-option{
-
-        font-size:10px;
-
-    }
-
-
-    table{
-
-        min-width:540px;
-
-        font-size:9px;
-
-    }
-
-
-    .summary-row{
-
-        font-size:9px;
-
-    }
-
-}
 
 /* =====================================================
    PROFILE SIDE PANEL
 ===================================================== */
 
 .profile-overlay{
-
     position:fixed;
 
     inset:0;
@@ -1760,19 +1002,13 @@ td:first-child{
     z-index:10000;
 
     display:none;
-
 }
-
 
 .profile-overlay.show{
-
     display:block;
-
 }
 
-
 .profile-panel{
-
     position:fixed;
 
     top:0;
@@ -1796,23 +1032,16 @@ td:first-child{
     overflow-y:auto;
 
     padding:80px 28px 30px;
-
 }
-
 
 .profile-panel.open{
-
     right:0;
-
 }
 
-
 .profile-close{
-
     position:absolute;
 
     top:18px;
-
     right:25px;
 
     border:none;
@@ -1824,12 +1053,9 @@ td:first-child{
     color:#999;
 
     cursor:pointer;
-
 }
 
-
 .profile-panel-header{
-
     display:flex;
 
     align-items:center;
@@ -1837,14 +1063,10 @@ td:first-child{
     gap:18px;
 
     margin-bottom:40px;
-
 }
 
-
 .profile-panel-avatar{
-
     width:55px;
-
     height:55px;
 
     border-radius:50%;
@@ -1852,34 +1074,23 @@ td:first-child{
     overflow:hidden;
 
     flex-shrink:0;
-
 }
-
 
 .profile-panel-avatar img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
 
-
 .profile-panel-name{
-
     color:#59616b;
 
     font-size:21px;
 
     line-height:1.2;
-
 }
 
-
 .profile-panel-name span{
-
     display:block;
 
     margin-top:18px;
@@ -1887,12 +1098,9 @@ td:first-child{
     font-size:15px;
 
     color:#777;
-
 }
 
-
 .profile-notice{
-
     display:flex;
 
     gap:8px;
@@ -1908,28 +1116,19 @@ td:first-child{
     font-size:15px;
 
     line-height:1.55;
-
 }
-
 
 .profile-notice i{
-
     font-size:13px;
-
 }
 
-
 .profile-links{
-
     display:flex;
 
     flex-direction:column;
-
 }
 
-
 .profile-links a{
-
     display:flex;
 
     align-items:center;
@@ -1943,26 +1142,20 @@ td:first-child{
     color:#687887;
 
     font-size:17px;
-
 }
 
-
 .profile-links a i{
-
     width:20px;
 
     color:#38659b;
 
     font-size:19px;
-
 }
-
 
 .profile-links a:hover{
-
     color:#315a9c;
-
 }
+
 
 /* =====================================================
    NOTIFICATION
@@ -1970,27 +1163,28 @@ td:first-child{
 
 .notification-wrapper{
     position:relative;
+
     display:flex;
+
     align-items:center;
 }
 
 .notification-icon{
     cursor:pointer;
+
     position:relative;
+
     z-index:2;
 }
 
-
-/* NOTIFICATION PANEL */
-
 .notification-panel{
-
     position:absolute;
 
     top:50px;
     right:0;
 
     width:460px;
+
     max-width:calc(100vw - 30px);
 
     background:#fff;
@@ -2006,26 +1200,15 @@ td:first-child{
     z-index:10002;
 }
 
-
-/* IMPORTANT:
-   CLOSED = COMPLETELY HIDDEN */
-
 .notification-panel:not(.show){
     display:none !important;
 }
-
-
-/* OPEN */
 
 .notification-panel.show{
     display:block !important;
 }
 
-
-/* TITLE */
-
 .notification-title{
-
     font-size:30px;
 
     font-weight:400;
@@ -2035,23 +1218,13 @@ td:first-child{
     padding:28px;
 
     border-bottom:1px solid #eee;
-
 }
-
-
-/* BODY */
 
 .notification-body{
-
     padding:28px;
-
 }
 
-
-/* MESSAGE */
-
 .notification-message{
-
     display:flex;
 
     align-items:flex-start;
@@ -2069,23 +1242,15 @@ td:first-child{
     font-size:18px;
 
     line-height:1.55;
-
 }
 
-
 .notification-message i{
-
     margin-top:4px;
 
     font-size:18px;
-
 }
 
-
-/* BUTTON */
-
 .view-notifications{
-
     width:100%;
 
     margin-top:28px;
@@ -2105,31 +1270,327 @@ td:first-child{
     font-size:16px;
 
     cursor:pointer;
-
-}
-
-
-.view-notifications:hover{
-
-    background:#284f91;
-
 }
 
 
 /* =====================================================
-   NOTIFICATION MOBILE
+   MOBILE
 ===================================================== */
 
 @media(max-width:700px){
 
-    .notification-panel{
+    /* HEADER */
 
+    .dashboard-header{
+        height:38px;
+
+        padding:0 10px;
+    }
+
+    .menu-icon{
+        font-size:20px;
+    }
+
+    .dashboard-actions{
+        gap:12px;
+
+        font-size:17px;
+    }
+
+    .profile-icon{
+        width:28px;
+        height:28px;
+    }
+
+
+    /* MEMBER INFO */
+
+    .member-info{
+        padding:7px 8px 8px;
+    }
+
+    .member-name{
+        font-size:9px;
+    }
+
+    .member-number{
+        font-size:9px;
+
+        margin-top:2px;
+    }
+
+    .member-date{
+        font-size:9px;
+
+        margin-top:3px;
+    }
+
+
+    /* MAIN */
+
+    .main-content{
+        padding:115px 8px 50px;
+    }
+
+    .member-title{
+        display:none;
+    }
+
+
+    /* PROFILE */
+
+    .member-details{
+        border-radius:4px;
+
+        margin-bottom:12px;
+    }
+
+    .cover{
+        height:80px;
+    }
+
+    .profile-content{
+        gap:10px;
+
+        padding:0 10px 10px;
+    }
+
+    .avatar{
+        width:58px;
+        height:58px;
+
+        border-width:4px;
+
+        margin-top:-30px;
+    }
+
+    .profile-text{
+        padding-top:8px;
+    }
+
+    .profile-text h2{
+        font-size:15px;
+
+        margin-bottom:7px;
+    }
+
+    .profile-info{
+        display:block;
+
+        font-size:9px;
+
+        line-height:1.8;
+    }
+
+    .profile-info span{
+        display:inline-flex;
+
+        margin-right:5px;
+    }
+
+
+    /* TABS */
+
+    .member-tabs{
+        margin:8px 0 12px;
+
+        gap:5px;
+    }
+
+    .member-tab{
+        font-size:10px;
+
+        padding:7px 10px;
+    }
+
+
+    /* DETAILS */
+
+    .details-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .detail-section-title{
+        font-size:12px;
+
+        margin-bottom:15px;
+
+        margin-top:25px;
+    }
+
+    .detail-table{
+        font-size:10px;
+    }
+
+    .detail-table td{
+        padding:8px 5px;
+
+        line-height:1.45;
+    }
+
+    .detail-table td:first-child{
+        width:45%;
+    }
+
+    .detail-table td:last-child{
+        width:55%;
+    }
+
+
+    /* ADDRESS */
+
+    .address-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .address-header{
+        align-items:flex-start;
+    }
+
+    .address-title{
+        font-size:12px;
+    }
+
+    .update-button{
+        font-size:8px;
+
+        padding:7px 8px;
+    }
+
+    .contact-title{
+        font-size:12px;
+    }
+
+
+    /* COVERAGE */
+
+    .coverage-section{
+        padding:20px 22px 25px;
+
+        border-radius:4px;
+    }
+
+    .coverage-title{
+        font-size:12px;
+    }
+
+    .coverage-timeline{
+        padding-left:25px;
+    }
+
+    .coverage-timeline::before{
+        left:6px;
+    }
+
+    .coverage-dot{
+        left:-25px;
+
+        width:13px;
+        height:13px;
+    }
+
+    .coverage-company{
+        font-size:10px;
+    }
+
+    .coverage-er{
+        font-size:9px;
+    }
+
+    .coverage-date{
+        font-size:9px;
+    }
+
+
+    /* CALENDAR */
+
+    .calendar{
+        top:290px;
+
+        padding:12px;
+
+        font-size:22px;
+
+        border-radius:10px 0 0 10px;
+    }
+
+
+    /* SIDE MENU */
+
+    .side-menu{
+        width:320px;
+    }
+
+    .side-menu-header{
+        height:60px;
+
+        padding:0 20px;
+    }
+
+    .side-menu-header span{
+        font-size:21px;
+    }
+
+    .menu-items{
+        padding:10px 18px 25px;
+    }
+
+    .menu-item{
+        min-height:50px;
+
+        font-size:16px;
+    }
+
+    .submenu a{
+        font-size:15px;
+
+        padding:11px 5px;
+    }
+
+
+    /* PROFILE */
+
+    .profile-panel{
+        width:90%;
+
+        max-width:360px;
+
+        padding:65px 20px 25px;
+    }
+
+    .profile-panel-name{
+        font-size:16px;
+    }
+
+    .profile-panel-name span{
+        font-size:12px;
+
+        margin-top:10px;
+    }
+
+    .profile-notice{
+        font-size:11px;
+
+        padding:12px;
+    }
+
+    .profile-links a{
+        font-size:13px;
+    }
+
+
+    /* NOTIFICATION */
+
+    .notification-panel{
         position:fixed;
 
         top:48px;
 
         right:10px;
-
         left:auto;
 
         width:calc(100vw - 20px);
@@ -2137,45 +1598,100 @@ td:first-child{
         max-width:420px;
 
         border-radius:6px;
-
     }
 
-
     .notification-title{
-
         font-size:20px;
 
         padding:18px;
-
     }
-
 
     .notification-body{
-
         padding:18px;
-
     }
 
-
     .notification-message{
-
         padding:16px;
 
         font-size:13px;
 
         line-height:1.5;
-
     }
 
-
     .view-notifications{
-
         margin-top:18px;
 
         padding:13px;
 
         font-size:12px;
+    }
 
+
+    /* APPOINTMENT */
+
+    .appointment-overlay{
+        padding:15px;
+    }
+
+    .appointment-box{
+        max-width:100%;
+
+        padding:22px 18px;
+
+        border-radius:7px;
+    }
+
+    .appointment-box h2{
+        font-size:17px;
+    }
+
+    .appointment-box h3{
+        font-size:13px;
+    }
+
+    .appointment-box p{
+        font-size:10px;
+    }
+
+    .appointment-box select,
+    .appointment-box input,
+    .appointment-box textarea{
+        font-size:11px;
+
+        padding:10px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media(max-width:380px){
+
+    .profile-text h2{
+        font-size:13px;
+    }
+
+    .profile-info{
+        font-size:8px;
+    }
+
+    .detail-table{
+        font-size:9px;
+    }
+
+    .detail-table td{
+        padding:7px 4px;
+    }
+
+    .coverage-company{
+        font-size:9px;
+    }
+
+    .coverage-date{
+        font-size:8px;
     }
 
 }
@@ -2194,70 +1710,84 @@ td:first-child{
 
 <header class="sticky-header">
 
-
     <div class="dashboard-header">
-
 
         <button
         class="menu-icon"
-        id="menuButton">
+        id="menuButton"
+        type="button">
 
             <i class="fa-solid fa-bars"></i>
 
         </button>
 
 
-     <div class="dashboard-actions">
+        <div class="dashboard-actions">
 
-    <div class="notification-wrapper">
+            <div class="notification-wrapper">
 
-        <i class="fa-solid fa-bell notification-icon"
-           id="notificationButton"></i>
+                <i
+                class="fa-solid fa-bell notification-icon"
+                id="notificationButton">
+                </i>
 
-        <div class="notification-panel" id="notificationPanel">
 
-            <div class="notification-title">
-                Notification
-            </div>
+                <div
+                class="notification-panel"
+                id="notificationPanel">
 
-            <div class="notification-body">
+                    <div class="notification-title">
+                        Notification
+                    </div>
 
-                <div class="notification-message">
 
-                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="notification-body">
 
-                    <span>
-                        You currently have no notifications.<br>
-                        Your 10 most recent notifications<br>
-                        will be displayed here.
-                    </span>
+                        <div class="notification-message">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                You currently have no notifications.<br>
+                                Your 10 most recent notifications<br>
+                                will be displayed here.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                        class="view-notifications"
+                        type="button">
+
+                            VIEW ALL NOTIFICATIONS
+
+                        </button>
+
+                    </div>
 
                 </div>
 
-                <button class="view-notifications">
-                    VIEW ALL NOTIFICATIONS
-                </button>
-
             </div>
+
+
+            <button
+            class="profile-icon"
+            id="profileButton"
+            type="button">
+
+                <img
+                src="Lprof.jpeg"
+                alt="Profile">
+
+            </button>
 
         </div>
 
     </div>
 
 
-    <div class="profile-icon" id="profileButton">
-
-        <img src="Lprof.jpeg" alt="Profile">
-
-    </div>
-
-</div>
-
-    </div>
-
-
     <div class="member-info">
-
 
         <div class="member-name">
 
@@ -2278,36 +1808,51 @@ td:first-child{
             <i class="fa-solid fa-calendar-days"></i>
 
             <span id="currentDate">
-
                 Loading...
-
             </span>
 
         </div>
 
-
     </div>
 
-
 </header>
+
 
 <!-- =====================================================
      PROFILE SIDE PANEL
 ===================================================== -->
 
-<div class="profile-overlay" id="profileOverlay"></div>
+<div
+class="profile-overlay"
+id="profileOverlay">
+</div>
 
-<div class="profile-panel" id="profilePanel">
 
-    <button class="profile-close" id="profileClose">
+<div
+class="profile-panel"
+id="profilePanel">
+
+
+    <button
+    class="profile-close"
+    id="profileClose"
+    type="button">
+
         <i class="fa-solid fa-xmark"></i>
+
     </button>
+
 
     <div class="profile-panel-header">
 
         <div class="profile-panel-avatar">
-            <img src="Lprof.jpeg" alt="Profile">
+
+            <img
+            src="Lprof.jpeg"
+            alt="Profile">
+
         </div>
+
 
         <div class="profile-panel-name">
 
@@ -2351,34 +1896,66 @@ td:first-child{
 
     <div class="profile-links">
 
-        <a href="#">
+        <a href="memberinfo.html">
+
             <i class="fa-solid fa-user"></i>
-            <span>My Details</span>
+
+            <span>
+                My Details
+            </span>
+
         </a>
 
+
         <a href="#">
+
             <i class="fa-solid fa-lock"></i>
-            <span>Change Password</span>
+
+            <span>
+                Change Password
+            </span>
+
         </a>
 
+
         <a href="#">
+
             <i class="fa-solid fa-user-lock"></i>
-            <span>Setup Time-based One-Time Password</span>
+
+            <span>
+                Setup Time-based One-Time Password
+            </span>
+
         </a>
+
 
         <a href="#">
+
             <i class="fa-solid fa-phone"></i>
-            <span>Contact Us</span>
+
+            <span>
+                Contact Us
+            </span>
+
         </a>
 
-        <a href="index.html" onclick="logout()">
+
+        <a
+        href="index.html"
+        onclick="logout()">
+
             <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Sign Out</span>
+
+            <span>
+                Sign Out
+            </span>
+
         </a>
 
     </div>
 
 </div>
+
 
 <!-- =====================================================
      CALENDAR
@@ -2386,12 +1963,11 @@ td:first-child{
 
 <div
 class="calendar"
-onclick="openAppointment()">
+id="calendarButton">
 
     <i class="fa-solid fa-calendar-days"></i>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2402,11 +1978,14 @@ onclick="openAppointment()">
 class="appointment-overlay"
 id="appointmentModal">
 
+
     <div class="appointment-box">
+
 
         <button
         class="close-appointment"
-        onclick="closeAppointment()">
+        id="closeAppointment"
+        type="button">
 
             <i class="fa-solid fa-xmark"></i>
 
@@ -2439,37 +2018,124 @@ id="appointmentModal">
         </p>
 
 
-        <select>
-            <option>Select Purpose</option>
+        <select id="appointmentPurpose">
+
+            <option value="">
+                Select Purpose
+            </option>
+
+            <option>
+                Member Data Update
+            </option>
+
+            <option>
+                Benefit Inquiry
+            </option>
+
+            <option>
+                Loan Inquiry
+            </option>
+
+            <option>
+                Other
+            </option>
+
         </select>
 
 
-        <select>
-            <option>Select Region</option>
+        <select id="appointmentRegion">
+
+            <option value="">
+                Select Region
+            </option>
+
+            <option>
+                Region II
+            </option>
+
+            <option>
+                NCR
+            </option>
+
+            <option>
+                Other Region
+            </option>
+
         </select>
 
 
-        <select>
-            <option>Select Branch</option>
+        <select id="appointmentBranch">
+
+            <option value="">
+                Select Branch
+            </option>
+
+            <option>
+                Tuguegarao Branch
+            </option>
+
+            <option>
+                Other SSS Branch
+            </option>
+
         </select>
 
 
-        <input type="date">
+        <input
+        type="date"
+        id="appointmentDate">
 
 
-        <select>
-            <option>Select Time</option>
+        <select id="appointmentTime">
+
+            <option value="">
+                Select Time
+            </option>
+
+            <option>
+                08:00 AM
+            </option>
+
+            <option>
+                09:00 AM
+            </option>
+
+            <option>
+                10:00 AM
+            </option>
+
+            <option>
+                11:00 AM
+            </option>
+
+            <option>
+                01:00 PM
+            </option>
+
+            <option>
+                02:00 PM
+            </option>
+
+            <option>
+                03:00 PM
+            </option>
+
         </select>
 
 
         <textarea
+        id="appointmentConcern"
         placeholder="Concern(s)">
         </textarea>
 
 
-        <button class="next-btn">
+        <button
+        class="next-btn"
+        id="appointmentNext"
+        type="button">
 
             Next
+
             <i class="fa-solid fa-chevron-right"></i>
 
         </button>
@@ -2477,7 +2143,6 @@ id="appointmentModal">
     </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2489,13 +2154,14 @@ id="appointmentModal">
 
     <div class="member-title">
 
-        Member Information / Contributions
+        Member Information / Member Details
 
     </div>
 
 
-
-    <!-- PROFILE CARD -->
+    <!-- =================================================
+         PROFILE CARD
+    ================================================== -->
 
     <div class="member-details">
 
@@ -2557,7 +2223,6 @@ id="appointmentModal">
 
                 </div>
 
-
             </div>
 
         </div>
@@ -2565,15 +2230,16 @@ id="appointmentModal">
     </div>
 
 
-
-    <!-- MEMBER TABS -->
+    <!-- =================================================
+         TABS
+    ================================================== -->
 
     <div class="member-tabs">
 
 
         <button
-        class="member-tab"
-        onclick="location.href='memberinfo.html'">
+        class="member-tab active"
+        type="button">
 
             <i class="fa-solid fa-user"></i>
 
@@ -2583,7 +2249,9 @@ id="appointmentModal">
 
 
         <button
-        class="member-tab active">
+        class="member-tab"
+        type="button"
+        onclick="location.href='contributions.html'">
 
             <i class="fa-solid fa-wallet"></i>
 
@@ -2591,258 +2259,538 @@ id="appointmentModal">
 
         </button>
 
-
     </div>
 
 
+    <!-- =================================================
+         MEMBER DETAILS
+    ================================================== -->
 
-    <!-- CONTRIBUTION SECTION -->
-
-    <section class="contributions-section">
+    <section class="details-section">
 
 
-        <div class="section-title">
+        <!-- MY DETAILS -->
 
-            <i class="fa-solid fa-file-invoice-dollar"></i>
+        <div class="detail-section-title">
 
-            &nbsp; Contributions
+            <i class="fa-solid fa-user"></i>
+
+            My Details
 
         </div>
 
 
+        <table class="detail-table">
 
-        <div class="contribution-layout">
+            <tr>
+                <td>SS Number Status</td>
+                <td class="status-active">ACTIVE</td>
+            </tr>
 
+            <tr>
+                <td>Document Compliance</td>
+                <td>
+                    APPLICATION THRU SSS WEB/MOBILE APP
+                </td>
+            </tr>
 
-            <!-- LEFT MENU -->
+            <tr>
+                <td>Membership Status</td>
+                <td>PERMANENT</td>
+            </tr>
 
-            <div class="contribution-menu">
+            <tr>
+                <td>Prior Registrant</td>
+                <td>NO</td>
+            </tr>
 
+            <tr>
+                <td>Date of SS Number Issuance</td>
+                <td>FEB 11, 2017</td>
+            </tr>
 
-                <div class="contribution-option">
+            <tr>
+                <td>Sex</td>
+                <td>MALE</td>
+            </tr>
 
-                    MONTHLY CONTRIBUTIONS
+        </table>
 
-                </div>
 
+        <!-- EMPLOYMENT -->
 
-                <div class="contribution-option">
+        <div class="detail-section-title">
 
-                    SE/VM CONTRIBUTIONS
+            <i class="fa-solid fa-briefcase"></i>
 
-                </div>
-
-
-                <div class="contribution-option">
-
-                    FLEXI-FUND
-
-                </div>
-
-
-                <div class="contribution-option">
-
-                    MANDATORY PROVIDENT FUND
-
-                </div>
-
-
-                <div class="contribution-option">
-
-                    PENSION BOOSTER
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- TABLE -->
-
-            <div class="contribution-content">
-
-
-                <div class="entries-label">
-
-                    10 &nbsp; entries per page
-
-                </div>
-
-
-                <div class="table-wrapper">
-
-
-                    <table>
-
-
-                        <thead>
-
-                            <tr>
-
-                                <th>YEAR</th>
-
-                                <th>JAN</th>
-                                <th>FEB</th>
-                                <th>MAR</th>
-                                <th>APR</th>
-                                <th>MAY</th>
-                                <th>JUN</th>
-                                <th>JUL</th>
-                                <th>AUG</th>
-                                <th>SEP</th>
-                                <th>OCT</th>
-                                <th>NOV</th>
-                                <th>DEC</th>
-
-                            </tr>
-
-                        </thead>
-
-
-                        <tbody id="contributionBody">
-
-                        </tbody>
-
-
-                    </table>
-
-
-                </div>
-
-
-
-                <div class="table-footer">
-
-
-                    <span>
-
-                        Showing 1 to 1 of 1 entries
-
-                    </span>
-
-
-                    <div class="pagination">
-
-                        <span>‹</span>
-
-                        <span>‹</span>
-
-                        <span class="page">1</span>
-
-                        <span>›</span>
-
-                        <span>›</span>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
+            Employment Details
 
         </div>
 
 
+        <table class="detail-table">
 
-        <!-- SUMMARY -->
+            <tr>
+                <td>Reporting Date</td>
+                <td>MAR 06, 2017</td>
+            </tr>
 
-        <div class="summary">
+            <tr>
+                <td>Reporting ID</td>
+                <td>03-9249624-1</td>
+            </tr>
 
+            <tr>
+                <td>Latest ER ID</td>
+                <td>80-0159722-6</td>
+            </tr>
 
-            <div class="summary-title">
+            <tr>
+                <td>Latest ER Name</td>
+                <td>
+                    LITTELFUSE PHILIPPINES INC.
+                </td>
+            </tr>
 
-                SUMMARY
-
-            </div>
-
-
-            <div class="summary-row">
-
-                <div class="summary-label">
-
-                    (A) Total Number of Contributions Displayed
-
-                </div>
-
-                <div class="summary-value">
-
-                    105
-
-                </div>
-
-            </div>
+        </table>
 
 
-            <div class="summary-row">
+        <!-- OTHER DETAILS -->
 
-                <div class="summary-label">
+        <div class="detail-section-title">
 
-                    (B) Total Number of Contributions not Displayed
+            <i class="fa-solid fa-circle-info"></i>
 
-                </div>
-
-                <div class="summary-value">
-
-                    0
-
-                </div>
-
-            </div>
-
-
-            <div class="summary-row">
-
-                <div class="summary-label">
-
-                    Total Number of Contributions Posted (A) + (B)
-
-                </div>
-
-                <div class="summary-value">
-
-                    105
-
-                </div>
-
-            </div>
-
-
-            <div class="summary-row">
-
-                <div class="summary-label">
-
-                    Total Amount of Contributions
-
-                </div>
-
-                <div class="summary-value">
-
-                    120,647.00
-
-                </div>
-
-            </div>
-
+            Other Details
 
         </div>
 
+
+        <table class="detail-table">
+
+            <tr>
+                <td>Claim Flag Status</td>
+                <td>
+                    NO FINAL/FUNERAL CLAIM
+                </td>
+            </tr>
+
+            <tr>
+                <td>Transferred to (New SS Number)</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Membership Type</td>
+                <td>EMPLOYEE</td>
+            </tr>
+
+            <tr>
+                <td>Change in Coverage Status</td>
+                <td>NO STATUS CHANGE</td>
+            </tr>
+
+            <tr>
+                <td>Date of Loan Disqualification</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>SS Number Withdrawal Reason</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Record Location</td>
+                <td>TUGUEGARAO</td>
+            </tr>
+
+        </table>
+
+
+        <!-- UMID -->
+
+        <div class="detail-section-title">
+
+            <i class="fa-solid fa-id-card"></i>
+
+            UMID/SSS ID Details
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+                <td>Capture Site</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Capture Date/Enrollment Date</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Card Serial/Transaction Number</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Card Type</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Transaction Status</td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </table>
 
     </section>
 
 
+    <!-- =================================================
+         ADDRESS
+    ================================================== -->
 
-    <div class="demo-notice">
+    <section class="address-section">
 
-        @2024 Social Security System
 
-    </div>
+        <div class="address-header">
+
+            <div class="address-title">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Address
+
+            </div>
+
+
+            <button
+            class="update-button"
+            type="button">
+
+                Update Information
+
+            </button>
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+
+                <td>
+                    Local Home Address
+                </td>
+
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAY TUGUEGARAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Local Mailing Address
+                </td>
+
+                <td>
+                    1168 ZONE 7 MAHARLIKA HIGHWAY CAGGAYAO CITY (CAPITAL) CAGAYAN 3500
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Home Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Foreign Mailing Address
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- CONTACT -->
+
+        <div class="contact-title">
+
+            <i class="fa-solid fa-address-book"></i>
+
+            Contact Information
+
+        </div>
+
+
+        <table class="detail-table">
+
+            <tr>
+
+                <td>
+                    Landline
+                </td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Mobile
+                </td>
+
+                <td>
+                    0935-0621315
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Email Address
+                </td>
+
+                <td>
+                    lestantiago22@gmail.com
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- =================================================
+         COVERAGE HISTORY
+    ================================================== -->
+
+    <section class="coverage-section">
+
+
+        <div class="coverage-title">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Coverage History
+
+        </div>
+
+
+        <div class="coverage-timeline">
+
+
+            <!-- 2026 -->
+
+            <div class="coverage-item">
+
+                <div class="coverage-dot"></div>
+
+
+                <div class="coverage-company">
+
+                    LITTELFUSE PHILIPPINES INC.
+
+                </div>
+
+
+                <div class="coverage-er">
+
+                    80-0159722-6
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
+                    Jan 01, 2026
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
+                    Sep 01, 2026
+
+                </div>
+
+            </div>
+
+
+            <!-- 2022 -->
+
+            <div class="coverage-item">
+
+                <div class="coverage-dot"></div>
+
+
+                <div class="coverage-company">
+
+                    LITTELFUSE PHILIPPINES INC.
+
+                </div>
+
+
+                <div class="coverage-er">
+
+                    80-0159722-6
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
+                    Feb 01, 2022
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
+                    May 01, 2025
+
+                </div>
+
+            </div>
+
+
+            <!-- 2019 -->
+
+            <div class="coverage-item">
+
+                <div class="coverage-dot"></div>
+
+
+                <div class="coverage-company">
+
+                    K&amp;K MOLDING INC.
+
+                </div>
+
+
+                <div class="coverage-er">
+
+                    06-8529635-2
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
+                    Dec 01, 2019
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
+                    Apr 01, 2021
+
+                </div>
+
+            </div>
+
+
+            <!-- 2017 -->
+
+            <div class="coverage-item">
+
+                <div class="coverage-dot"></div>
+
+
+                <div class="coverage-company">
+
+                    K&amp;K MOLDING INC.
+
+                </div>
+
+
+                <div class="coverage-er">
+
+                    06-8529635-2
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        EFFECTIVITY DATE:
+                    </strong>
+
+                    Feb 11, 2017
+
+                </div>
+
+
+                <div class="coverage-date">
+
+                    <strong>
+                        REPORTING DATE:
+                    </strong>
+
+                    Mar 06, 2017
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 
 </main>
-
 
 
 <!-- =====================================================
@@ -2853,7 +2801,6 @@ id="appointmentModal">
 class="menu-overlay"
 id="menuOverlay">
 </div>
-
 
 
 <!-- =====================================================
@@ -2867,21 +2814,21 @@ id="sideMenu">
 
     <div class="side-menu-header">
 
-
-        <span>Menu</span>
+        <span>
+            Menu
+        </span>
 
 
         <button
         class="close-menu"
-        id="closeMenu">
+        id="closeMenu"
+        type="button">
 
             <i class="fa-solid fa-xmark"></i>
 
         </button>
 
-
     </div>
-
 
 
     <div class="menu-items">
@@ -2895,10 +2842,11 @@ id="sideMenu">
 
             <i class="fa-solid fa-border-all"></i>
 
-            <span>Dashboard</span>
+            <span>
+                Dashboard
+            </span>
 
         </a>
-
 
 
         <!-- MEMBER INFORMATION -->
@@ -2912,9 +2860,9 @@ id="sideMenu">
 
                 <i class="fa-solid fa-user-tie"></i>
 
-                <span>Member Information</span>
-
-           
+                <span>
+                    Member Information
+                </span>
 
             </div>
 
@@ -2928,7 +2876,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-user"></i>
 
-                    <span>Member Details</span>
+                    <span>
+                        Member Details
+                    </span>
 
                 </a>
 
@@ -2937,7 +2887,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-wallet"></i>
 
-                    <span>My Contributions</span>
+                    <span>
+                        My Contributions
+                    </span>
 
                 </a>
 
@@ -2946,15 +2898,15 @@ id="sideMenu">
 
                     <i class="fa-solid fa-comments"></i>
 
-                    <span>Update Security Questions</span>
+                    <span>
+                        Update Security Questions
+                    </span>
 
                 </a>
-
 
             </div>
 
         </div>
-
 
 
         <!-- SERVICES -->
@@ -2968,9 +2920,9 @@ id="sideMenu">
 
                 <i class="fa-solid fa-fingerprint"></i>
 
-                <span>Services</span>
-
-             
+                <span>
+                    Services
+                </span>
 
             </div>
 
@@ -2984,7 +2936,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-building-columns"></i>
 
-                    <span>Disbursement Account</span>
+                    <span>
+                        Disbursement Account
+                    </span>
 
                 </a>
 
@@ -2993,7 +2947,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                    <span>Benefit Re-disbursement</span>
+                    <span>
+                        Benefit Re-disbursement
+                    </span>
 
                 </a>
 
@@ -3002,7 +2958,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-money-check-dollar"></i>
 
-                    <span>Auto Debit Arrangement</span>
+                    <span>
+                        Auto Debit Arrangement
+                    </span>
 
                 </a>
 
@@ -3011,7 +2969,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-people-roof"></i>
 
-                    <span>Pension Booster</span>
+                    <span>
+                        Pension Booster
+                    </span>
 
                 </a>
 
@@ -3020,16 +2980,22 @@ id="sideMenu">
 
                     <i class="fa-solid fa-barcode"></i>
 
-                    <span>RTC/CPO Reference Number Inquiry</span>
+                    <span>
+                        RTC/CPO Reference Number Inquiry
+                    </span>
 
                 </a>
 
 
-                <a href="#">
+                <a
+                href="#"
+                onclick="openAppointment(); return false;">
 
                     <i class="fa-solid fa-calendar-days"></i>
 
-                    <span>Set Appointment</span>
+                    <span>
+                        Set Appointment
+                    </span>
 
                 </a>
 
@@ -3038,15 +3004,15 @@ id="sideMenu">
 
                     <i class="fa-solid fa-id-card"></i>
 
-                    <span>MySSS Card</span>
+                    <span>
+                        MySSS Card
+                    </span>
 
                 </a>
-
 
             </div>
 
         </div>
-
 
 
         <!-- LOANS -->
@@ -3060,9 +3026,9 @@ id="sideMenu">
 
                 <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                <span>Loans</span>
-
-           
+                <span>
+                    Loans
+                </span>
 
             </div>
 
@@ -3076,7 +3042,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                    <span>Salary Loan</span>
+                    <span>
+                        Salary Loan
+                    </span>
 
                 </a>
 
@@ -3085,7 +3053,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-house-chimney"></i>
 
-                    <span>Calamity/Emergency Loan</span>
+                    <span>
+                        Calamity/Emergency Loan
+                    </span>
 
                 </a>
 
@@ -3094,7 +3064,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-person-cane"></i>
 
-                    <span>Pension Loan</span>
+                    <span>
+                        Pension Loan
+                    </span>
 
                 </a>
 
@@ -3103,15 +3075,15 @@ id="sideMenu">
 
                     <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                    <span>Loan Penalty Condonation</span>
+                    <span>
+                        Loan Penalty Condonation
+                    </span>
 
                 </a>
-
 
             </div>
 
         </div>
-
 
 
         <!-- BENEFITS -->
@@ -3125,9 +3097,9 @@ id="sideMenu">
 
                 <i class="fa-solid fa-network-wired"></i>
 
-                <span>Benefits</span>
-
-         
+                <span>
+                    Benefits
+                </span>
 
             </div>
 
@@ -3141,7 +3113,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-person-pregnant"></i>
 
-                    <span>Maternity Benefit</span>
+                    <span>
+                        Maternity Benefit
+                    </span>
 
                 </a>
 
@@ -3150,7 +3124,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-briefcase"></i>
 
-                    <span>Unemployment Benefit</span>
+                    <span>
+                        Unemployment Benefit
+                    </span>
 
                 </a>
 
@@ -3159,7 +3135,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-bed-pulse"></i>
 
-                    <span>Sickness Benefit</span>
+                    <span>
+                        Sickness Benefit
+                    </span>
 
                 </a>
 
@@ -3168,7 +3146,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-wheelchair"></i>
 
-                    <span>Disability Claim</span>
+                    <span>
+                        Disability Claim
+                    </span>
 
                 </a>
 
@@ -3177,7 +3157,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-person-cane"></i>
 
-                    <span>Retirement Claim</span>
+                    <span>
+                        Retirement Claim
+                    </span>
 
                 </a>
 
@@ -3186,7 +3168,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-box"></i>
 
-                    <span>Funeral Claim</span>
+                    <span>
+                        Funeral Claim
+                    </span>
 
                 </a>
 
@@ -3195,18 +3179,18 @@ id="sideMenu">
 
                     <i class="fa-solid fa-monument"></i>
 
-                    <span>Death Claim</span>
+                    <span>
+                        Death Claim
+                    </span>
 
                 </a>
-
 
             </div>
 
         </div>
 
 
-
-        <!-- PAYMENT REFERENCE NUMBER -->
+        <!-- PRN -->
 
         <div class="menu-group">
 
@@ -3217,9 +3201,9 @@ id="sideMenu">
 
                 <i class="fa-solid fa-barcode"></i>
 
-                <span>Payment Reference Number</span>
-
-              
+                <span>
+                    Payment Reference Number
+                </span>
 
             </div>
 
@@ -3233,7 +3217,9 @@ id="sideMenu">
 
                     <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                    <span>Contributions</span>
+                    <span>
+                        Contributions
+                    </span>
 
                 </a>
 
@@ -3242,15 +3228,15 @@ id="sideMenu">
 
                     <i class="fa-solid fa-hand-holding-dollar"></i>
 
-                    <span>Loans</span>
+                    <span>
+                        Loans
+                    </span>
 
                 </a>
-
 
             </div>
 
         </div>
-
 
 
         <!-- SIGN OUT -->
@@ -3262,249 +3248,18 @@ id="sideMenu">
 
             <i class="fa-solid fa-right-from-bracket"></i>
 
-            <span>Sign Out</span>
+            <span>
+                Sign Out
+            </span>
 
         </a>
-
 
     </div>
 
 </div>
 
 
-
 <script>
-
-/* =====================================================
-   CONTRIBUTION DATA
-===================================================== */
-
-const contributionData = {
-
-    2026: {
-        Jan:"1,466.00",
-        Feb:"1,466.00",
-        Mar:"1,466.00",
-        Apr:"1,466.00",
-        May:"1,466.00",
-        Jun:"1,466.00",
-        Jul:"1,466.00",
-        Aug:"1,466.00",
-        Sep:"1,466.00",
-        Oct:"0.00",
-        Nov:"0.00",
-        Dec:"0.00"
-    },
-
-    2025: {
-        Jan:"1,361.00",
-        Feb:"1,361.00",
-        Mar:"1,361.00",
-        Apr:"1,466.00",
-        May:"1,466.00",
-        Jun:"1,466.00",
-        Jul:"1,466.00",
-        Aug:"1,466.00",
-        Sep:"1,466.00",
-        Oct:"1,466.00",
-        Nov:"1,466.00",
-        Dec:"1,466.00"
-    },
-
-    2024: {
-        Jan:"1,250.00",
-        Feb:"1,250.00",
-        Mar:"1,361.00",
-        Apr:"1,361.00",
-        May:"1,361.00",
-        Jun:"1,361.00",
-        Jul:"1,361.00",
-        Aug:"1,361.00",
-        Sep:"1,361.00",
-        Oct:"1,361.00",
-        Nov:"1,361.00",
-        Dec:"1,361.00"
-    },
-
-    2023: {
-        Jan:"1,144.00",
-        Feb:"1,144.00",
-        Mar:"1,250.00",
-        Apr:"1,250.00",
-        May:"1,250.00",
-        Jun:"1,250.00",
-        Jul:"1,250.00",
-        Aug:"1,250.00",
-        Sep:"1,250.00",
-        Oct:"1,250.00",
-        Nov:"1,250.00",
-        Dec:"1,250.00"
-    },
-
-    2022: {
-        Jan:"0.00",
-        Feb:"1,144.00",
-        Mar:"1,144.00",
-        Apr:"1,144.00",
-        May:"1,144.00",
-        Jun:"1,144.00",
-        Jul:"1,144.00",
-        Aug:"1,144.00",
-        Sep:"1,144.00",
-        Oct:"1,144.00",
-        Nov:"1,144.00",
-        Dec:"1,144.00"
-    },
-
-    2021: {
-        Jan:"0.00",
-        Feb:"1,130.00",
-        Mar:"1,130.00",
-        Apr:"1,130.00",
-        May:"0.00",
-        Jun:"0.00",
-        Jul:"0.00",
-        Aug:"0.00",
-        Sep:"0.00",
-        Oct:"0.00",
-        Nov:"0.00",
-        Dec:"0.00"
-    },
-
-    2020: {
-        Jan:"1,020.00",
-        Feb:"1,020.00",
-        Mar:"1,020.00",
-        Apr:"1,020.00",
-        May:"1,130.00",
-        Jun:"1,130.00",
-        Jul:"1,130.00",
-        Aug:"1,130.00",
-        Sep:"1,130.00",
-        Oct:"1,130.00",
-        Nov:"1,130.00",
-        Dec:"1,130.00"
-    },
-
-    2019: {
-        Jan:"914.00",
-        Feb:"914.00",
-        Mar:"914.00",
-        Apr:"914.00",
-        May:"1,020.00",
-        Jun:"1,020.00",
-        Jul:"1,020.00",
-        Aug:"1,020.00",
-        Sep:"1,020.00",
-        Oct:"1,020.00",
-        Nov:"1,020.00",
-        Dec:"1,020.00"
-    },
-
-    2018: {
-        Jan:"806.00",
-        Feb:"806.00",
-        Mar:"806.00",
-        Apr:"806.00",
-        May:"914.00",
-        Jun:"914.00",
-        Jul:"914.00",
-        Aug:"914.00",
-        Sep:"914.00",
-        Oct:"914.00",
-        Nov:"914.00",
-        Dec:"914.00"
-    },
-
-    2017: {
-        Jan:"0.00",
-        Feb:"0.00",
-        Mar:"806.00",
-        Apr:"806.00",
-        May:"806.00",
-        Jun:"806.00",
-        Jul:"806.00",
-        Aug:"806.00",
-        Sep:"806.00",
-        Oct:"806.00",
-        Nov:"806.00",
-        Dec:"806.00"
-    }
-
-};
-
-
-/* =====================================================
-   LOAD CONTRIBUTION TABLE
-===================================================== */
-
-const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-];
-
-
-function loadContributionTable(){
-
-    const tbody =
-        document.getElementById(
-            "contributionBody"
-        );
-
-
-    tbody.innerHTML = "";
-
-
-    Object.keys(contributionData)
-    .sort((a,b) => b-a)
-    .forEach(year => {
-
-        const row =
-            document.createElement("tr");
-
-
-        const yearCell =
-            document.createElement("td");
-
-
-        yearCell.textContent =
-            year;
-
-
-        row.appendChild(yearCell);
-
-
-        months.forEach(month => {
-
-            const cell =
-                document.createElement("td");
-
-
-            cell.textContent =
-                contributionData[year][month];
-
-
-            row.appendChild(cell);
-
-        });
-
-
-        tbody.appendChild(row);
-
-    });
-
-}
-
 
 /* =====================================================
    REAL TIME DATE
@@ -3512,9 +3267,7 @@ function loadContributionTable(){
 
 function updateDateTime(){
 
-    const now =
-        new Date();
-
+    const now = new Date();
 
     const options = {
 
@@ -3536,7 +3289,6 @@ function updateDateTime(){
 
     };
 
-
     document.getElementById(
         "currentDate"
     ).textContent =
@@ -3547,9 +3299,7 @@ function updateDateTime(){
 
 }
 
-
 updateDateTime();
-
 
 setInterval(
     updateDateTime,
@@ -3566,18 +3316,15 @@ const menuButton =
         "menuButton"
     );
 
-
 const sideMenu =
     document.getElementById(
         "sideMenu"
     );
 
-
 const menuOverlay =
     document.getElementById(
         "menuOverlay"
     );
-
 
 const closeMenu =
     document.getElementById(
@@ -3616,46 +3363,60 @@ menuOverlay.onclick =
 
 
 /* =====================================================
-   SUBMENU
+   SUBMENUS
 ===================================================== */
 
 const menuToggles =
-    document.querySelectorAll(".menu-toggle");
+    document.querySelectorAll(
+        ".menu-toggle"
+    );
 
 
 menuToggles.forEach(toggle => {
 
-    toggle.addEventListener("click", function(){
+    toggle.addEventListener(
+        "click",
+        function(){
 
-        const targetId =
-            this.dataset.target;
+            const targetId =
+                this.dataset.target;
 
-        const target =
-            document.getElementById(targetId);
-
-
-        menuToggles.forEach(other => {
-
-            if(other !== this){
-
-                const otherId =
-                    other.dataset.target;
-
-                const otherMenu =
-                    document.getElementById(otherId);
-
-                otherMenu.classList.remove("show");
-
-            }
-
-        });
+            const target =
+                document.getElementById(
+                    targetId
+                );
 
 
-        target.classList.toggle("show");
+            menuToggles.forEach(other => {
 
-    });
+                if(other !== this){
+
+                    const otherId =
+                        other.dataset.target;
+
+                    const otherMenu =
+                        document.getElementById(
+                            otherId
+                        );
+
+                    otherMenu.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            });
+
+
+            target.classList.toggle(
+                "show"
+            );
+
+        }
+    );
 
 });
+
 
 /* =====================================================
    LOGOUT
@@ -3672,48 +3433,70 @@ function logout(){
 
 }
 
-      /* =====================================================
+
+/* =====================================================
    PROFILE PANEL
 ===================================================== */
 
 const profileIcon =
-    document.querySelector(".profile-icon");
+    document.getElementById(
+        "profileButton"
+    );
 
 const profilePanel =
-    document.getElementById("profilePanel");
+    document.getElementById(
+        "profilePanel"
+    );
 
 const profileOverlay =
-    document.getElementById("profileOverlay");
+    document.getElementById(
+        "profileOverlay"
+    );
 
 const profileClose =
-    document.getElementById("profileClose");
+    document.getElementById(
+        "profileClose"
+    );
 
 
 function openProfile(){
 
-    profilePanel.classList.add("open");
+    profilePanel.classList.add(
+        "open"
+    );
 
-    profileOverlay.classList.add("show");
+    profileOverlay.classList.add(
+        "show"
+    );
 
 }
 
 
 function closeProfile(){
 
-    profilePanel.classList.remove("open");
+    profilePanel.classList.remove(
+        "open"
+    );
 
-    profileOverlay.classList.remove("show");
+    profileOverlay.classList.remove(
+        "show"
+    );
 
 }
 
 
-profileIcon.addEventListener("click", function(){
+profileIcon.addEventListener(
+    "click",
+    function(){
 
-    notificationPanel.classList.remove("show");
+        notificationPanel.classList.remove(
+            "show"
+        );
 
-    openProfile();
+        openProfile();
 
-});
+    }
+);
 
 
 profileClose.addEventListener(
@@ -3727,72 +3510,191 @@ profileOverlay.addEventListener(
     closeProfile
 );
 
-      /* =====================================================
-   NOTIFICATION PANEL
+
+/* =====================================================
+   NOTIFICATION
 ===================================================== */
 
 const notificationButton =
-    document.getElementById("notificationButton");
+    document.getElementById(
+        "notificationButton"
+    );
 
 const notificationPanel =
-    document.getElementById("notificationPanel");
+    document.getElementById(
+        "notificationPanel"
+    );
 
 
-notificationButton.addEventListener("click", function(e){
+notificationButton.addEventListener(
+    "click",
+    function(e){
 
-    e.stopPropagation();
+        e.stopPropagation();
 
-    notificationPanel.classList.toggle("show");
+        profilePanel.classList.remove(
+            "open"
+        );
 
-});
+        profileOverlay.classList.remove(
+            "show"
+        );
+
+        notificationPanel.classList.toggle(
+            "show"
+        );
+
+    }
+);
 
 
-notificationPanel.addEventListener("click", function(e){
+notificationPanel.addEventListener(
+    "click",
+    function(e){
 
-    e.stopPropagation();
+        e.stopPropagation();
 
-});
+    }
+);
 
 
-document.addEventListener("click", function(){
+document.addEventListener(
+    "click",
+    function(){
 
-    notificationPanel.classList.remove("show");
+        notificationPanel.classList.remove(
+            "show"
+        );
 
-});
-
+    }
+);
 
 
 /* =====================================================
    APPOINTMENT
 ===================================================== */
 
+const calendarButton =
+    document.getElementById(
+        "calendarButton"
+    );
+
+const appointmentModal =
+    document.getElementById(
+        "appointmentModal"
+    );
+
+const closeAppointmentButton =
+    document.getElementById(
+        "closeAppointment"
+    );
+
+
 function openAppointment(){
 
-    document
-    .getElementById(
-        "appointmentModal"
-    )
-    .classList.add("show");
+    appointmentModal.classList.add(
+        "show"
+    );
 
 }
 
 
 function closeAppointment(){
 
-    document
-    .getElementById(
-        "appointmentModal"
-    )
-    .classList.remove("show");
+    appointmentModal.classList.remove(
+        "show"
+    );
 
 }
 
 
+calendarButton.addEventListener(
+    "click",
+    openAppointment
+);
+
+
+closeAppointmentButton.addEventListener(
+    "click",
+    closeAppointment
+);
+
+
+appointmentModal.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target === appointmentModal
+        ){
+
+            closeAppointment();
+
+        }
+
+    }
+);
+
+
 /* =====================================================
-   INITIALIZE
+   APPOINTMENT NEXT
 ===================================================== */
 
-loadContributionTable();
+document.getElementById(
+    "appointmentNext"
+).addEventListener(
+    "click",
+    function(){
+
+        const purpose =
+            document.getElementById(
+                "appointmentPurpose"
+            ).value;
+
+        const region =
+            document.getElementById(
+                "appointmentRegion"
+            ).value;
+
+        const branch =
+            document.getElementById(
+                "appointmentBranch"
+            ).value;
+
+        const date =
+            document.getElementById(
+                "appointmentDate"
+            ).value;
+
+        const time =
+            document.getElementById(
+                "appointmentTime"
+            ).value;
+
+
+        if(
+            !purpose ||
+            !region ||
+            !branch ||
+            !date ||
+            !time
+        ){
+
+            alert(
+                "Please complete all appointment details."
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Appointment details are ready for the next step."
+        );
+
+    }
+);
 
 </script>
 
@@ -3800,3 +3702,4 @@ loadContributionTable();
 </body>
 
 </html>
+```0
