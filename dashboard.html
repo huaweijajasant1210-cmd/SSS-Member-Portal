@@ -2093,13 +2093,6 @@ body{
 
 
 <!-- =====================================================
-     SIDE MENU OVERLAY
-===================================================== -->
-
-<div class="menu-overlay" id="menuOverlay"></div>
-
-
-<!-- =====================================================
      SIDE MENU
 ===================================================== -->
 
@@ -2591,9 +2584,9 @@ body{
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    /* ================================
+    /* =====================================================
        ELEMENTS
-    ================================ */
+    ===================================================== */
 
     const floatingCalendar =
         document.getElementById("floatingCalendar");
@@ -2639,168 +2632,46 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =====================================================
-   SIDE MENU
-===================================================== */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const sideMenu =
-    document.getElementById("sideMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-const closeMenu =
-    document.getElementById("closeMenu");
-
-
-function openMenu(){
-
-    sideMenu.classList.add("open");
-
-    menuOverlay.classList.add("open");
-
-}
-
-
-function closeSideMenu(){
-
-    sideMenu.classList.remove("open");
-
-    menuOverlay.classList.remove("open");
-
-}
-
-
-if(menuButton){
-
-    menuButton.addEventListener(
-        "click",
-        openMenu
-    );
-
-}
-
-
-if(closeMenu){
-
-    closeMenu.addEventListener(
-        "click",
-        closeSideMenu
-    );
-
-}
-
-
-if(menuOverlay){
-
-    menuOverlay.addEventListener(
-        "click",
-        closeSideMenu
-    );
-
-}
-
-
-/* =====================================================
-   SUBMENUS
-===================================================== */
-
-const menuToggles =
-    document.querySelectorAll(".menu-toggle");
-
-
-menuToggles.forEach(toggle => {
-
-    toggle.addEventListener("click", function(){
-
-        const targetId =
-            this.getAttribute("data-target");
-
-        const target =
-            document.getElementById(targetId);
-
-
-        /* CLOSE OTHER SUBMENUS */
-
-        menuToggles.forEach(other => {
-
-            if(other !== this){
-
-                const otherId =
-                    other.getAttribute("data-target");
-
-                const otherMenu =
-                    document.getElementById(otherId);
-
-                if(otherMenu){
-
-                    otherMenu.classList.remove("show");
-
-                }
-
-            }
-
-        });
-
-
-        /* OPEN / CLOSE SELECTED */
-
-        if(target){
-
-            target.classList.toggle("show");
-
-        }
-
-    });
-
-});
-    const submenu =
-        document.querySelector(".submenu");
-
-
-    /* ================================
        FLOATING CALENDAR
-    ================================ */
+    ===================================================== */
 
     if(floatingCalendar && appointmentOverlay){
 
-        floatingCalendar.onclick = function(e){
+        floatingCalendar.addEventListener("click", function(e){
 
             e.stopPropagation();
 
             appointmentOverlay.classList.add("show");
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        CLOSE APPOINTMENT
-    ================================ */
+    ===================================================== */
 
     if(appointmentClose && appointmentOverlay){
 
-        appointmentClose.onclick = function(e){
+        appointmentClose.addEventListener("click", function(e){
 
             e.stopPropagation();
 
             appointmentOverlay.classList.remove("show");
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        CLICK OUTSIDE APPOINTMENT
-    ================================ */
+    ===================================================== */
 
     if(appointmentOverlay){
 
-        appointmentOverlay.onclick = function(e){
+        appointmentOverlay.addEventListener("click", function(e){
 
             if(e.target === appointmentOverlay){
 
@@ -2808,18 +2679,18 @@ menuToggles.forEach(toggle => {
 
             }
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        APPOINTMENT NEXT
-    ================================ */
+    ===================================================== */
 
     if(appointmentNext){
 
-        appointmentNext.onclick = function(){
+        appointmentNext.addEventListener("click", function(){
 
             const purpose =
                 document.getElementById("appointmentPurpose").value;
@@ -2854,80 +2725,157 @@ menuToggles.forEach(toggle => {
 
             alert("Appointment details are ready for the next step.");
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        SIDE MENU
-    ================================ */
+    ===================================================== */
 
-    if(menuButton){
+    function openMenu(){
 
-        menuButton.onclick = function(e){
-
-            e.stopPropagation();
+        if(sideMenu){
 
             sideMenu.classList.add("open");
 
+        }
+
+        if(menuOverlay){
+
             menuOverlay.classList.add("open");
 
-        };
+        }
+
+    }
+
+
+    function closeSideMenu(){
+
+        if(sideMenu){
+
+            sideMenu.classList.remove("open");
+
+        }
+
+        if(menuOverlay){
+
+            menuOverlay.classList.remove("open");
+
+        }
+
+    }
+
+
+    if(menuButton){
+
+        menuButton.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+            openMenu();
+
+        });
 
     }
 
 
     if(closeMenu){
 
-        closeMenu.onclick = function(){
+        closeMenu.addEventListener("click", function(e){
 
-            sideMenu.classList.remove("open");
+            e.stopPropagation();
 
-            menuOverlay.classList.remove("open");
+            closeSideMenu();
 
-        };
+        });
 
     }
 
 
     if(menuOverlay){
 
-        menuOverlay.onclick = function(){
+        menuOverlay.addEventListener("click", function(){
 
-            sideMenu.classList.remove("open");
+            closeSideMenu();
 
-            menuOverlay.classList.remove("open");
-
-        };
+        });
 
     }
 
 
-    /* ================================
-       MEMBER INFORMATION SUBMENU
-    ================================ */
+    /* =====================================================
+       ALL SUBMENUS
+    ===================================================== */
 
-    if(memberToggle && submenu){
+    const menuToggles =
+        document.querySelectorAll(".menu-toggle");
 
-        memberToggle.onclick = function(e){
+
+    menuToggles.forEach(function(toggle){
+
+        toggle.addEventListener("click", function(e){
 
             e.stopPropagation();
 
-            submenu.classList.toggle("show");
 
-        };
-
-    }
+            const targetId =
+                this.getAttribute("data-target");
 
 
-    /* ================================
+            const targetMenu =
+                document.getElementById(targetId);
+
+
+            if(!targetMenu){
+
+                return;
+
+            }
+
+
+            /* CLOSE OTHER SUBMENUS */
+
+            menuToggles.forEach(function(otherToggle){
+
+                if(otherToggle !== toggle){
+
+                    const otherId =
+                        otherToggle.getAttribute("data-target");
+
+
+                    const otherMenu =
+                        document.getElementById(otherId);
+
+
+                    if(otherMenu){
+
+                        otherMenu.classList.remove("show");
+
+                    }
+
+                }
+
+            });
+
+
+            /* OPEN / CLOSE CURRENT SUBMENU */
+
+            targetMenu.classList.toggle("show");
+
+        });
+
+    });
+
+
+    /* =====================================================
        PROFILE
-    ================================ */
+    ===================================================== */
 
     if(profileIcon && profilePanel){
 
-        profileIcon.onclick = function(e){
+        profileIcon.addEventListener("click", function(e){
 
             e.stopPropagation();
 
@@ -2945,29 +2893,35 @@ menuToggles.forEach(toggle => {
 
             profilePanel.classList.add("show");
 
-        };
+        });
 
     }
 
+
+    /* =====================================================
+       CLOSE PROFILE
+    ===================================================== */
 
     if(closeProfile && profilePanel){
 
-        closeProfile.onclick = function(){
+        closeProfile.addEventListener("click", function(e){
+
+            e.stopPropagation();
 
             profilePanel.classList.remove("show");
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        NOTIFICATION
-    ================================ */
+    ===================================================== */
 
     if(notificationIcon && notificationPanel){
 
-        notificationIcon.onclick = function(e){
+        notificationIcon.addEventListener("click", function(e){
 
             e.stopPropagation();
 
@@ -2985,14 +2939,14 @@ menuToggles.forEach(toggle => {
 
             notificationPanel.classList.toggle("show");
 
-        };
+        });
 
     }
 
 
-    /* ================================
+    /* =====================================================
        OUTSIDE CLICK
-    ================================ */
+    ===================================================== */
 
     document.addEventListener("click", function(e){
 
@@ -3027,7 +2981,6 @@ menuToggles.forEach(toggle => {
 
 });
 
- 
 </script>
 
 <script>
