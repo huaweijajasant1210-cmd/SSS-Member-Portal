@@ -1601,6 +1601,91 @@ body{
 
 }
 
+   /* =====================================================
+   DASHBOARD SIDE MENU - SAME AS CONTRIBUTIONS
+===================================================== */
+
+.menu-group{
+    width:100%;
+}
+
+.menu-toggle{
+    display:flex !important;
+    align-items:center !important;
+    gap:15px !important;
+    width:100%;
+    cursor:pointer;
+}
+
+.menu-toggle i{
+    width:25px;
+    min-width:25px;
+    text-align:center;
+    color:#315a9c;
+}
+
+.submenu{
+    display:none;
+    width:100%;
+    padding-left:25px;
+    box-sizing:border-box;
+}
+
+.submenu.show{
+    display:block;
+}
+
+.submenu a{
+    display:flex !important;
+    align-items:center !important;
+    gap:14px !important;
+    width:100%;
+    box-sizing:border-box;
+
+    padding:12px 8px !important;
+
+    text-decoration:none !important;
+
+    color:#526987 !important;
+
+    font-family:"Montserrat",sans-serif !important;
+
+    font-size:16px !important;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    border:none;
+}
+
+.submenu a:hover{
+    background:#eef6fc !important;
+    color:#315a9c !important;
+    text-decoration:none !important;
+}
+
+.submenu a i{
+    width:25px;
+    min-width:25px;
+    text-align:center;
+    color:#315a9c !important;
+}
+
+@media(max-width:700px){
+
+    .submenu{
+        padding-left:25px;
+    }
+
+    .submenu a{
+        font-size:15px !important;
+        padding:11px 5px !important;
+        gap:14px !important;
+    }
+
+}
+
 </style>
 <div class="fixed-top">
 <div class="dashboard-header">
@@ -2007,85 +2092,395 @@ body{
 <div class="menu-overlay" id="menuOverlay"></div>
 
 
-<!-- SIDE MENU -->
+<!-- =====================================================
+     SIDE MENU OVERLAY
+===================================================== -->
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
 <div class="side-menu" id="sideMenu">
 
     <div class="side-menu-header">
+
         <span>Menu</span>
 
-        <button class="close-menu" id="closeMenu">
+        <button
+            class="close-menu"
+            id="closeMenu"
+            type="button">
+
             <i class="fa-solid fa-xmark"></i>
+
         </button>
+
     </div>
 
 
     <div class="menu-items">
 
-        <a href="dashboard.html" class="menu-item active">
+        <!-- DASHBOARD -->
+
+        <a
+            href="dashboard.html"
+            class="menu-item">
+
             <i class="fa-solid fa-border-all"></i>
+
             <span>Dashboard</span>
+
         </a>
 
+
+        <!-- =================================================
+             MEMBER INFORMATION
+        ================================================== -->
 
         <div class="menu-group">
 
-    <div class="menu-item member-toggle">
-        <i class="fa-solid fa-user-tie"></i>
-        <span>Member Information</span>
-    </div>
+            <div
+                class="menu-item menu-toggle"
+                data-target="memberSubmenu">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <span>Member Information</span>
+
+            </div>
 
 
-    <div class="submenu">
+            <div
+                class="submenu"
+                id="memberSubmenu">
 
-        <a href="memberinfo.html" class="submenu-item">
-            <i class="fa-solid fa-user"></i>
-            <span>Member Details</span>
-        </a>
+                <a href="memberinfo.html">
 
+                    <i class="fa-solid fa-user"></i>
 
-        <a href="contributions.html" class="submenu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>My Contributions</span>
-        </a>
+                    <span>Member Details</span>
 
-
-        <a href="#" class="submenu-item disabled">
-            <i class="fa-solid fa-comments"></i>
-            <span>Update Security Questions</span>
-        </a>
-
-    </div>
-
-</div>
+                </a>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-fingerprint"></i>
-            <span>Services</span>
-        </a>
+                <a href="contributions.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>My Contributions</span>
+
+                </a>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            <span>Loans</span>
-        </a>
+                <a href="#">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    <span>Update Security Questions</span>
+
+                </a>
+
+            </div>
+
+        </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-network-wired"></i>
-            <span>Benefits</span>
-        </a>
+        <!-- =================================================
+             SERVICES
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="serviceSubmenu">
+
+                <i class="fa-solid fa-fingerprint"></i>
+
+                <span>Services</span>
+
+            </div>
 
 
-        <a href="#" class="menu-item">
-            <i class="fa-solid fa-barcode"></i>
-            <span>Payment Reference Number</span>
-        </a>
+            <div
+                class="submenu"
+                id="serviceSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                    <span>Disbursement Account</span>
+
+                </a>
 
 
-        <a href="#" class="menu-item">
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Benefit Re-disbursement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                    <span>Auto Debit Arrangement</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-people-roof"></i>
+
+                    <span>Pension Booster</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <span>RTC/CPO Reference Number Inquiry</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Set Appointment</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <span>MySSS Card</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LOANS
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="loanSubmenu">
+
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                <span>Loans</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="loanSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Salary Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                    <span>Calamity/Emergency Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Pension Loan</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loan Penalty Condonation</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BENEFITS
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="benefitsSubmenu">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <span>Benefits</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="benefitsSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-pregnant"></i>
+
+                    <span>Maternity Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span>Unemployment Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-bed-pulse"></i>
+
+                    <span>Sickness Benefit</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-wheelchair"></i>
+
+                    <span>Disability Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-person-cane"></i>
+
+                    <span>Retirement Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    <span>Funeral Claim</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-monument"></i>
+
+                    <span>Death Claim</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAYMENT REFERENCE NUMBER
+        ================================================== -->
+
+        <div class="menu-group">
+
+            <div
+                class="menu-item menu-toggle"
+                data-target="prnSubmenu">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                <span>Payment Reference Number</span>
+
+            </div>
+
+
+            <div
+                class="submenu"
+                id="prnSubmenu">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Contributions</span>
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Loans</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SIGN OUT
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="menu-item"
+            onclick="logout()">
+
             <i class="fa-solid fa-right-from-bracket"></i>
+
             <span>Sign Out</span>
+
         </a>
 
     </div>
@@ -2243,9 +2638,124 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("notificationPanel");
 
 
-    const memberToggle =
-        document.querySelector(".member-toggle");
+    /* =====================================================
+   SIDE MENU
+===================================================== */
 
+const menuButton =
+    document.getElementById("menuButton");
+
+const sideMenu =
+    document.getElementById("sideMenu");
+
+const menuOverlay =
+    document.getElementById("menuOverlay");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+
+function openMenu(){
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("open");
+
+}
+
+
+function closeSideMenu(){
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("open");
+
+}
+
+
+if(menuButton){
+
+    menuButton.addEventListener(
+        "click",
+        openMenu
+    );
+
+}
+
+
+if(closeMenu){
+
+    closeMenu.addEventListener(
+        "click",
+        closeSideMenu
+    );
+
+}
+
+
+if(menuOverlay){
+
+    menuOverlay.addEventListener(
+        "click",
+        closeSideMenu
+    );
+
+}
+
+
+/* =====================================================
+   SUBMENUS
+===================================================== */
+
+const menuToggles =
+    document.querySelectorAll(".menu-toggle");
+
+
+menuToggles.forEach(toggle => {
+
+    toggle.addEventListener("click", function(){
+
+        const targetId =
+            this.getAttribute("data-target");
+
+        const target =
+            document.getElementById(targetId);
+
+
+        /* CLOSE OTHER SUBMENUS */
+
+        menuToggles.forEach(other => {
+
+            if(other !== this){
+
+                const otherId =
+                    other.getAttribute("data-target");
+
+                const otherMenu =
+                    document.getElementById(otherId);
+
+                if(otherMenu){
+
+                    otherMenu.classList.remove("show");
+
+                }
+
+            }
+
+        });
+
+
+        /* OPEN / CLOSE SELECTED */
+
+        if(target){
+
+            target.classList.toggle("show");
+
+        }
+
+    });
+
+});
     const submenu =
         document.querySelector(".submenu");
 
