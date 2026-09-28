@@ -1696,6 +1696,225 @@ body{
 
 }
 
+      /* =========================================
+   COVERAGE HISTORY
+   ========================================= */
+
+.coverage-history {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 25px 40px 35px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+
+.coverage-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #eef1f4;
+    color: #526987;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.coverage-title i {
+    font-size: 23px;
+}
+
+
+/* LATEST */
+
+.coverage-latest {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 35px 0 45px;
+}
+
+.coverage-latest span {
+    background: #d8edf7;
+    color: #526987;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.coverage-latest div {
+    flex: 1;
+    border-top: 2px dashed #dddddd;
+}
+
+
+/* EACH ENTRY */
+
+.coverage-entry {
+    position: relative;
+    margin-left: 45px;
+    padding-left: 55px;
+    padding-bottom: 45px;
+}
+
+
+/* VERTICAL LINE */
+
+.coverage-entry:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 25px;
+    height: calc(100% - 5px);
+    width: 2px;
+    background: #e0e0e0;
+}
+
+
+/* DOT */
+
+.timeline-dot {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+/* BLUE */
+
+.coverage-entry.blue .timeline-dot {
+    background: #18a9d2;
+    border: 5px solid #d9f7fc;
+}
+
+
+/* PURPLE */
+
+.coverage-entry.purple .timeline-dot {
+    background: #4b49c7;
+    border: 5px solid #e8e7ff;
+}
+
+
+/* ORANGE */
+
+.coverage-entry.orange .timeline-dot {
+    background: #efa313;
+    border: 5px solid #fff0d5;
+}
+
+
+/* DATES */
+
+.coverage-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.coverage-dates span {
+    display: block;
+    color: #444;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.coverage-dates strong {
+    display: block;
+    color: #555;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+/* MEMBER / COMPANY */
+
+.coverage-member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* INITIAL CIRCLE */
+
+.coverage-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 21px;
+}
+
+
+/* BLUE VM */
+
+.coverage-entry.blue .coverage-avatar {
+    background: #d9f7fc;
+    color: #29a8c5;
+}
+
+
+/* PURPLE P */
+
+.coverage-entry.purple .coverage-avatar {
+    background: #e8e7ff;
+    color: #5957c8;
+}
+
+
+/* ORANGE SE */
+
+.coverage-entry.orange .coverage-avatar {
+    background: #fff0d5;
+    color: #e5a11c;
+}
+
+
+/* COMPANY */
+
+.coverage-company {
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* NUMBER */
+
+.coverage-number {
+    color: #555;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+/* END CHECK */
+
+.coverage-end {
+    margin-left: 37px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #dce1e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dce1e5;
+    font-size: 17px;
+}
+
 </style>
 
 </head>
@@ -2593,200 +2812,165 @@ id="appointmentModal">
     <section class="coverage-section">
 
 
-        <div class="coverage-title">
+      <!-- COVERAGE HISTORY -->
+<div class="coverage-history">
 
-            <i class="fa-solid fa-clock-rotate-left"></i>
+    <div class="coverage-title">
+        <i class="fa-regular fa-clock"></i>
+        <span>Coverage History</span>
+    </div>
 
-            Coverage History
+    <div class="coverage-latest">
+        <span>LATEST</span>
+        <div></div>
+    </div>
 
+    <!-- 1ST COVERAGE -->
+    <div class="coverage-entry blue">
+
+        <div class="timeline-dot"></div>
+
+        <div class="coverage-dates">
+            <div>
+                <span>EFFECTIVITY DATE</span>
+                <strong>Jan 01, 2026</strong>
+            </div>
+
+            <div>
+                <span>REPORTING DATE</span>
+                <strong>Feb 01, 2026</strong>
+            </div>
         </div>
 
-
-        <div class="coverage-timeline">
-
-
-            <!-- 2026 -->
-
-            <div class="coverage-item">
-
-                <div class="coverage-dot"></div>
-
-
-                <div class="coverage-company">
-
-                    LITTELFUSE PHILIPPINES INC.
-
-                </div>
-
-
-                <div class="coverage-er">
-
-                    80-0159722-6
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        EFFECTIVITY DATE:
-                    </strong>
-
-                    Jan 01, 2026
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        REPORTING DATE:
-                    </strong>
-
-                    Sep 01, 2026
-
-                </div>
-
+        <div class="coverage-member">
+            <div class="coverage-avatar">
+                VM
             </div>
 
-
-            <!-- 2022 -->
-
-            <div class="coverage-item">
-
-                <div class="coverage-dot"></div>
-
-
+            <div>
                 <div class="coverage-company">
-
-                    LITTELFUSE PHILIPPINES INC.
-
+                    VOLUNTARY MEMBER
                 </div>
-
-
-                <div class="coverage-er">
-
-                    80-0159722-6
-
+                <div class="coverage-number">
+                    88-8888800-6
                 </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        EFFECTIVITY DATE:
-                    </strong>
-
-                    Feb 01, 2022
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        REPORTING DATE:
-                    </strong>
-
-                    May 01, 2025
-
-                </div>
-
             </div>
-
-
-            <!-- 2019 -->
-
-            <div class="coverage-item">
-
-                <div class="coverage-dot"></div>
-
-
-                <div class="coverage-company">
-
-                    K&amp;K MOLDING INC.
-
-                </div>
-
-
-                <div class="coverage-er">
-
-                    06-8529635-2
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        EFFECTIVITY DATE:
-                    </strong>
-
-                    Dec 01, 2019
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        REPORTING DATE:
-                    </strong>
-
-                    Apr 01, 2021
-
-                </div>
-
-            </div>
-
-
-            <!-- 2017 -->
-
-            <div class="coverage-item">
-
-                <div class="coverage-dot"></div>
-
-
-                <div class="coverage-company">
-
-                    K&amp;K MOLDING INC.
-
-                </div>
-
-
-                <div class="coverage-er">
-
-                    06-8529635-2
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        EFFECTIVITY DATE:
-                    </strong>
-
-                    Feb 11, 2017
-
-                </div>
-
-
-                <div class="coverage-date">
-
-                    <strong>
-                        REPORTING DATE:
-                    </strong>
-
-                    Mar 06, 2017
-
-                </div>
-
-            </div>
-
-
         </div>
 
+    </div>
+
+
+    <!-- 2ND COVERAGE -->
+    <div class="coverage-entry purple">
+
+        <div class="timeline-dot"></div>
+
+        <div class="coverage-dates">
+            <div>
+                <span>EFFECTIVITY DATE</span>
+                <strong>Jun 01, 2019</strong>
+            </div>
+
+            <div>
+                <span>REPORTING DATE</span>
+                <strong>Feb 01, 2021</strong>
+            </div>
+        </div>
+
+        <div class="coverage-member">
+            <div class="coverage-avatar">
+                P
+            </div>
+
+            <div>
+                <div class="coverage-company">
+                    PRIME MOVER BUSINESS SOLUTIONS
+                </div>
+                <div class="coverage-number">
+                    03-9115370-5
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 3RD COVERAGE -->
+    <div class="coverage-entry orange">
+
+        <div class="timeline-dot"></div>
+
+        <div class="coverage-dates">
+            <div>
+                <span>EFFECTIVITY DATE</span>
+                <strong>Feb 01, 2019</strong>
+            </div>
+
+            <div>
+                <span>REPORTING DATE</span>
+                <strong>Feb 01, 2019</strong>
+            </div>
+        </div>
+
+        <div class="coverage-member">
+            <div class="coverage-avatar">
+                SE
+            </div>
+
+            <div>
+                <div class="coverage-company">
+                    SELF-EMPLOYED
+                </div>
+                <div class="coverage-number">
+                    00-0000000-0
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 4TH COVERAGE -->
+    <div class="coverage-entry orange">
+
+        <div class="timeline-dot"></div>
+
+        <div class="coverage-dates">
+            <div>
+                <span>EFFECTIVITY DATE</span>
+                <strong>Jan 11, 2019</strong>
+            </div>
+
+            <div>
+                <span>REPORTING DATE</span>
+                <strong>Feb 20, 2019</strong>
+            </div>
+        </div>
+
+        <div class="coverage-member">
+            <div class="coverage-avatar">
+                SE
+            </div>
+
+            <div>
+                <div class="coverage-company">
+                    SELF-EMPLOYED
+                </div>
+                <div class="coverage-number">
+                    00-0000000-0
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- END OF TIMELINE -->
+    <div class="coverage-end">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+</div>
     </section>
 
 
