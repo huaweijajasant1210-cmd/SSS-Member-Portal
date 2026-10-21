@@ -2445,10 +2445,6 @@ table thead th {
 
 
 
-/* BLUE HIGHLIGHT SA SUMMARY LABEL */
-.summary table tr td:first-child {
-    background: #d9edf7 !important;
-}
 /* =====================================
    CONTRIBUTION TABLE COLORS
 ===================================== */
@@ -2562,6 +2558,27 @@ table tbody tr:nth-child(even) td:first-child {
         justify-content: flex-start !important;
     }
 
+}
+      /* BLUE HIGHLIGHT FOR SUMMARY TITLE */
+
+.summary > .summary-title {
+    display: inline-block !important;
+    width: auto !important;
+    background: #d9edf7 !important;
+    color: #315b78 !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    padding: 6px 10px !important;
+    margin: 0 0 10px 0 !important;
+    border-radius: 3px !important;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .summary > .summary-title {
+        font-size: 14px !important;
+        padding: 5px 8px !important;
+    }
 }
       
 </style>
