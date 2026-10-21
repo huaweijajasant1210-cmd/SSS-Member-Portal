@@ -2449,21 +2449,26 @@ table thead th {
 .summary table tr td:first-child {
     background: #d9edf7 !important;
 }
+/* =====================================
+   CONTRIBUTION TABLE COLORS
+===================================== */
 
-      /* Odd rows - light gray */
+table thead tr,
+table thead th {
+    background-color: #d9edf7 !important;
+    color: #315b78 !important;
+}
+
 table tbody tr:nth-child(odd) {
     background-color: #f2f2f2 !important;
 }
 
-/* Even rows - white */
 table tbody tr:nth-child(even) {
     background-color: #ffffff !important;
 }
 
-table tbody tr:nth-child(even) td {
-    background-color: #ffffff !important;
+/* YEAR COLUMN */
 
-      /* YEAR column - alternating gray and light gray */
 table tbody tr:nth-child(odd) td:first-child {
     background-color: #d9d9d9 !important;
 }
@@ -2472,111 +2477,91 @@ table tbody tr:nth-child(even) td:first-child {
     background-color: #eeeeee !important;
 }
 
-      /* Align member name to the left */
-.profile-text {
-    text-align: left !important;
-    margin-left: 0 !important;
-}
 
-.profile-text h2 {
-    text-align: left !important;
-    margin-left: 0 !important;
-}
+/* =====================================
+   PROFILE NAME ALIGNMENT
+   NAME BESIDE THE AVATAR
+===================================== */
 
-/* Mobile alignment */
-@media (max-width: 700px) {
-    .profile-content {
-        justify-content: flex-start !important;
-    }
-
-    .profile-text {
-        text-align: left !important;
-    }
-
-    .profile-text h2 {
-        text-align: left !important;
-    }
-}
-
-/* FORCE PROFILE NAME TO LEFT */
 .member-details .profile-content {
     display: flex !important;
-    justify-content: flex-start !important;
+    flex-direction: row !important;
     align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+}
+
+.member-details .avatar {
+    flex-shrink: 0 !important;
 }
 
 .member-details .profile-text {
-    flex: 1 !important;
+    display: block !important;
+    flex: 1 1 0% !important;
     min-width: 0 !important;
-    text-align: left !important;
     margin: 0 !important;
+    padding-top: 13px !important;
+    text-align: left !important;
 }
 
 .member-details .profile-text h2 {
     display: block !important;
     width: 100% !important;
-    text-align: left !important;
     margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
 }
 
 .member-details .profile-info {
-    justify-content: flex-start !important;
-    text-align: left !important;
-}
-
-      /* BLUE HIGHLIGHT FOR SUMMARY TEXT ONLY */
-.summary .summary-title {
-    display: inline-block !important;
-    width: auto !important;
-    background-color: #d9edf7 !important;
-    color: #315b78 !important;
-    font-size: 17px !important;
-    font-weight: 500 !important;
-    padding: 5px 8px !important;
-    margin-bottom: 10px !important;
-}
-
-      /* ALIGN PROFILE NAME TO THE LEFT BESIDE AVATAR */
-.profile-content {
     display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-}
-
-.profile-text {
-    flex: 1 !important;
-    min-width: 0 !important;
-    text-align: left !important;
-    margin-left: 15px !important;
-}
-
-.profile-text h2 {
-    text-align: left !important;
-    margin-left: 0 !important;
-    width: 100% !important;
-}
-
-/* PROFILE INFORMATION */
-.profile-info {
     justify-content: flex-start !important;
     text-align: left !important;
 }
 
-/* MOBILE DISPLAY */
+
+/* =====================================
+   MOBILE
+===================================== */
+
 @media (max-width: 700px) {
-    .profile-content {
+
+    .member-details .profile-content {
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        padding: 0 10px 10px !important;
+    }
+
+    .member-details .avatar {
+        width: 58px !important;
+        height: 58px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .member-details .profile-text {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding-top: 8px !important;
+        text-align: left !important;
+    }
+
+    .member-details .profile-text h2 {
+        width: 100% !important;
+        margin: 0 0 7px 0 !important;
+        font-size: 19px !important;
+        text-align: left !important;
+    }
+
+    .member-details .profile-info {
+        display: block !important;
+        text-align: left !important;
+        font-size: 13px !important;
+    }
+
+    .member-details .profile-info span {
         justify-content: flex-start !important;
     }
 
-    .profile-text {
-        text-align: left !important;
-        margin-left: 10px !important;
-    }
-
-    .profile-text h2 {
-        text-align: left !important;
-        font-size: 16px !important;
-    }
 }
       
 </style>
