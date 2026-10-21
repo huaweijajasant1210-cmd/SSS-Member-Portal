@@ -2819,23 +2819,26 @@ body{
     .view-notifications { font-size: 17px; }
 }
 
-/* Pantayin ang width ng Profile Information at Details */
-.profile-card {
+/* =========================================
+   MATCH PROFILE AND DETAILS CONTAINER WIDTH
+========================================= */
+
+.member-details,
+.details-section {
     width: 100%;
-    max-width: 750px;
+    max-width: 100%;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
 }
 
-.member-details-container {
-    width: 100%;
-    max-width: 750px;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
+      @media (max-width: 700px) {
+    .member-details,
+    .details-section {
+        width: 100%;
+        max-width: 100%;
+    }
 }
-
 </style>
 
 </head>
