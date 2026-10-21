@@ -2487,6 +2487,32 @@ table tbody tr:nth-child(odd) td:first-child {
 table tbody tr:nth-child(even) td:first-child {
     background-color: #eeeeee !important;
 }
+
+      /* Align member name to the left */
+.profile-text {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.profile-text h2 {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* Mobile alignment */
+@media (max-width: 700px) {
+    .profile-content {
+        justify-content: flex-start !important;
+    }
+
+    .profile-text {
+        text-align: left !important;
+    }
+
+    .profile-text h2 {
+        text-align: left !important;
+    }
+}
 </style>
 
 </head>
