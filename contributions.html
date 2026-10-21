@@ -2509,16 +2509,32 @@ table tbody tr:nth-child(even) td:first-child {
     }
 }
 
-      .summary-title {
-    display: table;
-    width: fit-content;
-    font-size: 17px;
-    font-weight: 500;
-    color: #315b78;
-    background: #d9edf7;
-    padding: 3px 6px;
-    margin-bottom: 10px;
+/* FORCE PROFILE NAME TO LEFT */
+.member-details .profile-content {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
 }
+
+.member-details .profile-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.member-details .profile-text h2 {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.member-details .profile-info {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+      
 </style>
 
 </head>
